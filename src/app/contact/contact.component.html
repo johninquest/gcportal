@@ -1,0 +1,25 @@
+
+
+<div class="contact">
+  <div class="title">{{ cTitle | uppercase }}</div>
+  <mat-divider></mat-divider>
+  <div class="form">
+    <mat-form-field>
+      <input matInput type="text" placeholder="First name, Last name" [formControl]="cNames" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput type="email" placeholder="E-mail" [formControl]="cSender">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Subject" [formControl]="cSubject" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Message" [formControl]="cMessage" required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="cMessage.invalid" (click)="sendToSlack()">Send</button>
+  </div>
+</div>

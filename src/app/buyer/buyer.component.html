@@ -1,0 +1,58 @@
+
+
+<div class="pi-form">
+
+  <div class="ps-header">
+    <mat-form-field>
+      <input matInput value="Buyer information" class="b-header-info" disabled>
+    </mat-form-field>
+  </div>
+  
+  <div class="pi-buyer">
+      <mat-form-field>
+        <input 
+          matInput placeholder="First name" 
+          type="text" 
+          [(ngModel)]="b_firstName">
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <input 
+          matInput placeholder="Last name" 
+          type="text" 
+          [(ngModel)]="b_lastName">
+      </mat-form-field><br>
+  
+      <mat-form-field>
+        <input 
+        matInput placeholder="Phone" 
+        type="tel" 
+        [(ngModel)]="b_phoneNumber">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field><br>
+  
+      <mat-form-field>
+        <input 
+        matInput placeholder="E-mail" 
+        type="email" 
+        [(ngModel)]="b_eMail">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field><br>
+  </div>
+    
+  <div class="pi-nav-buttons">
+        <div class="rt-button">
+        <button 
+          mat-raised-button color="primary" 
+          routerLink="/transaction">BACK
+        </button>
+      </div>
+       <div class="pi-submit">
+          <button 
+            (click)="saveBuyerDataToSS()" 
+            mat-raised-button color="accent" 
+            routerLink="/seller">NEXT
+          </button>
+        </div>
+  </div>    
+</div>

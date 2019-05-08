@@ -1,0 +1,19 @@
+
+<div class="dg">
+  <div mat-dialog-content>
+    <p class="dg-message">Was möchtest du machen?</p>
+  </div>
+  <div mat-dialog-actions class="dg-buttons">
+    <div class="dg-options">
+      <button mat-raised-button color="primary" (click)="doGiveAwayWf()" routerLink="/input">VERSCHENKEN</button>
+      <button mat-raised-button color="primary" (click)="doSaleWf()" routerLink="/input">&nbsp;&nbsp;&nbsp;VERKAUFEN&nbsp;&nbsp;&nbsp;</button>
+    </div>
+    <div class="dg-cancel">
+      <button mat-raised-button color="accent" (click)="cancelDialog()">ABBRECHEN</button>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<button mat-raised-button color="primary" (click)="doGiveAwayWf()" routerLink="/transaction" cdkFocusInitial>GIVE AWAY</button>
+ -->

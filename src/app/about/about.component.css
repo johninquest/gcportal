@@ -1,0 +1,49 @@
+
+.about {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.title {
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.info {
+    margin-top: 1em;
+}
+
+.info .catchphrase {
+    text-align: center;
+}
+
+sup {
+    font-size: 0.5em;
+}
+
+.info .catchphrase span {
+    font-weight: bold;
+}
+
+.info div p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.highlights {
+    margin-bottom: 2em;
+}
+
+.highlights ul li span {
+    font-weight: bold;
+}
+
+.howtouse ol li span {
+    font-weight: bold;
+}
+
+mat-divider {
+    width: 15em;
+}

@@ -1,0 +1,16 @@
+
+<div class="pageTitle">
+  <p>{{ title | uppercase }}<sup>beta</sup></p>
+</div>
+
+<div class="start-btn">
+  <button 
+    mat-fab color="primary" (click)="[openDialog(), clearSessionStorage()]">
+    {{ info | uppercase }}
+  </button>
+</div>
+
+<!--
+routerLink="/transaction"
+(click)="clearSessionStorage()
+-->

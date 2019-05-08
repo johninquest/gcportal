@@ -1,0 +1,49 @@
+
+
+.pi-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pi-header {
+    order: 1;
+    flex: 0 1 auto;
+}
+
+.s-header-info {
+    font-weight: bold;
+    color: grey;
+  }
+
+mat-form-field {
+    width: 15em;
+  }
+
+.pi-buyer {
+    order: 2;
+    flex: 0 1 auto;  
+  }
+
+.pi-nav-buttons {
+    margin-top: 0.5em;
+    order: 3;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly; 
+  }
+
+.rt-button {
+    margin-right: 1em;
+  }
+
+.pi-submit {
+    margin-left: 1em;
+  }
+
+button {
+    font-size: 1em;
+}
+
+
+  

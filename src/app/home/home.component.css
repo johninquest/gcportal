@@ -1,0 +1,26 @@
+
+.pageTitle {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+.pageTitle p {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.start-btn {
+    text-align: center;
+}
+
+button {
+    font-size: 1em;
+    width: 10em;
+    height: 10em;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 0.4em;
+}

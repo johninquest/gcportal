@@ -1,0 +1,117 @@
+
+<div class="pageTitle" *ngIf="showHide">
+    <p>{{ oTitle }}</p>
+  </div>
+
+ <div class="invoice-box" id="invbox">
+  <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+          <td colspan="2">
+              <table>
+                  <tr>
+                      <td class="title">
+                        {{ trLogo }}
+                      </td>
+                      
+                      <td>
+                        Date: {{ trDate }}<br>
+                        Place: {{ trPlace }}{{ commaSpace }}{{ trCountry | uppercase }}
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      
+      <tr class="information">
+          <td colspan="2">
+              <table>
+                  <tr>
+                      <td>
+                          <span class="bsInfo">{{ sgInfo }} information</span><br>
+                          {{ sgNames }}<br>
+                          {{ sgPhone }}<br>
+                          {{ sgEmail }}
+                      </td>
+                      
+                      <td>
+                          <span class="bsInfo">{{ brInfo }} information</span><br>
+                          {{ brNames }}<br>
+                          {{ brPhone }}<br>
+                          {{ brEmail }}
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      
+      <tr class="heading">
+        <td>
+            Transaction type
+        </td>
+        
+        <td>
+            Payment method
+        </td>
+    </tr>
+    
+    <tr class="details">
+        <td>
+            {{ trType }}
+        </td>
+        
+        <td>
+            {{ payMethod }}
+        </td>
+    </tr>
+      
+    <tr class="heading">
+        <td>
+            Item
+        </td>
+        
+        <td>
+            Price
+        </td>
+    </tr>
+    
+    <tr class="item">
+        <td>{{ trItem1 }}</td>
+        
+        <td>{{ trPrice1 }}</td>
+    </tr>
+    
+    <tr class="item">
+        <td>{{ trItem2 }}</td>
+        
+        <td>{{ trPrice2 }}</td>
+    </tr>
+    
+    <tr class="item last">
+        <td>{{ trItem3 }}</td>
+        
+        <td>{{ trPrice3 }}</td>
+    </tr>
+    
+    <tr class="total">
+        <td>Total</td>
+        
+        <td>{{ trTotal }} <span class="currency">{{ trCurrency }}</span>
+        </td>
+    </tr>
+  </table>
+  <p class="sig">⚙️ by stuuur</p>
+</div>
+
+<div class="nav-button">
+    <div>
+        <button mat-raised-button color="accent" routerLink="/input">ZURÜCK</button>
+    </div>
+    <div>
+        <!-- <button mat-stroked-button color='accent' [matMenuTriggerFor]="menu">OPTIONS</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>SHOW PDF</button>
+            <button mat-menu-item>SHARE PDF</button>
+        </mat-menu> -->
+        <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button>
+    </div>
+</div>

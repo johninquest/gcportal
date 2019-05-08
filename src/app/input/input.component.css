@@ -1,0 +1,66 @@
+
+.pageTitle {
+    text-align: center;
+    margin-top: 2em;
+    /* margin-bottom: 1em; */
+  }
+  
+  .pageTitle p {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  
+  mat-form-field {
+    width: 16em;
+  }
+  
+  /* .item {
+    width: 10.5em;
+    margin-right: 0.5em;
+  } */
+  
+  .price {
+    width: 4em;
+    margin-left: 0.5em;
+  }
+  
+  .location {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+  
+  .place {
+    width: 10.5em;
+    margin-right: 0.5em;
+  }
+  
+  .country {
+    width: 5em;
+  }
+  
+  .tr-nav-buttons {
+    margin-top: 0.5em;
+    order: 5;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  
+  .rt-button {
+    margin-right: 1em;
+    
+  }
+  .tr-submit {
+    margin-left: 1em;
+  }
+  
+  button {
+    font-size: 1em;
+  }

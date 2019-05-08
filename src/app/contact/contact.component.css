@@ -1,0 +1,49 @@
+
+
+.contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.title {
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.form {
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 15em;
+}
+
+mat-form-field textarea {
+    height: 6em;
+} 
+
+mat-divider {
+    width: 15em;
+}
+
+button {
+    font-size: 1em;
+}
+
+
+
+/*
+.contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 5em;
+}
+
+
+*/

@@ -1,0 +1,14 @@
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mytheme-primary: mat-palette($mat-deep-orange, 400);
+$mytheme-accent: mat-palette($mat-grey, 300);
+$mytheme-warn: mat-palette($mat-red, 500);
+
+$mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
+@include angular-material-theme($mytheme-all);
+
+$myfont: 'Quicksand', sans-serif;
+* { font: 100% $myfont; } 
+/* Add !important to overwrite all elements */
