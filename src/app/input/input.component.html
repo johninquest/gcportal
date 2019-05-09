@@ -7,7 +7,7 @@
    <mat-vertical-stepper #stepper>
       <mat-step>
         <ng-template matStepLabel>Start</ng-template>
-        <p>Start entering your <br>transaction information.</p>
+        <p>Bitte die Transaktionsdaten jetzt eingeben.</p>
         <div>
           <button mat-button matStepperNext>Weiter</button>
         </div>
@@ -96,7 +96,6 @@
         <div>
           <button mat-button matStepperPrevious>Zurück</button>
           <button mat-button matStepperNext>Weiter</button>
-          <!-- <button mat-button (click)="stepper.reset()">Restart</button> -->
         </div>
       </div>
     </mat-step> 
@@ -127,7 +126,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Ende</ng-template>
-      <p>You are now done entering <br>your transaction information.</p>
+      <p>Du bist mir der Dateneingabe jetzt fertig.</p>
       <div>
         <button mat-button matStepperPrevious>Zurück</button>
         <button mat-button (click)="stepper.reset()">Neu starten</button>

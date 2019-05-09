@@ -136,52 +136,9 @@ export class OutputComponent implements OnInit {
   showCurrency() {
     let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
     if(cCodeObj['tr_ccode']) {
-      if (cCodeObj['tr_ccode'] === 'aus') {return 'AUD'}
-      if (cCodeObj['tr_ccode'] === 'ago') {return 'AOA'}
-      if (cCodeObj['tr_ccode'] === 'alb') {return 'ALL'}
-      if (cCodeObj['tr_ccode'] === 'bgr') {return 'BGN'}
-      if (cCodeObj['tr_ccode'] === 'bih') {return 'BAM'}
-      if (cCodeObj['tr_ccode'] === 'bwa') {return 'BWP'}
-      if (cCodeObj['tr_ccode'] === 'can') {return 'CAD'}
-      if (cCodeObj['tr_ccode'] === 'che') {return 'CHF'}
-      if (cCodeObj['tr_ccode'] === 'chn') {return 'CNY'}
-      if (cCodeObj['tr_ccode'] === 'cze') {return 'CZK'}
-      if (cCodeObj['tr_ccode'] === 'dnk') {return 'DKK'}
-      if (cCodeObj['tr_ccode'] === 'dza') {return 'DZD'}
-      if (cCodeObj['tr_ccode'] === 'egy') {return 'EGP'}
-      if (cCodeObj['tr_ccode'] === 'gbr') {return 'GBP'}
-      if (cCodeObj['tr_ccode'] === 'hrv') {return 'HRK'}
-      if (cCodeObj['tr_ccode'] === 'hun') {return 'HUF'}
-      if (cCodeObj['tr_ccode'] === 'ind') {return 'INR'}
-      if (cCodeObj['tr_ccode'] === 'ken') {return 'KES'}
-      if (cCodeObj['tr_ccode'] === 'lby') {return 'LYD'}
-      if (cCodeObj['tr_ccode'] === 'mar') {return 'MAD'}
-      if (cCodeObj['tr_ccode'] === 'mkd') {return 'MKD'}
-      if (cCodeObj['tr_ccode'] === 'mrt') {return 'MRU'}
-      if (cCodeObj['tr_ccode'] === 'mwi') {return 'MWK'}
-      if (cCodeObj['tr_ccode'] === 'nga') {return 'NGN'}
-      if (cCodeObj['tr_ccode'] === 'nor') {return 'NOK'}
-      if (cCodeObj['tr_ccode'] === 'nzl') {return 'NZD'}
-      if (cCodeObj['tr_ccode'] === 'pol') {return 'PLN'}
-      if (cCodeObj['tr_ccode'] === 'rou') {return 'RON'}
-      if (cCodeObj['tr_ccode'] === 'sdn') {return 'SDG'}
-      if (cCodeObj['tr_ccode'] === 'swe') {return 'SEK'}
-      if (cCodeObj['tr_ccode'] === 'uga') {return 'UGX'}
-      if (cCodeObj['tr_ccode'] === 'zaf') {return 'ZAR'}
-      if (cCodeObj['tr_ccode'] === 'zmb') {return 'ZMW'}
-      if (cCodeObj['tr_ccode'] === 'zwe') {return 'ZWL'}
-      if (cCodeObj['tr_ccode'] === 'usa') {return 'USD'}
 
-      if ((cCodeObj['tr_ccode'] === 'caf') || (cCodeObj['tr_ccode'] === 'cmr') || 
-         (cCodeObj['tr_ccode'] === 'cog') || (cCodeObj['tr_ccode'] === 'gab') ||
-         (cCodeObj['tr_ccode'] === 'gnq') || (cCodeObj['tr_ccode'] === 'tcd')) 
-         { return 'XAF'; }
-
-      if ((cCodeObj['tr_ccode'] === 'ben') || (cCodeObj['tr_ccode'] === 'bfa') || 
-         (cCodeObj['tr_ccode'] === 'civ') || (cCodeObj['tr_ccode'] === 'gnb') ||
-         (cCodeObj['tr_ccode'] === 'mli') || (cCodeObj['tr_ccode'] === 'ner') || 
-         (cCodeObj['tr_ccode'] === 'sen') || (cCodeObj['tr_ccode'] === 'tgo')) 
-         { return 'XOF'; } 
+      if ((cCodeObj['tr_ccode'] === 'che') || (cCodeObj['tr_ccode'] === 'lie')) 
+         { return 'CHF'; } 
 
       else { return 'EUR'; }
 
