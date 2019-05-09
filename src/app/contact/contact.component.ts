@@ -14,7 +14,7 @@ import { SlackService } from '../slack.service';
 })
 export class ContactComponent implements OnInit {
 
-  cTitle: string = 'contact us';
+  cTitle: string = 'kontakt';
 
   cNames = new FormControl(''); 
   cSender = new FormControl('', [Validators.email]); 

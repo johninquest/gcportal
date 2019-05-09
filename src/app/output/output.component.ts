@@ -3,7 +3,7 @@ import html2canvas from 'html2canvas';
 /* import * as jsPDF from 'jspdf'; */
 import { saveAs } from 'file-saver';
 import * as moment from 'moment';
-moment.locale('en-gb');
+moment.locale('de');
 
 @Component({
   selector: 'app-output',
@@ -65,15 +65,15 @@ export class OutputComponent implements OnInit {
   // Display the transaction type on output template
   showTransactionType() {
     if (sessionStorage.getItem('dg_choice') === 'giveaway') {
-      this.trType = 'Give away';
-      this.payMethod = 'Free';
-      this.brInfo = 'Receiver';
-      this.sgInfo = 'Giver';
+      this.trType = 'Geschenk';
+      this.payMethod = 'Kostenlos';
+      this.brInfo = 'Empfänger';
+      this.sgInfo = 'Geber';
     } else if (sessionStorage.getItem('dg_choice') === 'sale') {
-      this.trType = 'Sale';
-      this.payMethod = 'Cash';
-      this.brInfo = 'Buyer';
-      this.sgInfo = 'Seller';
+      this.trType = 'Verkauf';
+      this.payMethod = 'Bar';
+      this.brInfo = 'Käufer';
+      this.sgInfo = 'Verkäufer';
     }
   }
 

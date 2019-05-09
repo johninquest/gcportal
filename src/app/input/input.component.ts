@@ -69,13 +69,13 @@ export class InputComponent implements OnInit {
   displayTrType() {
     let trChoice: string = sessionStorage.getItem('dg_choice');
     if (trChoice === 'giveaway') {
-      this.trType = 'transaction';
-      this.brInfo = 'receiver';
-      this.sgInfo = 'giver';
+      this.trType = 'Transaktionsdaten';
+      this.brInfo = 'Empfängerdaten';
+      this.sgInfo = 'Geberdaten';
     } else if (trChoice === 'sale') {
-      this.trType = 'transaction';
-      this.brInfo = 'buyer';
-      this.sgInfo = 'seller';
+      this.trType = 'Transaktionsdaten';
+      this.brInfo = 'Käuferdaten';
+      this.sgInfo = 'Verkäuferdaten';
     } else {
       this.trType = '';
       this.brInfo = '';

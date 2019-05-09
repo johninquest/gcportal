@@ -14,8 +14,8 @@
                       </td>
                       
                       <td>
-                        Date: {{ trDate }}<br>
-                        Place: {{ trPlace }}{{ commaSpace }}{{ trCountry | uppercase }}
+                        Datum: {{ trDate }}<br>
+                        Ort: {{ trPlace }}{{ commaSpace }}{{ trCountry | uppercase }}
                       </td>
                   </tr>
               </table>
@@ -45,33 +45,21 @@
       </tr>
       
       <tr class="heading">
-        <td>
-            Transaction type
-        </td>
+        <td>Art der Transaktion</td>
         
-        <td>
-            Payment method
-        </td>
+        <td>Zahlungsart</td>
     </tr>
     
     <tr class="details">
-        <td>
-            {{ trType }}
-        </td>
+        <td>{{ trType }}</td>
         
-        <td>
-            {{ payMethod }}
-        </td>
+        <td>{{ payMethod }}</td>
     </tr>
       
     <tr class="heading">
-        <td>
-            Item
-        </td>
+        <td>Artikel</td>
         
-        <td>
-            Price
-        </td>
+        <td>Preis</td>
     </tr>
     
     <tr class="item">
@@ -93,13 +81,13 @@
     </tr>
     
     <tr class="total">
-        <td>Total</td>
+        <td>Summe</td>
         
         <td>{{ trTotal }} <span class="currency">{{ trCurrency }}</span>
         </td>
     </tr>
   </table>
-  <p class="sig">⚙️ by stuuur</p>
+  <p class="sig">🔋 von stuuur</p>
 </div>
 
 <div class="nav-button">
