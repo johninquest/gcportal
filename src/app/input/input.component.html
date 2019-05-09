@@ -1,96 +1,117 @@
 
 <div class="pageTitle" *ngIf="showHide">
-    <p>{{ title }}</p>
-  </div>
-  
-  <div class="input-container">  
-   <mat-vertical-stepper #stepper>
-      <mat-step>
-        <ng-template matStepLabel>Start</ng-template>
-        <p>Bitte die Transaktionsdaten jetzt eingeben.</p>
-        <div>
-          <button mat-button matStepperNext>Weiter</button>
-        </div>
-      </mat-step>
+  <p>{{ title }}</p>
+</div>
 
-      <mat-step>
-        <div class="formGroup1">
-          <ng-template matStepLabel>{{trType}} hinzufügen</ng-template>
-          <div>
-            <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
-              <input matInput placeholder="Artikel 1" [formControl]="trItem1" type="text">
-            </mat-form-field>
-            <mat-form-field class="price" *ngIf="priceInput">
-              <input matInput placeholder="Price 1" 
-              [formControl]="trPrice1" type="number" step="0.01">
-            </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
-            <input matInput placeholder="Artikel 2" [formControl]="trItem2" type="text">
-          </mat-form-field>
-          <mat-form-field class="price" *ngIf="priceInput">
-            <input matInput placeholder="Price 2" 
-            [formControl]="trPrice2" type="number" step="0.01">
-          </mat-form-field>
-        </div>
-        <div>
-          <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
-            <textarea matInput placeholder="sonstige Artikel" [formControl]="trItem3"></textarea>
-          </mat-form-field>
-          <mat-form-field class="price" *ngIf="priceInput">
-            <input matInput placeholder="Price 3" 
-            [formControl]="trPrice3" type="number" step="0.01">
-          </mat-form-field>
-        </div>
-  
-        <div>
-          <mat-form-field class="date">
-          <input matInput [matDatepicker]="picker" 
-            placeholder="Datum auswählen" [formControl]="trDate">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker touchUi #picker color="accent"></mat-datepicker>
-          </mat-form-field>
-          <!-- <mat-form-field class="time">
-            <input matInput placeholder="Time" disabled>
-          </mat-form-field> -->
-        </div>
-      
-        <div class="location">
-          <mat-form-field class="place">
-            <input matInput placeholder="Ort" 
-            type="text" [formControl]="trLoc">
-            <mat-icon matSuffix>place</mat-icon>
-          </mat-form-field>
-          <mat-form-field class="country">
-            <mat-select placeholder="Land" [formControl]="trCountry">
-              <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewValue }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      
-        <div>
-          <button mat-button matStepperPrevious>Zurück</button>
-          <button mat-button matStepperNext>Weiter</button>
-        </div>
+<div class="input-container">  
+ <mat-vertical-stepper #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Start</ng-template>
+      <p>Bitte die Transaktionsdaten <br> jetzt eingeben!</p>
+      <div>
+        <button mat-button matStepperNext>Weiter</button>
       </div>
     </mat-step>
 
     <mat-step>
-      <div class="formGroup2">
-        <ng-template matStepLabel>{{ brInfo }} hinzufügen</ng-template>
+      <div class="formGroup1">
+        <ng-template matStepLabel>{{trType}} hinzufügen</ng-template>
+        <div>
+          <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
+            <input matInput placeholder="Artikel 1" [formControl]="trItem1" type="text">
+          </mat-form-field>
+          <mat-form-field class="price" *ngIf="priceInput">
+            <input matInput placeholder="Preis 1" 
+            [formControl]="trPrice1" type="number" step="0.01">
+          </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
+          <input matInput placeholder="Artikel 2" [formControl]="trItem2" type="text">
+        </mat-form-field>
+        <mat-form-field class="price" *ngIf="priceInput">
+          <input matInput placeholder="Preis 2" 
+          [formControl]="trPrice2" type="number" step="0.01">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field [ngStyle]="{'width':resizeItemInput()}">
+          <textarea matInput placeholder="sonstige Artikel" [formControl]="trItem3"></textarea>
+        </mat-form-field>
+        <mat-form-field class="price" *ngIf="priceInput">
+          <input matInput placeholder="Preis 3" 
+          [formControl]="trPrice3" type="number" step="0.01">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="date">
+        <input matInput [matDatepicker]="picker" 
+          placeholder="Datum auswählen" [formControl]="trDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker color="accent"></mat-datepicker>
+        </mat-form-field>
+      </div>
+    
+      <div class="location">
+        <mat-form-field class="place">
+          <input matInput placeholder="Ort" 
+          type="text" [formControl]="trLoc">
+          <mat-icon matSuffix>place</mat-icon>
+        </mat-form-field>
+        <mat-form-field class="country">
+          <mat-select placeholder="Land" [formControl]="trCountry">
+            <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    
+      <div>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext>Weiter</button>
+      </div>
+    </div>
+  </mat-step>
+
+  <mat-step>
+    <div class="formGroup2">
+      <ng-template matStepLabel>{{ brInfo }} hinzufügen</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Vorname, Nachname" 
+        type="text" [formControl]="brNames">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="Telefonnummer" 
+        type="tel" [formControl]="brPhone">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="E-Mail" 
+        type="email" [formControl]="brEmail">
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Zurück</button>
+        <button mat-button matStepperNext>Weiter</button>
+      </div>
+    </div>
+  </mat-step> 
+
+  <mat-step>
+      <div class="formGroup3">
+        <ng-template matStepLabel>{{ sgInfo }} hinzufügen</ng-template>
         <mat-form-field>
           <input matInput placeholder="Vorname, Nachname" 
-          type="text" [formControl]="brNames">
+          type="text" [formControl]="sgNames">
         </mat-form-field><br>
         <mat-form-field>
           <input matInput placeholder="Telefonnummer" 
-          type="tel" [formControl]="brPhone">
+          type="tel" [formControl]="sgPhone">
           <mat-icon matSuffix>phone</mat-icon>
         </mat-form-field><br>
         <mat-form-field>
           <input matInput placeholder="E-Mail" 
-          type="email" [formControl]="brEmail">
+          type="email" [formControl]="sgEmail">
           <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
         <div>
@@ -100,54 +121,29 @@
       </div>
     </mat-step> 
 
-    <mat-step>
-        <div class="formGroup3">
-          <ng-template matStepLabel>{{ sgInfo }} hinzufügen</ng-template>
-          <mat-form-field>
-            <input matInput placeholder="Vorname, Nachname" 
-            type="text" [formControl]="sgNames">
-          </mat-form-field><br>
-          <mat-form-field>
-            <input matInput placeholder="Telefonnummer" 
-            type="tel" [formControl]="sgPhone">
-            <mat-icon matSuffix>phone</mat-icon>
-          </mat-form-field><br>
-          <mat-form-field>
-            <input matInput placeholder="E-Mail" 
-            type="email" [formControl]="sgEmail">
-            <mat-icon matSuffix>email</mat-icon>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Zurück</button>
-            <button mat-button matStepperNext>Weiter</button>
-          </div>
-        </div>
-      </mat-step> 
+  <mat-step>
+    <ng-template matStepLabel>Ende</ng-template>
+    <p>Du bist mit der Dateneingabe <br> jetzt fertig!</p>
+    <div>
+      <button mat-button matStepperPrevious>Zurück</button>
+      <button mat-button (click)="stepper.reset()">Neu starten</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
 
-    <mat-step>
-      <ng-template matStepLabel>Ende</ng-template>
-      <p>Du bist mir der Dateneingabe jetzt fertig.</p>
-      <div>
-        <button mat-button matStepperPrevious>Zurück</button>
-        <button mat-button (click)="stepper.reset()">Neu starten</button>
-      </div>
-    </mat-step>
-  </mat-vertical-stepper>
-  
-  <div class="tr-nav-buttons">
-    <div class="rt-button">
-      <button mat-raised-button 
-        color="accent" 
-        routerLink="/home">ZURÜCK
-      </button>
-    </div>
-    <div class="tr-submit">
-      <button 
-        mat-raised-button color="primary" 
-        (click)="saveTrData()" 
-        routerLink="/output">VORSCHAU
-      </button>  
-    </div>
-   </div> 
+<div class="tr-nav-buttons">
+  <div class="rt-button">
+    <button mat-raised-button 
+      color="accent" 
+      routerLink="/home">ZURÜCK
+    </button>
+  </div>
+  <div class="tr-submit">
+    <button 
+      mat-raised-button color="primary" 
+      (click)="saveTrData()" 
+      routerLink="/output">VORSCHAU
+    </button>  
+  </div>
+ </div> 
 </div>
-  
