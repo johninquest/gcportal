@@ -24,7 +24,7 @@ export class AppComponent {
   constructor(router: Router) {
     const navEndEvent$ = router.events.pipe(filter(event => event instanceof NavigationEnd));
     navEndEvent$.subscribe((event: NavigationEnd) => {
-      gtag('config', 'UA-137248590-1', {'page_path': event.urlAfterRedirects});
+      gtag('config', 'UA-137248590-2', {'page_path': event.urlAfterRedirects});
     });
   }
 }

@@ -14,6 +14,7 @@ import { SellerComponent } from './seller/seller.component';
 import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AboutComponent } from './about/about.component';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/de'}],
   bootstrap: [AppComponent],
   entryComponents: [StartdialogComponent]
 })
