@@ -161,9 +161,10 @@ export class OutputComponent implements OnInit {
   }
 
   deleteData() {
-    let q: boolean = confirm('Alle Daten werden jetzt gelöscht!');
+    let q: boolean = confirm('alle Daten werden jetzt gelöscht!');
     if (q === true) {
       sessionStorage.removeItem('savedTrData')
+      alert('die Daten wurden gelöscht. Sie werden jetzt an der Startseite weitergeleitet!');
       this.routeTo.navigateByUrl('/home'); 
     }
   }
