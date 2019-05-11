@@ -15,6 +15,7 @@ import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { DeletedialogComponent } from './deletedialog/deletedialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { APP_BASE_HREF } from '@angular/common';
     SellerComponent,
     StartdialogComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    DeletedialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,6 @@ import { APP_BASE_HREF } from '@angular/common';
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/de'}],
   bootstrap: [AppComponent],
-  entryComponents: [StartdialogComponent]
+  entryComponents: [StartdialogComponent, DeletedialogComponent]
 })
 export class AppModule { }

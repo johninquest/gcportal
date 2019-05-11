@@ -9,23 +9,20 @@ import { from } from 'rxjs';
 })
 export class StartdialogComponent implements OnInit {
 
-  giveaway: string;
-  sale: string;
-
   constructor(public dialogRef: MatDialogRef<StartdialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
     doGiveAwayWf() {
-      sessionStorage.setItem('dg_choice', 'giveaway');
+      sessionStorage.setItem('dgChoice', 'giveaway');
       this.dialogRef.close();
     }
 
     doSaleWf() {
-      sessionStorage.setItem('dg_choice', 'sale');
+      sessionStorage.setItem('dgChoice', 'sale');
       this.dialogRef.close();
     }
 
-    cancelDialog() {
+    cancelDialog():void {
       this.dialogRef.close();
     }
 

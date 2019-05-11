@@ -34,7 +34,7 @@ export interface cCodeDesc {
 
 export class InputComponent implements OnInit {
 
-  title: string = 'A FWS App';
+  title: string = 'a stuuur app';
   showHide: boolean = false;
 
   trType: string;
@@ -52,7 +52,7 @@ export class InputComponent implements OnInit {
   brNames = new FormControl(''); brPhone = new FormControl(''); brEmail = new FormControl('', [Validators.email]);
 
   priceInput: boolean;
-  storedTrDataObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+  storedTrDataObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
 
   saveTrData() {
     const trDataObj: object = { 'tr_item1' : this.trItem1.value, 'tr_price1' : this.trPrice1.value,
@@ -62,12 +62,12 @@ export class InputComponent implements OnInit {
                         'sg_names' : this.sgNames.value, 'sg_phone' : this.sgPhone.value, 'sg_email' : this.sgEmail.value,
                         'br_names' : this.brNames.value, 'br_phone' : this.brPhone.value, 'br_email' : this.brEmail.value };
     let trDataStr: string = JSON.stringify(trDataObj);
-    sessionStorage.setItem('savedTrData', trDataStr);
+    sessionStorage.setItem('savedInputData', trDataStr);
     /* console.log(trDataStr) */
   }
 
   displayTrType() {
-    let trChoice: string = sessionStorage.getItem('dg_choice');
+    let trChoice: string = sessionStorage.getItem('dgChoice');
     if (trChoice === 'giveaway') {
       this.trType = 'Transaktionsdaten';
       this.brInfo = 'Empfängerdaten';
@@ -111,7 +111,7 @@ export class InputComponent implements OnInit {
   }
 
   hidePriceInput() {
-    let trChoice: string = sessionStorage.getItem('dg_choice');
+    let trChoice: string = sessionStorage.getItem('dgChoice');
     if (trChoice === 'giveaway') {
       this.priceInput = false;
     } else {
@@ -120,7 +120,7 @@ export class InputComponent implements OnInit {
   }
 
   resizeItemInput() {
-    let trChoice: string = sessionStorage.getItem('dg_choice');
+    let trChoice: string = sessionStorage.getItem('dgChoice');
     if (trChoice === 'giveaway') {
       return '16em';
     } else if (trChoice === 'sale') {

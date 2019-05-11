@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import html2canvas from 'html2canvas';
 /* import * as jsPDF from 'jspdf'; */
 import { saveAs } from 'file-saver';
 import { Router } from '@angular/router';
+import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 import * as moment from 'moment';
+import { from } from 'rxjs';
 moment.locale('de');
 
 @Component({
@@ -13,11 +16,11 @@ moment.locale('de');
 })
 export class OutputComponent implements OnInit {
 
-  oTitle: string = 'A FWS App'; showHide: boolean = false;
+  oTitle: string = 'a stuuur app'; showHide: boolean = false;
   trType: string; payMethod: string;
   brInfo: string; sgInfo: string;
 
-  constructor(private routeTo: Router) { }
+  constructor(private routeTo: Router, public dialog: MatDialog) { }
 
   brNames: string; brPhone: string; brEmail: string;
   sgNames: string; sgPhone: string; sgEmail: string;
@@ -29,7 +32,7 @@ export class OutputComponent implements OnInit {
   trTotal: string; trCurrency: string;
   commaSpace: string;
 
-  storedTrData: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+  storedTrData: object = JSON.parse(sessionStorage.getItem('savedInputData'));
 
   // due_date: string;
 
@@ -55,7 +58,7 @@ export class OutputComponent implements OnInit {
 
   // Returns stored date or returns current date if user doesn't input a date
   showDate() {
-    let dateObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+    let dateObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if (dateObj['tr_date']) {
       return moment(dateObj['tr_date']).format('LL'); // this.storedTrData['tr_date'];
     } else {
@@ -65,12 +68,12 @@ export class OutputComponent implements OnInit {
 
   // Display the transaction type on output template
   showTransactionType() {
-    if (sessionStorage.getItem('dg_choice') === 'giveaway') {
-      this.trType = 'Geschenk';
+    if (sessionStorage.getItem('dgChoice') === 'giveaway') {
+      this.trType = 'Schenkung';
       this.payMethod = 'Kostenlos';
       this.brInfo = 'Empfänger';
       this.sgInfo = 'Geber';
-    } else if (sessionStorage.getItem('dg_choice') === 'sale') {
+    } else if (sessionStorage.getItem('dgChoice') === 'sale') {
       this.trType = 'Verkauf';
       this.payMethod = 'Bar';
       this.brInfo = 'Käufer';
@@ -79,8 +82,8 @@ export class OutputComponent implements OnInit {
   }
 
   trTotalCalculator() {
-    let trType = sessionStorage.getItem('dg_choice');
-    let priceObj: object = JSON.parse(sessionStorage.getItem('savedTrData')); 
+    let trType = sessionStorage.getItem('dgChoice');
+    let priceObj: object = JSON.parse(sessionStorage.getItem('savedInputData')); 
     if (trType === 'giveaway') {
       this.trPrice1 = 0;
       this.trPrice2 = 0;
@@ -135,7 +138,7 @@ export class OutputComponent implements OnInit {
   } */
 
   showCurrency() {
-    let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+    let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cCodeObj['tr_ccode']) {
 
       if ((cCodeObj['tr_ccode'] === 'che') || (cCodeObj['tr_ccode'] === 'lie')) 
@@ -147,26 +150,21 @@ export class OutputComponent implements OnInit {
   } 
 
   showCountry() {
-    let cObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+    let cObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cObj['tr_ccode']) {
       return cObj['tr_ccode'];
     } else { return ''; }
   }
 
   cSpace() {
-    let locationObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
+    let locationObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if (locationObj['tr_location'] && locationObj['tr_ccode']) {
       return ', ';
     }
   }
 
   deleteData() {
-    let q: boolean = confirm('alle Daten werden jetzt gelöscht!');
-    if (q === true) {
-      sessionStorage.removeItem('savedTrData')
-      alert('die Daten wurden gelöscht. Sie werden jetzt an der Startseite weitergeleitet!');
-      this.routeTo.navigateByUrl('/home'); 
-    }
+    this.dialog.open(DeletedialogComponent);    
   }
   
   /* Called whenever component newly loads */
