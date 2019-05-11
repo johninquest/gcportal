@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import html2canvas from 'html2canvas';
 /* import * as jsPDF from 'jspdf'; */
 import { saveAs } from 'file-saver';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 moment.locale('de');
 
@@ -16,7 +17,7 @@ export class OutputComponent implements OnInit {
   trType: string; payMethod: string;
   brInfo: string; sgInfo: string;
 
-  constructor() { }
+  constructor(private routeTo: Router) { }
 
   brNames: string; brPhone: string; brEmail: string;
   sgNames: string; sgPhone: string; sgEmail: string;
@@ -156,6 +157,14 @@ export class OutputComponent implements OnInit {
     let locationObj: object = JSON.parse(sessionStorage.getItem('savedTrData'));
     if (locationObj['tr_location'] && locationObj['tr_ccode']) {
       return ', ';
+    }
+  }
+
+  deleteData() {
+    let q: boolean = confirm('Alle Daten werden jetzt gelöscht!');
+    if (q === true) {
+      sessionStorage.removeItem('savedTrData')
+      this.routeTo.navigateByUrl('/home'); 
     }
   }
   

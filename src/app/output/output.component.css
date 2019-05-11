@@ -114,13 +114,13 @@
 .nav-button {
     margin-top: 1em;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: center; 
 }
 
 .nav-button div {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 button { font-size: 1em; }
