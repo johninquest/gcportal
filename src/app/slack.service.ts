@@ -8,7 +8,8 @@ import { retry, catchError } from 'rxjs/operators';
 
 export class SlackService {
 
-  private url: string = 'https://hooks.slack.com/services/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';
+  // private url: string = 'https://hooks.slack.com/services/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';
+  private url: string = 'hkjhgkjhgkj';
 
   constructor(private http: HttpClient) { }
 
@@ -24,9 +25,9 @@ export class SlackService {
     let errMessage: string;
     let errCode = err.status; 
     if (errCode === 200) {
-      errMessage = 'Your message was sent successfully 😊.';
+      errMessage = 'Ihre Nachricht wurde erfolgreich gesendet 😊.';
     } else {
-      errMessage = 'Something went wrong ☹️! \nPlease try again some other time.';
+      errMessage = 'Ihre Nachricht konnte nicht gesendet werden ☹️! \nBitte versuchen Sie es nochmal später.';
     }
     alert(errMessage);
     return throwError(errCode);
