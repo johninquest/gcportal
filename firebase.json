@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/fwsapp",
+    "public": "dist/stuuurde",
     "ignore": [
       "firebase.json",
       "**/.*",
