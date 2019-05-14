@@ -152,7 +152,13 @@ export class OutputComponent implements OnInit {
   showCountry() {
     let cObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cObj['tr_ccode']) {
-      return cObj['tr_ccode'];
+      if (cObj['tr_ccode'] === 'aut') { return 'Österreich' }
+      if (cObj['tr_ccode'] === 'bel') { return 'Belgien' }
+      if (cObj['tr_ccode'] === 'che') { return 'Schweiz' }
+      if (cObj['tr_ccode'] === 'deu') { return 'Deutschland' }
+      if (cObj['tr_ccode'] === 'lie') { return 'Liechtenstein' }
+      if (cObj['tr_ccode'] === 'lux') { return 'Luxemburg' }
+      /* return cObj['tr_ccode']; */
     } else { return ''; }
   }
 
