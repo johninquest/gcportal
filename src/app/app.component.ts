@@ -16,7 +16,7 @@ export class AppComponent {
   /* title: string = 'A FWS App'; */
 
   callExtUrl() {
-    const url = 'https://stuuur.com';
+    const url = 'https://stuuur.com/en';
     open(url, '_self');
     // alert('coming soon!');
   }
