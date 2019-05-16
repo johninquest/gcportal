@@ -9,7 +9,10 @@
     </mat-form-field>
     
     <mat-form-field>
-      <input matInput type="email" placeholder="E-Mail" [formControl]="cSender">
+      <input matInput type="email" 
+             placeholder="E-Mail" 
+             matTooltip="Bitte nur wenn Sie sich eine Antwort wünschen." 
+             [formControl]="cSender">
     </mat-form-field>
 
     <mat-form-field>
