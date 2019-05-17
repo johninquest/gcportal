@@ -1,7 +1,7 @@
 {
   "hosting": [{
     "target": "en",
-    "public": "dist/fwsapp",
+    "public": "dist/tapp_en",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -16,7 +16,7 @@
   },
   {
     "target": "de",
-    "public": "dist/stuuurde",
+    "public": "dist/tapp_de",
     "ignore": [
       "firebase.json",
       "**/.*",
