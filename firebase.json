@@ -1,5 +1,21 @@
 {
-  "hosting": {
+  "hosting": [{
+    "target": "en",
+    "public": "dist/fwsapp",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  {
+    "target": "de",
     "public": "dist/stuuurde",
     "ignore": [
       "firebase.json",
@@ -12,5 +28,5 @@
         "destination": "/index.html"
       }
     ]
-  }
+  }]
 }
