@@ -47,3 +47,7 @@ sup {
 mat-divider {
     width: 15em;
 }
+
+.howtouse img { 
+    align-self: auto;
+ }

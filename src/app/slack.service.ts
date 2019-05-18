@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 
 export class SlackService {
 
-  private url: string = 'https://hooks.slack.com/services/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';
+  private url: string = 'https://hooks.slack.com/services/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';
 
   constructor(private http: HttpClient) { }
 

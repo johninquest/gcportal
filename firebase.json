@@ -1,21 +1,5 @@
 {
-  "hosting": [{
-    "target": "en",
-    "public": "dist/tapp_en",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  {
-    "target": "de",
+  "hosting": {
     "public": "dist/tapp_de",
     "ignore": [
       "firebase.json",
@@ -28,5 +12,5 @@
         "destination": "/index.html"
       }
     ]
-  }]
+  }
 }

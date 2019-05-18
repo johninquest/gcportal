@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fwsapp": {
+    "tapp_de": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fwsapp",
+            "outputPath": "dist/tapp_de",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fwsapp:build"
+            "browserTarget": "tapp_de:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fwsapp:build:production"
+              "browserTarget": "tapp_de:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fwsapp:build"
+            "browserTarget": "tapp_de:build"
           }
         },
         "test": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "fwsapp-e2e": {
+    "tapp_de-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -110,11 +110,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fwsapp:serve"
+            "devServerTarget": "tapp_de:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fwsapp:serve:production"
+              "devServerTarget": "tapp_de:serve:production"
             }
           }
         },
@@ -130,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "fwsapp"
+  "defaultProject": "tapp_de"
 }
