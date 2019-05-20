@@ -18,7 +18,7 @@ export class AppComponent {
   callExtUrl() {
     /* const url = 'https://stuuur.com/en';
     open(url, '_self'); */
-    alert('Sorry, geht noch nicht!');
+    alert('coming soon');
   }
 
   constructor(router: Router) {
