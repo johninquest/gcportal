@@ -2,7 +2,7 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$mytheme-primary: mat-palette($mat-deep-orange, 400);
+$mytheme-primary: mat-palette($mat-blue, A400);
 $mytheme-accent: mat-palette($mat-grey, 300);
 $mytheme-warn: mat-palette($mat-red, 500);
 
