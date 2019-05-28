@@ -9,12 +9,15 @@
       <input type="text" matInput placeholder="Ort" [formControl]="wTown">
       <mat-icon matSuffix>place</mat-icon>
   </mat-form-field>
-  <mat-form-field>
+  <!-- <mat-form-field>
     <input type="text" matInput placeholder="Land" [formControl]="wCountry">
-  </mat-form-field>
+  </mat-form-field> -->
   <button mat-raised-button color="primary" (click)="showWeatherData()">Abfragen</button>
 </div>
 
-<div class="response">
-    <p>{{ wTemp | json }}</p>
+<div class="response" *ngIf="resData">
+    <p><span>Temperature:</span> {{ resData.main.temp }} <span>&#8451;</span></p>
+    <p><span>Atmospheric pressure:</span> {{ resData.main.pressure }} <span>hPa</span></p>
+    <p><span>Wind speed:</span> {{ resData.wind.speed }} <span>m/s</span></p>
+    <p><span>Humidity:</span> {{ resData.main.humidity }} <span>%</span></p>
 </div>
