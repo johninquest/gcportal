@@ -12,9 +12,9 @@
   <mat-form-field>
     <input type="text" matInput placeholder="Land" [formControl]="wCountry">
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="getWeather()">Abfragen</button>
+  <button mat-raised-button color="primary" (click)="showWeatherData()">Abfragen</button>
 </div>
 
 <div class="response">
-    <p>{{ wTemp }}</p>
+    <p>{{ wTemp | json }}</p>
 </div>
