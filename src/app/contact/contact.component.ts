@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { SlackService } from '../slack.service';
+import { SlackService } from '../services/slack.service';
 
 /* export interface Data {
   url?: string;

@@ -1,0 +1,36 @@
+
+.pageTitle {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.pageTitle p {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.pageTitle mat-divider {
+    width: 15em;
+}
+
+.input {
+    margin-top: 5em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.response {
+    margin-top: 4em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.response p {
+    font-weight: bold;
+    font-size: 2em;
+}

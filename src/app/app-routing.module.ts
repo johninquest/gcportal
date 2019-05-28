@@ -6,6 +6,7 @@ import { OutputComponent } from './output/output.component';
 import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
+import { WeatherComponent } from './weather/weather.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'startdialog', component: StartdialogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'weather', component: WeatherComponent },
   { path: '**', component: HomeComponent }
 ];
 

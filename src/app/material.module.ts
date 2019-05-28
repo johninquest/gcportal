@@ -12,6 +12,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
 import { from } from 'rxjs';
 
 
@@ -32,7 +33,8 @@ import { from } from 'rxjs';
       MatMomentDateModule,
       MatStepperModule,
       MatDialogModule,
-      MatTooltipModule
+      MatTooltipModule,
+      MatCardModule
 ],
   exports: [
       MatButtonModule,
@@ -50,7 +52,8 @@ import { from } from 'rxjs';
       MatMomentDateModule,
       MatStepperModule,
       MatDialogModule,
-      MatTooltipModule
+      MatTooltipModule,
+      MatCardModule
     ],
 })
 export class MaterialModule { }
