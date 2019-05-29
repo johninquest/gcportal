@@ -32,7 +32,7 @@ export class WeatherComponent implements OnInit {
 
   showWeatherData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
-    let obs = this.wds.getWeatherData(this.wTown.value);
+    let obs = this.wds.getWeatherData(this.wTown.value, this.wCountry.value);
     obs.subscribe( res => { 
       this.resData = res; 
     });
