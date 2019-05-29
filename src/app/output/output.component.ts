@@ -141,7 +141,7 @@ export class OutputComponent implements OnInit {
     let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cCodeObj['tr_ccode']) {
 
-      if ((cCodeObj['tr_ccode'] === 'che') || (cCodeObj['tr_ccode'] === 'lie')) 
+      if ((cCodeObj['tr_ccode'] === 'ch') || (cCodeObj['tr_ccode'] === 'li')) 
          { return 'CHF'; } 
 
       else { return 'EUR'; }
@@ -152,12 +152,12 @@ export class OutputComponent implements OnInit {
   showCountry() {
     let cObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cObj['tr_ccode']) {
-      if (cObj['tr_ccode'] === 'aut') { return 'Österreich' }
-      if (cObj['tr_ccode'] === 'bel') { return 'Belgien' }
-      if (cObj['tr_ccode'] === 'che') { return 'Schweiz' }
-      if (cObj['tr_ccode'] === 'deu') { return 'Deutschland' }
-      if (cObj['tr_ccode'] === 'lie') { return 'Liechtenstein' }
-      if (cObj['tr_ccode'] === 'lux') { return 'Luxemburg' }
+      if (cObj['tr_ccode'] === 'at') { return 'Österreich' }
+      if (cObj['tr_ccode'] === 'be') { return 'Belgien' }
+      if (cObj['tr_ccode'] === 'ch') { return 'Schweiz' }
+      if (cObj['tr_ccode'] === 'de') { return 'Deutschland' }
+      if (cObj['tr_ccode'] === 'li') { return 'Liechtenstein' }
+      if (cObj['tr_ccode'] === 'lu') { return 'Luxemburg' }
       /* return cObj['tr_ccode']; */
     } else { return ''; }
   }

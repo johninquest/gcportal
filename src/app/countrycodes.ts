@@ -1,10 +1,10 @@
 
  export const COUNTRYCODES = [
-	{value: null, viewValue: ''},
-  {value: 'aut', viewValue: 'AUT'},
-	{value: 'bel', viewValue: 'BEL'},
-	{value: 'che', viewValue: 'CHE'},
-  {value: 'deu', viewValue: 'DEU'},
-	{value: 'lie', viewValue: 'LIE'},
-	{value: 'lux', viewValue: 'LUX'},
+	{value: null, viewValue: '', viewName: ''},
+  {value: 'at', viewValue: 'AT', viewName: 'Österreich'},
+	{value: 'be', viewValue: 'BE', viewName: 'Belgien'},
+	{value: 'ch', viewValue: 'CH', viewName: 'Schweiz'},
+  {value: 'de', viewValue: 'DE', viewName: 'Deutschland'},
+	{value: 'li', viewValue: 'LI', viewName: 'Liechtenstein'},
+	{value: 'lu', viewValue: 'LU', viewName: 'Luxemburg'},
 	];

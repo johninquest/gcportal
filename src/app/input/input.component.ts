@@ -16,6 +16,7 @@ export const MY_FORMATS = {
 export interface cCodeDesc {
   value: string;
   viewValue: string;
+  viewName: string;
 }
 
 @Component({
