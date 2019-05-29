@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-// import { Data } from './contact/contact.component';
 
 @Injectable({ providedIn: 'root' })
 
@@ -12,8 +11,8 @@ export class SlackService {
 
   constructor(private http: HttpClient) { }
 
-  sendData(body: Object): Observable<Object> {
-    return this.http.post<Object>(this.url, body)
+  sendData(body: Object): Observable<any> {
+    return this.http.post<any>(this.url, body)
     .pipe(
       retry(0),
       catchError(this.customErrorHandle)

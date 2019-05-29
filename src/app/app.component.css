@@ -3,6 +3,19 @@ nav {
     background-color: #2979FF;
 }
 
+.fa {
+    color: grey;
+    vertical-align: bottom;
+}
+
+button mat-icon {
+    font-size:2.25em;
+}
+
+button img {
+    vertical-align: bottom;
+}
+
 /*
 .pageTitle {
     text-align: center;

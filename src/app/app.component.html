@@ -14,11 +14,11 @@
       <!-- <span>Kontakt</span> -->
     </button>
     <button mat-menu-item routerLink="/weather">
-      <mat-icon>cloud</mat-icon>
-      <!-- <span>Kontakt</span> -->
+      <span class="fa"><i class="fas fa-cloud-sun-rain fa-2x"></i></span> 
+      <!-- <mat-icon>cloud</mat-icon> -->
     </button>
     <button mat-menu-item (click)="callExtUrl()">
-      <img src="../assets/flag_uk.png" width="20" height="20">
+      <img src="../assets/flag_uk.png" width="26" height="22">
       <span>&nbsp;&nbsp;</span>
     </button>
   </mat-menu>
@@ -27,10 +27,3 @@
   </button>
 </nav>
 <router-outlet></router-outlet>
-
-<!--
-The content below is only a placeholder and can be replaced.
-<div class="pageTitle">
-  <h1>{{ title }}</h1>
-</div>
--->

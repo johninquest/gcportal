@@ -40,9 +40,15 @@ export class WeatherComponent implements OnInit {
   showWeatherData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
     let obs = this.wds.getWeatherData(this.wTown.value, this.reqCountry());
-    obs.subscribe( res => { 
-      this.resData = res; 
-    });
+    obs.subscribe( res => { this.resData = res; },
+                   err => { this.errMessage(err.status); } 
+                   );
+  }
+  errMessage(errcode: number) {
+    switch(errcode) { 
+      case 400:
+      case 404:
+      alert('Es wurde für "' + this.wTown.value.toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
   }
 
   ngOnInit() { }
