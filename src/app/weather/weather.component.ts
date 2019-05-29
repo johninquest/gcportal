@@ -30,9 +30,16 @@ export class WeatherComponent implements OnInit {
   // private baseUrl: string = 'http://api.openweathermap.org/data/2.5/weather?appid=5fcc3c4a71b04e0848c1b8c80a738ce3&units=metric&q=';
   constructor(private wds: WeatherdataService) { }
 
+  reqCountry() {
+    if(this.wCountry.value) {
+      let qString: string = ',' +  this.wCountry.value;
+      return qString;
+    } else { return ''; }
+  }
+
   showWeatherData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
-    let obs = this.wds.getWeatherData(this.wTown.value, this.wCountry.value);
+    let obs = this.wds.getWeatherData(this.wTown.value, this.reqCountry());
     obs.subscribe( res => { 
       this.resData = res; 
     });

@@ -22,6 +22,6 @@
     <p> {{ wTime }} <span>Uhr</span></p>
     <p><span>Temperatur:</span> {{ resData.main.temp }} <span>&#8451;</span></p>
     <p><span>Luftdruck:</span> {{ resData.main.pressure }} <span>hPa</span></p>
-    <p><span>Wind:</span> {{ resData.wind.speed * 3.6 }} <span>km/h</span></p>
+    <p><span>Wind:</span> {{ (resData.wind.speed * 3.6).toFixed(2) }} <span>km/h</span></p>
     <p><span>Luftfeuchtigkeit:</span> {{ resData.main.humidity }} <span>%</span></p>
 </div>

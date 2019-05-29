@@ -13,8 +13,7 @@ export class WeatherdataService {
   constructor(private http: HttpClient) { }
 
   getWeatherData(qTown: string, qCountry: string): Observable<any>{
-    let reqUrl: string = this.baseUrl + qTown + ',' + qCountry;
-    console.log(reqUrl);
+    let reqUrl: string = this.baseUrl + qTown + qCountry;
     return this.http.get(reqUrl);
   }
 }
