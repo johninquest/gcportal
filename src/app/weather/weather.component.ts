@@ -48,7 +48,7 @@ export class WeatherComponent implements OnInit {
     switch(errcode) { 
       case 400:
       case 404:
-      alert('Es wurde für "' + this.wTown.value.toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
+      alert('Es wurde für "' + this.wTown.value.toUpperCase() + this.reqCountry().toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
   }
 
   ngOnInit() { }
