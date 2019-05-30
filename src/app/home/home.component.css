@@ -11,13 +11,17 @@
 }
 
 .start-btn {
-    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
-button {
+.start-btn button {
     font-size: 1em;
     width: 10em;
-    height: 10em;
+    height: 5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 sup {

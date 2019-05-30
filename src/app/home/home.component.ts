@@ -9,8 +9,10 @@ import { StartdialogComponent } from '../startdialog/startdialog.component';
 })
 export class HomeComponent implements OnInit {
 
-  title: string = 'stuuur';
-  info = 'los legen';
+  hTitle: string = 'stuuur';
+  hBeleg = 'Beleg';
+  hWetter = 'Wetter';
+
 
 // Clears or deletes all data in session storage
   clearSessionStorage() {

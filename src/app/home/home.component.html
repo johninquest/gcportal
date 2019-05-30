@@ -1,12 +1,16 @@
 
 <div class="pageTitle">
-  <p>{{ title | uppercase }}<sup>beta</sup></p>
+  <p>{{ hTitle | uppercase }}<sup>beta</sup></p>
 </div>
 
 <div class="start-btn">
   <button 
     mat-fab color="primary" (click)="[openDialog(), clearSessionStorage()]">
-    {{ info | uppercase }}
+    {{ hBeleg | uppercase }}
+  </button>
+  <button 
+    mat-fab color="primary" routerLink="/weather">
+    {{ hWetter | uppercase }}
   </button>
 </div>
 
