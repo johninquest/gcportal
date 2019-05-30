@@ -34,6 +34,7 @@ sup {
 
 .highlights {
     margin-bottom: 2em;
+    text-align: auto;
 }
 
 .highlights ul li span {
@@ -45,7 +46,17 @@ sup {
 }
 
 mat-divider {
-    width: 15em;
+    width: 12em;
+}
+
+.test {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.test p {
+    margin-bottom: 0.1em;
 }
 
 .howtouse img { 
