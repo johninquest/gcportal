@@ -26,9 +26,9 @@ export class WeatherComponent implements OnInit {
   wCountry = new FormControl('', Validators.required);
   resData: any;
   wTime = moment().format('dddd') + ', ' + moment().format('HH:mm');
+  // wSunrise = moment.utc(this.resData.sys.sunrise, 'X').local();
 
-  // private baseUrl: string = 'http://api.openweathermap.org/data/2.5/weather?appid=5fcc3c4a71b04e0848c1b8c80a738ce3&units=metric&q=';
-  constructor(private wds: WeatherdataService) { }
+    constructor(private wds: WeatherdataService) { }
 
   reqCountry() {
     if(this.wCountry.value) {
@@ -43,12 +43,17 @@ export class WeatherComponent implements OnInit {
     obs.subscribe( res => { this.resData = res; },
                    err => { this.errMessage(err.status); } 
                    );
-  }
+   }
+
   errMessage(errcode: number) {
     switch(errcode) { 
       case 400:
       case 404:
       alert('Es wurde für "' + this.wTown.value.toUpperCase() + this.reqCountry().toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
+  }
+
+  cUnixDate(udate:number) {
+    return moment.utc(udate, 'X').local().format('HH:mm');
   }
 
   ngOnInit() { }
