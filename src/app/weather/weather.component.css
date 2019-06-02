@@ -32,7 +32,8 @@ mat-form-field {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    /* border: solid 0.5em gray; */
+    border: solid 0.2em #448AFF;
+    border-radius: 1em;
 }
 
 .response p {
@@ -42,7 +43,16 @@ mat-form-field {
     margin-bottom: 0.2em;
 }
 
-.tempmima {
-    font-size: 0.7em;
-    font-weight: 0.7em;
+.resText {
+    color: #448AFF;
+}
+
+.tempmm1 {
+    font-size: 0.8em;
+    color: #448AFF;
+}
+
+.tempmm2 {
+    font-size: 0.8em;
+    font-weight: bold;
 }

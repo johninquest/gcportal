@@ -19,11 +19,11 @@
 </div>
 
 <div class="response" *ngIf="resData">
-    <p> {{ wTime }} <span>Uhr</span> <span> in </span>{{ resData.name + ', ' + resData.sys.country }}</p>
-    <p><span>Temperatur (aktuell):</span> {{ resData.main.temp }} <span>&#8451;</span></p>
-    <p ><span class="tempmima">Temperatur (min/max): {{ resData.main.temp_min }} / {{ resData.main.temp_max }}&nbsp;&#8451;</span></p>
-    <p><span>Luftdruck:</span> {{ resData.main.pressure }} <span>hPa</span></p>
-    <p><span>Wind:</span> {{ (resData.wind.speed * 3.6).toFixed(2) }} <span>km/h</span></p>
-    <p><span>Luftfeuchtigkeit:</span> {{ resData.main.humidity }} <span>%</span></p>
-    <p><span>Sonnenauf- / untergang:</span> {{ cUnixDate(resData.sys.sunrise) }} / {{ cUnixDate(resData.sys.sunset) }} <span>Uhr</span></p>
+    <p> {{ wTime }} Uhr<span> in </span>{{ resData.name + ', ' + resData.sys.country }}</p>
+    <p><span class="resText">Temperatur (aktuell):</span> {{ resData.main.temp }} &#8451;</p>
+    <p><span class="tempmm1">(min | max):</span>&nbsp;<span class="tempmm2">{{ resData.main.temp_min }} | {{ resData.main.temp_max }} &#8451;</span></p>
+    <p><span class="resText">Luftdruck:</span> {{ resData.main.pressure }} hPa</p>
+    <p><span class="resText">Wind:</span> {{ (resData.wind.speed * 3.6).toFixed(2) }} km/h</p>
+    <p><span class="resText">Luftfeuchtigkeit:</span> {{ resData.main.humidity }} %</p>
+    <p><span class="resText">Sonnenauf- | untergang:</span> {{ cUnixDate(resData.sys.sunrise) }} | {{ cUnixDate(resData.sys.sunset) }} Uhr</p>
 </div>
