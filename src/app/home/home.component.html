@@ -5,16 +5,11 @@
 
 <div class="start-btn">
   <button 
-    mat-fab color="primary" (click)="[openDialog(), clearSessionStorage()]">
+    mat-raised-button color="primary" (click)="[openDialog(), clearSessionStorage()]">
     {{ hBeleg | uppercase }}
   </button>
   <button 
-    mat-fab color="primary" routerLink="/weather">
+    mat-raised-button color="primary" routerLink="/weather">
     {{ hWetter | uppercase }}
   </button>
 </div>
-
-<!--
-routerLink="/transaction"
-(click)="clearSessionStorage()
--->
