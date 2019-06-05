@@ -52,7 +52,11 @@ export class WeatherComponent implements OnInit {
       alert('Es wurde für "' + this.wTown.value.toUpperCase() + this.reqCountry().toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
   }
 
-  cUnixDate(udate:number) {
+  windMs2Kmh(speed: number) {
+    return (speed * 3.6).toFixed(2);
+  }
+
+  cUnixDate(udate: number) {
     return moment.utc(udate, 'X').local().format('HH:mm');
   }
 
