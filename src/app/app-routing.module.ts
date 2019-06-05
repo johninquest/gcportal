@@ -10,14 +10,14 @@ import { WeatherComponent } from './weather/weather.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'input', component: InputComponent },
-  { path: 'output', component: OutputComponent },
+  { path: '', redirectTo: '/startseite', pathMatch: 'full' },
+  { path: 'startseite', component: HomeComponent },
+  { path: 'datenerfassung', component: InputComponent },
+  { path: 'datenvorschau', component: OutputComponent },
   { path: 'startdialog', component: StartdialogComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'weather', component: WeatherComponent },
+  { path: 'kontakt', component: ContactComponent },
+  { path: 'info', component: AboutComponent },
+  { path: 'wetter', component: WeatherComponent },
   { path: '**', component: HomeComponent }
 ];
 
