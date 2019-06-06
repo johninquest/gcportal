@@ -1,0 +1,25 @@
+
+
+.title {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.title p {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.title mat-divider {
+    width: 15em;
+}
+
+.input {
+    margin-top: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}

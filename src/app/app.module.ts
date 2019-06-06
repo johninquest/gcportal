@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DeletedialogComponent } from './deletedialog/deletedialog.component';
 import { WeatherComponent } from './weather/weather.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { WeatherComponent } from './weather/weather.component';
     ContactComponent,
     AboutComponent,
     DeletedialogComponent,
-    WeatherComponent
+    WeatherComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

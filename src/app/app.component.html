@@ -1,23 +1,25 @@
 
 <nav>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/startseite">
+    <button mat-menu-item routerLink="/startseite" matTooltip="Zur Startseite">
       <mat-icon>home</mat-icon>
       <!-- <span>Startseite</span> -->
     </button>
-    <button mat-menu-item routerLink="/info">
+    <button mat-menu-item routerLink="/info" matTooltip="Zur App infos">
       <mat-icon>info</mat-icon>
       <!-- <span>Über stuuur</span> -->
     </button>
-    <button mat-menu-item routerLink="/kontakt">
+    <button mat-menu-item routerLink="/kontakt" matTooltip="Zur Kontaktseite">
       <mat-icon>mail</mat-icon>
       <!-- <span>Kontakt</span> -->
     </button>
-    <button mat-menu-item routerLink="/wetter">
-      <span class="fa"><i class="fas fa-cloud-sun-rain fa-2x"></i></span> 
-      <!-- <mat-icon>cloud</mat-icon> -->
+    <button mat-menu-item routerLink="/wetter" matTooltip="Zur Wetterabfrage">
+      <mat-icon>cloud</mat-icon>
     </button>
-    <button mat-menu-item (click)="callExtUrl()">
+    <button mat-menu-item routerLink="/nachrichten" matTooltip="Zur Nachrichtenabfrage">
+      <mat-icon>new_releases</mat-icon>
+    </button>
+    <button mat-menu-item matTooltip="Under construction" disabled>
       <img src="../assets/flag_uk.png" width="26" height="22">
       <span>&nbsp;&nbsp;</span>
     </button>

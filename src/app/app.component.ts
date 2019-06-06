@@ -13,13 +13,13 @@ declare const gtag: any;
 
 export class AppComponent {
   
-  /* title: string = 'A FWS App'; */
-
+  /* title: string = 'A FWS App';
+  
   callExtUrl() {
-    // const url = 'https://stuuur.com/en';
-    // open(url, '_self'); 
+    const url = 'https://stuuur.com/en';
+    open(url, '_self'); 
     alert('coming soon ...');
-  }
+  } */
 
   constructor(router: Router) {
     const navEndEvent$ = router.events.pipe(filter(event => event instanceof NavigationEnd));

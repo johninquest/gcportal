@@ -7,6 +7,7 @@ import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { WeatherComponent } from './weather/weather.component';
+import { NewsComponent } from './news/news.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'kontakt', component: ContactComponent },
   { path: 'info', component: AboutComponent },
   { path: 'wetter', component: WeatherComponent },
+  { path: 'nachrichten', component: NewsComponent },
   { path: '**', component: HomeComponent }
 ];
 
