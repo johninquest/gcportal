@@ -15,15 +15,15 @@
       <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="showWeatherData()">Abfragen</button>
+  <button mat-raised-button color="primary" [disabled]="wTown.invalid" (click)="showWeatherData()">Abfragen</button>
 </div>
 
-<div class="response" *ngIf="resData">
-    <p> {{ wTime }} Uhr<span> in </span>{{ resData.name + ', ' + resData.sys.country }}</p>
-    <p><span class="resText">Temperatur (aktuell):</span> {{ resData.main.temp }} &#8451;</p>
-    <p><span class="tempmm1">(min | max):</span>&nbsp;<span class="tempmm2">{{ resData.main.temp_min }} | {{ resData.main.temp_max }} &#8451;</span></p>
-    <p><span class="resText">Luftdruck:</span> {{ resData.main.pressure }} hPa</p>
-    <p><span class="resText">Wind:</span> {{ windMs2Kmh(resData.wind.speed) }} km/h</p>
-    <p><span class="resText">Luftfeuchtigkeit:</span> {{ resData.main.humidity }} %</p>
-    <p><span class="resText">Sonnenauf- | untergang:</span> {{ cUnixDate(resData.sys.sunrise) }} | {{ cUnixDate(resData.sys.sunset) }} Uhr</p>
+<div class="response" *ngIf="respData">
+    <p> {{ wTime }} Uhr<span> in </span>{{ respData.name + ', ' + respData.sys.country }}</p>
+    <p><span class="resText">Temperatur (aktuell):</span> {{ respData.main.temp }} &#8451;</p>
+    <p><span class="tempmm1">(min | max):</span>&nbsp;<span class="tempmm2">{{ respData.main.temp_min }} | {{ respData.main.temp_max }} &#8451;</span></p>
+    <p><span class="resText">Luftdruck:</span> {{ respData.main.pressure }} hPa</p>
+    <p><span class="resText">Wind:</span> {{ windMs2Kmh(respData.wind.speed) }} km/h</p>
+    <p><span class="resText">Luftfeuchtigkeit:</span> {{ respData.main.humidity }} %</p>
+    <p><span class="resText">Sonnenauf- | untergang:</span> {{ cUnixDate(respData.sys.sunrise) }} | {{ cUnixDate(respData.sys.sunset) }} Uhr</p>
 </div>

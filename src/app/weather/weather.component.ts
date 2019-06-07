@@ -24,7 +24,7 @@ export class WeatherComponent implements OnInit {
   cCodes: cCodeDesc[] = COUNTRYCODES;
   wTown = new FormControl('', Validators.required);
   wCountry = new FormControl('', Validators.required);
-  resData: any;
+  respData: any;
   wTime = moment().format('dddd') + ', ' + moment().format('HH:mm');
   // wSunrise = moment.utc(this.resData.sys.sunrise, 'X').local();
 
@@ -40,7 +40,7 @@ export class WeatherComponent implements OnInit {
   showWeatherData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
     let obs = this.wds.getWeatherData(this.wTown.value, this.reqCountry());
-    obs.subscribe( res => { this.resData = res; },
+    obs.subscribe( res => { this.respData = res; },
                    err => { this.errMessage(err.status); } 
                    );
    }
