@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { COUNTRYCODES } from '../countrycodes';
+import { NewsdataService } from '../services/newsdata.service';
 import * as moment from 'moment';
+import { from } from 'rxjs';
 moment.locale('de');
 
 export interface cCodeDesc { 
@@ -24,7 +26,22 @@ export class NewsComponent implements OnInit {
   cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
 
-  constructor() { }
+  constructor(private nds: NewsdataService) { }
+
+  reqCountry() {
+    if(this.nCountry.value) {
+      let qString: string = '&lang=' +  this.nCountry.value;
+      return qString;
+    } else { return ''; }
+  }
+
+  showNewsData() { 
+    // let reqUrl: string = this.baseUrl + this.wTown.value; 
+    let obs = this.nds.getNewsData(this.nTown.value, this.reqCountry());
+    obs.subscribe( res => { this.respData = res; },
+                   err => { console.log(err.status); } 
+                   );
+   }
 
   ngOnInit() { }
 

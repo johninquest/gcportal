@@ -23,3 +23,19 @@
     flex-flow: column nowrap;
     align-items: center;
 }
+
+.response {
+    margin-top: 3em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    /* border: solid 0.2em #2979FF;
+    border-radius: 1em; */
+}
+
+.response p {
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}

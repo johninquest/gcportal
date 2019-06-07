@@ -1,18 +1,18 @@
 
-.pageTitle {
+.title {
     margin-top: 2em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-.pageTitle p {
+.title p {
     font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 0;
 }
 
-.pageTitle mat-divider {
+.title mat-divider {
     width: 15em;
 }
 

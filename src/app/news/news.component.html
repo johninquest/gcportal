@@ -20,5 +20,15 @@
       <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showWeatherData()">Abfragen</button>
+  <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showNewsData()">Abfragen</button>
+</div>
+
+<div class="response" *ngIf="respData">
+  <p>{{ respData.articles[0].title }}</p>
+  <p>{{ respData.articles[0].desc }}</p>
+  <p>{{ respData.articles[0].link }}</p>
+  <p>{{ respData.articles[0].website }}</p>
+  <p>{{ respData.articles[0].source }}</p>
+  <p>{{ respData.articles[0].date }}</p>
+  <p>{{ respData.articles[0].image }}</p>
 </div>
