@@ -21,8 +21,8 @@ export class NewsComponent implements OnInit {
 
   nTitle: string = 'nachrichten';
 
-  nTown = new FormControl('', Validators.required);
-  nCountry = new FormControl('');
+  nTown = new FormControl('Karlsruhe', Validators.required);
+  nCountry = new FormControl('de');
   cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
 
@@ -42,7 +42,7 @@ export class NewsComponent implements OnInit {
                    err => { console.log(err.status); } 
                    );
    }
-
+   
   ngOnInit() { }
 
 }
