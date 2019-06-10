@@ -1,5 +1,4 @@
 
-
 .title {
     margin-top: 2em;
     display: flex;
@@ -26,18 +25,13 @@
 
 .response {
     margin-top: 3em;
-    display: flex;
+    /* display: flex;
     flex-flow: column nowrap;
-    align-items: center;
-    /* border: solid 0.2em #2979FF;
-    border-radius: 1em; */
+    align-items: center; */
+    border: solid 0.2em #2979FF;
+    border-radius: 1em;
 }
 
-
-.response mat-list {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: left;
-    margin-top: 0;
-    margin-bottom: 0;
+mat-grid-list {
+    margin-bottom: 1em
 }

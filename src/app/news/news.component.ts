@@ -3,8 +3,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { COUNTRYCODES } from '../countrycodes';
 import { NewsdataService } from '../services/newsdata.service';
 import * as moment from 'moment';
-import { from } from 'rxjs';
 moment.locale('de');
+import { from } from 'rxjs';
 
 export interface cCodeDesc { 
   value: string;
@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit {
 
   nTitle: string = 'nachrichten';
 
-  nTown = new FormControl('Karlsruhe', Validators.required);
+  nTown = new FormControl('Berlin', Validators.required);
   nCountry = new FormControl('de');
   cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
@@ -39,7 +39,7 @@ export class NewsComponent implements OnInit {
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
     let obs = this.nds.getNewsData(this.nTown.value, this.reqCountry());
     obs.subscribe( res => { this.respData = res; },
-                   err => { console.log(err.status); } 
+                   // err => { console.log(err.status); } 
                    );
    }
    
