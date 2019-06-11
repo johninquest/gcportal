@@ -22,10 +22,10 @@
     flex-flow: column nowrap;
     align-items: center;
 }
-/*
-mat-form-field {
+
+.input mat-form-field {
     width: 15em;
-} */
+}
 
 .response {
     margin-top: 3em;

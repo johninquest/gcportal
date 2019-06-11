@@ -23,6 +23,10 @@
     align-items: center;
 }
 
+.input mat-form-field {
+    width: 15em;
+}
+
 .response {
     margin-top: 3em;
     /* display: flex;
