@@ -14,7 +14,7 @@
       <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="showNewsData()">Abfragen</button>
+  <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showNewsData()">Abfragen</button>
 </div>
 
 <div class="response" *ngIf="respData">

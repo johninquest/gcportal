@@ -9,7 +9,6 @@ import * as moment from 'moment';
 export class NewsdataService {
 
   private baseUrl: string = 'https://gnews.io/api/v2/?token=1b9fa329965960737566f042fb2d86ac&q=';
-  /* https://gnews.io/api/v2/?token=1b9fa329965960737566f042fb2d86ac&q=muyuka&country=cm&lang=en&max=5&mindate=2019-05-01 */
 
   constructor(private http: HttpClient) { }
 
