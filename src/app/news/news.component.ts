@@ -21,8 +21,8 @@ export class NewsComponent implements OnInit {
 
   nTitle: string = 'nachrichten';
 
-  nTown = new FormControl('Berlin', Validators.required);
-  nCountry = new FormControl('de');
+  nTown = new FormControl('', Validators.required);
+  nCountry = new FormControl('');
   cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
 
@@ -41,6 +41,10 @@ export class NewsComponent implements OnInit {
     obs.subscribe( res => { this.respData = res; },
                    // err => { console.log(err.status); } 
                    );
+   }
+
+   cDate(respDate: string) {
+     return moment(respDate).format('LLLL');
    }
    
   ngOnInit() { }

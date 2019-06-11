@@ -1,6 +1,6 @@
 
 <div class="title">
-  <p matTooltip="Nur die aktuellsten Nachrichten">{{ nTitle | uppercase }} </p>
+  <p matTooltip="Nur die aktuellsten Nachrichten">{{ nTitle | uppercase }}</p>
   <mat-divider class="divider"></mat-divider>
 </div>
 
@@ -20,9 +20,9 @@
 <div class="response" *ngIf="respData">
   <mat-grid-list cols="4" rowHeight="5em" *ngFor="let item of respData.articles">
     <mat-divider></mat-divider>
-    <mat-grid-tile colspan="1" rowspan="2"><img src="{{ item.image }}" width="150" height="150"></mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="2"><img src="{{ item.image }}" alt="{{ item.title }}" width="150" height="150"></mat-grid-tile>
     <mat-grid-tile colspan="3" rowspan="1"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1">{{ item.date }}</mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">{{ cDate(item.date) }}</mat-grid-tile>
     <mat-grid-tile colspan="4" rowspan="1">{{ item.desc }}</mat-grid-tile>
   </mat-grid-list>
 </div>
