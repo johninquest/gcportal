@@ -18,12 +18,11 @@
 </div>
 
 <div class="response" *ngIf="respData">
-  <mat-grid-list cols="4" rowHeight="5em" *ngFor="let item of respData.articles">
-    <mat-divider></mat-divider>
-    <mat-grid-tile colspan="1" rowspan="3"><img src="{{ item.image }}" alt="{{ item.title }}" width="150" height="150"></mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1"><a href="{{ item.website }}" target="_blank">{{ item.source }}</a></mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1">{{ cDate(item.date) }}</mat-grid-tile>
-    <mat-grid-tile colspan="4" rowspan="1">{{ item.desc }}</mat-grid-tile>
-  </mat-grid-list>
+  <div *ngFor="let item of respData.articles">
+    <p class="newsimg"><img src="{{ item.image }}" alt="{{ item.title }}" width="150" height="150"></p>
+    <p class="newstitle"><a href="{{ item.link }}" target="_blank">{{ item.title }}</a></p>
+    <p class="newsdate">{{ cDate(item.date) }}</p>
+    <p class="newssrc"><a href="{{ item.website }}" target="_blank">{{ item.source }}</a></p>
+    <p class="newsdesc">{{ item.desc }}</p>
+  </div>
 </div>

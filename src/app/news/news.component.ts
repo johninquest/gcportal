@@ -21,8 +21,8 @@ export class NewsComponent implements OnInit {
 
   nTitle: string = 'nachrichten';
 
-  nTown = new FormControl('Karlsruhe', Validators.required);
-  nCountry = new FormControl('de');
+  nTown = new FormControl('', Validators.required);
+  nCountry = new FormControl('');
   cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
 
