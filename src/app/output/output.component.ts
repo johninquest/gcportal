@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import html2canvas from 'html2canvas';
-/* import * as jsPDF from 'jspdf'; */
+import * as jsPDF from 'jspdf';
 import { saveAs } from 'file-saver';
 import { Router } from '@angular/router';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 import * as moment from 'moment';
 import { from } from 'rxjs';
+import { element } from 'protractor';
 moment.locale('de');
 
 @Component({
@@ -110,7 +111,8 @@ export class OutputComponent implements OnInit {
   }
 
   createImg() {
-    let target = document.getElementById('invbox');
+    let target = document.getElementById('canvas-box');
+    // let target = document.getElementsByClassName('invoice-box');
     let wt: string = '100%'; let ht: string = 'auto';
     html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
       
@@ -119,23 +121,19 @@ export class OutputComponent implements OnInit {
       ctx.mozImageSmoothingEnabled = false;
       ctx.imageSmoothingEnabled = false;
       let imageGened = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
-      /* let outputedImg = window.open().document.write('<img src="' + imageGened + '" />');
-      let outputedImg = window.open(imageGened, '_blank');
-      let outputedImg = new Blob(imageGened, {type: 'image/png'}); */
       let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
       return saveAs(imageGened, `TN-${tnow}.PNG`); 
     });
   } 
 
   /* A4 Web Pixel dimension -> 595 X 842 pixels */ 
-  /* createPdf() {
-    // let elem = document.getElementById('invbox');
-    // let imgData = html2canvas(elem).then(function(canvas: any) {canvas.toDataURL('image/jpeg')
+  createPdf() {
     let doc = new jsPDF('p','mm','a4');
     doc.text(10, 10, 'Hello world!');
     //doc.output();
-    doc.save('MyPOT.pdf');
-  } */
+    let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
+    doc.save(`TN-${tnow}.PDF`);
+  }
 
   showCurrency() {
     let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));

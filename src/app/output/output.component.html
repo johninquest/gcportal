@@ -3,7 +3,7 @@
     <p>{{ oTitle }}</p>
   </div>
 
- <div class="invoice-box" id="invbox">
+ <div class="invoice-box" id="canvas-box">
   <table cellpadding="0" cellspacing="0">
       <tr class="top">
           <td colspan="2">
@@ -95,12 +95,12 @@
         <button mat-raised-button color="accent" routerLink="/datenerfassung">ZURÜCK</button>
     </div>
     <div>
-        <!-- <button mat-stroked-button color='accent' [matMenuTriggerFor]="menu">OPTIONS</button>
+        <!-- <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button> -->
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">SPEICHERN</button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>SHOW PDF</button>
-            <button mat-menu-item>SHARE PDF</button>
-        </mat-menu> -->
-        <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button>
+            <button mat-menu-item (click)="createImg()">als Bild</button>
+            <button mat-menu-item (click)="createPdf()">als PDF</button>
+        </mat-menu>
     </div>
     <div>
         <button mat-raised-button color="accent" (click)="deleteData()">LÖSCHEN</button>
