@@ -114,7 +114,7 @@ export class OutputComponent implements OnInit {
     let target = document.getElementById('canvas-box');
     // let target = document.getElementsByClassName('invoice-box');
     let wt: string = '100%'; let ht: string = 'auto';
-    html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
+    html2canvas((target), {width: Number(wt), height: Number(ht)}).then((canvas: any) => {
       
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;
