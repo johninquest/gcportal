@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import html2canvas from 'html2canvas';
-import * as jsPDF from 'jspdf';
 import { saveAs } from 'file-saver';
-import { Router } from '@angular/router';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 import * as moment from 'moment';
+import { FileService } from '../services/file.service'
 import { from } from 'rxjs';
 import { element } from 'protractor';
 moment.locale('de');
+
 
 @Component({
   selector: 'app-output',
@@ -21,7 +21,7 @@ export class OutputComponent implements OnInit {
   trType: string; payMethod: string;
   brInfo: string; sgInfo: string;
 
-  constructor(private routeTo: Router, public dialog: MatDialog) { }
+  constructor(public md: MatDialog, private fs: FileService) { }
 
   brNames: string; brPhone: string; brEmail: string;
   sgNames: string; sgPhone: string; sgEmail: string;
@@ -113,8 +113,8 @@ export class OutputComponent implements OnInit {
   createImg() {
     let target = document.getElementById('canvas-box');
     // let target = document.getElementsByClassName('invoice-box');
-    let wt: string = '100%'; let ht: string = 'auto';
-    html2canvas((target), {width: Number(wt), height: Number(ht)}).then((canvas: any) => {
+    // let wt: string = '100%'; let ht: string = 'auto';
+    html2canvas((target), {width: 595, height: 842 }).then((canvas: any) => {
       
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;
@@ -127,13 +127,6 @@ export class OutputComponent implements OnInit {
   } 
 
   /* A4 Web Pixel dimension -> 595 X 842 pixels */ 
-  createPdf() {
-    let doc = new jsPDF('p','mm','a4');
-    doc.text(10, 10, 'Hello world!');
-    //doc.output();
-    let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
-    doc.save(`TN-${tnow}.PDF`);
-  }
 
   showCurrency() {
     let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
@@ -168,7 +161,7 @@ export class OutputComponent implements OnInit {
   }
 
   deleteData() {
-    this.dialog.open(DeletedialogComponent);    
+    this.md.open(DeletedialogComponent);    
   }
   
   /* Called whenever component newly loads */
