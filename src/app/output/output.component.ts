@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
+// import html2canvas from 'html2canvas';
+// import { saveAs } from 'file-saver';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 import * as moment from 'moment';
 import { FileService } from '../services/file.service'
@@ -110,24 +110,11 @@ export class OutputComponent implements OnInit {
     }
   }
 
-  createImg() {
-    let target = document.getElementById('canvas-box');
-    // let target = document.getElementsByClassName('invoice-box');
-    // let wt: string = '100%'; let ht: string = 'auto';
-    html2canvas((target), {width: 595, height: 842 }).then((canvas: any) => {
-      
-      let ctx = canvas.getContext('2d');
-      ctx.webkitImageSmoothingEnabled = false;
-      ctx.mozImageSmoothingEnabled = false;
-      ctx.imageSmoothingEnabled = false;
-      let imageGened = canvas.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
-      let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
-      return saveAs(imageGened, `TN-${tnow}.PNG`); 
-    });
-  } 
+  showImg() { this.fs.createImg(); }
+
+  showPdf() { this.fs.createPdf(); }
 
   /* A4 Web Pixel dimension -> 595 X 842 pixels */ 
-
   showCurrency() {
     let cCodeObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cCodeObj['tr_ccode']) {
