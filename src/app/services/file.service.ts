@@ -15,8 +15,10 @@ export class FileService {
   createImg() {
     let target = document.getElementById('canvas-box');
     // let wt: string = '100%'; let ht: string = 'auto';
-    let wt = innerWidth; let ht = innerHeight;
-    html2canvas((target), {width: wt, height: ht }).then((canvas: any) => {
+    // let wt = innerWidth; let ht = innerHeight; 
+    let wt = target.scrollWidth;
+    let ht = target.scrollHeight;
+    html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
       
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;
@@ -32,19 +34,24 @@ export class FileService {
     let sTrData: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     let doc = new jsPDF('p','mm','a4');
     if (sTrData) {
-      doc.text(10, 40, sTrData['sg_names']);
-      doc.text(10, 45, sTrData['sg_phone']);
-      doc.text(10, 50, sTrData['sg_email']);
+      doc.text(10, 55, sTrData['sg_names']);
+      doc.text(10, 60, sTrData['sg_phone']);
+      doc.text(10, 65, sTrData['sg_email']);
 
-      doc.text(130, 40, sTrData['br_names']);
-      doc.text(130, 45, sTrData['br_phone']);
-      doc.text(130, 50, sTrData['br_email']);
+      doc.text(130, 55, sTrData['br_names']);
+      doc.text(130, 60, sTrData['br_phone']);
+      doc.text(130, 65, sTrData['br_email']);
+      
+      doc.setLineWidth(0.2)
+      doc.line(10, 70, 200, 70)
     } else {
-      doc.text(50, 50, 'Nichts da!');
+      doc.text(50, 50, 'Nichts zu zeigen da!');
     }
-    //doc.output();
+
     let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
-    doc.save(`TN-${tnow}.PDF`);
+    window.open(doc.output('bloburl'), '_blank');
+    // doc.output();
+    // doc.save(`TN-${tnow}.PDF`); -> funktioniert
   }
 
 }
