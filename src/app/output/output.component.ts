@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material';
 // import html2canvas from 'html2canvas';
 // import { saveAs } from 'file-saver';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
-import * as moment from 'moment';
+import moment from 'moment';
 import { FileService } from '../services/file.service'
 import { from } from 'rxjs';
 import { element } from 'protractor';
@@ -110,9 +110,15 @@ export class OutputComponent implements OnInit {
     }
   }
 
-  showImg() { this.fs.createImg(); }
+  showImg() { 
+    let elem = document.getElementById('canvas-box');
+    // this.fs.createImg(elem); 
+    this.fs.createDmg(elem);
+  }
 
-  showPdf() { this.fs.createPdf(); }
+  showPdf() { 
+    this.fs.createPdf(); 
+  }
 
   /* A4 Web Pixel dimension -> 595 X 842 pixels */ 
   showCurrency() {

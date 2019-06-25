@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { WeatherdataService } from '../services/weatherdata.service';
 import { COUNTRYCODES } from '../countrycodes';
-import * as moment from 'moment';
+import moment from 'moment';
 moment.locale('de');
 
 export interface cCodeDesc { 

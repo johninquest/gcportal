@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import * as jsPDF from 'jspdf';
+import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
-import * as moment from 'moment';
+import moment from 'moment';
 moment.locale('de');
 
 @Injectable({
@@ -12,13 +13,10 @@ export class FileService {
 
   constructor() { }
 
-  createImg() {
-    let target = document.getElementById('canvas-box');
-    // let wt: string = '100%'; let ht: string = 'auto';
-    // let wt = innerWidth; let ht = innerHeight; 
-    let wt = target.scrollWidth;
-    let ht = target.scrollHeight;
-    html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
+  createImg(target: any) {
+    // let target = document.getElementById('canvas-box');
+    // let wt: string = '100%'; let ht: string = 'auto'; 
+    html2canvas(target).then((canvas: any) => {
       
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;
@@ -28,6 +26,18 @@ export class FileService {
       let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
       return saveAs(imageGened, `TN-${tnow}.PNG`); 
     });
+   }
+
+   createDmg(target: any) {
+    domtoimage.toBlob(target)
+    .then((blob: any) => {
+        // blob.toDataURL('image/png', 1.0).replace('image/png', 'image/octet-stream');
+        // window.saveAs(blob, 'blabla.png');
+        blob.width = 595;
+        blob.height = 842;
+        saveAs(blob, 'blabla.png');
+    });
+
    }
 
   createPdf() {
@@ -48,7 +58,7 @@ export class FileService {
       doc.text(50, 50, 'Nichts zu zeigen da!');
     }
 
-    let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
+    // let tnow = moment().format('YYYYMMDD') + 'T' + moment().format('HHmm');
     window.open(doc.output('bloburl'), '_blank');
     // doc.output();
     // doc.save(`TN-${tnow}.PDF`); -> funktioniert

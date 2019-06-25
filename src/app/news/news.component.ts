@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { COUNTRYCODES } from '../countrycodes';
 import { NewsdataService } from '../services/newsdata.service';
-import * as moment from 'moment';
+import moment from 'moment';
 moment.locale('de');
 import { from } from 'rxjs';
 
