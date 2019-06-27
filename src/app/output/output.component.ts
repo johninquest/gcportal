@@ -112,8 +112,8 @@ export class OutputComponent implements OnInit {
 
   showImg() { 
     let elem = document.getElementById('canvas-box');
-    // this.fs.createImg(elem); 
-    this.fs.createDmg(elem);
+    this.fs.createImg(elem); 
+    // this.fs.createDmg(elem);
   }
 
   showPdf() { 

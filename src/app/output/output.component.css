@@ -126,3 +126,8 @@
 button { font-size: 1em; }
 
 .currency { font-weight: bold; }
+
+canvas {
+    width: 100%;
+    height: auto;
+}
