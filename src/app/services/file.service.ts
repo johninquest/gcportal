@@ -15,8 +15,8 @@ export class FileService {
 
   createImg(target: any) {
     // let target = document.getElementById('canvas-box');
-    // let wt: string = '100%'; let ht: string = 'auto'; 3508 x 2480
-    let wt: number = 2480; let ht: number = 3508; 
+    // let wt: string = '100%'; let ht: string = 'auto';
+    let wt: number = 900; let ht: number = 1200; 
     html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
       
       let ctx = canvas.getContext('2d');
@@ -44,17 +44,27 @@ export class FileService {
   createPdf() {
     let sTrData: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     let doc = new jsPDF('p','mm','a4');
+    let nowDateTime: string = moment().format('LL');
+
     if (sTrData) {
+      doc.setFont('courier');
+      doc.setFontType('normal');
+
+      doc.text(140, 25, `Datum: ${nowDateTime}`);
+      doc.text(140, 30, `Ort: Karlsruhe, DEU`);
+
+      doc.text(10, 50, 'Verkäufer information');
       doc.text(10, 55, sTrData['sg_names']);
       doc.text(10, 60, sTrData['sg_phone']);
       doc.text(10, 65, sTrData['sg_email']);
 
-      doc.text(130, 55, sTrData['br_names']);
-      doc.text(130, 60, sTrData['br_phone']);
-      doc.text(130, 65, sTrData['br_email']);
+      doc.text(140, 50, 'Käufer information');
+      doc.text(140, 55, sTrData['br_names']);
+      doc.text(140, 60, sTrData['br_phone']);
+      doc.text(140, 65, sTrData['br_email']);
       
       doc.setLineWidth(0.2)
-      doc.line(10, 70, 200, 70)
+      doc.line(5, 70, 205, 70)
     } else {
       doc.text(50, 50, 'Nichts zu zeigen da!');
     }
