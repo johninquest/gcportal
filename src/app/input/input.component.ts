@@ -4,7 +4,7 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { COUNTRYCODES } from '../countrycodes';
 import { from } from 'rxjs';
-// import PouchDB from 'pouchdb';
+import PouchDB from 'pouchdb';
  
 /* See the Moment.js docs for the meaning of these formats:
  https://momentjs.com/docs/#/displaying/format */
@@ -54,6 +54,7 @@ export class InputComponent implements OnInit {
   brNames = new FormControl(''); brPhone = new FormControl(''); brEmail = new FormControl('', [Validators.email]);
 
   priceInput: boolean;
+  db = new PouchDB();
   storedTrDataObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
 
   saveTrData() {
