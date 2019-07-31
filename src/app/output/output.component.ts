@@ -111,7 +111,7 @@ export class OutputComponent implements OnInit {
   }
 
   showImg() { 
-    let elem = document.getElementById('canvas-box');
+    let elem: HTMLElement = document.getElementById('canvas-box');
     this.fs.createImg(elem); 
     // this.fs.createDmg(elem);
   }

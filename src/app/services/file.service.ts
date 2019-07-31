@@ -1,4 +1,4 @@
-import { Injectable, wtfCreateScope } from '@angular/core';
+import { Injectable } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
@@ -13,12 +13,12 @@ export class FileService {
 
   constructor() { }
 
-  createImg(target: any) {
+  createImg(target: HTMLElement) {
     // let target = document.getElementById('canvas-box');
     // let wt: string = '100%'; let ht: string = 'auto';
-    let wt: number = 900; let ht: number = 1200; 
-    html2canvas((target), {width: wt, height: ht}).then((canvas: any) => {
-      
+    let wt: number = 595; let ht: number = 842; 
+    html2canvas((target), {width: wt, height: ht})
+    .then((canvas: any) => {      
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;
       ctx.mozImageSmoothingEnabled = false;
