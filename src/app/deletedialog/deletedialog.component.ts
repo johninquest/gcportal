@@ -16,7 +16,7 @@ export class DeletedialogComponent implements OnInit {
     deleteYes() {
       sessionStorage.removeItem('savedInputData');
       this.dialogRef.close();
-      this.routeTo.navigateByUrl('/startseite'); 
+      this.routeTo.navigateByUrl('/home'); 
     }
 
     dialogCancel(): void {

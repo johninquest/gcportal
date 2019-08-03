@@ -11,15 +11,15 @@ import { NewsComponent } from './news/news.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/startseite', pathMatch: 'full' },
-  { path: 'startseite', component: HomeComponent },
-  { path: 'datenerfassung', component: InputComponent },
-  { path: 'datenvorschau', component: OutputComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'input', component: InputComponent },
+  { path: 'output', component: OutputComponent },
   { path: 'startdialog', component: StartdialogComponent },
-  { path: 'kontakt', component: ContactComponent },
-  { path: 'info', component: AboutComponent },
-  { path: 'wetter', component: WeatherComponent },
-  { path: 'nachrichten', component: NewsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'weather', component: WeatherComponent },
+  { path: 'news', component: NewsComponent },
   { path: '**', component: HomeComponent }
 ];
 
