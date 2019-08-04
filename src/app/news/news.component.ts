@@ -19,7 +19,7 @@ export interface cCodeDesc {
 })
 export class NewsComponent implements OnInit {
 
-  nTitle: string = 'nachrichten';
+  nTitle: string = 'news bits';
 
   nTown = new FormControl('', Validators.required);
   nCountry = new FormControl('');

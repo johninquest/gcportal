@@ -70,15 +70,15 @@ export class OutputComponent implements OnInit {
   // Display the transaction type on output template
   showTransactionType() {
     if (sessionStorage.getItem('dgChoice') === 'giveaway') {
-      this.trType = 'Schenkung';
-      this.payMethod = 'Kostenlos';
-      this.brInfo = 'Empfänger';
-      this.sgInfo = 'Geber';
+      this.trType = 'Giveaway';
+      this.payMethod = 'Free';
+      this.brInfo = 'Receiver';
+      this.sgInfo = 'Giver';
     } else if (sessionStorage.getItem('dgChoice') === 'sale') {
-      this.trType = 'Verkauf';
-      this.payMethod = 'Bar';
-      this.brInfo = 'Käufer';
-      this.sgInfo = 'Verkäufer';
+      this.trType = 'Sale';
+      this.payMethod = 'Cash';
+      this.brInfo = 'Buyer';
+      this.sgInfo = 'Seller';
     }
   }
 
@@ -136,12 +136,12 @@ export class OutputComponent implements OnInit {
   showCountry() {
     let cObj: object = JSON.parse(sessionStorage.getItem('savedInputData'));
     if(cObj['tr_ccode']) {
-      if (cObj['tr_ccode'] === 'at') { return 'Österreich' }
-      if (cObj['tr_ccode'] === 'be') { return 'Belgien' }
-      if (cObj['tr_ccode'] === 'ch') { return 'Schweiz' }
-      if (cObj['tr_ccode'] === 'de') { return 'Deutschland' }
+      if (cObj['tr_ccode'] === 'at') { return 'Austria' }
+      if (cObj['tr_ccode'] === 'be') { return 'Belgium' }
+      if (cObj['tr_ccode'] === 'ch') { return 'Switzerland' }
+      if (cObj['tr_ccode'] === 'de') { return 'Germany' }
       if (cObj['tr_ccode'] === 'li') { return 'Liechtenstein' }
-      if (cObj['tr_ccode'] === 'lu') { return 'Luxemburg' }
+      if (cObj['tr_ccode'] === 'lu') { return 'Luxembourg' }
       /* return cObj['tr_ccode']; */
     } else { return ''; }
   }

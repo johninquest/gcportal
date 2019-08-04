@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { WeatherdataService } from '../services/weatherdata.service';
 import { COUNTRYCODES } from '../countrycodes';
 import moment from 'moment';
-moment.locale('de');
+// moment.locale('en');
 
 export interface cCodeDesc { 
   value: string;
@@ -20,7 +20,7 @@ export interface cCodeDesc {
 
 export class WeatherComponent implements OnInit {
 
-  wTitle = 'wetter info'
+  wTitle = 'weathter info'
   cCodes: cCodeDesc[] = COUNTRYCODES;
   wTown = new FormControl('', Validators.required);
   wCountry = new FormControl('', Validators.required);

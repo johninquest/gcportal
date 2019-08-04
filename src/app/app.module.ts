@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_BASE_HREF } from '@angular/common';
+// import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,7 +39,7 @@ import { NewsComponent } from './news/news.component';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/de'}],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [StartdialogComponent, DeletedialogComponent]
 })
