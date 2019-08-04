@@ -1,28 +1,28 @@
 
 <nav>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/home" matTooltip="Go to homepage">
+    <button mat-menu-item routerLink="/home" matTooltip="Return to the homepage">
       <mat-icon>home</mat-icon>
       <!-- <span>Startseite</span> -->
     </button>
-    <button mat-menu-item routerLink="/about" matTooltip="Go to about page">
+    <button mat-menu-item routerLink="/weather" matTooltip="Get local weather information">
+      <mat-icon>cloud</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/news" matTooltip="Check for local news">
+      <mat-icon>new_releases</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/about" matTooltip="Go to the about page">
       <mat-icon>info</mat-icon>
       <!-- <span>Über stuuur</span> -->
     </button>
-    <button mat-menu-item routerLink="/contact" matTooltip="Go to the contact page">
+    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
       <mat-icon>mail</mat-icon>
       <!-- <span>Kontakt</span> -->
     </button>
-    <button mat-menu-item routerLink="/weather" matTooltip="Go check out your local weather">
-      <mat-icon>cloud</mat-icon>
-    </button>
-    <button mat-menu-item routerLink="/news" matTooltip="Go to check out your local news">
-      <mat-icon>new_releases</mat-icon>
-    </button>
-    <button mat-menu-item matTooltip="Under construction" disabled>
+    <!-- <button mat-menu-item matTooltip="Under construction" disabled>
       <img src="../assets/flag_uk.png" width="26" height="22">
       <span>&nbsp;&nbsp;</span>
-    </button>
+    </button> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>

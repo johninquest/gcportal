@@ -6,11 +6,12 @@ import moment from 'moment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NewsdataService {
 
   private baseUrl: string = 'https://gnews.io/api/v2/?token=1b9fa329965960737566f042fb2d86ac&q=';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getNewsData(qTown: string, qCountry: string): Observable<any> {
     let qLang: string = '&lang=en';
