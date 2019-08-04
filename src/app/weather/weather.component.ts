@@ -3,14 +3,13 @@ import { FormControl, Validators } from '@angular/forms';
 import { WeatherdataService } from '../services/weatherdata.service';
 import { COUNTRYCODES } from '../countrycodes';
 import moment from 'moment';
-// moment.locale('en');
+moment.locale('en');
 
 export interface cCodeDesc { 
   value: string;
   viewValue: string;
   viewName: string;
 }
-
 
 @Component({
   selector: 'app-weather',

@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { COUNTRYCODES } from '../countrycodes';
 import { NewsdataService } from '../services/newsdata.service';
 import moment from 'moment';
-moment.locale('de');
+moment.locale('en');
 import { from } from 'rxjs';
 
 export interface cCodeDesc { 
@@ -19,7 +19,7 @@ export interface cCodeDesc {
 })
 export class NewsComponent implements OnInit {
 
-  nTitle: string = 'news bits';
+  nTitle: string = 'local news';
 
   nTown = new FormControl('', Validators.required);
   nCountry = new FormControl('');

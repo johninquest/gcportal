@@ -13,8 +13,8 @@
                       </td>
                       
                       <td>
-                        <span style="font-weight:bold">Datum:</span>  {{ trDate }}<br>
-                        <span style="font-weight:bold">Ort:</span> {{ trPlace }}{{ commaSpace }}{{ trCountry | uppercase }}
+                        <span style="font-weight:bold">Date:</span>  {{ trDate }}<br>
+                        <span style="font-weight:bold">Place:</span> {{ trPlace }}{{ commaSpace }}{{ trCountry | uppercase }}
                       </td>
                   </tr>
               </table>
@@ -44,9 +44,9 @@
       </tr>
       
       <tr class="heading">
-        <td>Art der Transaktion</td>
+        <td>Type of transaction</td>
         
-        <td>Zahlungsart</td>
+        <td>Payment method</td>
     </tr>
     
     <tr class="details">
@@ -56,9 +56,9 @@
     </tr>
       
     <tr class="heading">
-        <td>Artikel</td>
+        <td>Items</td>
         
-        <td>Preis</td>
+        <td>Price</td>
     </tr>
     
     <tr class="item">
@@ -80,13 +80,13 @@
     </tr>
     
     <tr class="total">
-        <td>Summe</td>
+        <td>Total</td>
         
         <td>{{ trTotal }} <span class="currency">{{ trCurrency }}</span>
         </td>
     </tr>
   </table>
-  <p class="sig">⚙️ von stuuur</p>
+  <p class="sig">⚙️ by stuuur</p>
 </div>
 
 <div class="nav-button">
@@ -95,13 +95,13 @@
     </div>
     <div>
         <!-- <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button> -->
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">SPEICHERN</button>
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">SAVE</button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="showImg()">als Bild</button>
-            <button mat-menu-item (click)="showPdf()">als PDF</button>
+            <button mat-menu-item (click)="showImg()">as IMAGE</button>
+            <button mat-menu-item (click)="showPdf()">as PDF</button>
         </mat-menu>
     </div>
     <div>
-        <button mat-raised-button color="accent" (click)="deleteData()">LÖSCHEN</button>
+        <button mat-raised-button color="accent" (click)="deleteData()">RESET</button>
     </div>
 </div>

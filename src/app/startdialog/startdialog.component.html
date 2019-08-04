@@ -1,15 +1,15 @@
 
 <div class="dg">
   <div mat-dialog-content>
-    <p class="dg-message">Wofür soll der Beleg sein?</p>
+    <p class="dg-message">What type of transaction would you like to document?</p>
   </div>
   <div mat-dialog-actions class="dg-buttons">
     <div class="dg-options">
-      <button mat-raised-button color="primary" (click)="doGiveAwayWf()" routerLink="/input">GESCHENK</button>
-      <button mat-raised-button color="primary" (click)="doSaleWf()" routerLink="/input">&nbsp;&nbsp;VERKAUF&nbsp;&nbsp;</button>
+      <button mat-raised-button color="primary" (click)="doGiveAwayWf()" routerLink="/input">GIVEAWAY</button>
+      <button mat-raised-button color="primary" (click)="doSaleWf()" routerLink="/input">&nbsp;&nbsp;&nbsp;SALE&nbsp;&nbsp;&nbsp;</button>
     </div>
     <div class="dg-cancel">
-      <button mat-raised-button color="accent" (click)="cancelDialog()" cdkFocusInitial>ABBRECHEN</button>
+      <button mat-raised-button color="accent" (click)="cancelDialog()" cdkFocusInitial>CANCEL</button>
     </div>
   </div>
 </div>

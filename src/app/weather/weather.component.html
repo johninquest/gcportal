@@ -6,16 +6,16 @@
 
 <div class="input">
   <mat-form-field>
-      <input type="text" matInput placeholder="Ort" [formControl]="wTown">
+      <input type="text" matInput placeholder="City / Town" [formControl]="wTown">
       <mat-icon matSuffix>place</mat-icon>
   </mat-form-field>
   <mat-form-field>
     <!-- input type="text" matInput placeholder="Land" [formControl]="wCountry"> -->
-    <mat-select placeholder="Land" [formControl]="wCountry">
+    <mat-select placeholder="Country" [formControl]="wCountry">
       <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" [disabled]="wTown.invalid" (click)="showWeatherData()">Submit</button>
+  <button mat-raised-button color="primary" [disabled]="wTown.invalid" (click)="showWeatherData()">FIND</button>
 </div>
 
 <div class="response" *ngIf="respData">

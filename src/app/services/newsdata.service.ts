@@ -13,8 +13,8 @@ export class NewsdataService {
   constructor(private http: HttpClient) { }
 
   getNewsData(qTown: string, qCountry: string): Observable<any> {
-    let qLang: string = '&lang=de';
-    let maxRespNumber: string = '&max=5';
+    let qLang: string = '&lang=en';
+    let maxRespNumber: string = '&max=10';
     let qDate: string = moment().format('YYYY-MM-DD');
     let qDateString = `&mindate=${qDate}`;
     let reqUrl: string = this.baseUrl + qTown + qCountry + qLang + maxRespNumber + qDateString;

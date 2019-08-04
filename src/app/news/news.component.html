@@ -1,20 +1,20 @@
 
 <div class="title">
-  <p matTooltip="Nur die aktuellsten Nachrichten">{{ nTitle | uppercase }}</p>
+  <p matTooltip="only the latest local news">{{ nTitle | uppercase }}</p>
   <mat-divider class="divider"></mat-divider>
 </div>
 
 <div class="input">
   <mat-form-field>
-      <input type="text" matInput placeholder="Ort" [formControl]="nTown">
+      <input type="text" matInput placeholder="City / Town" [formControl]="nTown">
       <mat-icon matSuffix>place</mat-icon>
   </mat-form-field>
   <mat-form-field>
-    <mat-select placeholder="Land" [formControl]="nCountry">
+    <mat-select placeholder="Country" [formControl]="nCountry">
       <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showNewsData()">Abfragen</button>
+  <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showNewsData()">FIND</button>
 </div>
 
 <div class="response" *ngIf="respData">
