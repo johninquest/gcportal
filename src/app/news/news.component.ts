@@ -39,7 +39,7 @@ export class NewsComponent implements OnInit {
     // let reqUrl: string = this.baseUrl + this.wTown.value; 
     let obs = this.nds.getNewsData(this.nTown.value, this.reqCountry());
     obs.subscribe( res => { this.respData = res; },
-                   // err => { console.log(err.status); } 
+                   err => { console.log(err.status); } 
                    );
    }
 
