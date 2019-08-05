@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { SlackService } from '../services/slack.service';
 
-/* export interface Data {
-  url?: string;
-  payload?: string;
-} */
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -14,7 +9,7 @@ import { SlackService } from '../services/slack.service';
 })
 export class ContactComponent implements OnInit {
 
-  cTitle: string = 'kontakt';
+  cTitle: string = 'contact us';
 
   cNames = new FormControl(''); 
   cSender = new FormControl('', [Validators.email]); 

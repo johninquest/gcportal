@@ -2,6 +2,7 @@
 <div class="about">
   <div class="title">{{ aboutTitle | uppercase }}</div>
   <mat-divider></mat-divider>
+
   <div class="info">
     <div class="catchphrase"><span>stuuur<sup>beta</sup></span> - a free web app for taking care of the little things.</div><br>
     <div class="highlights">
@@ -34,16 +35,15 @@
         <li>Close the browser when you are done.</li>
       </ol> -->
     </div>
-    <div class="dsgvo">
-      <div>
-        <p>Datenschutz</p>
-      <mat-divider></mat-divider>
-      </div>
-      
-      <p>
-        Auf <a routerLink="/startseite">stuuur.com</a> werden keine personenbezogene Daten im Sinne der EU-Datenschutz-Grundverordnung (DSGVO) erhoben. Die Erklärung zum Datenschutz gilt nur für <a routerLink="/startseite">stuuur.com</a>. Sie trifft nicht zu für Websites, auf die verlinkt wird (Drittwebsites).
-      </p>
 
+    <div class="gdpr">
+      <div>
+        <p>Privacy notice</p>
+        <mat-divider></mat-divider>
+      </div>
+      <span class="gdpr-msg">
+        This site <a routerLink="/home">stuuur.com</a> neither retains, stores nor forwards any personal data in accordance with GDPR. This privacy disclaimer only applies for <a routerLink="/home">stuuur.com</a> and not for third-party applications linked on the site.
+      </span>
     </div>
   </div>
 </div>

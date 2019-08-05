@@ -19,7 +19,7 @@ export interface cCodeDesc {
 
 export class WeatherComponent implements OnInit {
 
-  wTitle = 'weathter info'
+  wTitle = 'weather info'
   cCodes: cCodeDesc[] = COUNTRYCODES;
   wTown = new FormControl('', Validators.required);
   wCountry = new FormControl('', Validators.required);

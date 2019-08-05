@@ -63,17 +63,21 @@ mat-divider {
     align-self: auto;
  }
 
- .dsgvo {
+ .gdpr {
     position: fixed;
     bottom: 0;
  }
  
- .dsgvo div {
+ .gdpr div {
      display: flex;
      flex-flow: column nowrap;
      align-items: center;
  }
 
- .dsgvo div p {
-     margin-bottom: 0;
+ .gdpr div p {
+     margin-bottom: 0.1em;
+ }
+
+ .gdpr-msg {
+    margin-bottom: 0;
  }
