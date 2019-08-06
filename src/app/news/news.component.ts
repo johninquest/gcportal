@@ -30,16 +30,17 @@ export class NewsComponent implements OnInit {
 
   reqCountry() {
     if(this.nCountry.value) {
-      let qString: string = '&lang=' +  this.nCountry.value;
+      let qString: string = this.nCountry.value;
       return qString;
     } else { return ''; }
   }
 
   showNewsData() { 
-    // let reqUrl: string = this.baseUrl + this.wTown.value; 
-    let obs = this.nds.getNewsData(this.nTown.value, this.reqCountry());
+    // let reqUrl: string = this.baseUrl + this.wTown.value;
+    let qData: string = this.nTown.value + ',' + this.reqCountry(); 
+    let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { this.respData = res; },
-                   err => { console.log(err.status); } 
+                   err => { console.log(err); } 
                    );
    }
 
