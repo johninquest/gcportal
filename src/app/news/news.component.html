@@ -22,7 +22,7 @@
   <div *ngFor="let item of respData.articles">
     <p class="newsimg"><img src="{{ item.image }}" alt="{{ item.title }}" width="150" height="150"></p>
     <p class="newstitle"><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></p>
-    <p class="newsdate">{{ cDate(item.date) }}</p>
+    <p class="newsdate">{{ cDate(item.publishedAt) }}</p>
     <p class="newssrc"><a href="{{ item.source.url }}" target="_blank">{{ item.source.name }}</a></p>
     <p class="newsdesc">{{ item.description }}</p>
   </div>

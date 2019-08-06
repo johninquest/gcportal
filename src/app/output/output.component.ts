@@ -138,10 +138,32 @@ export class OutputComponent implements OnInit {
     if(cObj['tr_ccode']) {
       if (cObj['tr_ccode'] === 'at') { return 'Austria' }
       if (cObj['tr_ccode'] === 'be') { return 'Belgium' }
-      if (cObj['tr_ccode'] === 'ch') { return 'Switzerland' }
+      if (cObj['tr_ccode'] === 'bg') { return 'Bulgaria' }
+      if (cObj['tr_ccode'] === 'hr') { return 'Croatia' }
+      if (cObj['tr_ccode'] === 'cy') { return 'Cyprus' }
+      if (cObj['tr_ccode'] === 'cz') { return 'Czechia' }
+      if (cObj['tr_ccode'] === 'dk') { return 'Denmark' }
+      if (cObj['tr_ccode'] === 'ee') { return 'Estonia' }
+      if (cObj['tr_ccode'] === 'fi') { return 'Finland' }
+      if (cObj['tr_ccode'] === 'fr') { return 'France' }
       if (cObj['tr_ccode'] === 'de') { return 'Germany' }
-      if (cObj['tr_ccode'] === 'li') { return 'Liechtenstein' }
+      if (cObj['tr_ccode'] === 'gr') { return 'Greece' }
+      if (cObj['tr_ccode'] === 'hu') { return 'Hungary' }
+      if (cObj['tr_ccode'] === 'ie') { return 'Ireland' }
+      if (cObj['tr_ccode'] === 'it') { return 'Italy' }
+      if (cObj['tr_ccode'] === 'lv') { return 'Latvia' }
+      if (cObj['tr_ccode'] === 'lt') { return 'Lithuania' }
       if (cObj['tr_ccode'] === 'lu') { return 'Luxembourg' }
+      if (cObj['tr_ccode'] === 'mt') { return 'Malta' }
+      if (cObj['tr_ccode'] === 'nl') { return 'Netherlands' }
+      if (cObj['tr_ccode'] === 'pl') { return 'Poland' }
+      if (cObj['tr_ccode'] === 'pt') { return 'Portugal' }
+      if (cObj['tr_ccode'] === 'ro') { return 'Romania' }
+      if (cObj['tr_ccode'] === 'sk') { return 'Slovakia' }
+      if (cObj['tr_ccode'] === 'si') { return 'Slovania' }
+      if (cObj['tr_ccode'] === 'es') { return 'Spain' }
+      if (cObj['tr_ccode'] === 'se') { return 'Sweden' }
+      if (cObj['tr_ccode'] === 'uk') { return 'United Kingdom' }
       /* return cObj['tr_ccode']; */
     } else { return ''; }
   }

@@ -44,8 +44,12 @@ export class NewsComponent implements OnInit {
                    );
    }
 
+   handleErr(errCode: number) {
+     errCode;
+   }
+
    cDate(respDate: string) {
-     return moment(respDate).format('LLLL');
+     return moment.utc(respDate).format('LLLL');
    }
    
   ngOnInit() { }
