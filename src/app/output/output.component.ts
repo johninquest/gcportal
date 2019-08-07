@@ -117,7 +117,8 @@ export class OutputComponent implements OnInit {
   }
 
   showPdf() { 
-    this.fs.createPdf(); 
+    alert('🚧 Under construction 🚧');
+    // this.fs.createPdf(); 
   }
 
   /* A4 Web Pixel dimension -> 595 X 842 pixels */ 
@@ -127,6 +128,24 @@ export class OutputComponent implements OnInit {
 
       if ((cCodeObj['tr_ccode'] === 'ch') || (cCodeObj['tr_ccode'] === 'li')) 
          { return 'CHF'; } 
+      if (cCodeObj['tr_ccode'] === 'bg') 
+         { return 'BGN'; } 
+      if (cCodeObj['tr_ccode'] === 'cz') 
+         { return 'CZK'; } 
+      if (cCodeObj['tr_ccode'] === 'dk') 
+         { return 'DKK'; }
+      if (cCodeObj['tr_ccode'] === 'gb') 
+         { return 'GBP'; }          
+      if (cCodeObj['tr_ccode'] === 'hr') 
+         { return 'HRK'; }  
+      if (cCodeObj['tr_ccode'] === 'hu') 
+         { return 'HUF'; }  
+      if (cCodeObj['tr_ccode'] === 'pl') 
+         { return 'PLN'; }     
+      if (cCodeObj['tr_ccode'] === 'ro') 
+         { return 'RON'; } 
+      if (cCodeObj['tr_ccode'] === 'se') 
+         { return 'SEK'; }             
 
       else { return 'EUR'; }
 
@@ -141,17 +160,19 @@ export class OutputComponent implements OnInit {
       if (cObj['tr_ccode'] === 'bg') { return 'Bulgaria' }
       if (cObj['tr_ccode'] === 'hr') { return 'Croatia' }
       if (cObj['tr_ccode'] === 'cy') { return 'Cyprus' }
-      if (cObj['tr_ccode'] === 'cz') { return 'Czechia' }
+      if (cObj['tr_ccode'] === 'cz') { return 'Czech Republic' }
       if (cObj['tr_ccode'] === 'dk') { return 'Denmark' }
       if (cObj['tr_ccode'] === 'ee') { return 'Estonia' }
       if (cObj['tr_ccode'] === 'fi') { return 'Finland' }
       if (cObj['tr_ccode'] === 'fr') { return 'France' }
       if (cObj['tr_ccode'] === 'de') { return 'Germany' }
+      if (cObj['tr_ccode'] === 'gb') { return 'Great Britain' }
       if (cObj['tr_ccode'] === 'gr') { return 'Greece' }
       if (cObj['tr_ccode'] === 'hu') { return 'Hungary' }
       if (cObj['tr_ccode'] === 'ie') { return 'Ireland' }
       if (cObj['tr_ccode'] === 'it') { return 'Italy' }
       if (cObj['tr_ccode'] === 'lv') { return 'Latvia' }
+      if (cObj['tr_ccode'] === 'li') { return 'Liechtenstein' }
       if (cObj['tr_ccode'] === 'lt') { return 'Lithuania' }
       if (cObj['tr_ccode'] === 'lu') { return 'Luxembourg' }
       if (cObj['tr_ccode'] === 'mt') { return 'Malta' }
@@ -163,7 +184,7 @@ export class OutputComponent implements OnInit {
       if (cObj['tr_ccode'] === 'si') { return 'Slovania' }
       if (cObj['tr_ccode'] === 'es') { return 'Spain' }
       if (cObj['tr_ccode'] === 'se') { return 'Sweden' }
-      if (cObj['tr_ccode'] === 'uk') { return 'United Kingdom' }
+      if (cObj['tr_ccode'] === 'ch') { return 'Switzerland' }
       /* return cObj['tr_ccode']; */
     } else { return ''; }
   }

@@ -61,7 +61,7 @@
         </mat-form-field>
         <mat-form-field class="country">
           <mat-select placeholder="Country" [formControl]="trCountry">
-            <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewValue }}</mat-option>
+            <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

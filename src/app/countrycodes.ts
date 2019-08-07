@@ -6,11 +6,12 @@
 	{value: 'bg', viewValue: 'BG', viewName: 'Bulgaria'},
 	{value: 'hr', viewValue: 'HR', viewName: 'Croatia'},
 	{value: 'cy', viewValue: 'CY', viewName: 'Cyprus'},
-	{value: 'cz', viewValue: 'CZ', viewName: 'Czechia'},
+	{value: 'cz', viewValue: 'CZ', viewName: 'Czech Republic'},
 	{value: 'dk', viewValue: 'DK', viewName: 'Denmark'},
 	{value: 'ee', viewValue: 'EE', viewName: 'Estonia'},
 	{value: 'fi', viewValue: 'FI', viewName: 'Finland'},
 	{value: 'fr', viewValue: 'FR', viewName: 'France'},
+	{value: 'gb', viewValue: 'GB', viewName: 'Great Britain'},
 	{value: 'de', viewValue: 'DE', viewName: 'Germany'},
 	{value: 'gr', viewValue: 'GR', viewName: 'Greece'},
 	{value: 'hu', viewValue: 'HU', viewName: 'Hungary'},
@@ -27,6 +28,5 @@
 	{value: 'sk', viewValue: 'SK', viewName: 'Slovakia'},
 	{value: 'si', viewValue: 'SI', viewName: 'Slovania'},
 	{value: 'es', viewValue: 'ES', viewName: 'Spain'},
-	{value: 'se', viewValue: 'SE', viewName: 'Sweden'},    
-	{value: 'uk', viewValue: 'UK', viewName: 'United Kingdom'}
+	{value: 'se', viewValue: 'SE', viewName: 'Sweden'}
 	];

@@ -49,7 +49,8 @@ export class NewsComponent implements OnInit {
    }
 
    cDate(respDate: string) {
-     return moment.utc(respDate).format('LLLL');
+    return moment(respDate).format('LLLL'); 
+    //return moment.utc(respDate).format('LLLL');
    }
    
   ngOnInit() { }
