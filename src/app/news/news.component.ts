@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { COUNTRYCODES } from '../countrycodes';
 import { NewsdataService } from '../services/newsdata.service';
 import moment from 'moment';
-moment.locale('en');
+moment.locale('en-gb');
 import { from } from 'rxjs';
 
 export interface cCodeDesc { 
@@ -48,8 +48,8 @@ export class NewsComponent implements OnInit {
      errCode;
    }
 
-   cDate(respDate: string) {
-    return moment(respDate).format('LLLL'); 
+   convertDate(respDate: string) {
+    return moment(respDate, 'YYYY-MM-DD HH:mm:ss UTC').format('LLLL'); 
     //return moment.utc(respDate).format('LLLL');
    }
    

@@ -19,7 +19,7 @@ export class NewsdataService {
     let qLang: string = '&language=en';
     // let qOrder: string = '&sortBy=publishedAt';
     let maxResNumber: string = '&max=15';
-    let qDate = moment().subtract(1, 'days').format('YYYY-MM-DD');
+    let qDate = moment().subtract(2, 'days').format('YYYY-MM-DD');
     let qDateString = `&mindate=${qDate}`;
     let reqUrl: string = this.baseUrl + qLocation + qLang + maxResNumber + qDateString;
     // console.log(reqUrl)
