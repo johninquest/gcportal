@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { from } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
+import { from } from 'rxjs';
 
 declare const gtag: any;
 
@@ -13,14 +13,6 @@ declare const gtag: any;
 
 export class AppComponent {
   
-  /* title: string = 'A FWS App';
-  
-  callExtUrl() {
-    const url = 'https://stuuur.com/en';
-    open(url, '_self'); 
-    alert('coming soon ...');
-  } */
-
   constructor(router: Router) {
     const navEndEvent$ = router.events.pipe(filter(event => event instanceof NavigationEnd));
     navEndEvent$.subscribe((event: NavigationEnd) => {
@@ -28,3 +20,12 @@ export class AppComponent {
     });
   }
 }
+
+
+  /* title: string = 'A FWS App';
+  
+  callExtUrl() {
+    const url = 'https://stuuur.com/en';
+    open(url, '_self'); 
+    alert('coming soon ...');
+  } */
