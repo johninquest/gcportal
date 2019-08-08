@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   hWetter: string = 'weather';
   hNews: string = 'news';
 
-
 // Clears or deletes all data in session storage
   clearSessionStorage() {
    sessionStorage.clear();
@@ -29,6 +28,10 @@ export class HomeComponent implements OnInit {
     // dialogConfig.width = '50%';
     this.dialog.open(StartdialogComponent);
     // const dialogRef = this.dialog.open(StartdialogComponent, {});
+  }
+
+  msg() {
+    alert('GO TO HELL, MORON!');
   }
 
   ngOnInit() { }
