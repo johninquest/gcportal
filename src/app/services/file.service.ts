@@ -4,6 +4,7 @@ import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 import moment from 'moment';
+import { start } from 'repl';
 moment.locale('de');
 
 @Injectable({
@@ -16,8 +17,9 @@ export class FileService {
   createImg(target: HTMLElement) {
     // let target = document.getElementById('canvas-box');
     // let wt: string = '100%'; let ht: string = 'auto';
-    let wt: number = 595; let ht: number = 842; 
-    html2canvas((target), {width: wt, height: ht})
+    // let wt: number = 595; let ht: number = 842; 
+    target.scrollIntoView(true);
+    html2canvas(target)
     .then((canvas: any) => {      
       let ctx = canvas.getContext('2d');
       ctx.webkitImageSmoothingEnabled = false;

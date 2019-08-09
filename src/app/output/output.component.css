@@ -1,18 +1,7 @@
 
-.pageTitle {
-    text-align: center;
-    margin-top: 2em;
-    /* margin-bottom: 1em; */
-}
-
-.pageTitle p {
-    font-size: 1em;
-    font-weight: bold;
-}
-
 .invoice-box {
     max-width: 800px;
-    margin: auto;
+    /* margin: auto; */
     padding: 30px;
     border: 1px solid #eee;
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
@@ -126,8 +115,3 @@
 button { font-size: 1em; }
 
 .currency { font-weight: bold; }
-
-canvas {
-    width: 100%;
-    height: auto;
-}
