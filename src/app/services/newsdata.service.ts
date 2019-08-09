@@ -22,7 +22,7 @@ export class NewsdataService {
     let qDate = moment().subtract(2, 'days').format('YYYY-MM-DD');
     let qDateString = `&mindate=${qDate}`;
     let reqUrl: string = this.baseUrl + qLocation + qLang + maxResNumber + qDateString;
-    // console.log(reqUrl)
+    console.log(reqUrl)
     return this.http.get(reqUrl);
   }
 

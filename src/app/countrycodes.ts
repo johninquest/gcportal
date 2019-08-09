@@ -28,5 +28,6 @@
 	{value: 'sk', viewValue: 'SK', viewName: 'Slovakia'},
 	{value: 'si', viewValue: 'SI', viewName: 'Slovania'},
 	{value: 'es', viewValue: 'ES', viewName: 'Spain'},
-	{value: 'se', viewValue: 'SE', viewName: 'Sweden'}
+	{value: 'se', viewValue: 'SE', viewName: 'Sweden'},
+	{value: 'ch', viewValue: 'CH', viewName: 'Switzerland'}
 	];

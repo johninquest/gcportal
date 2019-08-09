@@ -48,15 +48,16 @@ export class WeatherComponent implements OnInit {
     switch(errcode) { 
       case 400:
       case 404:
-      alert('Es wurde für "' + this.wTown.value.toUpperCase() + this.reqCountry().toUpperCase() + '" keine Wetterinfos gefunden.\nBitte überprüfen Sie Ihre Eingabe!') }
+      alert('There is no weather information available for the following entry, "' + this.wTown.value.toUpperCase() + this.reqCountry().toUpperCase() + '. Please enter a valid city/town.'); 
+    }
   }
 
   windMs2Kmh(speed: number) {
     return (speed * 3.6).toFixed(2);
   }
 
-  cUnixDate(udate: number) {
-    return moment.utc(udate, 'X').local().format('HH:mm');
+  cUnixDate(respDate: number) {
+    return moment.utc(respDate, 'X').local().format('HH:mm');
   }
 
   ngOnInit() { }
