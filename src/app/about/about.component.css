@@ -64,8 +64,9 @@ mat-divider {
  }
 
  .gdpr {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    margin-top: 6em;
+    bottom: 1;
  }
  
  .gdpr div {

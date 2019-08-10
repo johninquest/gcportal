@@ -1,7 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { filter } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
 import { from } from 'rxjs';
 
 declare const gtag: any;
@@ -21,15 +21,14 @@ export class AppComponent {
     });
   }
 
+  /*
   @ViewChild(HomeComponent, {static: false}) private importedHome: HomeComponent;
-  
   startDocApp() {
     // alert('FUCK OFF');
     this.importedHome.msg();
-  }
+  } */
 
 }
-
 
   /* title: string = 'A FWS App';
   

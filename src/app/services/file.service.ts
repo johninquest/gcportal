@@ -7,9 +7,8 @@ import moment from 'moment';
 import { start } from 'repl';
 moment.locale('de');
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
+
 export class FileService {
 
   constructor() { }
@@ -18,7 +17,8 @@ export class FileService {
     // let target = document.getElementById('canvas-box');
     // let wt: string = '100%'; let ht: string = 'auto';
     // let wt: number = 595; let ht: number = 842; 
-    target.scrollIntoView(true);
+    // target.scrollIntoView(true);
+    // target.scrollTo(0,0);
     html2canvas(target)
     .then((canvas: any) => {      
       let ctx = canvas.getContext('2d');
