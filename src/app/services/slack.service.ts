@@ -23,9 +23,9 @@ export class SlackService {
     let errMessage: string;
     let errCode = err.status; 
     if (errCode === 200) {
-      errMessage = 'Ihre Nachricht wurde erfolgreich gesendet 😊.';
+      errMessage = 'Your message was sent successfully 😊.';
     } else {
-      errMessage = 'Ihre Nachricht konnte nicht gesendet werden ☹️! \nBitte versuchen Sie es nochmal später.';
+      errMessage = 'Your message could not be sent ☹️! \nPlease try again later.';
     }
     alert(errMessage);
     return throwError(errCode);

@@ -3,9 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import moment from 'moment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 
 export class NewsdataService {
 
@@ -22,7 +20,7 @@ export class NewsdataService {
     let qDate = moment().subtract(2, 'days').format('YYYY-MM-DD');
     let qDateString = `&mindate=${qDate}`;
     let reqUrl: string = this.baseUrl + qLocation + qLang + maxResNumber + qDateString;
-    console.log(reqUrl)
+    // console.log(reqUrl)
     return this.http.get(reqUrl);
   }
 

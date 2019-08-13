@@ -7,7 +7,7 @@ import moment from 'moment';
 import { FileService } from '../services/file.service'
 import { from } from 'rxjs';
 import { element } from 'protractor';
-moment.locale('de');
+moment.locale('en-gb');
 
 
 @Component({

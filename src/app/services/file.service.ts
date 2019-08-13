@@ -5,7 +5,7 @@ import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 import moment from 'moment';
 import { start } from 'repl';
-moment.locale('de');
+moment.locale('en-gb');
 
 @Injectable({ providedIn: 'root' })
 
@@ -53,14 +53,14 @@ export class FileService {
       doc.setFontType('normal');
 
       doc.text(140, 25, `Datum: ${nowDateTime}`);
-      doc.text(140, 30, `Ort: Karlsruhe, DEU`);
+      doc.text(140, 30, 'Ort: Karlsruhe, DE');
 
-      doc.text(10, 50, 'Verkäufer information');
+      doc.text(10, 50, 'Seller information');
       doc.text(10, 55, sTrData['sg_names']);
       doc.text(10, 60, sTrData['sg_phone']);
       doc.text(10, 65, sTrData['sg_email']);
 
-      doc.text(140, 50, 'Käufer information');
+      doc.text(140, 50, 'Buyer information');
       doc.text(140, 55, sTrData['br_names']);
       doc.text(140, 60, sTrData['br_phone']);
       doc.text(140, 65, sTrData['br_email']);
