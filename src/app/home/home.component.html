@@ -1,19 +1,23 @@
 
 <div class="pageTitle">
-  <p>{{ hTitle | uppercase }}<sup>beta</sup></p>
+  <p>THE INSURANCE CORNER</p>
 </div>
 
 <div class="start-btn">
-  <button 
+  <!-- <button 
     mat-raised-button color="primary" (click)="[openDialog(), clearSessionStorage()]">
-    {{ hBeleg | uppercase }}
+    DOCUMENT
+  </button> -->
+  <button 
+    mat-raised-button color="primary" routerLink="/offers" matTooltip="Click to see available insurance offers">
+    OFFERS
+  </button>
+  <button 
+    mat-raised-button color="primary" routerLink="/news" matTooltip="Click to see the latest insurance news">
+    NEWS
   </button>
   <button 
     mat-raised-button color="primary" routerLink="/weather">
-    {{ hWetter | uppercase }}
-  </button>
-  <button 
-    mat-raised-button color="primary" routerLink="/news">
-    {{ hNews | uppercase }}
+    WEATHER
   </button>
 </div>

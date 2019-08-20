@@ -8,6 +8,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { WeatherComponent } from './weather/weather.component';
 import { NewsComponent } from './news/news.component';
+import { OffersComponent } from './offers/offers.component';
+
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'weather', component: WeatherComponent },
   { path: 'news', component: NewsComponent },
+  { path: 'offers', component: OffersComponent },
   { path: '**', component: HomeComponent }
 ];
 
