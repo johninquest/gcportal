@@ -1,9 +1,10 @@
 
 <div class="title">
-  <p matTooltip="only the latest local news">{{ nTitle | uppercase }}</p>
+  <p matTooltip="The latest insurance news">INSURANCE NEWS</p>
   <mat-divider class="divider"></mat-divider>
 </div>
 
+<!--
 <div class="input">
   <mat-form-field>
       <input type="text" matInput placeholder="City / Town" [formControl]="nTown">
@@ -15,8 +16,8 @@
     </mat-select>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="showNewsData()">FIND</button>
-  <!-- <button mat-raised-button color="primary" [disabled]="nTown.invalid" (click)="showNewsData()">FIND</button> -->
 </div>
+-->
 
 <div class="response" *ngIf="respData">
   <div *ngFor="let item of respData">

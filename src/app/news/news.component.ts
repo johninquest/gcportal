@@ -19,8 +19,6 @@ export interface cCodeDesc {
 })
 export class NewsComponent implements OnInit {
 
-  nTitle: string = 'local news';
-
   nTown = new FormControl('', Validators.required);
   nCountry = new FormControl('');
   cCodes: cCodeDesc[] = COUNTRYCODES;
@@ -37,7 +35,8 @@ export class NewsComponent implements OnInit {
 
   showNewsData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value;
-    let qData: string = this.nTown.value + ',' + this.reqCountry(); 
+    //let qData: string = this.nTown.value + ',' + this.reqCountry(); 
+    let qData: string = 'insurance';
     let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { 
                             // this.respData = res['articles']; 
@@ -81,6 +80,8 @@ export class NewsComponent implements OnInit {
     //return moment.utc(respDate).format('LLLL');
    }
    
-  ngOnInit() { }
+  ngOnInit() {
+    this.showNewsData();
+   }
 
 }
