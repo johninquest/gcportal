@@ -36,7 +36,7 @@ export class NewsComponent implements OnInit {
   showNewsData() { 
     // let reqUrl: string = this.baseUrl + this.wTown.value;
     //let qData: string = this.nTown.value + ',' + this.reqCountry(); 
-    let qData: string = 'insurance';
+    let qData: string = '+europe+insurance';
     let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { 
                             // this.respData = res['articles']; 
