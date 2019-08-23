@@ -9,7 +9,8 @@ export class NewsdataService {
 
   private baseUrl: string = 'https://gnews.io/api/v3/search?token=1b9fa329965960737566f042fb2d86ac&q=';
   // private baseUrl: string = 'https://newsapi.org/v2/everything?apiKey=bc80aee5a6654843bd745e416bccc24d&sortBy=publishedAt' 
-  // &q=bruchsal
+  // Google Custom Search JSON API Key = AIzaSyAbUBuq98veydP52oAe-8LvrKxqTLpNbJ4 
+  // Postman: https://www.googleapis.com/customsearch/v1?key=AIzaSyAbUBuq98veydP52oAe-8LvrKxqTLpNbJ4&cx=011742578395077431650:pemrlwdwwbp&q=insurance
 
   constructor(private http: HttpClient) {}
 
