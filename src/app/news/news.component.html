@@ -4,27 +4,12 @@
   <mat-divider class="divider"></mat-divider>
 </div>
 
-<!--
-<div class="input">
-  <mat-form-field>
-      <input type="text" matInput placeholder="City / Town" [formControl]="nTown">
-      <mat-icon matSuffix>place</mat-icon>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-select placeholder="Country" [formControl]="nCountry">
-      <mat-option *ngFor="let cCode of cCodes" [value]="cCode.value">{{ cCode.viewName }}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="showNewsData()">FIND</button>
-</div>
--->
-
 <div class="response" *ngIf="respData">
   <div *ngFor="let item of respData">
-    <p class="newsimg"><img src="{{ item.image }}" alt="{{ item.title }}" width="150" height="150"></p>
-    <p class="newstitle"><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></p>
-    <p class="newsdate">{{ convertDate(item.publishedAt) }}</p>
-    <p class="newssrc"><a href="{{ item.source.url }}" target="_blank">{{ item.source.name }}</a></p>
-    <p class="newsdesc">{{ item.description }}</p>
+    <p class="newsimg"><img src="{{ item.pagemap.cse_thumbnail[0].src }}" alt="{{ item.title }}" width="150" height="150"></p>
+    <p class="newstitle"><a href="{{ item.pagemap.metatags[0]['og:url'] }}" target="_blank">{{ item.pagemap.metatags[0]['og:title'] }}</a></p>
+    <p class="newsdate">{{ convertDate(item.pagemap.metatags[0]['og:updated_time']) }}</p>
+    <p class="newssrc"><a href="{{ item.pagemap.metatags[0]['og:url'] }}" target="_blank">{{ item.pagemap.metatags[0]['og:site_name'] }}</a></p>
+    <p class="newsdesc">{{ item.pagemap.metatags[0]['og:description'] }}</p>
   </div>
 </div>

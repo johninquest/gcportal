@@ -26,33 +26,21 @@ export class NewsComponent implements OnInit {
 
   constructor(private nds: NewsdataService) { }
 
-  reqCountry() {
-    if(this.nCountry.value) {
-      let qString: string = this.nCountry.value;
-      return qString;
-    } else { return ''; }
-  }
-
   showNewsData() { 
-    // let reqUrl: string = this.baseUrl + this.wTown.value;
-    //let qData: string = this.nTown.value + ',' + this.reqCountry(); 
-    let qData: string = '+europe+insurance';
+    let qData: string = '+travel+insurance+europe';
     let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { 
                             // this.respData = res['articles']; 
-                            this.respData = this.handleEmptyResponse(res['articles']);
+                            this.respData = this.handleEmptyResponse(res['items']);
                           },
                    err => { this.handleErr(err.status); } 
                    );
    }
 
    handleEmptyResponse(resContent: any) {
-     // let cLength = Object.keys(myObject).length == 0
      if(Object.keys(resContent).length == 0) {
-       return alert('No news was found for this location. Please, try another location.');
-     } else {
-      return resContent;
-     }
+       return alert('No news was found. Please come back later.');
+     } else { return resContent; }
    }
 
    handleErr(errCode: number) {
@@ -76,8 +64,12 @@ export class NewsComponent implements OnInit {
    }
 
    convertDate(respDate: string) {
-    return moment(respDate, 'YYYY-MM-DD HH:mm:ss UTC').format('LLLL'); 
-    //return moment.utc(respDate).format('LLLL');
+     if (respDate) {
+       return moment(respDate, 'YYYY-MM-DD HH:mm:ss UTC').format('LLLL');
+        //return moment.utc(respDate).format('LLLL');
+     } else {
+       return moment().format('LLLL');
+     }
    }
    
   ngOnInit() {
