@@ -27,11 +27,11 @@ export class NewsComponent implements OnInit {
   constructor(private nds: NewsdataService) { }
 
   showNewsData() { 
-    let qData: string = '+travel+insurance+europe';
+    let qData: string = 'health';
     let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { 
                             // this.respData = res['articles']; 
-                            this.respData = this.handleEmptyResponse(res['items']);
+                            this.respData = this.handleEmptyResponse(res['articles']);
                           },
                    err => { this.handleErr(err.status); } 
                    );
@@ -65,8 +65,8 @@ export class NewsComponent implements OnInit {
 
    convertDate(respDate: string) {
      if (respDate) {
-       return moment(respDate, 'YYYY-MM-DD HH:mm:ss UTC').format('LLLL');
-        //return moment.utc(respDate).format('LLLL');
+       // return moment(respDate, 'YYYY-MM-DD HH:mm:ss UTC').format('LLLL');
+       return moment.utc(respDate).format('LLLL');
      } else {
        return moment().format('LLLL');
      }
