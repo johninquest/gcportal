@@ -1,1 +1,32 @@
-<p>offers works!</p>
+
+<div class="o-title">
+    <div class="title" matTooltip="insurance offers">OFFERS</div>
+
+    <div class="items">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu1">HEALTH INSURANCE</button>
+        <mat-menu #menu1="matMenu">
+            <button mat-menu-item (click)="showImg()">AOK</button>
+            <button mat-menu-item>AXA</button>
+            <button mat-menu-item>BARMER</button>
+            <button mat-menu-item>DAK</button>
+            <button mat-menu-item>TK</button>
+        </mat-menu>
+    </div>
+
+    <div class="items">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu2">TRAVEL INSURANCE</button>
+        <mat-menu #menu2="matMenu">
+            <button mat-menu-item (click)="showImg()">AXA</button>
+            <button mat-menu-item>HanseMerkur</button>
+        </mat-menu>
+    </div>
+
+    <div class="items">
+            <button mat-raised-button color="primary" [matMenuTriggerFor]="menu3">OTHERS</button>
+            <mat-menu #menu3="matMenu">
+                <button mat-menu-item>One</button>
+                <button mat-menu-item>Two</button>
+            </mat-menu>
+        </div>
+</div>
+
