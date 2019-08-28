@@ -18,4 +18,10 @@
 
 button {
     width: 15em;
+    height: 5em;
+}
+
+a {
+    font-weight: bold;
+    width: 12.5em;
 }
