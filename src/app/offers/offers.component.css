@@ -16,9 +16,11 @@
     margin-bottom: 1em;
 }
 
-button {
+.items button {
     width: 15em;
     height: 5em;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 mat-menu {
@@ -29,6 +31,7 @@ mat-menu {
 
 a {
     align-items: center;
+    font-size: 1em;
     font-weight: bold;
     width: 12.7em;
 }
