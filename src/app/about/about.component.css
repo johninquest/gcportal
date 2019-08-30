@@ -78,6 +78,7 @@ mat-divider {
  }
 
  .gdpr div p {
+     font-weight: bold;
      margin-bottom: 0.1em;
  }
 

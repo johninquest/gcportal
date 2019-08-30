@@ -23,6 +23,6 @@
       <textarea matInput placeholder="Message" [formControl]="cMessage" required></textarea>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" [disabled]="cMessage.invalid" (click)="sendToSlack()">SEND</button>
+    <button mat-raised-button color="primary" (click)="sendToSlack()">SEND</button>
   </div>
 </div>

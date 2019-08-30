@@ -7,30 +7,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputComponent } from './input/input.component';
-import { OutputComponent } from './output/output.component';
 import { HomeComponent } from './home/home.component';
-import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { DeletedialogComponent } from './deletedialog/deletedialog.component';
-import { WeatherComponent } from './weather/weather.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent,
-    OutputComponent,
     HomeComponent,
-    StartdialogComponent,
     ContactComponent,
     AboutComponent,
-    DeletedialogComponent,
-    WeatherComponent,
     NewsComponent,
-    OffersComponent
+    OffersComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +35,6 @@ import { OffersComponent } from './offers/offers.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [StartdialogComponent, DeletedialogComponent]
+  entryComponents: []
 })
 export class AppModule { }

@@ -1,28 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { InputComponent } from './input/input.component';
-import { OutputComponent } from './output/output.component';
-import { StartdialogComponent } from './startdialog/startdialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { WeatherComponent } from './weather/weather.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
-
+import { ResourcesComponent } from './resources/resources.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'input', component: InputComponent },
-  { path: 'output', component: OutputComponent },
-  { path: 'startdialog', component: StartdialogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'weather', component: WeatherComponent },
   { path: 'news', component: NewsComponent },
   { path: 'offers', component: OffersComponent },
+  { path: 'resources', component: ResourcesComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -30,4 +23,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

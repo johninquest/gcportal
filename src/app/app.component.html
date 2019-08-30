@@ -3,24 +3,22 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
-      <!-- <span>Home</span> -->
     </button>
-    <button mat-menu-item routerLink="/offers" matTooltip="Click to see available insurance offers">
+    <button mat-menu-item routerLink="/about" matTooltip="About stuuur">
+      <mat-icon>info</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/offers" matTooltip="Insurance offers">
       <mat-icon>local_offer</mat-icon>
     </button>
-    <button mat-menu-item routerLink="/news" matTooltip="Click to see the latest insurance news">
-      <mat-icon>new_releases</mat-icon>
+    <button mat-menu-item routerLink="/resources" matTooltip="Consumer resources">
+      <mat-icon>help</mat-icon>
     </button>
-    <button mat-menu-item routerLink="/about" matTooltip="About app">
-      <mat-icon>info</mat-icon>
+    <button mat-menu-item routerLink="/news" matTooltip="Health & travel insurance news">
+      <mat-icon>assignment</mat-icon>
     </button>
     <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
       <mat-icon>mail</mat-icon>
     </button>
-    <!-- <button mat-menu-item matTooltip="Under construction" disabled>
-      <img src="../assets/flag_uk.png" width="26" height="22">
-      <span>&nbsp;&nbsp;</span>
-    </button> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>

@@ -19,6 +19,7 @@
 .items button {
     width: 15em;
     height: 5em;
+    border-radius: 0.4em;
     font-size: 1em;
     font-weight: bold;
 }
@@ -33,5 +34,9 @@ a {
     align-items: center;
     font-size: 1em;
     font-weight: bold;
-    width: 12.7em;
+    width: 13em;
+}
+
+.mat-menu-item:hover {
+    background-color: #1DE9B6;
 }

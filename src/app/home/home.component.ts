@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { StartdialogComponent } from '../startdialog/startdialog.component';
 
 @Component({
   selector: 'app-home',
@@ -9,25 +7,7 @@ import { StartdialogComponent } from '../startdialog/startdialog.component';
 })
 export class HomeComponent implements OnInit {
 
-// Clears or deletes all data in session storage
-  clearSessionStorage() {
-   sessionStorage.clear();
-  }  
-
-  constructor(public dialog: MatDialog) { }
-
-  openDialog(): void {
-    // const dialogConfig = new MatDialogConfig();
-    // dialogConfig.disableClose = true;
-    // dialogConfig.autoFocus = true;
-    // dialogConfig.width = '50%';
-    this.dialog.open(StartdialogComponent);
-    // const dialogRef = this.dialog.open(StartdialogComponent, {});
-  }
-
-  msg() {
-    alert('GO TO HELL, MORON!');
-  }
+  constructor() { }
 
   ngOnInit() { }
 }
