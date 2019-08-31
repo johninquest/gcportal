@@ -2,21 +2,21 @@
 
 <div class="contact">
   <div class="title">{{ cTitle | uppercase }}</div>
-  <mat-divider></mat-divider>
+
   <div class="form">
     <mat-form-field>
-      <input matInput type="text" placeholder="First name, Last name" [formControl]="cNames">
+      <input matInput type="text" placeholder="First name, Last name" [formControl]="cNames" required>
     </mat-form-field>
     
     <mat-form-field>
       <input matInput 
              placeholder="E-mail" 
-             matTooltip="Only if a reply is expected." 
+             matTooltip="Please, provide only if a reply is expected!" 
              [formControl]="cSender">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Subject" [formControl]="cSubject" required>
+      <input matInput placeholder="Subject" [formControl]="cSubject">
     </mat-form-field>
 
     <mat-form-field>
