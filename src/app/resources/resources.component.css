@@ -11,3 +11,7 @@
     font-size: 1.5em;
     margin-bottom: 1em;
 }
+
+.mat-row:hover {
+    background-color: #1DE9B6;
+}
