@@ -9,8 +9,6 @@ import { SlackService } from '../services/slack.service';
 })
 export class ContactComponent implements OnInit {
 
-  cTitle: string = 'contact us';
-
   cNames = new FormControl(''); 
   cSender = new FormControl('', [Validators.email]); 
   cSubject = new FormControl('');
@@ -51,10 +49,11 @@ export class ContactComponent implements OnInit {
            ]
         }
      ] });
-     this.slackservice.sendData(payloadData)
-     .subscribe( res => { res }, 
-                 err => { if(err === 200) { this.resetInputs(); } } 
-                );
+    this.slackservice.sendData(payloadData)
+      .subscribe( 
+        res => { res }, 
+        err => { if(err === 200) { this.resetInputs(); } } 
+          );
     }
 
   ngOnInit() { }

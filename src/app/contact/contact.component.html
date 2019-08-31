@@ -1,28 +1,28 @@
 
 
 <div class="contact">
-  <div class="title">{{ cTitle | uppercase }}</div>
+  <div class="title">CONTACT US</div>
 
   <div class="form">
     <mat-form-field>
-      <input matInput type="text" placeholder="First name, Last name" [formControl]="cNames" required>
+      <input matInput type="text" placeholder="First name, Last name" [formControl]="cNames">
     </mat-form-field>
     
     <mat-form-field>
       <input matInput 
              placeholder="E-mail" 
-             matTooltip="Please, provide only if a reply is expected!" 
+             matTooltip="Please, provide only if a reply is expected" 
              [formControl]="cSender">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Subject" [formControl]="cSubject" required>
+      <input matInput placeholder="Subject" [formControl]="cSubject">
     </mat-form-field>
 
     <mat-form-field>
       <textarea matInput placeholder="Message" [formControl]="cMessage" required></textarea>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)="sendToSlack()">SEND</button>
+    <button mat-raised-button color="primary" [disabled]="cMessage.invalid" (click)="sendToSlack()">SEND</button>
   </div>
 </div>
