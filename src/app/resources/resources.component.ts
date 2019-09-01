@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
+export interface TableDataDesc {
   name: string;
   url: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const TableData: TableDataDesc[] = [
   {name: 'European Banking Authority (EBA)', url: 'https://eba.europa.eu/consumer-corner'},
   {name: 'European Union Directives', url: 'https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/insurance-products/indexamp_en.htm'},
   {name: 'German Association of the Insured (BdV)', url: 'https://www.bundderversicherten.de/english' },
@@ -21,7 +21,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ResourcesComponent implements OnInit {
 
   displayedColumns: string[] = ['name'];
-  dataSource = ELEMENT_DATA;
+  dataSource = TableData;
 
   openExtUrl(targetUrl: string) {
     window.open(targetUrl, '_blank');

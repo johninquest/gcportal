@@ -3,21 +3,27 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
+      <span>HOME</span>
     </button>
     <button mat-menu-item routerLink="/about" matTooltip="About stuuur">
       <mat-icon>info</mat-icon>
+      <span>ABOUT STUUUR</span>
     </button>
     <button mat-menu-item routerLink="/offers" matTooltip="Insurance offers">
       <mat-icon>local_offer</mat-icon>
+      <span>OFFERS</span>
     </button>
     <button mat-menu-item routerLink="/resources" matTooltip="Consumer resources">
       <mat-icon>help</mat-icon>
+      <span>RESOURCES</span>
     </button>
     <button mat-menu-item routerLink="/news" matTooltip="Health & travel insurance news">
       <mat-icon>assignment</mat-icon>
+      <span>NEWS</span>
     </button>
     <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
       <mat-icon>mail</mat-icon>
+      <span>CONTACT</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
