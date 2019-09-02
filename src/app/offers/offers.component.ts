@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersComponent implements OnInit {
 
+  panelOpenState = false;
+
   msg() {
     alert('coming soon ... ');
   }
