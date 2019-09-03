@@ -31,7 +31,7 @@ mat-menu {
 }
 
 a {
-    align-items: center;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1em;
     font-weight: bold;
     width: 13em;

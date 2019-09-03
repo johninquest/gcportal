@@ -2,3 +2,11 @@
 /*nav {
     background-color: #2979FF;
 } */
+
+button:hover {
+    background-color: #1DE9B6;
+}
+
+.mat-menu-item:hover {
+    background-color: #1DE9B6;
+}
