@@ -41,9 +41,6 @@ sup {
     font-weight: bold;
 }
 
-.howtouse ol li span {
-    font-weight: bold;
-}
 
 mat-divider {
     width: 12em;
@@ -59,11 +56,8 @@ mat-divider {
     margin-bottom: 0.1em;
 }
 
-.howtouse img { 
-    align-self: auto;
- }
 
- .gdpr {
+.gdpr {
     text-align: center;
     position: fixed;
     bottom: 0;
@@ -71,13 +65,13 @@ mat-divider {
     margin-bottom: 0.5em;
  }
  
- .gdpr div {
+.gdpr div {
      display: flex;
      flex-flow: column nowrap;
      align-items: center;
  }
 
- .gdpr div p {
+.gdpr div p {
      font-weight: bold;
      margin-bottom: 0.1em;
  }
