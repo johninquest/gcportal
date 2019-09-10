@@ -16,8 +16,15 @@
     </div>
 
     <div class="items">
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu2">TRAVEL INSURANCE</button>
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu2">LIABILITY INSURANCE</button>
         <mat-menu #menu2="matMenu">
+            <a mat-menu-item href="https://www.hellogetsafe.com/en-de/leistungsdetails/haftpflicht" target="_blank">GETSAFE</a>
+        </mat-menu>
+    </div>
+
+    <div class="items">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu3">TRAVEL INSURANCE</button>
+        <mat-menu #menu3="matMenu">
             <a mat-menu-item href="https://www.allianzcare.com/en/personal-international-health-insurance/travel-insurance.html" target="_blank">Allianz</a>
             <a mat-menu-item href="https://www.axa-schengen.com/en/travel-insurance-europe-carefree-travel" target="_blank">AXA</a>
             <a mat-menu-item href="https://www.hmrv.de/en" target="_blank">HanseMerkur</a>
