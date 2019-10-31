@@ -1,4 +1,4 @@
-# insure - shop insurance seamlessly across europe
+# philtrips - aiming to build a cameroon-based logistics, transport & travel consulting business 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
