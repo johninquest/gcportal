@@ -27,7 +27,7 @@ export class NewsComponent implements OnInit {
   constructor(private nds: NewsdataService) { }
 
   showNewsData() { 
-    let qData: string = 'en';
+    let qData: string = 'cameroon+transport+road';
     let obs = this.nds.getNewsData(qData);
     obs.subscribe( res => { 
                             // this.respData = res['articles']; 
