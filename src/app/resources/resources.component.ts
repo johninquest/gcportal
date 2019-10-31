@@ -6,10 +6,10 @@ export interface TableDataDesc {
 }
 
 const TableData: TableDataDesc[] = [
-  {name: 'European Banking Authority (EBA)', url: 'https://eba.europa.eu/consumer-corner'},
-  {name: 'Your Europe (EU)', url: 'https://europa.eu/youreurope/citizens/consumers/financial-products-and-services/insurance-products/indexamp_en.htm'},
-  {name: 'German Association of the Insured (BdV)', url: 'https://www.bundderversicherten.de/english' },
-  {name: 'German Insurance Association (GDV)', url: 'https://www.en.gdv.de/en'}
+  {name: 'Ministry of Transport (Cameroon)', url: 'https://mintransports.net/fr/'},
+  {name: 'A', url: 'coming soon'},
+  {name: 'B', url: 'coming soon' },
+  {name: 'C', url: 'coming soon'}
 ];
 
 @Component({
