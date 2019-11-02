@@ -4,6 +4,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 .title p {
@@ -12,23 +13,7 @@
     margin-bottom: 0;
 }
 
-.title mat-divider {
-    width: 15em;
-}
-
-.input {
-    margin-top: 2em;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.input mat-form-field {
-    width: 15em;
-}
-
 .response {
-    margin-top: 3em;
     border: solid 0.2em #FFC107;
     border-radius: 1em;
 }
