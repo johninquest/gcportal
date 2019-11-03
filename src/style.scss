@@ -9,6 +9,7 @@ $mytheme-warn: mat-palette($mat-red, 500);
 $mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
 @include angular-material-theme($mytheme-all);
 
-$myfont: 'Quicksand', sans-serif;
+/* $myfont: 'Quicksand', sans-serif; */
+$myfont: 'Roboto Mono', monospace;
 * { font: 100% $myfont; } 
 /* Add !important to overwrite all elements */
