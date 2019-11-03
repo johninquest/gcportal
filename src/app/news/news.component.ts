@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { COUNTRYCODES } from '../countrycodes';
 import { NewsdataService } from '../services/newsdata.service';
 import moment from 'moment';
 moment.locale('en-gb');
@@ -21,7 +20,6 @@ export class NewsComponent implements OnInit {
 
   nTown = new FormControl('', Validators.required);
   nCountry = new FormControl('');
-  cCodes: cCodeDesc[] = COUNTRYCODES;
   respData: any; // News response Object
 
   constructor(private nds: NewsdataService) { }
