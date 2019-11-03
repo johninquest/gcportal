@@ -16,6 +16,7 @@ export interface cCodeDesc {
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
+
 export class NewsComponent implements OnInit {
 
   nTown = new FormControl('', Validators.required);

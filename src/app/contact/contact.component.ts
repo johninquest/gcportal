@@ -7,6 +7,7 @@ import { SlackService } from '../services/slack.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
 
   cNames = new FormControl(''); 

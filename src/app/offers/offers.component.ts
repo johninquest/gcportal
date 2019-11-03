@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.css']
 })
+
 export class OffersComponent implements OnInit {
 
   panelOpenState = false;

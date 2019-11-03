@@ -20,20 +20,4 @@ export class AppComponent {
       gtag('config', 'UA-137248590-2', {'page_path': event.urlAfterRedirects});
     });
   }
-
-  /*
-  @ViewChild(HomeComponent, {static: false}) private importedHome: HomeComponent;
-  startDocApp() {
-    // alert('FUCK OFF');
-    this.importedHome.msg();
-  } */
-
 }
-
-  /* title: string = 'A FWS App';
-  
-  callExtUrl() {
-    const url = 'https://stuuur.com/en';
-    open(url, '_self'); 
-    alert('coming soon ...');
-  } */
