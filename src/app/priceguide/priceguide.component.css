@@ -1,0 +1,19 @@
+
+.pagetitle {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.locations {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+mat-form-field { width: 15em; }

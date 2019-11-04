@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { PriceguideComponent } from './priceguide/priceguide.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ResourcesComponent } from './resources/resources.component';
     AboutComponent,
     NewsComponent,
     OffersComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    PriceguideComponent
   ],
   imports: [
     BrowserModule,

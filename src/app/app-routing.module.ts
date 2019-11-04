@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { PriceguideComponent } from './priceguide/priceguide.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'offers', component: OffersComponent },
   { path: 'resources', component: ResourcesComponent },
+  { path: 'priceguide', component: PriceguideComponent },
   { path: '**', component: HomeComponent }
 ];
 

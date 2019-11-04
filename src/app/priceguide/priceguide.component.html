@@ -1,0 +1,17 @@
+
+<div class="pagetitle">PRICE GUIDE</div>
+
+<div class="locations">
+    <mat-form-field class="start-location">
+        <mat-select placeholder="Departure" [formControl]="startLoc">
+          <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="end-location">
+        <mat-select placeholder="Arrival" [formControl]="endLoc">
+            <mat-option *ngFor="let ePlace of endPlaces" [value]="ePlace.value">{{ ePlace.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+

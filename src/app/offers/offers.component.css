@@ -1,5 +1,5 @@
 
-.o-title {
+.offers-container {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

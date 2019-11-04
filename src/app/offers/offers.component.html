@@ -1,23 +1,13 @@
 
-<div class="o-title">
+<div class="offers-container">
     <div class="title" matTooltip="transport services">SERVICES</div>
 
     <div class="items">
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu1">PRICE CHECK</button>
-        <mat-menu #menu1="matMenu">
-            <a mat-menu-item href="https://www.allianzcare.com/en/personal-international-health-insurance.html" target="_blank" matTooltip="AllianzCare - Internatinal Health Insurance">Allianz</a>
-            <a mat-menu-item href="https://en.zuwanderer.aok.de/home" target="_blank">AOK</a>
-            <a mat-menu-item href="https://www.axaglobalhealthcare.com/en/international-health-insurance" target="_blank" matTooltip="AXA - Internatinal Health Insurance">AXA</a>
-            <a mat-menu-item href="https://www.tk.de/en" target="_blank" matTooltip="Techniker Krankenkasse">TK</a>
-        </mat-menu>
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu1" matTooltip="Guide to your transport fares" routerLink="/priceguide">PRICE GUIDE</button>
     </div>
 
     <div class="items">
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu2">COMPANIES</button>
-        <mat-menu #menu2="matMenu">
-            <a mat-menu-item href="http://www.care-concept.de/krankenversicherung/auslandsversicherung_haftpflicht/haftpflicht_fuer_auslandsreisen_einleitung_eng.php?navilang=eng" target="_blank">CARE CONCEPT</a>
-            <a mat-menu-item href="https://www.hellogetsafe.com/en-de/leistungsdetails/haftpflicht" target="_blank">GETSAFE</a>
-        </mat-menu>
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu2" matTooltip="List of transport companies">COMPANIES</button>
     </div>
 
     <div class="items">
