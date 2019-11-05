@@ -13,7 +13,22 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-
+    margin-bottom: 2em;
 }
 
 mat-form-field { width: 15em; }
+
+.results {
+    width: 16em;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.2em #FFC107;
+    border-radius: 1em;
+}
+
+.results div { font-weight: bold; }
+
+.currency { font-weight: bold; }

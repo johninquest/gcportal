@@ -20,8 +20,25 @@ export class PriceguideComponent implements OnInit {
 
   startLoc = new FormControl(''); 
   endLoc = new FormControl('');
+  tAmount: number = 1600;
   startPlaces: placesListDesc[] = START;
   endPlaces: placesListDesc[] = END;
+
+  computeFares() {
+    let tStart: string = this.startLoc.value;
+    let tEnd: string = this.endLoc.value;
+    if (tStart === 'douala' && tEnd === 'buea') {
+      return 1000;
+    } if (tStart === 'douala' && tEnd === 'limbe') {
+      return 1200;
+    } if (tStart === 'douala' && tEnd === 'muyuka') {
+      return 1500;
+    } if (tStart === 'douala' && tEnd === 'muyuka') {
+      return 1800;
+    } else {
+      return 0;
+    }
+  }
 
   ngOnInit() { }
 
