@@ -10,6 +10,6 @@ $mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
 @include angular-material-theme($mytheme-all);
 
 /* $myfont: 'Quicksand', sans-serif; */
-$myfont: 'Roboto Mono', monospace;
+$myfont: 'Allerta', sans-serif;
 * { font: 100% $myfont; } 
 /* Add !important to overwrite all elements */
