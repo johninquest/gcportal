@@ -16,7 +16,9 @@
 </div>
 
 <div class="results">
-    <div>TRANSPORT FARE(S)</div>
-    <p>{{ computeFares() }} <span class="currency">XAF</span></p>
+    <div>TRAVEL DETAIL(S)</div>
+    <!-- <p><span>{{ startLoc.value | uppercase }}</span><span> >> </span><span>{{ endLoc.value | uppercase }}</span></p> -->
+    <p><span>PRICE: </span> {{ computeFares()[0] }}<span> XAF</span></p>
+    <p><span>DISTANCE: </span> {{ computeFares()[1] }}<span> KM</span></p>
 </div>
 

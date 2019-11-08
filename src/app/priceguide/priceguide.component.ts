@@ -29,20 +29,13 @@ export class PriceguideComponent implements OnInit {
     let tStart: string = this.startLoc.value;
     let tEnd: string = this.endLoc.value;
 
-    if (tStart === 'douala' && tEnd === 'buea') {
-      return 1000;
-    } if (tStart === 'douala' && tEnd === 'limbe') {
-      return 1200;
-    } if (tStart === 'douala' && tEnd === 'mamfe') {
-        return 6500;
-    } if (tStart === 'douala' && tEnd === 'muyuka') {
-      return 1500;
-    } if (tStart === 'douala' && tEnd === 'kumba') {
-      return 2500;
-    } if (tStart === 'douala' && tEnd === 'tiko') {
-      return 600;
-    } 
-    else { return 0; }
+    if (tStart === 'buea' && tEnd === 'douala') {
+      let tPrice: number = 1000;
+      let tDistance: number = 71.2;
+      return [tPrice, tDistance];
+    } else { 
+      return ['N/A', 'N/A']; 
+    }
   }
 
   onChanges(): void {
