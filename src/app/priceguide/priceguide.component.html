@@ -16,9 +16,9 @@
 </div>
 
 <div class="results">
-    <div>TRAVEL DETAIL(S)</div>
-    <!-- <p><span>{{ startLoc.value | uppercase }}</span><span> >> </span><span>{{ endLoc.value | uppercase }}</span></p> -->
-    <p><span>PRICE: </span> {{ computeFares()[0] }}<span> XAF</span></p>
-    <p><span>DISTANCE: </span> {{ computeFares()[1] }}<span> KM</span></p>
+    <div class="resulttitle">YOUR JOURNEY DETAIL(S)</div>
+    <div><span class="selectedloc">{{ startLoc.value | uppercase }}</span><span> | </span><span class="selectedloc">{{ endLoc.value | uppercase }}</span></div>
+    <div><span class="fieldname">PRICE: </span> {{ computeFares()[0] }}</div>
+    <div><span class="fieldname">DISTANCE: </span> {{ computeFares()[1] }}</div>
 </div>
 

@@ -29,4 +29,17 @@ mat-form-field { width: 15em; }
     border-radius: 1em;
 }
 
-.results div { font-weight: bold; }
+.resulttitle { 
+    font-size: 0.9em;
+    font-weight: bold; 
+    color: gray;
+}
+
+.fieldname {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.selectedloc {
+    font-size: 0.8em;
+}
