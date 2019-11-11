@@ -31,6 +31,12 @@ export const END = [
     {value: 'yaounde', viewValue: 'YAOUNDE'}
 ];
 
+export const PRICEDETAILS = [
+    { from: 'douala', to: 'buea', price: 1100, distance: 80 },
+    { from: 'douala', to: 'limbe', price: 1300, distance: 95.3 },
+    { from: 'douala', to: 'yaounde', price: 2700, distance: 250 }
+];
+
 /*
 mundemba,
 kendem,
