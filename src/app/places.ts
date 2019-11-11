@@ -1,6 +1,7 @@
 
 export const START = [
     {value: null, viewValue: ''},
+    {value: 'bamenda', viewValue: 'BAMENDA'},
     {value: 'buea', viewValue: 'BUEA'},
     {value: 'kumba', viewValue: 'KUMBA'},
     {value: 'limbe', viewValue: 'LIMBE'},
