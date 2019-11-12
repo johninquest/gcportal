@@ -37,32 +37,43 @@ export class PriceguideComponent implements OnInit {
      }
   }
 
-  testList = function() {
-    let input1 = this.startLoc.value;
-    let input2 = this.endLoc.value;
-    console.log(input1, input2);
+  testNew = function() {
+    let input1: string = this.startLoc.value;
+    let input2: string = this.endLoc.value;
+    // console.log(input1, input2);
     const d = DETAILS; 
-    for (let i = 0; i < d.length; i++) {
-      // console.log(d[i]);
-      if (d[i].includes(input1) && d[i].includes(input2)) {
-        return console.log(d[i]);
-        // break;
+    // console.log(d);
+    for (let item of d) {
+      if (item.includes(input1) && item.includes(input2)) {
+        console.log(item);
+        break;
       }
-      // return console.log(d[i]);
+      // console.log(item);
     }
 
+   /* for (let i = 0; i < d.length; i++) {
+      if (d[i].includes(input1) && d[i].includes(input2)) {
+        let tPrice = d[i][2];
+        let tDistance = d[i][3];
+        let tRoad = d[i][4];
+        console.log(tPrice, tDistance, tRoad);
+      }
+      // return console.log(d[i]);
+    } */
   }
 
   onChanges(): void {
     this.startLoc.valueChanges.subscribe( 
-      () => { this.computeFare(); this.testList(); } );
+      () => { this.computeFare();
+              this.testNew(); } );
     this.endLoc.valueChanges.subscribe( 
-      () => { this.computeFare(); this.testList(); } );
+      () => { this.computeFare();
+              this.testNew(); } );
   }
 
   ngOnInit() {
     this.onChanges();
-    this.testList();
+    this.testNew();
   }
 
 }

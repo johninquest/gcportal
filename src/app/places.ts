@@ -35,14 +35,13 @@ export const END = [
 
 export const DETAILS = [
    /* from/to, from/to, price, distance */
-    ['bamenda', 'bafoussam', 750, 77.5],
-    ['bamenda', 'bertoua', 8000, 650],
-    ['bamenda', 'buea', 3800, 340],
-    ['bamenda', 'douala', 3200, 321],
-    ['bamenda', 'mamfe', 2100, 137],
-    ['bamenda', 'yaounde', 4000, 372],
-    ['buea', 'yaounde', 3700, 472]
-
+    ['buea', 'bafoussam', 750, 77.5, 'OK'],
+    ['buea', 'bamenda', 8000, 650, 'MIXED'],
+    ['buea', 'kumba', 3800, 340, 'NO IDEA'],
+    ['bamenda', 'douala', 3200, 321, 'AVERAGE'],
+    ['buea', 'limbe', 3800, 340, 'GOOD'],
+    ['bamenda', 'mamfe', 2100, 137, 'BAD'],
+    ['buea', 'yaounde', 3700, 472, 'MIXED']
 ];
 
 /*
