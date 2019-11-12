@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { START, END } from '../places';
+import { START, END, DETAILS } from '../places';
 import { from } from 'rxjs';
 
 export interface placesListDesc {
@@ -20,15 +20,13 @@ export class PriceguideComponent implements OnInit {
 
   startLoc = new FormControl(''); 
   endLoc = new FormControl('');
-  // tAmount: number;
   startPlaces: placesListDesc[] = START;
   endPlaces: placesListDesc[] = END;
+  // detailsList: tripDetailsListDesc[] = DETAILS; 
 
   computeFare = function() {
-
     let tStart: string = this.startLoc.value;
     let tEnd: string = this.endLoc.value;
-
     if(tStart === 'bamenda' && tEnd === 'buea') {
       let tPrice: number = 4500;
       let tDistance: number = 320;
@@ -39,15 +37,32 @@ export class PriceguideComponent implements OnInit {
      }
   }
 
+  testList = function() {
+    let input1 = this.startLoc.value;
+    let input2 = this.endLoc.value;
+    console.log(input1, input2);
+    const d = DETAILS; 
+    for (let i = 0; i < d.length; i++) {
+      // console.log(d[i]);
+      if (d[i].includes(input1) && d[i].includes(input2)) {
+        return console.log(d[i]);
+        // break;
+      }
+      // return console.log(d[i]);
+    }
+
+  }
+
   onChanges(): void {
     this.startLoc.valueChanges.subscribe( 
-      () => this.computeFare() );
+      () => { this.computeFare(); this.testList(); } );
     this.endLoc.valueChanges.subscribe( 
-      () => this.computeFare() );
+      () => { this.computeFare(); this.testList(); } );
   }
 
   ngOnInit() {
     this.onChanges();
+    this.testList();
   }
 
 }
