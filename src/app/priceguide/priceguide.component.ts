@@ -24,20 +24,45 @@ export class PriceguideComponent implements OnInit {
   endPlaces: placesListDesc[] = END;
   // detailsList: tripDetailsListDesc[] = DETAILS; 
 
-  computeFare = function() {
+  computeFare() {
     let tStart: string = this.startLoc.value;
     let tEnd: string = this.endLoc.value;
-    if(tStart === 'bamenda' && tEnd === 'buea') {
-      let tPrice: number = 4500;
-      let tDistance: number = 320;
-      let tRoad: string = 'BAD';
+    if((tStart === 'bamenda' && tEnd === 'buea') || (tStart === 'buea' && tEnd === 'bamenda')) {
+      let tPrice: number = 3600;
+      let tDistance: number = 343;
+      let tRoad: string = 'AVERAGE';
+      return [tPrice, tDistance, tRoad];
+    } if((tStart === 'bamenda' && tEnd === 'douala') || (tStart === 'douala' && tEnd === 'bamenda')) {
+      let tPrice: number = 3200;
+      let tDistance: number = 321;
+      let tRoad: string = 'GOOD';
+      return [tPrice, tDistance, tRoad];
+    } if((tStart === 'bamenda' && tEnd === 'tibati') || (tStart === 'tibati' && tEnd === 'bamenda')) {
+      let tPrice: number = 9500;
+      let tDistance: number = 454;
+      let tRoad: string = 'POOR';
+      return [tPrice, tDistance, tRoad];
+    } if((tStart === 'bamenda' && tEnd === 'yaounde') || (tStart === 'yaounde' && tEnd === 'bamenda')) {
+      let tPrice: number = 4100;
+      let tDistance: number = 372;
+      let tRoad: string = 'MIXED';
       return [tPrice, tDistance, tRoad];
     } else { 
-      return [0, 0, 'N/A'];
+      return ['', '', ''];
      }
   }
 
-  testNew = function() {
+  showUnit() {
+    let startValue: string = this.startLoc.value;
+    let endValue: string = this.endLoc.value;
+    // let returnValue = this.computeFare();
+    // console.log(returnValue);
+    if (startValue && endValue) {
+      return ['XAF', 'KM'];
+    } else { return ['', '']; }
+  }
+
+  /* testNew = function() {
     let input1: string = this.startLoc.value;
     let input2: string = this.endLoc.value;
     // console.log(input1, input2);
@@ -51,7 +76,7 @@ export class PriceguideComponent implements OnInit {
       // console.log(item);
     }
 
-   /* for (let i = 0; i < d.length; i++) {
+    for (let i = 0; i < d.length; i++) {
       if (d[i].includes(input1) && d[i].includes(input2)) {
         let tPrice = d[i][2];
         let tDistance = d[i][3];
@@ -59,21 +84,24 @@ export class PriceguideComponent implements OnInit {
         console.log(tPrice, tDistance, tRoad);
       }
       // return console.log(d[i]);
-    } */
-  }
+    }
+  } */
 
   onChanges(): void {
     this.startLoc.valueChanges.subscribe( 
-      () => { this.computeFare();
-              this.testNew(); } );
+      () => { 
+        this.computeFare(); 
+        this.showUnit(); 
+      });
     this.endLoc.valueChanges.subscribe( 
-      () => { this.computeFare();
-              this.testNew(); } );
+      () => { 
+        this.computeFare(); 
+        this.showUnit();
+      });
   }
 
   ngOnInit() {
     this.onChanges();
-    this.testNew();
   }
 
 }

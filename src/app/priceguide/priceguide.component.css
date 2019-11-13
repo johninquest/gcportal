@@ -30,17 +30,16 @@ mat-form-field { width: 15em; }
 }
 
 .resulttitle { 
-    font-size: 0.9em;
-    font-weight: bold; 
+    font-weight: bolder; 
     color: gray;
     margin: 0.5em;
 }
 
 .fieldname {
-    font-size: 0.8em;
-    color: gray;
+       color: gray;
 }
 
+/*
 .selectedloc {
     font-size: 0.8em;
-}
+} */

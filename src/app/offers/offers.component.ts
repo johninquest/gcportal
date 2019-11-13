@@ -11,7 +11,7 @@ export class OffersComponent implements OnInit {
   panelOpenState = false;
 
   msg() {
-    alert('coming soon ... ');
+    alert('Under construction! 👷🏾');
   }
 
   constructor() { }
