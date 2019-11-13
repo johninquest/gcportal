@@ -3,13 +3,13 @@
 
 <div class="locations">
     <mat-form-field class="start-location">
-        <mat-select placeholder="Departure" [formControl]="startLoc">
+        <mat-select placeholder="Departure" [formControl]="startLocation">
           <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
         </mat-select>
     </mat-form-field>
 
     <mat-form-field class="end-location">
-        <mat-select placeholder="Arrival" [formControl]="endLoc">
+        <mat-select placeholder="Arrival" [formControl]="endLocation">
             <mat-option *ngFor="let ePlace of endPlaces" [value]="ePlace.value">{{ ePlace.viewValue }}</mat-option>
         </mat-select>
     </mat-form-field>
@@ -17,10 +17,10 @@
 
 <div class="results">
     <div class="resulttitle">YOUR TRIP DETAILS</div>
-    <div><span class="fieldname">FROM: </span><span class="selectedloc">{{ startLoc.value | uppercase }}</span></div>
-    <div><span class="fieldname">TO: </span><span class="selectedloc">{{ endLoc.value | uppercase }}</span></div>
+    <div><span class="fieldname">FROM: </span><span class="selectedloc">{{ startLocation.value | uppercase }}</span></div>
+    <div><span class="fieldname">TO: </span><span class="selectedloc">{{ endLocation.value | uppercase }}</span></div>
     <div><span class="fieldname">PRICE: </span>{{ computeFare()[0] }}<span class="unit"> {{ showUnit()[0] }}</span></div>
     <div><span class="fieldname">DISTANCE: </span>{{ computeFare()[1] }}<span class="unit"> {{ showUnit()[1] }}</span></div>
-    <div><span class="fieldname">ROAD QUALITY: </span>{{ computeFare()[2] }}</div>
+    <div><span class="fieldname">ROAD STATE: </span>{{ computeFare()[2] }}</div>
 </div>
 

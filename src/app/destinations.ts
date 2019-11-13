@@ -37,31 +37,21 @@ export const END = [
 ];
 
 export const DETAILS = [
-   /* from/to, from/to, price, distance */
-   {from: 'bafoussam', 
-    to: [
-        {city: 'bamenda', price: 4500, distance: 320},
-        {city: 'buea', price: 4500, distance: 320},
-        {city: 'douala', price: 4500, distance: 320},
-        {city: 'yaounde', price: 4500, distance: 320},
-    ]},
-    {from: 'bamenda', 
-    to: [
-        {city: 'bafoussam', price: 4500, distance: 320},
-        {city: 'buea', price: 4500, distance: 320},
-        {city: 'douala', price: 4500, distance: 320},
-        {city: 'yaounde', price: 4500, distance: 320},
-    ]}, 
-    {from: 'buea', 
-    to: [
-        {city: 'bamenda', price: 4500, distance: 320},
-        {city: 'bafoussam', price: 4500, distance: 320},
-        {city: 'douala', price: 1200, distance: 90},
-        {city: 'kumba', price: 4500, distance: 320},
-        {city: 'mamfe', price: 4500, distance: 320},
-        {city: 'muyuka', price: 4500, distance: 320},
-        {city: 'yaounde', price: 4500, distance: 320}
-    ]}
+   /* from/to, from/to, price, distance, road state */
+   {from: 'buea', to: 'bamenda', price: 4600, distance: 336, roadstate: 'AVERAGE'},
+   {from: 'buea', to: 'bafoussam', price: 3900, distance: 280, roadstate: 'AVERAGE'},
+   {from: 'buea', to: 'douala', price: 1200, distance: 71.2, roadstate: 'GOOD'},
+   {from: 'buea', to: 'idenau', price: 2000, distance: 70.2, roadstate: 'GOOD'},
+   {from: 'buea', to: 'kribi', price: 2900, distance: 271, roadstate: 'GOOD'},
+   {from: 'buea', to: 'kumba', price: 1300, distance: 71.4, roadstate: 'GOOD'},
+   {from: 'buea', to: 'limbe', price: 500, distance: 30.1, roadstate: 'GOOD'},
+   {from: 'buea', to: 'mamfe', price: 3300, distance: 224, roadstate: 'BAD'},
+   {from: 'buea', to: 'mutengene', price: 150, distance: 12.5, roadstate: 'GOOD'},
+   {from: 'buea', to: 'muyuka', price: 400, distance: 26.2, roadstate: 'GOOD'},
+   {from: 'buea', to: 'tiko', price: 300, distance: 17.8, roadstate: 'GOOD'},
+   {from: 'buea', to: 'yaounde', price: 3500, distance: 371, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'kribi', price: 1900, distance: 250, roadstate: 'AVERAGE'},
+   {from: 'tiko', to: 'douala', price: 700, distance: 55.4, roadstate: 'GOOD'}
 ];
 
 /*
@@ -101,6 +91,8 @@ Distance
 4. buea - bamenda -> 325 to 350 km
 5. buea - kumba -> 71.4 km
 6. buea - mamfe -> 224 km
-7. buea - bafoussam -> 270 km
-8. buea - tiko -> 17.8 km
+7. buea - muyuka -> 26.2 km
+8. buea - bafoussam -> 270 km
+9. buea - tiko -> 17.8 km
+10. buea - idenau -> 70.2 km
 */
