@@ -41,6 +41,10 @@ sup {
     font-weight: bold;
 }
 
+.offeritems {
+    color: gray;
+}
+
 
 mat-divider {
     width: 12em;
