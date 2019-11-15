@@ -17,10 +17,12 @@ export const START = [
 
 export const END = [
     {value: null, viewValue: ''},
+    {value: 'baffia', viewValue: 'BAFFIA'},
     {value: 'bafoussam', viewValue: 'BAFOUSSAM'},
     {value: 'bamenda', viewValue: 'BAMENDA'},
     {value: 'buea', viewValue: 'BUEA'},
     {value: 'douala', viewValue: 'DOUALA'},
+    {value: 'ekona', viewValue: 'EKONA'},
     {value: 'eyumojok', viewValue: 'EYUMOJOK'},
     {value: 'fontem', viewValue: 'FONTEM'},
     {value: 'idenau', viewValue: 'IDENAU'},
@@ -51,10 +53,24 @@ export const DETAILS = [
    {from: 'buea', to: 'tiko', price: 300, distance: 17.8, roadstate: 'GOOD'},
    {from: 'buea', to: 'yaounde', price: 3500, distance: 371, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'kribi', price: 1900, distance: 250, roadstate: 'AVERAGE'},
-   {from: 'tiko', to: 'douala', price: 700, distance: 55.4, roadstate: 'GOOD'}
+   {from: 'tiko', to: 'douala', price: 700, distance: 55.4, roadstate: 'GOOD'},
+
+   {from: 'muyuka', to: 'baffia', price: 250, distance: 17.8, roadstate: 'BAD'},
+   {from: 'muyuka', to: 'bamenda', price: 3200, distance: 317.0, roadstate: 'AVERAGE'},
+   {from: 'muyuka', to: 'douala', price: 1200, distance: 90.1, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'ekona', price: 300, distance: 12.4, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'idenau', price: 2000, distance: 89.0, roadstate: 'N/A'},
+   {from: 'muyuka', to: 'kumba', price: 800, distance: 45.5, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'limbe', price: 1000, distance: 49.0, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'malende', price: 150, distance: 6.6, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'mutengene', price: 800, distance: 31.4, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'tiko', price: 900, distance: 36.7, roadstate: 'GOOD'},
+   {from: 'muyuka', to: 'tombel', price: 0, distance: 78.2, roadstate: 'N/A'},
+   {from: 'muyuka', to: 'yaounde', price: 4500, distance: 352.0, roadstate: 'AVERAGE'}
 ];
 
 /*
+SW Region
 mundemba,
 kendem,
 ekondo titi,
@@ -80,19 +96,14 @@ idenau,
 eyumojok,
 numba,
 dikome,
-Besongabang
-*/
-
-/*
-Distance
-1. buea - limbe -> 30.1 km
-2. buea - douala -> 71.2 km
-3. buea - yaounde -> 333 km
-4. buea - bamenda -> 325 to 350 km
-5. buea - kumba -> 71.4 km
-6. buea - mamfe -> 224 km
-7. buea - muyuka -> 26.2 km
-8. buea - bafoussam -> 270 km
-9. buea - tiko -> 17.8 km
-10. buea - idenau -> 70.2 km
+besongabang,
+bolifamba,
+moliwe,
+mondoni,
+malende,
+ekombe bonji,
+small ekombe,
+kombone,
+bekondo,
+mofako bekondo
 */
