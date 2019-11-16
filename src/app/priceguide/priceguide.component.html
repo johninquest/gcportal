@@ -16,11 +16,11 @@
 </div>
 
 <div class="results">
-    <div class="resulttitle">YOUR TRIP DETAILS</div>
+    <div class="resulttitle">ROUTE DETAILS</div>
     <div><span class="fieldname">FROM: </span><span class="selectedloc">{{ startLocation.value | uppercase }}</span></div>
     <div><span class="fieldname">TO: </span><span class="selectedloc">{{ endLocation.value | uppercase }}</span></div>
-    <div><span class="fieldname">PRICE: </span>{{ computeFare()[0] }}<span class="unit"> {{ showUnit()[0] }}</span></div>
+    <div><span class="fieldname">PRICE<span class="approx">(approx)</span>: </span>{{ computeFare()[0] }}<span class="unit"> {{ showUnit()[0] }}</span></div>
     <div><span class="fieldname">DISTANCE: </span>{{ computeFare()[1] }}<span class="unit"> {{ showUnit()[1] }}</span></div>
-    <div><span class="fieldname">ROAD STATE: </span>{{ computeFare()[2] }}</div>
+    <div><span class="fieldname">ROAD QUALITY: </span>{{ computeFare()[2] }}</div>
 </div>
 

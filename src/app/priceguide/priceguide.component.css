@@ -39,6 +39,10 @@ mat-form-field { width: 15em; }
        color: gray;
 }
 
+.approx {
+    font-size: 0.5em;
+}
+
 /*
 .selectedloc {
     font-size: 0.8em;
