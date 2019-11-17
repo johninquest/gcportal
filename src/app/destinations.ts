@@ -20,8 +20,10 @@ export const END = [
     {value: 'baffia', viewValue: 'BAFFIA'},
     {value: 'bafoussam', viewValue: 'BAFOUSSAM'},
     {value: 'bamenda', viewValue: 'BAMENDA'},
+    {value: 'bimbia', viewValue: 'BIMBIA'},
     {value: 'buea', viewValue: 'BUEA'},
     {value: 'douala', viewValue: 'DOUALA'},
+    {value: 'edea', viewValue: 'EDEA'},
     {value: 'ekona', viewValue: 'EKONA'},
     {value: 'eyumojok', viewValue: 'EYUMOJOK'},
     {value: 'fontem', viewValue: 'FONTEM'},
@@ -45,6 +47,7 @@ export const DETAILS = [
    {from: 'buea', to: 'bamenda', price: 4600, distance: 336, roadstate: 'AVERAGE'},
    {from: 'buea', to: 'bafoussam', price: 3900, distance: 280, roadstate: 'AVERAGE'},
    {from: 'buea', to: 'douala', price: 1200, distance: 71.2, roadstate: 'GOOD'},
+   {from: 'buea', to: 'ejumojok', price: 0, distance: 257, roadstate: 'GOOD'},
    {from: 'buea', to: 'idenau', price: 2000, distance: 70.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'kribi', price: 2900, distance: 271, roadstate: 'GOOD'},
    {from: 'buea', to: 'kumba', price: 1300, distance: 71.4, roadstate: 'GOOD'},
@@ -54,8 +57,26 @@ export const DETAILS = [
    {from: 'buea', to: 'muyuka', price: 400, distance: 26.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'tiko', price: 300, distance: 17.8, roadstate: 'GOOD'},
    {from: 'buea', to: 'yaounde', price: 3500, distance: 371, roadstate: 'AVERAGE'},
+
+   {from: 'douala', to: 'bamenda', price: 0, distance: 323, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'bafoussam', price: 0, distance: 258, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'bertoua', price: 0, distance: 595, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'ebolowa', price: 0, distance: 319, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'edea', price: 0, distance: 92.7, roadstate: 'GOOD'},
+   {from: 'douala', to: 'kumba', price: 0, distance: 136, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'limbe', price: 0, distance: 77.3, roadstate: 'GOOD'},
    {from: 'douala', to: 'kribi', price: 1900, distance: 250, roadstate: 'AVERAGE'},
-   {from: 'tiko', to: 'douala', price: 700, distance: 55.4, roadstate: 'GOOD'},
+   {from: 'douala', to: 'tiko', price: 1900, distance: 55.5, roadstate: 'GOOD'},
+   {from: 'douala', to: 'yaounde', price: 0, distance: 263, roadstate: 'GOOD'},
+
+   {from: 'limbe', to: 'bimbia', price: 0, distance: 11.6, roadstate: 'BAD'},
+   {from: 'limbe', to: 'ekona', price: 0, distance: 36.7, roadstate: 'GOOD'},
+   {from: 'limbe', to: 'ejumojok', price: 0, distance: 280, roadstate: 'MIXED'},
+   {from: 'limbe', to: 'idenau', price: 0, distance: 42.3, roadstate: 'GOOD'},
+   {from: 'limbe', to: 'kumba', price: 0, distance: 94.1, roadstate: 'AVERAGE'},
+   {from: 'limbe', to: 'mamfe', price: 0, distance: 246, roadstate: 'GOOD'},
+   {from: 'limbe', to: 'mutengene', price: 0, distance: 17.5, roadstate: 'GOOD'},
+   {from: 'limbe', to: 'tiko', price: 0, distance: 23.3, roadstate: 'GOOD'},
 
    {from: 'muyuka', to: 'baffia', price: 250, distance: 17.8, roadstate: 'BAD'},
    {from: 'muyuka', to: 'bamenda', price: 3200, distance: 317.0, roadstate: 'AVERAGE'},
@@ -69,7 +90,9 @@ export const DETAILS = [
    {from: 'muyuka', to: 'mutengene', price: 800, distance: 31.4, roadstate: 'GOOD'},
    {from: 'muyuka', to: 'tiko', price: 900, distance: 36.7, roadstate: 'GOOD'},
    {from: 'muyuka', to: 'tombel', price: 0, distance: 78.2, roadstate: 'N/A'},
-   {from: 'muyuka', to: 'yaounde', price: 4500, distance: 352.0, roadstate: 'AVERAGE'}
+   {from: 'muyuka', to: 'yaounde', price: 4500, distance: 352.0, roadstate: 'AVERAGE'},
+
+   {from: 'tiko', to: 'douala', price: 700, distance: 55.4, roadstate: 'GOOD'}
 ];
 
 /*
