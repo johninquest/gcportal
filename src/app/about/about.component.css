@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    margin-bottom: 2em;
 }
 
 .title {
@@ -50,13 +51,13 @@ mat-divider {
     width: 12em;
 }
 
-.test {
+.highlights-title {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-.test p {
+.highlights-title p {
     margin-bottom: 0.1em;
 }
 
@@ -67,6 +68,7 @@ mat-divider {
     bottom: 0;
     width: 100%;
     margin-bottom: 0.5em;
+    margin-top: 2em;
  }
  
 .privacy .privacy-title {
@@ -81,6 +83,7 @@ mat-divider {
  }
 
  .privacy-msg {
+     font-size: 0.7em;
     text-align: left;
     margin-bottom: 0;
  }
