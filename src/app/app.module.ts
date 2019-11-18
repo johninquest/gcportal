@@ -35,6 +35,6 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [HomeComponent]
 })
 export class AppModule { }

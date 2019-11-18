@@ -9,13 +9,13 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'services', component: OffersComponent },
-  { path: 'priceguide', component: PriceguideComponent },
+  { path: 'services', component: OffersComponent, },
+  { path: 'services/priceguide', component: PriceguideComponent },
   { path: '**', component: HomeComponent }
 ];
 
