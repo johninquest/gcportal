@@ -12,7 +12,6 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
-import { ResourcesComponent } from './resources/resources.component';
 import { PriceguideComponent } from './priceguide/priceguide.component';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
     AboutComponent,
     NewsComponent,
     OffersComponent,
-    ResourcesComponent,
     PriceguideComponent
   ],
   imports: [
