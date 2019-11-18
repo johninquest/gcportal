@@ -1,19 +1,19 @@
 
 .about {
+    margin-top: 1.5em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .title {
-    margin-top: 2em;
     font-weight: bold;
     font-size: 1.5em;
 }
 
 .info {
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 .info .catchphrase {
@@ -34,7 +34,7 @@ sup {
 }
 
 .highlights {
-    margin-bottom: 2em;
+    margin-bottom: 0.8em;
     text-align: auto;
 }
 
@@ -45,7 +45,6 @@ sup {
 .offeritems {
     color: #FFC107;
 }
-
 
 mat-divider {
     width: 12em;
@@ -68,7 +67,7 @@ mat-divider {
     bottom: 0;
     width: 100%;
     margin-bottom: 0.5em;
-    margin-top: 2em;
+    margin-top: 1em;
  }
  
 .privacy .privacy-title {
@@ -78,12 +77,13 @@ mat-divider {
  }
 
 .privacy .privacy-title p {
+    font-size: 0.8em;
      font-weight: bold;
      margin-bottom: 0.1em;
  }
 
  .privacy-msg {
-     font-size: 0.7em;
+    font-size: 0.7em;
     text-align: left;
     margin-bottom: 0;
  }
