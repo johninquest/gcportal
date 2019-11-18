@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/tapp_de",
+    "public": "dist/ptb",
     "ignore": [
       "firebase.json",
       "**/.*",
