@@ -44,8 +44,8 @@ export const END = [
 
 export const DETAILS = [
    /* from/to, from/to, price, distance, road state */
-   {from: 'buea', to: 'bamenda', price: 4600, distance: 336, roadstate: 'AVERAGE'},
-   {from: 'buea', to: 'bafoussam', price: 3900, distance: 280, roadstate: 'AVERAGE'},
+   {from: 'buea', to: 'bamenda', price: 6000, distance: 345, roadstate: 'AVERAGE'},
+   {from: 'buea', to: 'bafoussam', price: 3900, distance: 270, roadstate: 'AVERAGE'},
    {from: 'buea', to: 'douala', price: 1200, distance: 71.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'ejumojok', price: 0, distance: 257, roadstate: 'GOOD'},
    {from: 'buea', to: 'idenau', price: 2000, distance: 70.2, roadstate: 'GOOD'},
@@ -54,7 +54,7 @@ export const DETAILS = [
    {from: 'buea', to: 'limbe', price: 500, distance: 30.1, roadstate: 'GOOD'},
    {from: 'buea', to: 'mamfe', price: 3300, distance: 224, roadstate: 'BAD'},
    {from: 'buea', to: 'mutengene', price: 150, distance: 12.5, roadstate: 'GOOD'},
-   {from: 'buea', to: 'muyuka', price: 400, distance: 26.2, roadstate: 'GOOD'},
+   {from: 'buea', to: 'muyuka', price: 1000, distance: 26.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'tiko', price: 300, distance: 17.8, roadstate: 'GOOD'},
    {from: 'buea', to: 'yaounde', price: 3500, distance: 371, roadstate: 'AVERAGE'},
 
@@ -63,7 +63,7 @@ export const DETAILS = [
    {from: 'douala', to: 'bertoua', price: 0, distance: 595, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'ebolowa', price: 0, distance: 319, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'edea', price: 0, distance: 92.7, roadstate: 'GOOD'},
-   {from: 'douala', to: 'kumba', price: 0, distance: 136, roadstate: 'AVERAGE'},
+   {from: 'douala', to: 'kumba', price: 2500, distance: 136, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'limbe', price: 0, distance: 77.3, roadstate: 'GOOD'},
    {from: 'douala', to: 'kribi', price: 1900, distance: 250, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'tiko', price: 1900, distance: 55.5, roadstate: 'GOOD'},
