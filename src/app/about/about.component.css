@@ -38,12 +38,13 @@ sup {
     text-align: auto;
 }
 
-.highlights ul li span {
-    font-weight: bold;
+.highlights ul li {
+    font-size: 0.9em;
 }
 
 .offeritems {
-    color: #FFC107;
+    color: #FFC107; 
+    font-weight: bold;
 }
 
 mat-divider {
@@ -59,7 +60,6 @@ mat-divider {
 .highlights-title p {
     margin-bottom: 0.1em;
 }
-
 
 .privacy {
     text-align: center;
@@ -84,6 +84,6 @@ mat-divider {
 
  .privacy-msg {
     font-size: 0.7em;
-    text-align: left;
+    /* text-align: center; */
     margin-bottom: 0;
  }
