@@ -54,8 +54,8 @@ export const END = [
 ];
 
 export const DETAILS = [
-   /* from/to, from/to, price, distance, road state */
-   {from: 'buea', to: 'bamenda', price: 6000, distance: 345, roadstate: 'AVERAGE'},
+   /* from/to, from/to, price, distance, road quality */
+   {from: 'buea', to: 'bamenda', price: 6000, distance: 340, roadstate: 'AVERAGE'},
    {from: 'buea', to: 'bafoussam', price: 0, distance: 270, roadstate: 'AVERAGE'},
    {from: 'buea', to: 'douala', price: 0, distance: 71.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'ejumojok', price: 0, distance: 257, roadstate: 'GOOD'},
@@ -67,7 +67,7 @@ export const DETAILS = [
    {from: 'buea', to: 'mutengene', price: 0, distance: 12.5, roadstate: 'GOOD'},
    {from: 'buea', to: 'muyuka', price: 1000, distance: 26.2, roadstate: 'GOOD'},
    {from: 'buea', to: 'tiko', price: 0, distance: 17.8, roadstate: 'GOOD'},
-   {from: 'buea', to: 'yaounde', price: 3500, distance: 371, roadstate: 'AVERAGE'},
+   {from: 'buea', to: 'yaounde', price: 0, distance: 333, roadstate: 'AVERAGE'},
 
    {from: 'douala', to: 'bamenda', price: 0, distance: 323, roadstate: 'AVERAGE'},
    {from: 'douala', to: 'bafoussam', price: 0, distance: 258, roadstate: 'AVERAGE'},
@@ -84,7 +84,7 @@ export const DETAILS = [
    {from: 'limbe', to: 'ekona', price: 0, distance: 36.7, roadstate: 'GOOD'},
    {from: 'limbe', to: 'ejumojok', price: 0, distance: 280, roadstate: 'MIXED'},
    {from: 'limbe', to: 'idenau', price: 0, distance: 42.3, roadstate: 'GOOD'},
-   {from: 'limbe', to: 'kumba', price: 0, distance: 94.1, roadstate: 'AVERAGE'},
+   {from: 'limbe', to: 'kumba', price: 0, distance: 94.1, roadstate: 'GOOD'},
    {from: 'limbe', to: 'mamfe', price: 0, distance: 246, roadstate: 'GOOD'},
    {from: 'limbe', to: 'mutengene', price: 0, distance: 17.5, roadstate: 'GOOD'},
    {from: 'limbe', to: 'tiko', price: 0, distance: 23.3, roadstate: 'GOOD'},
@@ -105,42 +105,3 @@ export const DETAILS = [
 
    {from: 'tiko', to: 'douala', price: 0, distance: 55.4, roadstate: 'GOOD'}
 ];
-
-/*
-SW Region
-mundemba,
-kendem,
-ekondo titi,
-mbonge,
-tombel,
-manyemen,
-nguti,
-eyang,
-tinto,
-kembong,
-fontem,
-etuku,
-small ekombe,
-new barombi,
-malende,
-ekona,
-mondoni,
-moliwe,
-bonadikombo,
-batoke,
-bakingili,
-idenau,
-eyumojok,
-numba,
-dikome,
-besongabang,
-bolifamba,
-moliwe,
-mondoni,
-malende,
-ekombe bonji,
-small ekombe,
-kombone,
-bekondo,
-mofako bekondo
-*/
