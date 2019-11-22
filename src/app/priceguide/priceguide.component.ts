@@ -24,7 +24,7 @@ export class PriceguideComponent implements OnInit {
   endPlaces: placesListDesc[] = END;
   // detailsList: tripDetailsListDesc[] = DETAILS; 
 
-  computeFare() {
+  tripDetails() {
     let tStart: string = this.startLocation.value;
     let tEnd: string = this.endLocation.value;
     
@@ -44,8 +44,18 @@ export class PriceguideComponent implements OnInit {
     }
   }
 
+  computeFare(priceValue: number,  distanceValue: number) {
+    if(priceValue) {
+      // returns price if a fixed has been entered for that route
+      return priceValue;
+    }else {
+      // define formula for calculating and returning price based on distance
+      return distanceValue;
+    }
+  }
+
   showUnit() {
-    let returnValue = this.computeFare();
+    let returnValue = this.tripDetails();
     // console.log(returnValue);
     if (returnValue.includes('')) {
       return ['', ''];
@@ -55,15 +65,17 @@ export class PriceguideComponent implements OnInit {
      }
   }
 
+
+
   onChanges(): void {
     this.startLocation.valueChanges.subscribe( 
       () => { 
-        this.computeFare(); 
+        this.tripDetails(); 
         this.showUnit(); 
       });
     this.endLocation.valueChanges.subscribe( 
       () => { 
-        this.computeFare(); 
+        this.tripDetails(); 
         this.showUnit();
       });
   }
