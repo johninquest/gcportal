@@ -22,7 +22,6 @@ export class PriceguideComponent implements OnInit {
   endLocation = new FormControl('');
   startPlaces: placesListDesc[] = START;
   endPlaces: placesListDesc[] = END;
-  // detailsList: tripDetailsListDesc[] = DETAILS; 
 
   tripDetails() {
     let tStart: string = this.startLocation.value;
@@ -33,30 +32,28 @@ export class PriceguideComponent implements OnInit {
         if ((d.from === tStart && d.to === tEnd) || (d.from === tEnd && d.to === tStart)) 
         { return d; } });
     if (getDetail) {
-      // console.log(getDetail);
       let tPrice: number = getDetail['price'];
       let tDistance: number = getDetail['distance'];
       let tRoad: string = getDetail['roadstate'];
       return [tPrice, tDistance, tRoad];
     } else {
-      // console.log('No match!');
       return ['', '', ''];
     }
   }
 
-  computeFare(priceValue: number,  distanceValue: number) {
+  computeFare(priceValue: any, distanceValue: any) {
     if(priceValue) {
       // returns price if a fixed has been entered for that route
       return priceValue;
     }else {
       // define formula for calculating and returning price based on distance
-      return distanceValue;
+      let calcPrice: any = (28 * distanceValue).toFixed(2);
+      return calcPrice;
     }
   }
 
   showUnit() {
     let returnValue = this.tripDetails();
-    // console.log(returnValue);
     if (returnValue.includes('')) {
       return ['', ''];
       // return ['XAF', 'KM'];
@@ -64,8 +61,6 @@ export class PriceguideComponent implements OnInit {
       return ['XAF', 'KM'];
      }
   }
-
-
 
   onChanges(): void {
     this.startLocation.valueChanges.subscribe( 
@@ -83,5 +78,4 @@ export class PriceguideComponent implements OnInit {
   ngOnInit() {
     this.onChanges();
   }
-
 }
