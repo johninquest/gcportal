@@ -42,13 +42,15 @@ export class PriceguideComponent implements OnInit {
   }
 
   computeFare(priceValue: any, distanceValue: any) {
-    if(priceValue) {
+    if (priceValue) {
       // returns price if a fixed has been entered for that route
       return priceValue;
-    }else {
+    }if (!priceValue && distanceValue) {
       // define formula for calculating and returning price based on distance
-      let calcPrice: any = (28 * distanceValue).toFixed(2);
+      let calcPrice: any = (18 * distanceValue).toFixed(2);
       return calcPrice;
+    }else {
+      return '';
     }
   }
 
