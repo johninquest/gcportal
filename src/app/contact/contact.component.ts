@@ -56,6 +56,14 @@ export class ContactComponent implements OnInit {
         err => { if(err === 200) { this.resetInputs(); } } 
           );
     }
+  
+ /*
+    sendToWhatsApp() {
+    let rNumber: string = '{{ Place phone number }}';
+    let rMessage: string = '{{ Leave me the fuck alone }}';
+    let whatsappReq = 'https://api.whatsapp.com/send?phone=' + rNumber + '&text=%20' + rMessage;
+    return window.open(whatsappReq);
+  } */  
 
   ngOnInit() { }
 
