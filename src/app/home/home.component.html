@@ -1,11 +1,53 @@
 
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+    <button mat-menu-item routerLink="/about" matTooltip="About MANDI GUIDE">
+      <mat-icon>info</mat-icon>
+      <span>ABOUT</span>
+    </button>
+    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
+      <mat-icon>mail</mat-icon>
+      <span>CONTACT</span>
+    </button>
+    <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
+      <mat-icon>assignment</mat-icon>
+      <span>NEWS</span>
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="services" matTooltip="Transport-related services">
+      <mat-icon>local_offer</mat-icon>
+      <span>SERVICES</span>
+    </button>
+  </mat-menu>
+  <mat-menu #services="matMenu">
+    <button mat-menu-item routerLink="/priceguide"> 
+      <mat-icon>directions</mat-icon>
+      <span>PRICE GUIDE</span>
+    </button>
+    <button mat-menu-item routerLink="/records">
+      <mat-icon>store</mat-icon>
+      <span>RECORDS</span>
+    </button>
+    <button mat-menu-item routerLink="/login" disabled>
+      <mat-icon>person</mat-icon>
+      <span>OTHERS</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
+
 <div class="pageTitle">
   <p matTooltip="Reliable transport information and services">- MANDI GUIDE -<br><span style="font-size: 0.6em">Reliable transport information and services</span></p>
 </div>
 
 <div class="start-btn">
   <button 
-    mat-raised-button color="primary" routerLink="/services" matTooltip="Check out our services">
+    mat-raised-button color="primary" matTooltip="Check out our services">
     SERVICES
   </button>
 

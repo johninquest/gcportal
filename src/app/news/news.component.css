@@ -1,4 +1,8 @@
 
+button:hover { background-color: #FFC107; }
+
+.mat-menu-item:hover { background-color: #FFC107; }
+
 .title {
     margin-top: 2em;
     display: flex;

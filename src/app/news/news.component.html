@@ -1,4 +1,20 @@
 
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
+      <mat-icon>mail</mat-icon>
+      <span>CONTACT</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
+
 <div class="title">
   <p matTooltip="Latest transport-related news">NEWS</p>
 </div>

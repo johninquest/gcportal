@@ -1,4 +1,12 @@
 
+button:hover {
+    background-color: #FFC107;
+}
+
+.mat-menu-item:hover {
+    background-color: #FFC107;
+}
+
 .pageTitle {
     text-align: center;
     margin-top: 3em;

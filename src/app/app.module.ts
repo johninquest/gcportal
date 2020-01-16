@@ -11,8 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
-import { OffersComponent } from './offers/offers.component';
 import { PriceguideComponent } from './priceguide/priceguide.component';
+import { RecordsComponent } from './records/records.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
     ContactComponent,
     AboutComponent,
     NewsComponent,
-    OffersComponent,
-    PriceguideComponent
+    PriceguideComponent,
+    RecordsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,4 +39,5 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
   bootstrap: [AppComponent],
   entryComponents: [HomeComponent]
 })
+
 export class AppModule { }

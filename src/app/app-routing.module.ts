@@ -4,8 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
-import { OffersComponent } from './offers/offers.component';
 import { PriceguideComponent } from './priceguide/priceguide.component';
+import { RecordsComponent } from './records/records.component';
+import { LoginComponent } from './login/login.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -14,8 +15,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'services', component: OffersComponent, },
-  { path: 'services/priceguide', component: PriceguideComponent },
+  { path: 'priceguide', component: PriceguideComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'records', component: RecordsComponent },
   { path: '**', component: HomeComponent }
 ];
 

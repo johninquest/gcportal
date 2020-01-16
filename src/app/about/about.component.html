@@ -1,4 +1,20 @@
 
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+    <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
+      <mat-icon>assignment</mat-icon>
+      <span>NEWS</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
+
 <div class="about">
   <div class="title">ABOUT</div>
 
@@ -11,10 +27,10 @@
         <mat-divider></mat-divider>
       </div> 
       <ul>
-        <li><span class="offeritems">Planning services</span> - let us help plan your transport-related activities, so you can focus on the things that matter to you more.</li>
-        <li><span class="offeritems" routerLink="/services/priceguide">Price information</span> - avoid paying too much. Use our price guide for orientation.</li>
-        <li><span class="offeritems">Safety information</span> - you need advice or help moving your people, goods or services around safely? Contact us, we will happily help.</li>
-        <li><span class="offeritems" routerLink="/news">Transport news</span> - use our modest news section to stay up-to-date with all transport-related happenings in Cameroon.</li>
+        <li><span class="offeritems">Planning services</span></li>
+        <li><span class="offeritems" routerLink="/services/priceguide">Price information</span></li>
+        <li><span class="offeritems">Safety information</span></li>
+        <li><span class="offeritems" routerLink="/news">Transport news</span></li>
       </ul>
     </div> 
   </div>

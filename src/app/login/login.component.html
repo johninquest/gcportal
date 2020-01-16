@@ -1,0 +1,11 @@
+
+
+<div class="login">
+    <mat-form-field>
+      <input matInput placeholder="Username" [formControl]="userid">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="Password" type="password" [formControl]="userpassword">
+    </mat-form-field><br>
+    <button mat-raised-button color="primary" (click)="userAuth()">Log in</button>
+</div>
