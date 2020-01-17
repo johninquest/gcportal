@@ -5,7 +5,15 @@
         <mat-icon>home</mat-icon>
         <span>HOME</span>
       </button>
-      <button mat-menu-item routerLink="" matTooltip="Home">
+      <button mat-menu-item (click)="addData()">
+        <mat-icon>add</mat-icon>
+        <span>ADD RECORD</span>
+      </button>
+      <button mat-menu-item (click)="showAllData()">
+        <mat-icon>list</mat-icon>
+        <span>RECORD LIST</span>
+      </button>
+      <button mat-menu-item matTooltip="Log out">
         <mat-icon>power_settings_new</mat-icon>
         <span>LOG OUT</span>
       </button>
@@ -14,4 +22,69 @@
       <mat-icon>menu</mat-icon>
     </button>
 </nav>
+
+<div class="btns">
+  <button mat-raised-button color="primary" (click)="showInput()">ADD RECORD</button>
+  <button mat-raised-button color="primary" (click)="updateData()">UPDATE RECORD</button>
+  <button mat-raised-button color="primary" (click)="deleteData()">DELETE RECORD</button>    
+</div>
+
+<div *ngIf="toggleInput" class="data-input">
+  <mat-form-field>
+    <input matInput placeholder="FROM" [formControl]="start">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="TO" [formControl]="end">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="GIVEN NAME" [formControl]="firstname">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="SURNAME" [formControl]="lastname">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="FEE" [formControl]="fee">
+  </mat-form-field>
+  <div class="action-btns">
+    <button mat-raised-button color="accent" (click)="hideInput()">CANCEL</button>
+    <button mat-raised-button color="primary" (click)="addData()">&nbsp;SAVE&nbsp;</button>
+  </div>  
+</div>
+
+<table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="route">
+      <th mat-header-cell *matHeaderCellDef> ROUTE </th>
+      <td mat-cell *matCellDef="let element">
+        <span><span class="item-label">FROM: </span>{{ element.start }}</span><br>
+        <span><span class="item-label">TO: </span>{{ element.end }}</span>
+      </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+  <ng-container matColumnDef="person">
+    <th mat-header-cell *matHeaderCellDef> PERSON </th>
+    <td mat-cell *matCellDef="let element">
+      <span>{{ element.firstname }}</span><br>
+      <span>{{ element.lastname }}</span><br>
+      <span><span class="item-label">NID: </span>{{ element.national_id }}</span>
+    </td>
+    <td mat-footer-cell *matFooterCellDef></td>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> DETAILS </th>
+    <td mat-cell *matCellDef="let element">
+      <span><span class="item-label">DATE: </span> {{ dateFormater(element.created) }}</span><br>
+      <span><span class="item-label">FEE: </span> {{ element.fee }}</span><br>
+      <!--<span><span class="item-label">N. ID: </span>{{ element.national_id }}</span> -->
+    </td>
+    <td mat-footer-cell *matFooterCellDef class="total"> 4100 XAF </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="tr2" (dblclick)="showDoc(row.doc._id)"></tr> -->
+</table>
 

@@ -33,7 +33,6 @@ button:hover {
     margin-bottom: 1em;
 }
 
-sup {
-  vertical-align: super;
-  font-size: 0.4em;
+.menu-btn {
+    width: 17em;
 }

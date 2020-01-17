@@ -46,14 +46,12 @@
 </div>
 
 <div class="start-btn">
-  <button 
-    mat-raised-button color="primary" matTooltip="Check out our services">
-    SERVICES
-  </button>
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" matTooltip="Check out our services">SERVICES</button>
+  <mat-menu #menu="matMenu">
+    <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
+    <button class="menu-btn" mat-menu-item routerLink="/records">RECORDS</button>
+  </mat-menu>
 
-  <button 
-    mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">
-    NEWS
-  </button>
+  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">NEWS</button>
   
 </div>
