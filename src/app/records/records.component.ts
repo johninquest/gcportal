@@ -16,7 +16,7 @@ export class RecordsComponent implements OnInit {
   toggleInput: boolean = false;
   start = new FormControl(''); end = new FormControl('');
   firstname = new FormControl(''); lastname = new FormControl('', Validators.required); 
-  nidn = new FormControl('') // National Id number
+  fee = new FormControl(''); nidn = new FormControl('') // National Id number
   created = moment().format('YYYY-MM-DD HH:mm:ss');
   tableData: any;
 
@@ -28,7 +28,7 @@ export class RecordsComponent implements OnInit {
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
-        console.log(res); 
+        // console.log(res); 
         this.tableData = res; 
       },
       err => { console.log(err) }
@@ -49,16 +49,14 @@ export class RecordsComponent implements OnInit {
     return alert('Under construction');
    }
 
-   showInput() { 
-     this.toggleInput = true; 
-    }
+   showInput() { this.toggleInput = true; }
 
-   hideInput() { this.toggleInput = false }
+   hideInput() { this.toggleInput = false; }
 
    dateFormater(dbDate: string) {
      // let inDate = moment(dbDate).format('YYYY-MM-DD HH:mm:ss');
      let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
-     console.log(outDate);
+     // console.log(outDate);
      return outDate;
    }
 

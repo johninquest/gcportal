@@ -14,12 +14,17 @@ button:hover { background-color: #FFC107; }
     margin: 0.5em;
 }
 
-.data-input {
+.form {
     text-align: center;
 }
 
+.form mat-form-field {
+    margin: 0.2em;
+
+}
+
 .action-btns button {
-    margin: 1em;
+    margin: 0.4em;
 }
 
 table {

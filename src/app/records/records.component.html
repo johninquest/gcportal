@@ -24,12 +24,12 @@
 </nav>
 
 <div class="btns">
-  <button mat-raised-button color="primary" (click)="showInput()">ADD RECORD</button>
-  <button mat-raised-button color="primary" (click)="updateData()">UPDATE RECORD</button>
-  <button mat-raised-button color="primary" (click)="deleteData()">DELETE RECORD</button>    
+  <button mat-raised-button color="primary" (click)="showInput()">ADD</button>
+  <button mat-raised-button color="primary" (click)="updateData()">UPDATE</button>
+  <button mat-raised-button color="primary" (click)="deleteData()">DELETE</button>    
 </div>
 
-<div *ngIf="toggleInput" class="data-input">
+<div class="form" *ngIf="toggleInput">
   <mat-form-field>
     <input matInput placeholder="FROM" [formControl]="start">
   </mat-form-field>
@@ -59,7 +59,7 @@
         <span><span class="item-label">FROM: </span>{{ element.start }}</span><br>
         <span><span class="item-label">TO: </span>{{ element.end }}</span>
       </td>
-      <td mat-footer-cell *matFooterCellDef></td>
+      <td mat-footer-cell *matFooterCellDef class="total">Total</td>
     </ng-container>
 
   <ng-container matColumnDef="person">
