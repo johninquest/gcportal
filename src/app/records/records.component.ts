@@ -28,11 +28,23 @@ export class RecordsComponent implements OnInit {
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
-        // console.log(res); 
-        this.tableData = res; 
+        console.log(res); 
+        this.tableData = res;
+        this.addFees(res); 
       },
       err => { console.log(err) }
     );
+  }
+
+  addFees(arr: any) { 
+    // let arr = [{j: 5}, {j: 7}, {j: 3}];
+    // let sumedFees = arr.reduce( (acc, { j }: { j: number }) => acc + j, 0);
+    if(arr) {
+      let sumedFees = arr.reduce( (acc: number, { fee }: { fee: number }) => acc + fee, 0);
+      console.log(sumedFees);
+    }else {
+      console.log('No money');
+    }    
    }
 
   addData() { 
@@ -63,7 +75,6 @@ export class RecordsComponent implements OnInit {
    displayedColumns: string[] = ['route', 'person', 'details'];
 
   ngOnInit() {
-    // console.log(this.created);
     this.showAllData();
    }
 
