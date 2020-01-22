@@ -31,9 +31,9 @@
       <mat-icon>store</mat-icon>
       <span>RECORDS</span>
     </button>
-    <button mat-menu-item routerLink="/login" disabled>
+    <button mat-menu-item routerLink="/login">
       <mat-icon>person</mat-icon>
-      <span>OTHERS</span>
+      <span>PERSONAL</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -46,8 +46,8 @@
 </div>
 
 <div class="start-btn">
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" matTooltip="Check out our services">SERVICES</button>
-  <mat-menu #menu="matMenu">
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out our services">SERVICES</button>
+  <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
     <button class="menu-btn" mat-menu-item routerLink="/records">RECORDS</button>
   </mat-menu>

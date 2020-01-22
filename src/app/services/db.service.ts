@@ -10,6 +10,11 @@ export class DbService {
 
   private dbUrl: string = 'http://localhost:3000/';
 
+  authUser(dbEndpoint: string, reqPayload: object): Observable<object> {
+    let dbUrl: string = this.dbUrl + dbEndpoint;
+    return this.http.post(dbUrl, reqPayload);
+  }
+
   getAllRowsInTable(dbEndpoint: string, reqPayload: object): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.post(dbUrl, reqPayload);

@@ -23,7 +23,7 @@ export class RecordsComponent implements OnInit {
   showAllData() { 
     // return alert('Under construction');
     let reqEndpoint: string = 'get_all_rows_in_table';
-    let targetTable: string = 'ticketsales';
+    let targetTable: string = 'sales';
     let sqlPayload: object = { tb_name: targetTable };
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(

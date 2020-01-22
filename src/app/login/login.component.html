@@ -1,11 +1,22 @@
 
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
 
 <div class="login">
     <mat-form-field>
       <input matInput placeholder="Username" [formControl]="userid">
     </mat-form-field><br>
     <mat-form-field>
-      <input matInput placeholder="Password" type="password" [formControl]="userpassword">
+      <input matInput placeholder="Password" type="password" [formControl]="userpwd">
     </mat-form-field><br>
-    <button mat-raised-button color="primary" (click)="userAuth()">Log in</button>
+    <button mat-raised-button color="primary" (click)="verifyUser()">Log in</button>
 </div>

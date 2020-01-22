@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { DbService } from '../services/db.service';
+import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,19 @@ import { FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   userid = new FormControl('', Validators.required);
-  userpassword = new FormControl('');
-  constructor() { }
+  userpwd = new FormControl('', Validators.required);
+  
+  constructor(private dbs: DbService) { }
 
-  userAuth() { 
-    alert('Under construction') 
+  verifyUser() { 
+    let userData: object = { db_table: 'users',  user: this.userid.value, pwd: this.userpwd.value };
+    console.log(userData);
+    let reqEndpoint: string = 'user_check';
+    let obs = this.dbs.authUser(reqEndpoint, userData);
+    obs.subscribe( 
+      res => console.log('RES => ' + res),
+      err => console.log('ERR => ' + err)
+    ); 
   }
 
   ngOnInit() { }
