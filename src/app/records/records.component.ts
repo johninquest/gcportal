@@ -28,22 +28,22 @@ export class RecordsComponent implements OnInit {
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
-        console.log(res); 
+        // console.log(res); 
         this.tableData = res;
-        this.addFees(res); 
+        // this.addFees(res); 
       },
       err => { console.log(err) }
     );
   }
 
-  addFees(arr: any) { 
-    // let arr = [{j: 5}, {j: 7}, {j: 3}];
-    // let sumedFees = arr.reduce( (acc, { j }: { j: number }) => acc + j, 0);
+  feeTotal(arr: any) { 
     if(arr) {
       let sumedFees = arr.reduce( (acc: number, { fee }: { fee: number }) => acc + fee, 0);
-      console.log(sumedFees);
+      // console.log(sumedFees);
+      return sumedFees;
     }else {
-      console.log('No money');
+      // console.log('No money');
+      return 'No money';
     }    
    }
 

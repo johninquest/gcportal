@@ -79,7 +79,7 @@
       <span><span class="item-label">FEE: </span> {{ element.fee }}</span><br>
       <!--<span><span class="item-label">N. ID: </span>{{ element.national_id }}</span> -->
     </td>
-    <td mat-footer-cell *matFooterCellDef class="total"> 4100 XAF </td>
+    <td mat-footer-cell *matFooterCellDef class="total"> {{ feeTotal(tableData) }} XAF </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
