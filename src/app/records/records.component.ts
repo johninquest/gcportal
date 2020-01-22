@@ -21,7 +21,6 @@ export class RecordsComponent implements OnInit {
   tableData: any;
 
   showAllData() { 
-    // return alert('Under construction');
     let reqEndpoint: string = 'get_all_rows_in_table';
     let targetTable: string = 'sales';
     let sqlPayload: object = { tb_name: targetTable };
@@ -29,8 +28,7 @@ export class RecordsComponent implements OnInit {
     obs.subscribe(
       res => {
         // console.log(res); 
-        this.tableData = res;
-        // this.addFees(res); 
+        this.tableData = res; 
       },
       err => { console.log(err) }
     );
@@ -38,12 +36,12 @@ export class RecordsComponent implements OnInit {
 
   feeTotal(arr: any) { 
     if(arr) {
-      let sumedFees = arr.reduce( (acc: number, { fee }: { fee: number }) => acc + fee, 0);
+      let sumedFees = arr.reduce((acc: number, { fee }: { fee: number }) => acc + fee, 0);
       // console.log(sumedFees);
       return sumedFees;
     }else {
       // console.log('No money');
-      return 'No money';
+      return 0;
     }    
    }
 
@@ -58,6 +56,7 @@ export class RecordsComponent implements OnInit {
    }
 
   deleteData() { 
+    let deleteData: object = {};
     return alert('Under construction');
    }
 
@@ -66,7 +65,6 @@ export class RecordsComponent implements OnInit {
    hideInput() { this.toggleInput = false; }
 
    dateFormater(dbDate: string) {
-     // let inDate = moment(dbDate).format('YYYY-MM-DD HH:mm:ss');
      let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
      // console.log(outDate);
      return outDate;
