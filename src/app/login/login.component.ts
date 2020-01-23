@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { DbService } from '../services/db.service';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +14,26 @@ export class LoginComponent implements OnInit {
   userid = new FormControl('', Validators.required);
   userpwd = new FormControl('', Validators.required);
   
-  constructor(private dbs: DbService) { }
+  constructor(private dbs: DbService, private rt: Router) { }
 
   verifyUser() { 
-    let userData: object = { db_table: 'users',  user: this.userid.value, pwd: this.userpwd.value };
+    let userData: object = { table: 'users',  username: this.userid.value, userpwd: this.userpwd.value };
     console.log(userData);
-    let reqEndpoint: string = 'user_check';
+    let reqEndpoint: string = 'check_user';
     let obs = this.dbs.authUser(reqEndpoint, userData);
     obs.subscribe( 
-      res => console.log('RES => ' + res),
-      err => console.log('ERR => ' + err)
+      res => {
+        console.log('RES => ' + JSON.stringify(res));
+        if(res['message'] === 'OK') {
+          // alert('Login successful!');
+          this.rt.navigateByUrl('/records');
+        }else if(res['message'] === 'NOK') {
+          alert('Login failed!');
+        }else {
+          alert('Not sure what happened');
+        }
+      },
+      err => console.log('ERR => ' + JSON.stringify(err))
     ); 
   }
 
