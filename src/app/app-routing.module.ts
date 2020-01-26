@@ -7,6 +7,7 @@ import { NewsComponent } from './news/news.component';
 import { PriceguideComponent } from './priceguide/priceguide.component';
 import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'priceguide', component: PriceguideComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'records', component: RecordsComponent },
+  { path: 'records', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: '**', component: HomeComponent }
 ];
 

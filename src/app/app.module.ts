@@ -13,6 +13,7 @@ import { NewsComponent } from './news/news.component';
 import { PriceguideComponent } from './priceguide/priceguide.component';
 import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [HomeComponent]
 })

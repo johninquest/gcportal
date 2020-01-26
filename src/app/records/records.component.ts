@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { DbService } from '../services/db.service';
 import moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-records',
@@ -11,7 +12,7 @@ import moment from 'moment';
 
 export class RecordsComponent implements OnInit {
 
-  constructor(private dbs: DbService) { }
+  constructor(private dbs: DbService, private rt: Router) { }
 
   toggleInput: boolean = false;
   start = new FormControl(''); end = new FormControl('');
@@ -69,6 +70,11 @@ export class RecordsComponent implements OnInit {
      // console.log(outDate);
      return outDate;
    }
+
+   logout() {
+    sessionStorage.removeItem('access');
+    this.rt.navigateByUrl('/login');
+  }
 
    displayedColumns: string[] = ['route', 'person', 'details'];
 

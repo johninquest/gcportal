@@ -27,9 +27,9 @@
       <mat-icon>directions</mat-icon>
       <span>PRICE GUIDE</span>
     </button>
-    <button mat-menu-item routerLink="/records">
+    <button mat-menu-item (click)="msg()">
       <mat-icon>store</mat-icon>
-      <span>RECORDS</span>
+      <span>OTHERS</span>
     </button>
     <button mat-menu-item routerLink="/login">
       <mat-icon>person</mat-icon>
@@ -49,7 +49,8 @@
   <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out our services">SERVICES</button>
   <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
-    <button class="menu-btn" mat-menu-item routerLink="/records">RECORDS</button>
+    <button class="menu-btn" mat-menu-item routerLink="/login">PERSONAL</button>
+    <button class="menu-btn" mat-menu-item (click)="msg()">OTHERS</button>
   </mat-menu>
 
   <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">NEWS</button>
