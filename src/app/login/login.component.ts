@@ -23,18 +23,20 @@ export class LoginComponent implements OnInit {
     let obs = this.dbs.authUser(reqEndpoint, userData);
     obs.subscribe( 
       res => {
-        console.log('RES => ' + JSON.stringify(res));
+        // console.log('RES => ' + JSON.stringify(res));
         if(res['message'] === 'OK') {
           // alert('Login successful!');
           sessionStorage.setItem('access', 'allowed');
           this.rt.navigateByUrl('/records');
         }else if(res['message'] === 'NOK') {
-          alert('Login failed!');
+          alert('Login failed');
         }else {
           alert('Not sure what happened');
         }
       },
-      err => console.log('ERR => ' + JSON.stringify(err))
+      err => { 
+        // console.log('ERR => ' + JSON.stringify(err));
+        alert('Something went wrong, please try again later'); }
     ); 
   }
 
