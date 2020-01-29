@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         }
       },
       err => { 
-        // console.log('ERR => ' + JSON.stringify(err));
+        console.log('ERR => ' + JSON.stringify(err));
         alert('Something went wrong, please try again later'); }
     ); 
   }
