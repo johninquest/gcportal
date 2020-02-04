@@ -12,6 +12,7 @@ nav button:hover { background-color: #FFC107; }
 
 .btns button {
     margin: 0.5em;
+    margin-bottom: 1em;
 }
 
 .form {
@@ -28,7 +29,7 @@ nav button:hover { background-color: #FFC107; }
 }
 
 table {
-    width: 60%;
+    width: 95%;
     margin: 0px auto;
   }
 
@@ -50,4 +51,8 @@ th { font-weight: bold;}
 
 .total {
     font-weight: bold;
+}
+
+.mat-header-row {
+    pointer-events: none;
 }

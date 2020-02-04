@@ -9,10 +9,6 @@
       <mat-icon>info</mat-icon>
       <span>ABOUT</span>
     </button>
-    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
-      <mat-icon>mail</mat-icon>
-      <span>CONTACT</span>
-    </button>
     <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
       <mat-icon>assignment</mat-icon>
       <span>NEWS</span>
@@ -21,8 +17,16 @@
       <mat-icon>local_offer</mat-icon>
       <span>SERVICES</span>
     </button>
+    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
+      <mat-icon>mail</mat-icon>
+      <span>CONTACT</span>
+    </button>
   </mat-menu>
   <mat-menu #services="matMenu">
+    <button mat-menu-item routerLink="/login">
+      <mat-icon>person</mat-icon>
+      <span>PERSONAL</span>
+    </button>
     <button mat-menu-item routerLink="/priceguide"> 
       <mat-icon>directions</mat-icon>
       <span>PRICE GUIDE</span>
@@ -30,10 +34,6 @@
     <button mat-menu-item (click)="msg()">
       <mat-icon>store</mat-icon>
       <span>OTHERS</span>
-    </button>
-    <button mat-menu-item routerLink="/login">
-      <mat-icon>person</mat-icon>
-      <span>PERSONAL</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">

@@ -19,4 +19,9 @@ export class DbService {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.post(dbUrl, reqPayload);
   }
+
+  addRowToTable(dbEndpoint: string, reqPayload: object): Observable<object> {
+    let dbUrl: string = this.dbUrl + dbEndpoint;
+    return this.http.post(dbUrl, reqPayload);
+  }
 }

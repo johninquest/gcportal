@@ -3,6 +3,12 @@ import { FormControl, Validators } from '@angular/forms';
 import { DbService } from '../services/db.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
+import { START, END, DETAILS } from '../destinations';
+
+export interface placesListDesc {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-records',
@@ -16,23 +22,75 @@ export class RecordsComponent implements OnInit {
 
   toggleInput: boolean = false;
   start = new FormControl(''); end = new FormControl('');
-  firstname = new FormControl(''); lastname = new FormControl('', Validators.required); 
+  surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
-  created = moment().format('YYYY-MM-DD HH:mm:ss');
-  tableData: any;
+  dateNow = moment().format('YYYY-MM-DD HH:mm:ss');
+  salesData: any;
+  startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
 
   showAllData() { 
+    this.toggleInput = false;
     let reqEndpoint: string = 'get_all_rows_in_table';
-    let targetTable: string = 'sales';
-    let sqlPayload: object = { tb_name: targetTable };
+    let sqlPayload: object = { tb_name: 'sales' };
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
         // console.log(res); 
-        this.tableData = res; 
+        this.salesData = res; 
       },
       err => { console.log(err) }
     );
+  }
+
+  addData() { 
+    let reqEndpoint: string = 'add_row_to_table';
+    let createData: object = {
+      tb_name: 'sales',
+      from: this.start.value,
+      to: this.end.value,
+      surname: this.surname.value,
+      givennames: this.givennames.value,
+      fee: this.fee.value, 
+      created: this.dateNow
+    };
+    let obs = this.dbs.addRowToTable(reqEndpoint, createData);
+    obs.subscribe(
+      res => { 
+        console.log(res);
+        this.resHandler(res);
+        this.showAllData();
+       },
+      err => console.log(err)
+    );
+   }
+
+  updateData() { 
+    let updateData: object = {
+      tb_name: 'sales',
+      from: this.start.value,
+      to: this.end.value,
+      surname: this.surname.value,
+      givennames: this.givennames.value,
+      fee: this.fee.value, 
+      updated: this.dateNow
+    };
+    return alert('Under construction 👷🏾');
+   }
+
+  deleteData() { 
+    let deleteData: object = {};
+    return alert('Under construction 👷🏾');
+   }
+
+  resHandler(resData: object) {
+    console.log(resData);
+    if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
+      alert('Your information was successfully ADDED!')
+    }if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
+      alert('Your information was successfully UPDATED!')
+    }if(resData['errno']) {
+      alert('You submitted invalid information \nPlease verify and try again.');
+    }
   }
 
   feeTotal(arr: any) { 
@@ -46,37 +104,29 @@ export class RecordsComponent implements OnInit {
     }    
    }
 
-  addData() { 
-    let createData: object = {};
-    return alert('Under construction');
-   }
+  calcBalance() {
+    alert('Under construction 👷🏾');
+  } 
 
-  updateData() { 
-    let updateData: object = {};
-    return alert('Under construction');
-   }
+  showInput() { 
+    this.salesData = null;
+    this.toggleInput = true; 
+  }
 
-  deleteData() { 
-    let deleteData: object = {};
-    return alert('Under construction');
-   }
+  hideInput() { this.toggleInput = false; }
 
-   showInput() { this.toggleInput = true; }
-
-   hideInput() { this.toggleInput = false; }
-
-   dateFormater(dbDate: string) {
-     let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
-     // console.log(outDate);
+  dateFormater(dbDate: string) {
+     // let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
+     let outDate = moment(dbDate).format('DD.MM.YYYY');
      return outDate;
    }
 
-   logout() {
+  logout() {
     sessionStorage.removeItem('access');
     this.rt.navigateByUrl('/login');
   }
 
-   displayedColumns: string[] = ['route', 'person', 'details'];
+  displayedColumns: string[] = ['route', 'person', 'details'];
 
   ngOnInit() {
     this.showAllData();

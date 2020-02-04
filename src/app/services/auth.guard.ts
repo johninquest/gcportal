@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate {
       if(sessionStorage.getItem('access') === 'allowed') {
         return true;
       }else {
-        return this.rt.navigateByUrl('/login');
+        alert('ACCESS DENIED 🛑');
+        this.rt.navigateByUrl('/login');
         // return false;
       }
   }
