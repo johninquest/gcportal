@@ -1,10 +1,10 @@
 
 <nav>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="" matTooltip="Home">
+      <!-- <button mat-menu-item routerLink="" matTooltip="Home">
         <mat-icon>home</mat-icon>
         <span>HOME</span>
-      </button>
+      </button> -->
       <button mat-menu-item (click)="showInput()">
         <mat-icon>add</mat-icon>
         <span>ADD RECORD</span>
@@ -13,13 +13,25 @@
         <mat-icon>list</mat-icon>
         <span>RECORD LIST</span>
       </button>
-      <button mat-menu-item (click)="calcBalance()">
+      <button mat-menu-item [matMenuTriggerFor]="balance" (click)="calcBalance()">
         <mat-icon>account_balance_wallet</mat-icon>
         <span>BALANCE</span>
       </button>
       <button mat-menu-item matTooltip="Log out" (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>
         <span>LOG OUT</span>
+      </button>
+    </mat-menu>
+    <mat-menu #balance="matMenu">
+      <button mat-menu-item (click)="msg()">
+        <mat-icon>today</mat-icon>
+        <span>DAILY</span>
+      </button>
+      <button mat-menu-item (click)="msg()"> 
+        <span>WEEKLY</span>
+      </button>
+      <button mat-menu-item (click)="msg()">
+        <span>MONTHLY</span>
       </button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -52,7 +64,7 @@
     <input matInput placeholder="GIVEN NAMES" [formControl]="givennames">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="FEE" [formControl]="fee" type="number" step="0.01">
+    <input matInput placeholder="FEE" [formControl]="fee" type="number">
   </mat-form-field>
   <div class="action-btns">
     <button mat-raised-button color="accent" (click)="hideInput()">CANCEL</button>
