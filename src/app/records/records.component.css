@@ -56,3 +56,7 @@ th { font-weight: bold;}
 .mat-header-row {
     pointer-events: none;
 }
+
+.balance {
+    text-align: center;
+}

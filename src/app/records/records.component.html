@@ -13,8 +13,8 @@
         <mat-icon>list</mat-icon>
         <span>RECORD LIST</span>
       </button>
-      <button mat-menu-item [matMenuTriggerFor]="balance" (click)="calcBalance()">
-        <mat-icon>account_balance_wallet</mat-icon>
+      <button mat-menu-item [matMenuTriggerFor]="balance">
+        <mat-icon>account_balance</mat-icon>
         <span>BALANCE</span>
       </button>
       <button mat-menu-item matTooltip="Log out" (click)="logout()">
@@ -23,15 +23,17 @@
       </button>
     </mat-menu>
     <mat-menu #balance="matMenu">
-      <button mat-menu-item (click)="msg()">
-        <mat-icon>today</mat-icon>
+      <button mat-menu-item (click)="getBalance('day')">
         <span>DAILY</span>
       </button>
-      <button mat-menu-item (click)="msg()"> 
+      <button mat-menu-item (click)="getBalance('week')"> 
         <span>WEEKLY</span>
       </button>
-      <button mat-menu-item (click)="msg()">
+      <button mat-menu-item (click)="getBalance('month')">
         <span>MONTHLY</span>
+      </button>
+      <button mat-menu-item (click)="getBalance('year')">
+        <span>YEARLY</span>
       </button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -41,13 +43,12 @@
 
 <div class="btns">
   <button mat-raised-button color="primary" (click)="showInput()">ADD</button>
-  <button mat-raised-button color="primary" (click)="updateData()">UPDATE</button>
-  <button mat-raised-button color="primary" (click)="deleteData()">DELETE</button>    
+  <button mat-raised-button color="primary" (click)="deleteData()">DELETE</button>
+  <button mat-raised-button color="primary" (click)="updateData()">EDIT</button>    
 </div>
 
 <div class="form" *ngIf="toggleInput">
   <mat-form-field>
-    <!-- <input matInput placeholder="FROM" [formControl]="start"> -->
     <mat-select placeholder="FROM" [formControl]="start">
       <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
     </mat-select>
@@ -107,4 +108,9 @@
   <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="tr2" (dblclick)="showDoc(row.doc._id)"></tr> -->
 </table>
+
+<div class="balance" *ngIf="balanceData">
+  <p>TODAY'S BALANCE</p>
+  <p>27500 XAF</p>
+</div>
 

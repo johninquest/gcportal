@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { DbService } from '../services/db.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
-import { START, END, DETAILS } from '../destinations';
+import { START, END } from '../destinations';
 
 export interface placesListDesc {
   value: string;
@@ -25,8 +25,8 @@ export class RecordsComponent implements OnInit {
   surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
   dateNow = moment().format('YYYY-MM-DD HH:mm:ss');
-  salesData: any;
   startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
+  salesData: any; balanceData: any;
 
   showAllData() { 
     this.toggleInput = false;
@@ -104,7 +104,7 @@ export class RecordsComponent implements OnInit {
     }    
    }
 
-  calcBalance() {
+  msg() {
     alert('Under construction 👷🏾');
   } 
 
@@ -124,6 +124,18 @@ export class RecordsComponent implements OnInit {
   logout() {
     sessionStorage.removeItem('access');
     this.rt.navigateByUrl('/login');
+  }
+
+  getBalance(period: string) {
+    if(period === 'day') {
+      alert('Daily balance is ...')
+    }if(period === 'week') {
+      alert('Weekly balance is ...')
+    }if(period === 'month') {
+      alert('Monthly balance is ...')
+    }if(period === 'year') {
+      alert('Yearly balance is ...')
+    }
   }
 
   displayedColumns: string[] = ['route', 'person', 'details'];
