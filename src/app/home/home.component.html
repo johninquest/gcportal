@@ -48,8 +48,8 @@
 <div class="start-btn">
   <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out our services">SERVICES</button>
   <mat-menu #buttons="matMenu">
-    <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
     <button class="menu-btn" mat-menu-item routerLink="/login">PERSONAL</button>
+    <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
     <button class="menu-btn" mat-menu-item (click)="msg()">OTHERS</button>
   </mat-menu>
 

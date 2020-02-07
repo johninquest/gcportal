@@ -127,14 +127,44 @@ export class RecordsComponent implements OnInit {
   }
 
   getBalance(period: string) {
+    let reqEndpoint: string = 'get_total'; 
     if(period === 'day') {
-      alert('Daily balance is ...')
+      let reqObject: object = { tb_name: 'sales', period: 'day' };
+      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      obs.subscribe( 
+        res => { 
+          console.log(res);
+          alert(`Today's balance is: ${res[0]['dayTotal']} XAF`)
+         },
+        err => console.log(err) 
+        );
     }if(period === 'week') {
-      alert('Weekly balance is ...')
+      let reqObject: object = { tb_name: 'sales', period: 'week' };
+      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      obs.subscribe( 
+        res => { 
+          console.log(res);
+          alert(`This week's balance is: ${res[0]['weekTotal']} XAF`); 
+        },
+        err => console.log(err) );
     }if(period === 'month') {
-      alert('Monthly balance is ...')
+      let reqObject: object = { tb_name: 'sales', period: 'month' };
+      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      obs.subscribe( 
+        res => { console.log(res); 
+          alert(`This month's balance is: ${res[0]['monthTotal']} XAF`); 
+        },
+        err => console.log(err) );
     }if(period === 'year') {
-      alert('Yearly balance is ...')
+      let reqObject: object = { tb_name: 'sales', period: 'year' };
+      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      obs.subscribe( 
+        res => { 
+          console.log(res);
+          alert(`This year's balance is: ${res[0]['yearTotal']} XAF`);
+        },
+        err => console.log(err) 
+        );
     }
   }
 

@@ -78,8 +78,8 @@
   <ng-container matColumnDef="route">
       <th mat-header-cell *matHeaderCellDef> ROUTE </th>
       <td mat-cell *matCellDef="let element">
-        <span><span class="item-label">FROM: </span>{{ element.start }}</span><br>
-        <span><span class="item-label">TO: </span>{{ element.end }}</span>
+        <span><span class="item-label">FROM: </span>{{ element.start | uppercase }}</span><br>
+        <span><span class="item-label">TO: </span>{{ element.end | uppercase }}</span>
       </td>
       <td mat-footer-cell *matFooterCellDef class="total">Total</td>
     </ng-container>

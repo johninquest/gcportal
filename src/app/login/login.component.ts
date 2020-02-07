@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private dbs: DbService, private rt: Router) { }
 
   verifyUser() { 
-    let userData: object = { table: 'users',  username: this.userid.value, userpwd: this.userpwd.value };
+    let userData: object = { tb_name: 'users',  username: this.userid.value, userpwd: this.userpwd.value };
     // console.log(userData);
     let reqEndpoint: string = 'check_user';
     let obs = this.dbs.authUser(reqEndpoint, userData);

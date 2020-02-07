@@ -24,4 +24,14 @@ export class DbService {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.post(dbUrl, reqPayload);
   }
+
+  postReq(dbEndpoint: string, reqPayload: object): Observable<object> {
+    let dbUrl: string = this.dbUrl + dbEndpoint;
+    return this.http.post(dbUrl, reqPayload);
+  }
+
+  getReq(dbEndpoint: string): Observable<object> {
+    let dbUrl: string = this.dbUrl + dbEndpoint;
+    return this.http.get(dbUrl);
+  }
 }
