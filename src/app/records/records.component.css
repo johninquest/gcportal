@@ -15,8 +15,17 @@ nav button:hover { background-color: #FFC107; }
     margin-bottom: 1em;
 }
 
+.btns p {
+    font-size: 1em;
+    font-weight: bold;
+}
+
 .form {
-    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .form mat-form-field {
@@ -29,15 +38,25 @@ nav button:hover { background-color: #FFC107; }
 }
 
 table {
-    width: 95%;
+    width: 100%;
     margin: 0px auto;
   }
+
+caption {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
 
 table tr:hover {
   background-color:#FFC107;
 }  
 
-th { font-weight: bold;}
+th { 
+    font-size: 0.6em;
+    font-weight: bold; 
+    text-align: center;
+}
 
 .item-label {
     color: gray;
@@ -53,10 +72,41 @@ th { font-weight: bold;}
     font-weight: bold;
 }
 
+th {
+    margin-right: 0.5em;
+}
+
 .mat-header-row {
     pointer-events: none;
 }
 
+.options-menu { cursor: pointer; }
+
 .balance {
-    text-align: center;
+    margin-top: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.balance mat-card {
+    width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.balance mat-card mat-card-header {
+    color: gray;
+    font-weight: bold;
+    margin: 0.5em;
+    font-size: 0.8em;
+    align-self: center;
+}
+
+.balance mat-card mat-card-content {
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin: 0.5em;
+    align-self: center;
 }

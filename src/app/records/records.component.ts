@@ -28,14 +28,14 @@ export class RecordsComponent implements OnInit {
   startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
   salesData: any; balanceData: any;
 
-  showAllData() { 
+  getAllSalesRecords() { 
     this.toggleInput = false;
+    this.balanceData = null;
     let reqEndpoint: string = 'get_all_rows_in_table';
     let sqlPayload: object = { tb_name: 'sales' };
     let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
-        // console.log(res); 
         this.salesData = res; 
       },
       err => { console.log(err) }
@@ -58,7 +58,7 @@ export class RecordsComponent implements OnInit {
       res => { 
         console.log(res);
         this.resHandler(res);
-        this.showAllData();
+        this.getAllSalesRecords();
        },
       err => console.log(err)
     );
@@ -96,10 +96,8 @@ export class RecordsComponent implements OnInit {
   feeTotal(arr: any) { 
     if(arr) {
       let sumedFees = arr.reduce((acc: number, { fee }: { fee: number }) => acc + fee, 0);
-      // console.log(sumedFees);
       return sumedFees;
     }else {
-      // console.log('No money');
       return 0;
     }    
    }
@@ -110,10 +108,17 @@ export class RecordsComponent implements OnInit {
 
   showInput() { 
     this.salesData = null;
+    this.balanceData = null;
     this.toggleInput = true; 
   }
 
-  hideInput() { this.toggleInput = false; }
+  cancelAdd() {
+    this.toggleInput = false;
+    this.getAllSalesRecords();
+
+  }
+
+  // hideInput() { this.toggleInput = false; }
 
   dateFormater(dbDate: string) {
      // let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
@@ -127,51 +132,65 @@ export class RecordsComponent implements OnInit {
   }
 
   getBalance(period: string) {
+    this.salesData = null;
+    this.toggleInput = false;
     let reqEndpoint: string = 'get_total'; 
     if(period === 'day') {
       let reqObject: object = { tb_name: 'sales', period: 'day' };
       let obs = this.dbs.postReq(reqEndpoint, reqObject);
       obs.subscribe( 
-        res => { 
-          console.log(res);
-          alert(`Today's balance is: ${res[0]['dayTotal']} XAF`)
-         },
+        res => { this.balanceData = res },
         err => console.log(err) 
         );
     }if(period === 'week') {
       let reqObject: object = { tb_name: 'sales', period: 'week' };
       let obs = this.dbs.postReq(reqEndpoint, reqObject);
       obs.subscribe( 
-        res => { 
-          console.log(res);
-          alert(`This week's balance is: ${res[0]['weekTotal']} XAF`); 
-        },
+        res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'month') {
       let reqObject: object = { tb_name: 'sales', period: 'month' };
       let obs = this.dbs.postReq(reqEndpoint, reqObject);
       obs.subscribe( 
-        res => { console.log(res); 
-          alert(`This month's balance is: ${res[0]['monthTotal']} XAF`); 
-        },
+        res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'year') {
       let reqObject: object = { tb_name: 'sales', period: 'year' };
       let obs = this.dbs.postReq(reqEndpoint, reqObject);
       obs.subscribe( 
-        res => { 
-          console.log(res);
-          alert(`This year's balance is: ${res[0]['yearTotal']} XAF`);
-        },
+        res => { this.balanceData = res },
         err => console.log(err) 
         );
     }
   }
 
-  displayedColumns: string[] = ['route', 'person', 'details'];
-
-  ngOnInit() {
-    this.showAllData();
+  formatTotal(totalObj: any) {
+    if('dayTotal' in totalObj[0]) {
+      let message: string = `today's balance`;
+      let amount: number = totalObj[0]['dayTotal'];
+      return [message, amount];
+    }if('weekTotal' in totalObj[0]) {
+      let message: string = `this week's balance`;
+      let amount: number = totalObj[0]['weekTotal'];
+      return [message, amount];
+    }if('monthTotal' in totalObj[0]) {
+      let message: string = `this month's balance`;
+      let amount: number = totalObj[0]['monthTotal'];
+      return [message, amount];
+    }if('yearTotal' in totalObj[0]) {
+      let message: string = `this year's balance`;
+      let amount: number = totalObj[0]['yearTotal'];
+      return [message, amount];
+    }else {
+      let message: string = '';
+      let amount: number = 0;
+      return [message, amount];
+    }
    }
 
+  displayedColumns: string[] = ['route', 'person', 'details', 'options'];
+
+  ngOnInit() {
+    this.getAllSalesRecords();
+   }
 }

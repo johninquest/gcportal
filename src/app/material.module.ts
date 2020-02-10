@@ -13,6 +13,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card'; 
 import { from } from 'rxjs';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { from } from 'rxjs';
       MatStepperModule,
       MatDialogModule,
       MatTooltipModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatCardModule
 ],
   exports: [
       MatButtonModule,
@@ -52,7 +54,8 @@ import { from } from 'rxjs';
       MatStepperModule,
       MatDialogModule,
       MatTooltipModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatCardModule
     ],
 })
 export class MaterialModule { }
