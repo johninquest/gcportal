@@ -117,9 +117,7 @@ export class RecordsComponent implements OnInit {
     if(arr) {
       let sumedFees = arr.reduce((acc: number, { fee }: { fee: number }) => acc + fee, 0);
       return sumedFees;
-    }else {
-      return 0;
-    }    
+    }else { return 0; }    
    }
 
   msg() {

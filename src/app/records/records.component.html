@@ -1,47 +1,41 @@
 
 <nav>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="showInput()">
-        <mat-icon>add</mat-icon>
-        <span>ADD RECORD</span>
-      </button>
-      <button mat-menu-item (click)="getAllSalesRecords()">
-        <mat-icon>list</mat-icon>
-        <span>RECORD LIST</span>
-      </button>
-      <button mat-menu-item [matMenuTriggerFor]="balance">
-        <mat-icon>account_balance</mat-icon>
-        <span>BALANCE</span>
-      </button>
-      <button mat-menu-item matTooltip="Log out" (click)="logout()">
-        <mat-icon>power_settings_new</mat-icon>
-        <span>LOG OUT</span>
-      </button>
-    </mat-menu>
-    <mat-menu #balance="matMenu">
-      <button mat-menu-item (click)="getBalance('day')">
-        <span>DAILY</span>
-      </button>
-      <button mat-menu-item (click)="getBalance('week')"> 
-        <span>WEEKLY</span>
-      </button>
-      <button mat-menu-item (click)="getBalance('month')">
-        <span>MONTHLY</span>
-      </button>
-      <button mat-menu-item (click)="getBalance('year')">
-        <span>YEARLY</span>
-      </button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="showInput()">
+      <mat-icon>add</mat-icon>
+      <span>ADD RECORD</span>
     </button>
+    <button mat-menu-item (click)="getAllSalesRecords()">
+      <mat-icon>list</mat-icon>
+      <span>RECORD LIST</span>
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="balance">
+      <mat-icon>account_balance</mat-icon>
+      <span>BALANCE</span>
+    </button>
+    <button mat-menu-item matTooltip="Log out" (click)="logout()">
+      <mat-icon>power_settings_new</mat-icon>
+      <span>LOG OUT</span>
+    </button>
+  </mat-menu>
+  <mat-menu #balance="matMenu">
+    <button mat-menu-item (click)="getBalance('day')">
+      <span>DAILY</span>
+    </button>
+    <button mat-menu-item (click)="getBalance('week')"> 
+      <span>WEEKLY</span>
+    </button>
+    <button mat-menu-item (click)="getBalance('month')">
+      <span>MONTHLY</span>
+    </button>
+      <button mat-menu-item (click)="getBalance('year')">
+      <span>YEARLY</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 </nav>
-
-<!--<div class="btns">
-  <button mat-raised-button color="primary" (click)="showInput()">ADD</button>
-  <button mat-raised-button color="primary" (click)="deleteData()">DELETE</button>
-  <button mat-raised-button color="primary" (click)="updateData()">EDIT</button>  
-</div> -->
 
 <div class="form" *ngIf="toggleInput">
 
