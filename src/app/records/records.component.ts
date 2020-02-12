@@ -56,15 +56,26 @@ export class RecordsComponent implements OnInit {
     let obs = this.dbs.addRowToTable(reqEndpoint, createData);
     obs.subscribe(
       res => { 
-        console.log(res);
-        this.resHandler(res);
-        this.getAllSalesRecords();
+        this.addResponseHandler(res);
        },
       err => console.log(err)
     );
    }
 
+  addResponseHandler(resData: object) {
+    console.log(resData);
+    if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
+      alert('PASSENGER successfully ADDED');
+      this.ngOnInit();
+    }if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
+      alert('PASSENGER successfully UPDATED')
+    }if(resData['errno']) {
+      alert('You submitted invalid information \nPlease verify and try again.');
+    }
+  } 
+
   updateData() { 
+    // this.toggleInput = true;
     let updateData: object = {
       tb_name: 'sales',
       from: this.start.value,
@@ -77,21 +88,30 @@ export class RecordsComponent implements OnInit {
     return alert('Under construction 👷🏾');
    }
 
-  deleteData() { 
-    let deleteData: object = {};
-    return alert('Under construction 👷🏾');
+  deleteData(targetRow: number) { 
+    let reqEndpoint: string = 'delete_row_in_table';
+    let deleteData: object = {
+      tb_name: 'sales',
+      row_id: targetRow
+    };
+    console.log(targetRow);
+    let obs = this.dbs.postReq(reqEndpoint, deleteData);
+    obs.subscribe(
+      res => { 
+        this.deleteResponseHandler(res);
+        this.ngOnInit();
+       },
+      err => console.log(err)
+    );
    }
 
-  resHandler(resData: object) {
-    console.log(resData);
-    if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
-      alert('Your information was successfully ADDED!')
-    }if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
-      alert('Your information was successfully UPDATED!')
-    }if(resData['errno']) {
-      alert('You submitted invalid information \nPlease verify and try again.');
-    }
-  }
+  deleteResponseHandler(resData: object) {
+    if(resData['affectedRows'] === 1 && resData['warningCount'] === 0) {
+      alert('PASSENGER successfully DELETED');
+    }if(resData['affectedRows'] === 0 && resData['warningCount'] === 0) {
+      alert('NOTHING DELETED');
+     }
+   }
 
   feeTotal(arr: any) { 
     if(arr) {
@@ -117,7 +137,6 @@ export class RecordsComponent implements OnInit {
     this.getAllSalesRecords();
 
   }
-
   // hideInput() { this.toggleInput = false; }
 
   dateFormater(dbDate: string) {

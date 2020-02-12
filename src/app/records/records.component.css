@@ -25,12 +25,11 @@ nav button:hover { background-color: #FFC107; }
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    
+    margin-bottom: 1em;
 }
 
 .form mat-form-field {
     margin: 0.2em;
-
 }
 
 .action-btns button {
@@ -40,6 +39,7 @@ nav button:hover { background-color: #FFC107; }
 table {
     width: 100%;
     margin: 0px auto;
+    overflow: scroll;
   }
 
 caption {
