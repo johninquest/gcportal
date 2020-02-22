@@ -123,27 +123,26 @@ export class RecordsComponent implements OnInit {
     this.fee.reset();
   } 
   
-  deleteData(targetRow: number) { 
-    let deleteDialog = confirm('Delete this information?');
-    if(deleteDialog === true) {
-      let reqEndpoint: string = 'delete_row_in_table';
-      let deleteData: object = {
-        tb_name: 'sales',
-        row_id: targetRow
-      };
-      // console.log(targetRow);
-      let obs = this.dbs.postReq(reqEndpoint, deleteData);
-      obs.subscribe(
-        res => { 
-        this.deleteResponseHandler(res);
-        this.ngOnInit();
-       },
-        err => console.log(err)
+deleteData(targetRow: number) { 
+  let deleteDialog = confirm('Delete this information?');
+  if(deleteDialog === true) {
+    let reqEndpoint: string = 'delete_row_in_table';
+    let deleteData: object = {
+      tb_name: 'sales',
+      row_id: targetRow
+    };
+    let obs = this.dbs.postReq(reqEndpoint, deleteData);
+    obs.subscribe(
+      res => { 
+      this.deleteResponseHandler(res);
+      this.ngOnInit();
+      },
+      err => console.log(err)
       );
     }else {
       console.log('Delete was cancelled')
     }  
-   }
+  }
 
   deleteResponseHandler(resData: object) {
     if(resData['affectedRows'] === 1 && resData['warningCount'] === 0) {
