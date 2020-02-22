@@ -25,6 +25,11 @@ export class DbService {
     return this.http.post(dbUrl, reqPayload);
   }
 
+  updateRowInTable(dbEndpoint: string, reqPayload: object): Observable<object> {
+    let dbUrl: string = this.dbUrl + dbEndpoint;
+    return this.http.post(dbUrl, reqPayload);
+  }
+
   postReq(dbEndpoint: string, reqPayload: object): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.post(dbUrl, reqPayload);

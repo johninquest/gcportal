@@ -26,7 +26,9 @@ export class RecordsComponent implements OnInit {
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
   dateNow = moment().format('YYYY-MM-DD HH:mm:ss');
   startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
-  salesData: any; balanceData: any;
+  salesData: any; 
+  balanceData: any; 
+  updateRowId: number;
 
   getAllSalesRecords() { 
     this.toggleInput = false;
@@ -43,7 +45,7 @@ export class RecordsComponent implements OnInit {
   }
 
   addData() { 
-    let reqEndpoint: string = 'add_row_to_table';
+    let createEndpoint: string = 'add_row_to_table';
     let createData: object = {
       tb_name: 'sales',
       from: this.start.value,
@@ -53,7 +55,7 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       created: this.dateNow
     };
-    let obs = this.dbs.addRowToTable(reqEndpoint, createData);
+    let obs = this.dbs.addRowToTable(createEndpoint, createData);
     obs.subscribe(
       res => { 
         this.addResponseHandler(res);
@@ -63,21 +65,32 @@ export class RecordsComponent implements OnInit {
    }
 
   addResponseHandler(resData: object) {
-    console.log(resData);
+    // console.log(resData);
     if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
       alert('PASSENGER successfully ADDED');
       this.ngOnInit();
-    }if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
-      alert('PASSENGER successfully UPDATED')
     }if(resData['errno']) {
       alert('You submitted invalid information \nPlease verify and try again.');
     }
   } 
 
+  getUpdateData(rowData: object) {
+    this.resetInputs();
+    this.toggleInput = true;
+    this.updateRowId = rowData['id'];
+    this.start.setValue(rowData['start']);
+    this.end.setValue(rowData['end']);
+    this.surname.setValue(rowData['surname']);
+    this.givennames.setValue(rowData['givennames']);
+    this.fee.setValue(rowData['fee']);
+    // console.log(this.updateRowId);
+  }
+
   updateData() { 
-    // this.toggleInput = true;
+    let updateEndpoint: string = 'update_row_in_table';
     let updateData: object = {
       tb_name: 'sales',
+      row_id: this.updateRowId,
       from: this.start.value,
       to: this.end.value,
       surname: this.surname.value,
@@ -85,11 +98,33 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       updated: this.dateNow
     };
-    return alert('Under construction 👷🏾');
+    let obs = this.dbs.updateRowInTable(updateEndpoint, updateData);
+    obs.subscribe(
+      res => this.updateResponseHandler(res),
+      err => this.updateResponseHandler(err)
+    );
+    // return alert('Under construction 👷🏾');
    }
+
+  updateResponseHandler(resData: object) {
+     if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
+       alert('PASSENGER successfully UPDATED');
+       this.ngOnInit();
+     }if(resData['errno']) {
+      alert('You submitted invalid information \nPlease verify and try again.');
+    }
+   }
+
+  resetInputs() {
+    this.start.reset();
+    this.end.reset();
+    this.surname.reset();
+    this.givennames.reset();
+    this.fee.reset();
+  } 
   
   deleteData(targetRow: number) { 
-    let deleteDialog = confirm('Sure you want to delete this?');
+    let deleteDialog = confirm('Delete this information?');
     if(deleteDialog === true) {
       let reqEndpoint: string = 'delete_row_in_table';
       let deleteData: object = {
@@ -131,6 +166,7 @@ export class RecordsComponent implements OnInit {
   } 
 
   showInput() { 
+    this.resetInputs();
     this.salesData = null;
     this.balanceData = null;
     this.toggleInput = true; 
