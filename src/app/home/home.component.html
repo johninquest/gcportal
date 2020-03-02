@@ -42,10 +42,13 @@
 </nav>
 
 <div class="pageTitle">
-  <p matTooltip="Reliable transport information and services">- MANDI GUIDE -<br><span style="font-size: 0.6em">Transport information and services</span></p>
+  <p matTooltip="Reliable transport information and services">- MANDI GUIDE -<br><span style="font-size: 0.6em">Transport information, services and tools</span></p>
 </div>
 
 <div class="start-btn">
+
+  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">NEWS</button>
+
   <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out our services">SERVICES</button>
   <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item routerLink="/login">PERSONAL</button>
@@ -53,6 +56,4 @@
     <button class="menu-btn" mat-menu-item (click)="msg()">OTHERS</button>
   </mat-menu>
 
-  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">NEWS</button>
-  
 </div>

@@ -49,6 +49,7 @@ sup {
 .offeritems {
     color: #FFC107; 
     font-weight: bold;
+    cursor: default;
 }
 
 mat-divider {
