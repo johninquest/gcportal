@@ -20,7 +20,8 @@ export class RecordsComponent implements OnInit {
 
   constructor(private dbs: DbService, private rt: Router) { }
 
-  toggleInput: boolean = false;
+  toggleAddForm: boolean = false; 
+  toggleUpdateForm: boolean = false;
   start = new FormControl(''); end = new FormControl('');
   surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
@@ -31,7 +32,8 @@ export class RecordsComponent implements OnInit {
   updateRowId: number;
 
   getAllSalesRecords() { 
-    this.toggleInput = false;
+    this.toggleAddForm = false;
+    this.toggleUpdateForm = false;
     this.balanceData = null;
     let reqEndpoint: string = 'get_all_rows_in_table';
     let sqlPayload: object = { tb_name: 'sales' };
@@ -76,7 +78,8 @@ export class RecordsComponent implements OnInit {
 
   getUpdateData(rowData: object) {
     this.resetInputs();
-    this.toggleInput = true;
+    this.toggleAddForm = false;
+    this.toggleUpdateForm = true;
     this.updateRowId = rowData['id'];
     this.start.setValue(rowData['start']);
     this.end.setValue(rowData['end']);
@@ -164,15 +167,26 @@ deleteData(targetRow: number) {
     alert('Under construction 👷🏾');
   } 
 
-  showInput() { 
+  showAddForm() { 
     this.resetInputs();
     this.salesData = null;
     this.balanceData = null;
-    this.toggleInput = true; 
+    this.toggleUpdateForm = false;
+    this.toggleAddForm = true; 
   }
 
-  cancelAdd() {
-    this.toggleInput = false;
+  showUpdateForm() {
+    this.resetInputs();
+    this.salesData = null;
+    this.balanceData = null;
+    this.toggleAddForm = false;  
+    this.toggleUpdateForm = true;
+   
+  }
+
+  cancelAction() {
+    this.toggleAddForm = false;  
+    this.toggleUpdateForm = false;
     this.getAllSalesRecords();
   }
   // hideInput() { this.toggleInput = false; }
@@ -190,7 +204,8 @@ deleteData(targetRow: number) {
 
   getBalance(period: string) {
     this.salesData = null;
-    this.toggleInput = false;
+    this.toggleAddForm = false;  
+    this.toggleUpdateForm = false;
     let reqEndpoint: string = 'get_total'; 
     if(period === 'day') {
       let reqObject: object = { tb_name: 'sales', period: 'day' };

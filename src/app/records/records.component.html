@@ -1,7 +1,7 @@
 
 <nav>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="showInput()">
+    <button mat-menu-item (click)="showAddForm()">
       <mat-icon>add</mat-icon>
       <span>ADD RECORD</span>
     </button>
@@ -37,9 +37,9 @@
   </button>
 </nav>
 
-<div class="form" *ngIf="toggleInput">
+<div class="add-edit-form" *ngIf="toggleAddForm">
 
-  <caption>ADD PASSENGER</caption>
+  <caption>ADD PASSENGER INFO</caption>
 
   <mat-form-field>
     <mat-select placeholder="FROM" [formControl]="start">
@@ -61,10 +61,40 @@
     <input matInput placeholder="FEE" [formControl]="fee" type="number">
   </mat-form-field>
   <div class="action-btns">
-    <button mat-raised-button color="accent" (click)="cancelAdd()">CANCEL</button>
-    <button mat-raised-button color="primary" (click)="addData()">&nbsp;ADD&nbsp;</button>
-    <button mat-raised-button color="primary" (click)="updateData()">&nbsp;UPDATE&nbsp;</button>
+    <button mat-raised-button color="accent" (click)="cancelAction()">CANCEL</button>
+    <button mat-raised-button color="primary" (click)="addData()">&nbsp;SAVE&nbsp;</button>
+    <!-- <button mat-raised-button color="primary" (click)="updateData()">&nbsp;UPDATE&nbsp;</button> -->
   </div>  
+</div>
+
+<div class="add-edit-form" *ngIf="toggleUpdateForm">
+
+  <caption>UPDATE PASSENGER INFO</caption>
+
+  <mat-form-field>
+    <mat-select placeholder="FROM" [formControl]="start">
+      <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="TO" [formControl]="end">
+      <mat-option *ngFor="let ePlace of endPlaces" [value]="ePlace.value">{{ ePlace.viewValue }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="SURNAME" [formControl]="surname">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="GIVEN NAMES" [formControl]="givennames">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="FEE" [formControl]="fee" type="number">
+  </mat-form-field>
+  <div class="action-btns">
+    <button mat-raised-button color="accent" (click)="cancelAction()">CANCEL</button>
+    <button mat-raised-button color="primary" (click)="updateData()">&nbsp;SAVE&nbsp;</button>
+  </div>
+
 </div>
 
 <table mat-table [dataSource]="salesData" *ngIf="salesData" class="mat-elevation-z8">
@@ -73,8 +103,8 @@
   <ng-container matColumnDef="route" sticky>
       <th mat-header-cell *matHeaderCellDef> ROUTE </th>
       <td mat-cell *matCellDef="let element">
-        <span><span class="item-label">FROM: </span>{{ element.start | titlecase }}</span><br>
-        <span><span class="item-label">TO: </span>{{ element.end | titlecase }}</span>
+        <span><span class="item-label">FROM: </span>{{ element.start | uppercase }}</span><br>
+        <span><span class="item-label">TO: </span>{{ element.end | uppercase }}</span>
       </td>
       <td mat-footer-cell *matFooterCellDef class="total">TOTAL</td>
     </ng-container>
