@@ -8,7 +8,8 @@ export class DbService {
 
   constructor(private http: HttpClient) { }
 
-  private dbUrl: string = 'http://localhost:3000/';
+  // private dbUrl: string = 'http://localhost:3000/';
+  private dbUrl: string = 'http://ec2-18-197-147-166.eu-central-1.compute.amazonaws.com:3000/';
 
   authUser(dbEndpoint: string, reqPayload: object): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;
