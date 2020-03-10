@@ -9,3 +9,9 @@ button:hover { background-color: #FFC107; }
     flex-flow: column nowrap;
     align-items: center;
 }
+
+.login button {
+    width: 6em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
