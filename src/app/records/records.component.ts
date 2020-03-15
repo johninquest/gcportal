@@ -25,7 +25,7 @@ export class RecordsComponent implements OnInit {
   start = new FormControl(''); end = new FormControl('');
   surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
-  dateNow = moment().format('YYYY-MM-DD HH:mm:ss');
+  datetime_now = moment().format('YYYY-MM-DD HH:mm:ss');
   startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
   salesData: any; 
   balanceData: any; 
@@ -55,7 +55,7 @@ export class RecordsComponent implements OnInit {
       surname: this.surname.value,
       givennames: this.givennames.value,
       fee: this.fee.value, 
-      created: this.dateNow
+      created: this.datetime_now
     };
     let obs = this.dbs.addRowToTable(createEndpoint, createData);
     obs.subscribe(
@@ -80,12 +80,12 @@ export class RecordsComponent implements OnInit {
     this.resetInputs();
     this.toggleAddForm = false;
     this.toggleUpdateForm = true;
-    this.updateRowId = rowData['id'];
-    this.start.setValue(rowData['start']);
-    this.end.setValue(rowData['end']);
-    this.surname.setValue(rowData['surname']);
-    this.givennames.setValue(rowData['givennames']);
-    this.fee.setValue(rowData['fee']);
+    this.updateRowId = rowData['_id'];
+    this.start.setValue(rowData['_start']);
+    this.end.setValue(rowData['_end']);
+    this.surname.setValue(rowData['_surname']);
+    this.givennames.setValue(rowData['_givennames']);
+    this.fee.setValue(rowData['_fee']);
     // console.log(this.updateRowId);
   }
 
@@ -99,7 +99,7 @@ export class RecordsComponent implements OnInit {
       surname: this.surname.value,
       givennames: this.givennames.value,
       fee: this.fee.value, 
-      updated: this.dateNow
+      updated: this.datetime_now
     };
     let obs = this.dbs.updateRowInTable(updateEndpoint, updateData);
     obs.subscribe(
@@ -158,7 +158,7 @@ deleteData(targetRow: number) {
 
   feeTotal(arr: any) { 
     if(arr) {
-      let sumedFees = arr.reduce((acc: number, { fee }: { fee: number }) => acc + fee, 0);
+      let sumedFees = arr.reduce((acc: number, { _fee }: { _fee: number }) => acc + _fee, 0);
       return sumedFees;
     }else { return 0; }    
    }
