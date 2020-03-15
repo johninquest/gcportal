@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
         }
       },
       err => { 
-        console.log('ERR => ' + JSON.stringify(err));
-        alert('Network issue. \nPlease try again later'); }
+        // console.log('ERR => ' + JSON.stringify(err));
+        alert('Network or firewall problems! \nPlease try again later'); }
     ); 
   }
 
