@@ -67,9 +67,8 @@ export class RecordsComponent implements OnInit {
    }
 
   addResponseHandler(resData: object) {
-    // console.log(resData);
     if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
-      alert('PASSENGER successfully ADDED');
+      // alert('PASSENGER successfully ADDED');
       this.ngOnInit();
     }if(resData['errno']) {
       alert('You submitted invalid information \nPlease verify and try again.');
@@ -111,7 +110,7 @@ export class RecordsComponent implements OnInit {
 
   updateResponseHandler(resData: object) {
      if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
-       alert('PASSENGER successfully UPDATED');
+       // alert('PASSENGER successfully UPDATED');
        this.ngOnInit();
      }if(resData['errno']) {
       alert('You submitted invalid information \nPlease verify and try again.');
