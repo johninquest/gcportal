@@ -14,7 +14,7 @@
       <span>NEWS</span>
     </button>
     <button mat-menu-item [matMenuTriggerFor]="services" matTooltip="Transport-related services">
-      <mat-icon>build</mat-icon>
+      <mat-icon>menu</mat-icon>
       <span>SERVICES</span>
     </button>
     <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
@@ -23,17 +23,17 @@
     </button>
   </mat-menu>
   <mat-menu #services="matMenu">
-    <button mat-menu-item routerLink="/login">
+    <button mat-menu-item matTooltip="Passenger management system" routerLink="/login">
       <mat-icon>person</mat-icon>
-      <span>PERSONAL</span>
+      <span>PMS</span>
     </button>
     <button mat-menu-item routerLink="/priceguide"> 
       <mat-icon>directions</mat-icon>
       <span>PRICE GUIDE</span>
     </button>
-    <button mat-menu-item (click)="msg()">
-      <mat-icon>help</mat-icon>
-      <span>OTHERS</span>
+    <button mat-menu-item matTooltip="Safety information" (click)="msg()">
+      <mat-icon>security</mat-icon>
+      <span>SAFETY</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -42,18 +42,18 @@
 </nav>
 
 <div class="pageTitle">
-  <p matTooltip="Reliable transport information and services">- MANDI GUIDE -<br><span style="font-size: 0.6em">Transport information, services and tools</span></p>
+  <p matTooltip="Reliable transport information, services and tools">- MANDI GUIDE -<br><span style="font-size: 0.6em">Transport information, services and tools</span></p>
 </div>
 
 <div class="start-btn">
 
-  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport news">NEWS</button>
+  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport-related news">NEWS</button>
 
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out our services">SERVICES</button>
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">SERVICES</button>
   <mat-menu #buttons="matMenu">
-    <button class="menu-btn" mat-menu-item routerLink="/login">PERSONAL</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Passenger management system" routerLink="/login">PMS</button>
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
-    <button class="menu-btn" mat-menu-item (click)="msg()">OTHERS</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Safety information" (click)="msg()">SAFETY</button>
   </mat-menu>
 
 </div>
