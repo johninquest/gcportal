@@ -37,7 +37,7 @@ export class RecordsComponent implements OnInit {
     this.balanceData = null;
     let reqEndpoint: string = 'get_all_rows_in_table';
     let sqlPayload: object = { tb_name: 'sales' };
-    let obs = this.dbs.getAllRowsInTable(reqEndpoint, sqlPayload);
+    let obs = this.dbs.postRequest(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
         this.salesData = res; 
@@ -57,7 +57,7 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       created: this.datetime_now
     };
-    let obs = this.dbs.addRowToTable(createEndpoint, createData);
+    let obs = this.dbs.postRequest(createEndpoint, createData);
     obs.subscribe(
       res => { 
         this.addResponseHandler(res);
@@ -85,7 +85,6 @@ export class RecordsComponent implements OnInit {
     this.surname.setValue(rowData['_surname']);
     this.givennames.setValue(rowData['_givennames']);
     this.fee.setValue(rowData['_fee']);
-    // console.log(this.updateRowId);
   }
 
   updateData() { 
@@ -100,12 +99,11 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       updated: this.datetime_now
     };
-    let obs = this.dbs.updateRowInTable(updateEndpoint, updateData);
+    let obs = this.dbs.postRequest(updateEndpoint, updateData);
     obs.subscribe(
       res => this.updateResponseHandler(res),
       err => this.updateResponseHandler(err)
     );
-    // return alert('Under construction 👷🏾');
    }
 
   updateResponseHandler(resData: object) {
@@ -125,15 +123,15 @@ export class RecordsComponent implements OnInit {
     this.fee.reset();
   } 
   
-deleteData(targetRow: number) { 
-  let deleteDialog = confirm('Delete this information?');
-  if(deleteDialog === true) {
-    let reqEndpoint: string = 'delete_row_in_table';
-    let deleteData: object = {
-      tb_name: 'sales',
-      row_id: targetRow
-    };
-    let obs = this.dbs.postReq(reqEndpoint, deleteData);
+  deleteData(targetRow: number) { 
+    let deleteDialog = confirm('Delete this information?');
+    if(deleteDialog === true) {
+      let reqEndpoint: string = 'delete_row_in_table';
+      let deleteData: object = {
+        tb_name: 'sales', 
+        row_id: targetRow
+      };
+    let obs = this.dbs.postRequest(reqEndpoint, deleteData);
     obs.subscribe(
       res => { 
       this.deleteResponseHandler(res);
@@ -162,10 +160,6 @@ deleteData(targetRow: number) {
     }else { return 0; }    
    }
 
-  msg() {
-    alert('Under construction 👷🏾');
-  } 
-
   showAddForm() { 
     this.resetInputs();
     this.salesData = null;
@@ -188,7 +182,6 @@ deleteData(targetRow: number) {
     this.toggleUpdateForm = false;
     this.getAllSalesRecords();
   }
-  // hideInput() { this.toggleInput = false; }
 
   dateFormater(dbDate: string) {
      // let outDate = moment(dbDate).format('DD.MM.YYYY HH:mm');
@@ -208,26 +201,26 @@ deleteData(targetRow: number) {
     let reqEndpoint: string = 'get_total'; 
     if(period === 'day') {
       let reqObject: object = { tb_name: 'sales', period: 'day' };
-      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) 
         );
     }if(period === 'week') {
       let reqObject: object = { tb_name: 'sales', period: 'week' };
-      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'month') {
       let reqObject: object = { tb_name: 'sales', period: 'month' };
-      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'year') {
       let reqObject: object = { tb_name: 'sales', period: 'year' };
-      let obs = this.dbs.postReq(reqEndpoint, reqObject);
+      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) 
@@ -258,6 +251,10 @@ deleteData(targetRow: number) {
       return [message, amount];
     }
    }
+
+  msg() {
+    alert('Under construction 👷🏾');
+  }  
 
   displayedColumns: string[] = ['route', 'person', 'details', 'options'];
 

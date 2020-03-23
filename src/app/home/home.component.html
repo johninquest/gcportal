@@ -1,7 +1,6 @@
-
 <nav>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="" matTooltip="Home">
+  <mat-menu #nav_menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
@@ -13,7 +12,7 @@
       <mat-icon>assignment</mat-icon>
       <span>NEWS</span>
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="services" matTooltip="Transport-related services">
+    <button mat-menu-item [matMenuTriggerFor]="nav_services" matTooltip="Transport-related services">
       <mat-icon>menu</mat-icon>
       <span>SERVICES</span>
     </button>
@@ -22,21 +21,31 @@
       <span>CONTACT</span>
     </button>
   </mat-menu>
-  <mat-menu #services="matMenu">
+  <mat-menu #nav_services="matMenu">
     <button mat-menu-item matTooltip="Passenger management system" routerLink="/login">
       <mat-icon>person</mat-icon>
       <span>PMS</span>
     </button>
     <button mat-menu-item routerLink="/priceguide"> 
-      <mat-icon>directions</mat-icon>
+      <mat-icon>attach_money</mat-icon>
       <span>PRICE GUIDE</span>
     </button>
-    <button mat-menu-item matTooltip="Safety information" (click)="msg()">
+    <button mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="nav_safety">
       <mat-icon>security</mat-icon>
       <span>SAFETY</span>
     </button>
   </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-menu #nav_safety="matMenu">
+    <button mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">
+      <mat-icon>healing</mat-icon>
+      <span>CORONAVIRUS SAFETY</span>
+    </button>
+    <button mat-menu-item matTooltip="General road safety recommendations" (click)="msg()"> 
+      <mat-icon>directions</mat-icon>
+      <span>ROAD SAFETY</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="nav_menu">
     <mat-icon>menu</mat-icon>
   </button>
 </nav>
@@ -46,14 +55,15 @@
 </div>
 
 <div class="start-btn">
-
   <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport-related news">NEWS</button>
-
   <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">SERVICES</button>
   <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Passenger management system" routerLink="/login">PMS</button>
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Safety information" (click)="msg()">SAFETY</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="safety_buttons">SAFETY</button>
   </mat-menu>
-
+  <mat-menu #safety_buttons="matMenu">
+    <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">CORONAVIRUS SAFETY</button>
+    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" (click)="msg()">ROAD SAFETY</button>
+  </mat-menu>
 </div>

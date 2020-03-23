@@ -8,17 +8,19 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
 import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
+import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/coronavirus', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
   { path: 'priceguide', component: PriceguideComponent },
   { path: 'login', component: LoginComponent },
   { path: 'records', component: RecordsComponent, canActivate: [AuthGuard] },
+  { path: 'coronavirus', component: CoronavirusComponent }, 
   { path: '**', component: HomeComponent }
 ];
 

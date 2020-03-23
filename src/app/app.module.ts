@@ -14,6 +14,7 @@ import { PriceguideComponent } from './priceguide/priceguide.component';
 import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
+import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthGuard } from './services/auth.guard';
     NewsComponent,
     PriceguideComponent,
     RecordsComponent,
-    LoginComponent
+    LoginComponent,
+    CoronavirusComponent
   ],
   imports: [
     BrowserModule,

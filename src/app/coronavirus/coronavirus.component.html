@@ -1,0 +1,42 @@
+<nav>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" matTooltip="Home">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
+        <mat-icon>assignment</mat-icon>
+        <span>NEWS</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</nav>
+
+<div class="chead">Coronavirus safety recommendations for drivers and transporters</div>
+<div class="cbody">
+  <ul>
+    <li>Keep vehicle ventilated at all times (if possible).</li>
+    <li>Increase hygiene and sanitation. Clean and sanitize vehicle (especially seats, armsets, doors and handles) after every trip.</li>
+    <li>Drivers should use face masks and sanitary gloves (if possible).</li>
+    <li>Avoid overloading. Underloading in order to achieve some amount of social distancing between passengers is more effective.</li>
+    <li>Avoid cash if possible (mobile money is an alternative).</li>
+    <li>Only accept passengers with signs of a cold or fever if necessary.</li>
+    <li>Keep records of your passengers. In case one of them eventually turns out to be an infected person, those records can help prevent further infections.</li>
+    <li>Use posters inside and outside of vehicles to make passengers aware of the situation.</li>
+  </ul>  
+</div>
+
+<div class="chead">General coronavirus (COVID-19) safety recommendations by the WHO</div>
+<div class="cbody">
+  <ol>
+    <li>Wash your hands often.</li>
+    <li>Cough / sneeze into your elbow.</li>
+    <li>Don't touch your face.</li>
+    <li>Stay more than 1 meter away from each other.</li>
+    <li>Stay home if you feel sick.</li>
+  </ol>
+</div>
+
+<div class="cfoot">&copy; <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank">World Health Organization (WHO)</a></div>

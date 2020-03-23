@@ -28,18 +28,19 @@ export class NewsComponent implements OnInit {
   showNewsData() { 
     let qData: string = 'cameroon+transport';
     let obs = this.nds.getNewsData(qData);
-    obs.subscribe( res => { 
-                            // this.respData = res['articles']; 
-                            this.respData = this.handleEmptyResponse(res['articles']);
-                          },
-                   err => { this.handleErr(err.status); } 
-                   );
+    obs.subscribe( 
+      res => { 
+        this.respData = this.handleEmptyResponse(res['articles']);
+                },
+      err => { 
+        this.handleErr(err.status); } 
+           );
    }
 
-   handleEmptyResponse(resContent: any) {
+  handleEmptyResponse(resContent: any) {
      if(Object.keys(resContent).length == 0) {
        return alert('No news was found. Please come back later.');
-     } else { return resContent; }
+     }else { return resContent; }
    }
 
    handleErr(errCode: number) {

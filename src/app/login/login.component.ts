@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     let userData: object = { tb_name: 'users',  username: this.userid.value, userpwd: this.userpwd.value };
     // console.log(userData);
     let reqEndpoint: string = 'check_user';
-    let obs = this.dbs.authUser(reqEndpoint, userData);
+    let obs = this.dbs.postRequest(reqEndpoint, userData);
     obs.subscribe( 
       res => {
         // console.log('RES => ' + JSON.stringify(res));

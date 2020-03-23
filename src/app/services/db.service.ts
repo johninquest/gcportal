@@ -11,33 +11,12 @@ export class DbService {
   // private dbUrl: string = 'http://localhost:3000/';
   private dbUrl: string = 'https://mandiguide2020.appspot.com/';
 
-  authUser(dbEndpoint: string, reqPayload: object): Observable<object> {
-    let dbUrl: string = this.dbUrl + dbEndpoint;
-    console.log(dbUrl);
-    return this.http.post(dbUrl, reqPayload);
-  }
-
-  getAllRowsInTable(dbEndpoint: string, reqPayload: object): Observable<object> {
+  postRequest(dbEndpoint: string, reqPayload: object): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.post(dbUrl, reqPayload);
   }
 
-  addRowToTable(dbEndpoint: string, reqPayload: object): Observable<object> {
-    let dbUrl: string = this.dbUrl + dbEndpoint;
-    return this.http.post(dbUrl, reqPayload);
-  }
-
-  updateRowInTable(dbEndpoint: string, reqPayload: object): Observable<object> {
-    let dbUrl: string = this.dbUrl + dbEndpoint;
-    return this.http.post(dbUrl, reqPayload);
-  }
-
-  postReq(dbEndpoint: string, reqPayload: object): Observable<object> {
-    let dbUrl: string = this.dbUrl + dbEndpoint;
-    return this.http.post(dbUrl, reqPayload);
-  }
-
-  getReq(dbEndpoint: string): Observable<object> {
+  getRequest(dbEndpoint: string): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;
     return this.http.get(dbUrl);
   }
