@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   msg() {
-    alert('Coming soon ...');
+    alert('Under construction ... 🚧');
   }
 
   ngOnInit() { }
