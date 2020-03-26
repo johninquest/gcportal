@@ -44,12 +44,13 @@ sup {
 
 .highlights ul li {
     font-size: 0.9em;
+    margin: 0 0 0.5em 0;
 }
 
 .offeritems {
     color: #FFC107; 
     font-weight: bold;
-    cursor: default;
+    cursor: pointer;
 }
 
 mat-divider {

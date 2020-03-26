@@ -147,7 +147,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-  <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="tr2" (dblclick)="showDoc(row.doc._id)"></tr> -->
 </table>
 
 <div class="balance" *ngIf="balanceData">
