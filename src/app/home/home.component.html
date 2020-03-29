@@ -40,7 +40,7 @@
       <mat-icon>healing</mat-icon>
       <span>CORONAVIRUS SAFETY</span>
     </button>
-    <button mat-menu-item matTooltip="General road safety recommendations" (click)="msg()"> 
+    <button mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety"> 
       <mat-icon>directions</mat-icon>
       <span>ROAD SAFETY</span>
     </button>
@@ -64,6 +64,6 @@
   </mat-menu>
   <mat-menu #safety_buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">CORONAVIRUS SAFETY</button>
-    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" (click)="msg()">ROAD SAFETY</button>
+    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety">ROAD SAFETY</button>
   </mat-menu>
 </div>

@@ -9,6 +9,7 @@ import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
+import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'records', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: 'coronavirus', component: CoronavirusComponent }, 
+  { path: 'roadsafety', component: RoadsafetyComponent },
   { path: '**', component: HomeComponent }
 ];
 
