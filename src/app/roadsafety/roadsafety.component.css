@@ -1,11 +1,16 @@
-div {
+nav button:hover { background-color: #FFC107; }
+
+.mat-menu-item:hover { background-color: #FFC107; }
+
+.title {
     font-size: 1.1em;
     font-weight: bold;
     text-align: center;
     color: #FFC107;
     margin-top: 2em;
+    margin-bottom: 1em;
 }
 
-p {
-    text-align: center;
+.content ul li {
+    text-align: left;
 }

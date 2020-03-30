@@ -8,6 +8,7 @@ nav button:hover { background-color: #FFC107; }
     font-weight: bold;
     font-size: 1.1em;
     color: #FFC107;
+    margin-bottom: 1em;
 }
 
 .cbody {

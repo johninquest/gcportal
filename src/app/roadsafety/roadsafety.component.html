@@ -1,4 +1,37 @@
+<nav>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" matTooltip="Home">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item routerLink="/coronavirus" matTooltip="Safety tips in times of the coronavirus">
+        <mat-icon>local_hospital</mat-icon>
+        <span>CORONAVIRUS SAFETY</span>
+      </button>
+      <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
+        <mat-icon>assignment</mat-icon>
+        <span>NEWS</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</nav>
 
-<div>ROAD SAFETY</div>
+<div class="title">ROAD SAFETY <br> (useful tips)</div>
 
-<p>Coming soon ... 🚧</p>
+<div class="content">
+    <ul>
+        <li>Avoid speeding.</li>
+        <li>Avoid driving while tired. Get some rest.</li>
+        <li>Avoid overcrowding your vehicle.</li>
+        <li>Be vigilant while driving for blind spots and other reckless drivers. Slow down if necessary.</li>
+        <li>Do not drink and drive.</li>
+        <li>Do not drive too close to the vehicle ahead. Always leave space for a safe braking distance.</li>
+        <li>Make sure your headlights are working. You will need them in the dark and when driving through a fog.</li>
+        <li>Pay attention to road signs.</li>
+        <li>Put your phone away and avoid other distractions while driving.</li>
+        <li>Slow down before taking corners.</li>
+        <li>Wear your seat belt.</li>
+    </ul>
+</div>
