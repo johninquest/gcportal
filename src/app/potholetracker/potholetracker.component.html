@@ -1,0 +1,27 @@
+
+<nav>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" matTooltip="Home">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
+        <mat-icon>radio</mat-icon>
+        <span>NEWS</span>
+      </button>
+      <button mat-menu-item routerLink="/roadsafety" matTooltip="Road safety tips">
+        <mat-icon>directions</mat-icon>
+        <span>ROAD SAFETY GUIDE</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</nav>
+
+<div class="title">POTHOLE TRACKER</div>
+
+<div class="content">
+    <button mat-raised-button color="primary" (click)="msg()">REPORT POTHOLE</button>
+    <button mat-raised-button color="primary" (click)="msg()">SHOW POTHOLES</button>
+</div>

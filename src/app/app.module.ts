@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
+import { PotholetrackerComponent } from './potholetracker/potholetracker.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
     RecordsComponent,
     LoginComponent,
     CoronavirusComponent,
-    RoadsafetyComponent
+    RoadsafetyComponent,
+    PotholetrackerComponent
   ],
   imports: [
     BrowserModule,
