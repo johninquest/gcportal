@@ -19,4 +19,10 @@ nav button:hover { background-color: #FFC107; }
 
 .content button {
     margin: 1em;
+    width: 12em;
+    height: 12em;
+}
+
+.gmap {
+    text-align: center;
 }
