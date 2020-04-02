@@ -17,6 +17,7 @@ import { AuthGuard } from './services/auth.guard';
 import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
 import { PotholetrackerComponent } from './potholetracker/potholetracker.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PotholetrackerComponent } from './potholetracker/potholetracker.compone
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyDASOEZLqXaQhpncdDDZxuneXoo7wBubTw'})
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],

@@ -25,4 +25,11 @@ nav button:hover { background-color: #FFC107; }
 
 .gmap {
     text-align: center;
+ 
+}
+
+.gmap agm-map {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
 }
