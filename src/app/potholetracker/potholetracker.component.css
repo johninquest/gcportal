@@ -25,12 +25,15 @@ nav button:hover { background-color: #FFC107; }
 }
 
 .gmap {
-    text-align: center;
- 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .gmap agm-map {
-    text-align: center;
-    height: 80vh;
-    width: 100vw;
+    overflow: hidden;
+    height: 22em;
+    width: 22em;
+    border-radius: 0.8em;
 }

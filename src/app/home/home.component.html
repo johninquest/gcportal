@@ -26,9 +26,9 @@
       <mat-icon>person</mat-icon>
       <span>PMS</span>
     </button>
-    <button mat-menu-item matTooltip="See pothole information" routerLink="/potholetracker"> 
+    <button mat-menu-item matTooltip="See pothole information" routerLink="/pothole-tracker"> 
       <mat-icon>terrain</mat-icon>
-      <span>POTHOLE INFO</span>
+      <span>POTHOLE TRACKER</span>
     </button>
     <button mat-menu-item routerLink="/priceguide"> 
       <mat-icon>attach_money</mat-icon>
@@ -63,7 +63,7 @@
   <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">SERVICES</button>
   <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Passenger management system" routerLink="/login">PMS</button>
-    <button class="menu-btn" mat-menu-item matTooltip="See and submit pothole information" routerLink="/potholetracker">POTHOLE INFO</button>
+    <button class="menu-btn" mat-menu-item matTooltip="See and submit pothole information" routerLink="/pothole-tracker">POTHOLE TRACKER</button>
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
     <button class="menu-btn" mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="safety_buttons">SAFETY</button>
   </mat-menu>

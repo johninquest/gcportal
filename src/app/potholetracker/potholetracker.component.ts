@@ -13,11 +13,14 @@ export class PotholetrackerComponent implements OnInit {
 
   lat: number;
   lng: number;
+  potholeData: any;
 
   savePotholeLocation() {
-    if(navigator.geolocation) {
+    let saveDialog = confirm('This pothole location is now going to be reported ... ');
+    if(saveDialog === true) {
+      if(navigator.geolocation) {
       // console.log('Geolocation is supported!');
-      navigator.geolocation.getCurrentPosition( (position) => {
+        navigator.geolocation.getCurrentPosition( (position) => {
         let myLatitude = position.coords.latitude;
         let myLongitude = position.coords.longitude;
         // console.log([myLatitude, myLongitude]);
@@ -25,13 +28,19 @@ export class PotholetrackerComponent implements OnInit {
         let reqPayload: object = { tb_name: 'potholes', geo_lat: myLatitude, geo_lng: myLongitude };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
-          res => console.log(res),
+          res => { 
+            console.log(res);
+            alert('Pothole location reported successfully')
+            // this.showPotholes();
+           },
           err => console.log(err)
         );
       });
-    }else {
-      console.log('Geolocation is not supported!');
-    }
+     }else {
+      // console.log('Geolocation is not supported!');
+      alert('Your GPS is either not activated or not working properly');
+      }
+    }    
   }
 
   showPotholes() {
@@ -46,7 +55,10 @@ export class PotholetrackerComponent implements OnInit {
         let reqPayload: object = { tb_name: 'potholes' };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
-          res => console.log(res),
+          res => { 
+            // console.log(res);
+            this.potholeData = res;
+           },
           err => console.log(err)
         );
       });
@@ -55,9 +67,9 @@ export class PotholetrackerComponent implements OnInit {
     }
   }
 
-  getPosition(event: object) {
+/*  getPosition(event: object) {
     console.log(event);
-  }
+  } */
 
   ngOnInit(): void { }
 

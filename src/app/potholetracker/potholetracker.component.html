@@ -22,7 +22,7 @@
     </button>
 </nav>
 
-<div class="title">POTHOLE INFO &#7495;&#7497;&#7511;&#7491;</div>
+<div class="title">POTHOLE TRACKER &#7495;&#7497;&#7511;&#7491;</div>
 
 <div class="content">
     <button mat-raised-button color="primary" (click)="savePotholeLocation()">REPORT<br>POTHOLE</button>
@@ -30,9 +30,14 @@
 </div>
 
 <div class="gmap" *ngIf="lat && lng">
-  
-  <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="getPosition($event)">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+  <!-- <agm-marker [latitude]="lat" [longitude]="lng" (mapClick)="getPosition($event)"></agm-marker> -->
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker *ngFor="let data of potholeData" [latitude]="data.latitude" [longitude]="data.longitude">
+      <!-- <agm-info-window>
+        <p>Hello world!</p>
+      </agm-info-window> -->
+    </agm-marker>
   </agm-map>
 
 </div>

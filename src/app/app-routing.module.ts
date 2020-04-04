@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'records', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: 'coronavirus', component: CoronavirusComponent }, 
   { path: 'roadsafety', component: RoadsafetyComponent },
-  { path: 'potholetracker', component: PotholetrackerComponent },
+  { path: 'pothole-tracker', component: PotholetrackerComponent },
   { path: '**', component: HomeComponent }
 ];
 
