@@ -4,9 +4,13 @@
         <mat-icon>home</mat-icon>
         <span>HOME</span>
       </button>
-      <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
-        <mat-icon>radio</mat-icon>
-        <span>NEWS</span>
+      <button mat-menu-item (click)="savePotholeLocation()" matTooltip="Report a pothole you have just found">
+        <mat-icon>report_problem</mat-icon>
+        <span>REPORT POTHOLE</span>
+      </button>
+      <button mat-menu-item (click)="showPotholes()" matTooltip="See all potholes around you">
+        <mat-icon>map</mat-icon>
+        <span>SHOW POTHOLES</span>
       </button>
       <button mat-menu-item routerLink="/roadsafety" matTooltip="Road safety tips">
         <mat-icon>directions</mat-icon>
@@ -21,8 +25,8 @@
 <div class="title">POTHOLE INFO &#7495;&#7497;&#7511;&#7491;</div>
 
 <div class="content">
-    <button mat-fab color="primary" (click)="saveGeoLocation()">REPORT POTHOLE</button>
-    <button mat-fab color="primary" (click)="msg()">SHOW POTHOLES</button>
+    <button mat-raised-button color="primary" (click)="savePotholeLocation()">REPORT<br>POTHOLE</button>
+    <button mat-raised-button color="primary" (click)="showPotholes()">SHOW<br>POTHOLES</button>
 </div>
 
 <div class="gmap" *ngIf="lat && lng">

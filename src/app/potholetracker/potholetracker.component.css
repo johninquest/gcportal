@@ -11,7 +11,7 @@ nav button:hover { background-color: #FFC107; }
 
 .content {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     margin: 1em;
@@ -19,8 +19,9 @@ nav button:hover { background-color: #FFC107; }
 
 .content button {
     margin: 1em;
-    width: 12em;
-    height: 12em;
+    border-radius: 0.8em;
+    width: 10em;
+    height: 5em;
 }
 
 .gmap {
@@ -30,6 +31,6 @@ nav button:hover { background-color: #FFC107; }
 
 .gmap agm-map {
     text-align: center;
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
 }
