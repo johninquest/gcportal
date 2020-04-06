@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from '../services/db.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-potholetracker',
@@ -9,30 +10,24 @@ import { DbService } from '../services/db.service';
 
 export class PotholetrackerComponent implements OnInit {
 
-  constructor(private dbs: DbService) {}
+  constructor(private dbs: DbService, private snackBar: MatSnackBar) {}
 
-  lat: number;
-  lng: number;
+  lat: number; lng: number;
   potholeData: any;
 
   savePotholeLocation() {
-    let saveDialog = confirm('This pothole location is now going to be reported ... ');
+    let saveDialog = confirm('Reporting pothole location ... ');
     if(saveDialog === true) {
       if(navigator.geolocation) {
       // console.log('Geolocation is supported!');
         navigator.geolocation.getCurrentPosition( (position) => {
         let myLatitude = position.coords.latitude;
         let myLongitude = position.coords.longitude;
-        // console.log([myLatitude, myLongitude]);
         let reqEndpoint: string = 'save_pothole_data';
         let reqPayload: object = { tb_name: 'potholes', geo_lat: myLatitude, geo_lng: myLongitude };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
-          res => { 
-            console.log(res);
-            alert('Pothole location reported successfully')
-            // this.showPotholes();
-           },
+          res => this.saveResponseHandler(res),
           err => console.log(err)
         );
       });
@@ -41,6 +36,14 @@ export class PotholetrackerComponent implements OnInit {
       alert('Your GPS is either not activated or not working properly');
       }
     }    
+  }
+
+  saveResponseHandler(dbResponse: object) {
+    if(dbResponse['insertId'] !== 0 && dbResponse['warningCount'] === 0) {
+      this.snackBar.open('Pothole location reported successfully 👍', '', { duration: 4000 });
+    }if(dbResponse['errno']) {
+      alert('Something went wrong ⚠️ \nPlease try again later.');
+    }
   }
 
   showPotholes() {
@@ -56,7 +59,6 @@ export class PotholetrackerComponent implements OnInit {
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
           res => { 
-            // console.log(res);
             this.potholeData = res;
            },
           err => console.log(err)
@@ -67,10 +69,12 @@ export class PotholetrackerComponent implements OnInit {
     }
   }
 
-/*  getPosition(event: object) {
-    console.log(event);
-  } */
-
   ngOnInit(): void { }
 
 }
+
+/*  
+  getPosition(event: object) {
+    console.log(event);
+  } 
+*/

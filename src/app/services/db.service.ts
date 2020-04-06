@@ -8,8 +8,8 @@ export class DbService {
 
   constructor(private http: HttpClient) { }
 
-  private dbUrl: string = 'http://localhost:3000/';
-  // private dbUrl: string = 'https://mandiguide2020.appspot.com/';
+  // private dbUrl: string = 'http://localhost:3000/';
+  private dbUrl: string = 'https://mandiguide2020.appspot.com/';
 
   postRequest(dbEndpoint: string, reqPayload: object): Observable<object> {
     let dbUrl: string = this.dbUrl + dbEndpoint;

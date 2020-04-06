@@ -30,14 +30,10 @@
 </div>
 
 <div class="gmap" *ngIf="lat && lng">
-
   <!-- <agm-marker [latitude]="lat" [longitude]="lng" (mapClick)="getPosition($event)"></agm-marker> -->
   <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker *ngFor="let data of potholeData" [latitude]="data.latitude" [longitude]="data.longitude">
-      <!-- <agm-info-window>
-        <p>Hello world!</p>
-      </agm-info-window> -->
+      <!-- <agm-info-window> <p>Hello world!</p> </agm-info-window> -->
     </agm-marker>
   </agm-map>
-
 </div>
