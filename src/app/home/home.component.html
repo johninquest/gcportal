@@ -36,7 +36,7 @@
     </button>
     <button mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="nav_safety">
       <mat-icon>security</mat-icon>
-      <span>SAFETY GUIDES</span>
+      <span>SAFETY</span>
     </button>
   </mat-menu>
   <mat-menu #nav_safety="matMenu">
@@ -46,7 +46,7 @@
     </button>
     <button mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety"> 
       <mat-icon>directions</mat-icon>
-      <span>ROAD SAFETY</span>
+      <span>ROAD SAFETY GUIDE</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="nav_menu">
@@ -69,6 +69,6 @@
   </mat-menu>
   <mat-menu #safety_buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">CORONAVIRUS SAFETY</button>
-    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety">ROAD SAFETY</button>
+    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety">ROAD SAFETY GUIDE</button>
   </mat-menu>
 </div>

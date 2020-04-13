@@ -16,7 +16,7 @@ export class PotholetrackerComponent implements OnInit {
   potholeData: any;
 
   savePotholeLocation() {
-    let saveDialog = confirm('Reporting pothole location ... ');
+    let saveDialog = confirm(`Reporting this pothole location ... 📍 \nIf requested, please allow access to your phone's location.`);
     if(saveDialog === true) {
       if(navigator.geolocation) {
       // console.log('Geolocation is supported!');
