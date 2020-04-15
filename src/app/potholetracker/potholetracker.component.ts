@@ -16,7 +16,7 @@ export class PotholetrackerComponent implements OnInit {
   potholeData: any;
 
   savePotholeLocation() {
-    let saveDialog = confirm(`Reporting this pothole location ... 📍 \nIf requested, please allow access to your phone's location.`);
+    let saveDialog = confirm(`Reporting pothole ... 📝 \nPlease allow access to your phone's location.`);
     if(saveDialog === true) {
       if(navigator.geolocation) {
       // console.log('Geolocation is supported!');
@@ -27,21 +27,21 @@ export class PotholetrackerComponent implements OnInit {
         let reqPayload: object = { tb_name: 'potholes', geo_lat: myLatitude, geo_lng: myLongitude };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
-          res => this.saveResponseHandler(res),
+          res => this.savePotholesResponseHandler(res),
           err => console.log(err)
         );
       });
      }else {
       // console.log('Geolocation is not supported!');
-      alert('Your GPS is either not activated or not working properly');
+      alert('Your GPS is either not activated or not working properly.');
       }
     }    
   }
 
-  saveResponseHandler(dbResponse: object) {
-    if(dbResponse['insertId'] !== 0 && dbResponse['warningCount'] === 0) {
+  savePotholesResponseHandler(responseData: object) {
+    if(responseData['insertId'] !== 0 && responseData['warningCount'] === 0) {
       this.snackBar.open('Pothole location reported successfully 👍', '', { duration: 4000 });
-    }if(dbResponse['errno']) {
+    }if(responseData['errno']) {
       alert('Something went wrong ⚠️ \nPlease try again later.');
     }
   }
@@ -59,6 +59,7 @@ export class PotholetrackerComponent implements OnInit {
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
           res => { 
+            console.log(res);
             this.potholeData = res;
            },
           err => console.log(err)
@@ -72,9 +73,3 @@ export class PotholetrackerComponent implements OnInit {
   ngOnInit(): void { }
 
 }
-
-/*  
-  getPosition(event: object) {
-    console.log(event);
-  } 
-*/

@@ -14,7 +14,7 @@
     </button>
     <button mat-menu-item [matMenuTriggerFor]="nav_services" matTooltip="Transport-related services">
       <mat-icon>menu</mat-icon>
-      <span>SERVICES</span>
+      <span>TOOLS</span>
     </button>
     <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
       <mat-icon>mail</mat-icon>
@@ -60,7 +60,7 @@
 
 <div class="start-btn">
   <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport-related news">NEWS</button>
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">SERVICES</button>
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">TOOLS</button>
   <mat-menu #buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Passenger management system" routerLink="/login">PMS</button>
     <button class="menu-btn" mat-menu-item matTooltip="See and submit pothole information" routerLink="/pothole-tracker">POTHOLE TRACKER</button>
