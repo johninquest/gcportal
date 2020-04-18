@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DbService } from '../services/db.service';
+import { NetworkService } from '../services/network.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-potholetracker',
@@ -10,9 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 export class PotholetrackerComponent implements OnInit {
 
-  constructor(private dbs: DbService, private snackBar: MatSnackBar) {}
+  constructor(private dbs: DbService, private nets: NetworkService, private snackBar: MatSnackBar) {}
 
-  lat: number; lng: number;
+  lat: number; lng: number; deviceIp: string;
   potholeData: any;
 
   savePotholeLocation() {
@@ -24,7 +26,7 @@ export class PotholetrackerComponent implements OnInit {
         let myLatitude = position.coords.latitude;
         let myLongitude = position.coords.longitude;
         let reqEndpoint: string = 'save_pothole_data';
-        let reqPayload: object = { tb_name: 'potholes', geo_lat: myLatitude, geo_lng: myLongitude };
+        let reqPayload: object = { tb_name: 'potholes', geo_lat: myLatitude, geo_lng: myLongitude, geo_ip: this.deviceIp };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
           res => this.savePotholesResponseHandler(res),
@@ -58,10 +60,7 @@ export class PotholetrackerComponent implements OnInit {
         let reqPayload: object = { tb_name: 'potholes' };
         let obs = this.dbs.postRequest(reqEndpoint, reqPayload);
         obs.subscribe(
-          res => { 
-            console.log(res);
-            this.potholeData = res;
-           },
+          res => this.potholeData = res,
           err => console.log(err)
         );
       });
@@ -70,6 +69,17 @@ export class PotholetrackerComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void { }
+  getPublicIp() {
+    let responseFormat: string = 'json';
+    let obs = this.nets.getRequest(responseFormat);
+    obs.subscribe(
+      res => this.deviceIp = res['ip'], 
+      err => console.log(err)
+    );
+  }
+
+  ngOnInit(): void { 
+    this.getPublicIp();
+   }
 
 }
