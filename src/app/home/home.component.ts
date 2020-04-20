@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  msg() {
-    alert('Under construction ... 🚧');
+  goToFacebook() {
+    let targetUrl: string = 'https://www.facebook.com/mandiguide';
+    window.open(targetUrl, '_blank');
+    window.focus();
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 }

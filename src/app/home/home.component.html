@@ -20,6 +20,10 @@
       <mat-icon>mail</mat-icon>
       <span>CONTACT</span>
     </button>
+    <button mat-menu-item (click)="goToFacebook()" matTooltip="Visit our facebook page">
+      <mat-icon><img src="https://img.icons8.com/color/26/000000/facebook.png"/></mat-icon> 
+      <span>FACEBOOK</span>
+    </button>
   </mat-menu>
   <mat-menu #nav_services="matMenu">
     <button mat-menu-item matTooltip="Passenger management system" routerLink="/login">
