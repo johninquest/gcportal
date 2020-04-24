@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
         if(res['message'] === 'OK') {
           // alert('Login successful!');
           sessionStorage.setItem('access', 'allowed');
-          this.rt.navigateByUrl('/records');
+          this.rt.navigateByUrl('/pms');
         }else if(res['message'] === 'NOK') {
           alert('Login failed');
         }else {

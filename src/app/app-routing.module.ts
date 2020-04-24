@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'priceguide', component: PriceguideComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'records', component: RecordsComponent, canActivate: [AuthGuard] },
+  { path: 'pms', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: 'coronavirus', component: CoronavirusComponent }, 
   { path: 'roadsafety', component: RoadsafetyComponent },
   { path: 'pothole-tracker', component: PotholetrackerComponent },
