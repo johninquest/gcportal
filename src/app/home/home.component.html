@@ -12,7 +12,7 @@
       <mat-icon>radio</mat-icon>
       <span>NEWS</span>
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="nav_services" matTooltip="Transport-related services">
+    <button mat-menu-item [matMenuTriggerFor]="navtools" matTooltip="Transport-related services">
       <mat-icon>menu</mat-icon>
       <span>TOOLS</span>
     </button>
@@ -25,7 +25,7 @@
       <span>FACEBOOK</span>
     </button>
   </mat-menu>
-  <mat-menu #nav_services="matMenu">
+  <mat-menu #navtools="matMenu">
     <button mat-menu-item matTooltip="Passenger management system" routerLink="/login">
       <mat-icon>person</mat-icon>
       <span>PMS</span>
@@ -38,12 +38,16 @@
       <mat-icon>attach_money</mat-icon>
       <span>PRICE GUIDE</span>
     </button>
-    <button mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="nav_safety">
+    <button mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="navsafety">
       <mat-icon>security</mat-icon>
       <span>SAFETY</span>
     </button>
+    <button mat-menu-item routerLink="/ticket"> 
+      <mat-icon>receipt</mat-icon>
+      <span>TICKET</span>
+    </button>
   </mat-menu>
-  <mat-menu #nav_safety="matMenu">
+  <mat-menu #navsafety="matMenu">
     <button mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">
       <mat-icon>local_hospital</mat-icon>
       <span>CORONAVIRUS SAFETY</span>
@@ -70,6 +74,7 @@
     <button class="menu-btn" mat-menu-item matTooltip="See and submit pothole information" routerLink="/pothole-tracker">POTHOLE TRACKER</button>
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
     <button class="menu-btn" mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="safety_buttons">SAFETY</button>
+    <button class="menu-btn" mat-menu-item routerLink="/ticket">TICKET</button>
   </mat-menu>
   <mat-menu #safety_buttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">CORONAVIRUS SAFETY</button>
