@@ -14,4 +14,29 @@
     </button>
 </nav>
 
-<p>ticket works!</p>
+<div class="pagetitle">TICKET TOOL &#7495;&#7497;&#7511;&#7491;</div>
+
+<div class="locations">
+    <mat-form-field class="start-location">
+        <mat-select placeholder="FROM" [formControl]="startLocation">
+          <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="end-location">
+        <mat-select placeholder="TO" [formControl]="endLocation">
+            <mat-option *ngFor="let ePlace of endPlaces" [value]="ePlace.value">{{ ePlace.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="FEE" [formControl]="ticketFee" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="PASSENGER NAME" [formControl]="ticketOwner" type="text">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="printTicket()">PRINT</button>
+
+</div>
