@@ -22,7 +22,7 @@ export class TicketComponent implements OnInit {
   startPlaces: placesListDesc[] = START;
   endPlaces: placesListDesc[] = END;
 
-  printTicket() {
+  previewTicket() {
     alert('Under construction ... 👷🏽');
   }
 
