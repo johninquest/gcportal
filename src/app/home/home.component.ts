@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
 
-  constructor() {}
+  constructor(private rt: Router, private snackBar: MatSnackBar) {}
 
   goToFacebook() {
     let targetUrl: string = 'https://www.facebook.com/mandiguide';
@@ -16,5 +18,14 @@ export class HomeComponent implements OnInit {
     window.focus();
   }
 
-  ngOnInit() {}
+  popUpDialog() {
+    setTimeout(() => {
+      let snackbarRef = this.snackBar.open('Please take a look at our hygiene and safety tips in times of the coronavirus (COVID-19).', 'YES, SHOW ME', { duration: 30000 });
+      snackbarRef.onAction().subscribe(() => this.rt.navigateByUrl('/coronavirus'));
+    }, 10000);
+  }
+
+  ngOnInit() {
+    this.popUpDialog();
+  }
 }
