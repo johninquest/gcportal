@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { DbService } from '../services/db.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
-import { START, END } from '../destinations';
+import { PLACES } from '../destinations';
 
 export interface placesListDesc {
   value: string;
@@ -26,7 +26,7 @@ export class RecordsComponent implements OnInit {
   surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
   fee = new FormControl(''); nidn = new FormControl('') // National Id number
   datetime_now = moment().format('YYYY-MM-DD HH:mm:ss');
-  startPlaces: placesListDesc[] = START; endPlaces: placesListDesc[] = END;
+  startPlaces: placesListDesc[] = PLACES; endPlaces: placesListDesc[] = PLACES;
   salesData: any; 
   balanceData: any; 
   updateRowId: number;

@@ -34,7 +34,15 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="PASSENGER NAME" [formControl]="ticketOwner" type="text">
+      <input matInput placeholder="PASSENGER NAME" [formControl]="ticketOwnerName" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="PASSENGER ID" [formControl]="ticketOwnerId" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="TICKET NUMBER" [formControl]="ticketNumber" type="number">
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="previewTicket()">PREVIEW</button>

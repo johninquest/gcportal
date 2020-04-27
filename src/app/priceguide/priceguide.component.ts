@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { START, END, DETAILS } from '../destinations';
+import { PLACES, DETAILS } from '../destinations';
 import { from } from 'rxjs';
 
 export interface placesListDesc {
@@ -20,8 +20,8 @@ export class PriceguideComponent implements OnInit {
 
   startLocation = new FormControl(''); 
   endLocation = new FormControl('');
-  startPlaces: placesListDesc[] = START;
-  endPlaces: placesListDesc[] = END;
+  startPlaces: placesListDesc[] = PLACES;
+  endPlaces: placesListDesc[] = PLACES;
 
   tripDetails() {
     let tStart: string = this.startLocation.value;

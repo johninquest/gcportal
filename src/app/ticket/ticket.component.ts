@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { START, END } from '../destinations';
+import { PLACES } from '../destinations';
 
 export interface placesListDesc {
   value: string;
@@ -18,12 +18,13 @@ export class TicketComponent implements OnInit {
   constructor() { }
 
   startLocation = new FormControl(''); endLocation = new FormControl('');
-  ticketFee = new FormControl(''); ticketOwner = new FormControl('');
-  startPlaces: placesListDesc[] = START;
-  endPlaces: placesListDesc[] = END;
+  ticketFee = new FormControl(''); ticketOwnerName = new FormControl(''); 
+  ticketOwnerId = new FormControl(''); ticketNumber = new FormControl('');
+  startPlaces: placesListDesc[] = PLACES;
+  endPlaces: placesListDesc[] = PLACES;
 
   previewTicket() {
-    alert('Under construction ... 👷🏽');
+    alert('Under construction ... 🚧');
   }
 
   ngOnInit(): void { }
