@@ -14,9 +14,9 @@
     </button>
 </nav>
 
-<div class="pagetitle">TICKET TOOL &#7495;&#7497;&#7511;&#7491;</div>
+<div class="pagetitle">TICKET TOOL</div>
 
-<div class="locations">
+<div class="locations" *ngIf="toggleInput">
     <mat-form-field class="start-location">
         <mat-select placeholder="FROM" [formControl]="startLocation">
           <mat-option *ngFor="let sPlace of startPlaces" [value]="sPlace.value">{{ sPlace.viewValue }}</mat-option>
@@ -47,4 +47,109 @@
 
     <button mat-raised-button color="primary" (click)="previewTicket()">PREVIEW</button>
 
+</div>
+
+<div class="invoice-box" id="canvas-box" *ngIf="togglePreview">
+  <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+          <td colspan="2">
+              <table>
+                  <tr>
+                      <td class="title"><!-- trLogo --></td>
+                      
+                      <td>
+                        <span style="font-weight:bold">Date:</span> {{ tDate }} <br>
+                        <span style="font-weight:bold">Place:</span> {{ startLocation.value | uppercase }}
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      
+      <tr class="information">
+          <td colspan="2">
+              <table>
+                  <tr>
+                      <td>
+                          <!-- <span class="bsInfo">sgInfo information</span><br>
+                          sgNames<br>
+                          sgPhone<br>
+                          sgEmail -->
+                      </td>
+                      
+                      <td>
+                          <span class="bsInfo">PASSENGER INFORMATION</span><br>
+                          {{ ticketOwnerName.value | uppercase }}<br>
+                          {{ ticketOwnerId.value | uppercase }}<br>
+                          {{ ticketNumber.value }}
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+      
+<!--      <tr class="heading">
+        <td>Type of transaction</td>
+        
+        <td>Payment method</td>
+    </tr>
+    
+    <tr class="details">
+        <td>tType</td>
+        
+        <td>payMethod</td>
+    </tr>
+-->      
+    <tr class="heading">
+        <td>TICKET DETAILS</td>
+        
+        <td></td>
+    </tr>
+    
+    <tr class="item">
+        <td>FROM</td>
+        
+        <td>{{ startLocation.value | uppercase }}</td>
+    </tr>
+    
+    <tr class="item">
+        <td>TO</td>
+        
+        <td>{{ endLocation.value | uppercase }}</td>
+    </tr>
+
+    <tr class="item">
+      <td>FEE</td>
+      
+      <td>{{ ticketFee.value }}</td>
+  </tr>
+    
+    <tr class="item last">
+        <td>TAX (19.25%)</td>
+        
+        <td>{{ calculateTaxTotal(ticketFee.value)[0] }}</td>
+    </tr>
+    
+    <tr class="total">
+        <td>TOTAL</td>
+        
+        <td>{{ calculateTaxTotal(ticketFee.value)[1] }} <span class="currency"> XAF </span>
+        </td>
+    </tr>
+  </table>
+  <p class="sig">⚙️ by mandiguide</p>
+</div>
+
+<div class="nav-button" *ngIf="toggleButtons">
+  <div>
+      <button mat-raised-button color="accent" (click)="backToInput()">EDIT</button>
+  </div>
+  <div>
+      <!-- <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button> -->
+      <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">SAVE</button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="saveAsImage()">as IMAGE</button>
+          <button mat-menu-item (click)="saveAsPdf()">as PDF</button>
+      </mat-menu>
+  </div>
 </div>
