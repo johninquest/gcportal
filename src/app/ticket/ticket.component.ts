@@ -25,7 +25,7 @@ export class TicketComponent implements OnInit {
   startPlaces: placesListDesc[] = PLACES;
   endPlaces: placesListDesc[] = PLACES;
   toggleInput: boolean = true; togglePreview: boolean = false; toggleButtons: boolean = false;
-  tDate = moment().format('lll');
+  tDate = moment().format('LLL');
 
   previewTicket() {
     this.toggleInput = false;

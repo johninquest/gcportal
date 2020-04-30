@@ -58,52 +58,21 @@
                       <td class="title"><!-- trLogo --></td>
                       
                       <td>
-                        <span style="font-weight:bold">Date:</span> {{ tDate }} <br>
-                        <span style="font-weight:bold">Place:</span> {{ startLocation.value | uppercase }}
+                        <span style="font-weight: bold">DATE: </span>{{ tDate }}<br><br>
+                        <span>PASSENGER INFORMATION</span><br>
+                        <span style="font-weight: bold">NAME(S): </span>{{ ticketOwnerName.value | uppercase }}<br>
+                        <span style="font-weight: bold">ID NUMBER: </span>{{ ticketOwnerId.value | uppercase }}<br>
+                        <span style="font-weight: bold">TICKET NUMBER: </span>{{ ticketNumber.value }}
                       </td>
                   </tr>
               </table>
           </td>
       </tr>
-      
-      <tr class="information">
-          <td colspan="2">
-              <table>
-                  <tr>
-                      <td>
-                          <!-- <span class="bsInfo">sgInfo information</span><br>
-                          sgNames<br>
-                          sgPhone<br>
-                          sgEmail -->
-                      </td>
-                      
-                      <td>
-                          <span class="bsInfo">PASSENGER INFORMATION</span><br>
-                          {{ ticketOwnerName.value | uppercase }}<br>
-                          {{ ticketOwnerId.value | uppercase }}<br>
-                          {{ ticketNumber.value }}
-                      </td>
-                  </tr>
-              </table>
-          </td>
-      </tr>
-      
-<!--      <tr class="heading">
-        <td>Type of transaction</td>
-        
-        <td>Payment method</td>
-    </tr>
-    
-    <tr class="details">
-        <td>tType</td>
-        
-        <td>payMethod</td>
-    </tr>
--->      
+           
     <tr class="heading">
-        <td>TICKET DETAILS</td>
+      <td></td>
         
-        <td></td>
+      <td></td>
     </tr>
     
     <tr class="item">
@@ -118,7 +87,7 @@
         <td>{{ endLocation.value | uppercase }}</td>
     </tr>
 
-    <tr class="item">
+    <!-- <tr class="item">
       <td>FEE</td>
       
       <td>{{ ticketFee.value }}</td>
@@ -128,12 +97,12 @@
         <td>TAX (19.25%)</td>
         
         <td>{{ calculateTaxTotal(ticketFee.value)[0] }}</td>
-    </tr>
+    </tr> -->
     
     <tr class="total">
-        <td>TOTAL</td>
+        <td>FARE INCL. TAX</td>
         
-        <td>{{ calculateTaxTotal(ticketFee.value)[1] }} <span class="currency"> XAF </span>
+        <td>{{ ticketFee.value }} <span class="currency"> XAF </span>
         </td>
     </tr>
   </table>
@@ -145,7 +114,7 @@
       <button mat-raised-button color="accent" (click)="backToInput()">EDIT</button>
   </div>
   <div>
-      <!-- <button mat-raised-button color="primary" (click)="createImg()">SPEICHERN</button> -->
+      <!-- <button mat-raised-button color="primary">SAVE</button> -->
       <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">SAVE</button>
       <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="saveAsImage()">as IMAGE</button>

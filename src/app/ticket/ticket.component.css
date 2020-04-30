@@ -83,12 +83,20 @@ mat-form-field { width: 15em; }
     border-bottom: 1px solid #eee;
 }
 
+.invoice-box table tr.item td:nth-child(2){
+    font-weight: bold;
+}
+
 .invoice-box table tr.item.last td {
     border-bottom: none;
 }
 
 .invoice-box table tr.total td {
     border-top: 3px solid #eee;
+    /* font-weight: bold; */
+}
+
+.invoice-box table tr.total td:nth-child(2) {
     font-weight: bold;
 }
 
@@ -104,11 +112,6 @@ mat-form-field { width: 15em; }
         display: block;
         text-align: center;
     }
-}
-
-.bsInfo {
-    /* font-size: 1.1em; */
-    font-weight: bold;
 }
 
 .trTitle {
