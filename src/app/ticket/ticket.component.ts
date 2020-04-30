@@ -52,11 +52,11 @@ export class TicketComponent implements OnInit {
   }
 
   saveAsImage() {
-    alert('Under construction ...');
+    alert('Under construction 🚧');
   }
 
   saveAsPdf() {
-    alert('Under construction ...');
+    alert('Under construction 🚧');
   }
 
   ngOnInit(): void { }
