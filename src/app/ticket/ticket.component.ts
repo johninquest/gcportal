@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { PLACES } from '../destinations';
 import moment from 'moment';
-moment.locale('de');
+moment.locale('en-gb');
 
 export interface placesListDesc {
   value: string;
