@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import htmlToImage from 'html-to-image';
+import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
 import moment from 'moment';
 moment.locale('en-gb');
@@ -24,14 +26,16 @@ export class TicketComponent implements OnInit {
   ticketOwnerId = new FormControl(''); ticketNumber = new FormControl('');
   startPlaces: placesListDesc[] = PLACES;
   endPlaces: placesListDesc[] = PLACES;
-  toggleInput: boolean = true; togglePreview: boolean = false; toggleButtons: boolean = false;
+  toggleInput: boolean = true; 
+  togglePreview: boolean = false; 
+  toggleButtons: boolean = false; 
+  toggleCanvas: boolean = false;
   tDate = moment().format('LLL');
 
   previewTicket() {
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
-    // alert('Under construction ... 🚧');
   }
 
   backToInput() {
@@ -40,6 +44,23 @@ export class TicketComponent implements OnInit {
     this.toggleInput = true;
   }
 
+  saveAsImage() {
+    htmlToImage.toBlob(document.getElementById('docCanvas'))
+    .then( blob => {
+      let timestamp: string = moment().format('YYYYMMDDTHHmmss');
+      saveAs(blob, `${timestamp}.PNG`); 
+    });
+  }
+
+  saveAsPdf() {
+    alert('Coming soon 🚧');
+  }
+
+  ngOnInit(): void { }
+
+}
+
+  /*
   calculateTaxTotal(feeBeforeTax: number) {
     let taxRate: number = 19.25;
     let taxTotal: number = (taxRate / 100) * feeBeforeTax;
@@ -50,15 +71,4 @@ export class TicketComponent implements OnInit {
       return ['', ''];
     }  
   }
-
-  saveAsImage() {
-    alert('Under construction 🚧');
-  }
-
-  saveAsPdf() {
-    alert('Under construction 🚧');
-  }
-
-  ngOnInit(): void { }
-
-}
+ */

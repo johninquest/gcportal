@@ -14,7 +14,7 @@
     </button>
 </nav>
 
-<div class="pagetitle">TICKET TOOL &#7495;&#7497;&#7511;&#7491;</div>
+<div class="pagetitle">TICKET TOOL</div>
 
 <div class="locations" *ngIf="toggleInput">
     <mat-form-field class="start-location">
@@ -49,7 +49,7 @@
 
 </div>
 
-<div class="invoice-box" id="canvas-box" *ngIf="togglePreview">
+<div class="invoice-box" id="docCanvas" *ngIf="togglePreview">
   <table cellpadding="0" cellspacing="0">
       <tr class="top">
           <td colspan="2">
@@ -58,11 +58,11 @@
                       <td class="title"><!-- trLogo --></td>
                       
                       <td>
-                        <span style="font-weight: bold">DATE: </span>{{ tDate }}<br><br>
+                        <span>DATE: </span> <span style="font-weight: bold">{{ tDate }}</span><br><br>
                         <span>PASSENGER INFORMATION</span><br>
-                        <span style="font-weight: bold">NAME(S): </span>{{ ticketOwnerName.value | uppercase }}<br>
-                        <span style="font-weight: bold">ID NUMBER: </span>{{ ticketOwnerId.value | uppercase }}<br>
-                        <span style="font-weight: bold">TICKET NUMBER: </span>{{ ticketNumber.value }}
+                        <span>NAME(S): </span><span style="font-weight: bold">{{ ticketOwnerName.value | uppercase }}</span><br>
+                        <span>ID NUMBER: </span><span style="font-weight: bold">{{ ticketOwnerId.value | uppercase }}</span><br>
+                        <span>TICKET NUMBER: </span><span style="font-weight: bold">{{ ticketNumber.value }}</span>
                       </td>
                   </tr>
               </table>
