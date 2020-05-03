@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import htmlToImage from 'html-to-image';
+import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
 import moment from 'moment';
@@ -45,12 +45,18 @@ export class TicketComponent implements OnInit {
   }
 
   saveAsImage() {
-    htmlToImage.toBlob(document.getElementById('docCanvas'))
-    .then( blob => {
-      let timestamp: string = moment().format('YYYYMMDDTHHmmss');
-      saveAs(blob, `${timestamp}.PNG`); 
+    let targetElement = document.getElementById('ticketElement');
+    html2canvas(targetElement)
+    .then((canvas: any) => {      
+      let ctx = canvas.getContext('2d');
+      ctx.webkitImageSmoothingEnabled = false;
+      ctx.mozImageSmoothingEnabled = false;
+      ctx.imageSmoothingEnabled = false;
+      let imageGened = canvas.toDataURL('image/jpeg', 1.0).replace('image/png', 'image/octet-stream');
+      let timeNow: string = moment().format('YYYYMMDDTHHmmss');
+      return saveAs(imageGened, `TN-${timeNow}.JPEG`); 
     });
-  }
+   }
 
   saveAsPdf() {
     alert('Coming soon 🚧');

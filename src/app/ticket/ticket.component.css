@@ -26,24 +26,22 @@ mat-form-field { width: 15em; }
     margin-top: 1em;
 }
 
-/* Invoice */
+/* Style for ticket */
 .invoice-box {
     max-width: 800px;
-    /* width: 100%;
-    height: auto; */
     margin: auto;
     padding: 30px;
     border: 1px solid #eee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
     font-size: 16px;
     line-height: 24px;
-    color: #555;
+    background-color: #ffffff;
 }
 
 .invoice-box table {
     width: 100%;
     line-height: inherit;
     text-align: left;
+    background-color: #ffffff;
 }
 
 .invoice-box table td {
@@ -93,7 +91,6 @@ mat-form-field { width: 15em; }
 
 .invoice-box table tr.total td {
     border-top: 3px solid #eee;
-    /* font-weight: bold; */
 }
 
 .invoice-box table tr.total td:nth-child(2) {
@@ -126,6 +123,11 @@ mat-form-field { width: 15em; }
     margin-bottom: -1.5em;
 }
 
+.currency { 
+    font-weight: bold; 
+}
+
+/*Style for buttons*/
 .nav-button {
     margin-top: 1em;
     display: flex;
@@ -140,6 +142,3 @@ mat-form-field { width: 15em; }
 
 button { font-size: 1em; }
 
-.currency { 
-    font-weight: bold; 
-}
