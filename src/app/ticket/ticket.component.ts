@@ -30,12 +30,13 @@ export class TicketComponent implements OnInit {
   togglePreview: boolean = false; 
   toggleButtons: boolean = false; 
   toggleCanvas: boolean = false;
-  tDate = moment().format('LLL');
+  tDate: string;
 
   previewTicket() {
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
+    this.tDate = moment().format('LLL');
   }
 
   backToInput() {
