@@ -26,8 +26,8 @@ export class NewsComponent implements OnInit {
   constructor(private nds: NewsdataService) { }
 
   showNewsData() { 
-    let qData: string = 'cameroon+transport';
-    let obs = this.nds.getNewsData(qData);
+    let queryTarget: string = 'cameroon+transport';
+    let obs = this.nds.getNewsData(queryTarget);
     obs.subscribe( 
       res => { 
         this.respData = this.handleEmptyResponse(res['articles']);
@@ -71,9 +71,19 @@ export class NewsComponent implements OnInit {
        return moment().format('LLLL');
      }
    }
+
+  showGoogleNews() {
+    let queryTarget: string = 'cameroon';
+    let obs = this.nds.getGoogleNews(queryTarget);
+    obs.subscribe(
+      res => console.log(res), 
+      err => console.log(err)
+    );
+  } 
    
   ngOnInit() {
     this.showNewsData();
+    // this.showGoogleNews();
    }
 
 }
