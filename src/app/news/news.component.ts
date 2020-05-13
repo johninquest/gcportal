@@ -73,15 +73,6 @@ export class NewsComponent implements OnInit {
      }
    }
 
-  showGoogleNews() {
-    let queryTarget: string = 'cameroon';
-    let obs = this.nds.getGoogleNews(queryTarget);
-    obs.subscribe(
-      res => console.log(res), 
-      err => console.log(err)
-    );
-  } 
-
   getGoogleRss() {
     let corsUrl: string = 'https://cors-anywhere.herokuapp.com/';
     let rssUrl: string = 'https://news.google.com/news/rss/headlines/section/geo/cameroon';
