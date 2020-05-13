@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { NewsdataService } from '../services/newsdata.service';
+import { NewsService } from '../services/news.service';
 import moment from 'moment';
 moment.locale('en-gb');
 import { from } from 'rxjs';
@@ -22,8 +22,9 @@ export class NewsComponent implements OnInit {
   nTown = new FormControl('', Validators.required);
   nCountry = new FormControl('');
   respData: any; // News response Object
+  rssData: any;
 
-  constructor(private nds: NewsdataService) { }
+  constructor(private nds: NewsService) { }
 
   showNewsData() { 
     let queryTarget: string = 'cameroon+transport';
@@ -80,10 +81,26 @@ export class NewsComponent implements OnInit {
       err => console.log(err)
     );
   } 
-   
+
+  getGoogleRss() {
+    let corsUrl: string = 'https://cors-anywhere.herokuapp.com/';
+    let rssUrl: string = 'https://news.google.com/news/rss/headlines/section/geo/cameroon';
+    let reqUrl = corsUrl + rssUrl;
+    fetch(reqUrl)
+      .then(response => response.text())
+      .then(str => new DOMParser().parseFromString(str, 'text/xml'))
+      .then(data => { 
+        // console.log(data);
+        const rss2json = data.querySelectorAll('item');
+        // console.log(rssItems);
+        this.rssData = rss2json;
+      });
+  }
+
   ngOnInit() {
-    this.showNewsData();
+    // this.showNewsData();
     // this.showGoogleNews();
+    this.getGoogleRss();
    }
 
 }

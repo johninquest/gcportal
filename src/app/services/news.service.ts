@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 
-export class NewsdataService {
+export class NewsService {
 
   private baseUrl: string = 'https://newsapi.org/v2/everything?apiKey=bc80aee5a6654843bd745e416bccc24d&sortBy=publishedAt&q=';
   private googleNewsBaseUrl: string = 'https://news.google.com/news/rss/headlines/section/geo/'; 
+  private corsUrl: string = 'https://cors-anywhere.herokuapp.com/';
 
   constructor(private http: HttpClient) {}
 
@@ -17,8 +18,8 @@ export class NewsdataService {
   }
 
   getGoogleNews(reqTarget: string): Observable<any> {
-    let reqUrl: string = this.googleNewsBaseUrl + reqTarget;
-    return this.http.get(reqUrl, { responseType: 'text' });
+    let reqUrl: string = this.corsUrl + this.googleNewsBaseUrl + reqTarget;
+    return this.http.get(reqUrl);
   }
 
 }

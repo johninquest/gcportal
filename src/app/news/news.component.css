@@ -1,10 +1,9 @@
-
 nav button:hover { background-color: #FFC107; }
 
 .mat-menu-item:hover { background-color: #FFC107; }
 
 .title {
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -17,6 +16,34 @@ nav button:hover { background-color: #FFC107; }
     margin-bottom: 0;
 }
 
+.rss {
+    border: solid 0.2em #FFC107;
+    border-radius: 1em;
+}
+
+.rss div {
+    border-bottom: dashed 0.05em #FFC107;
+}
+
+.rss div .ititle {
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.rss div .ititle a {
+    font-weight: bold;
+}
+
+.rss div .idate {
+    text-align: center;
+}
+
+.rss div .isrc {
+    text-align: center;
+}
+
+/*
 .response {
     border: solid 0.2em #FFC107;
     border-radius: 1em;
@@ -26,7 +53,7 @@ nav button:hover { background-color: #FFC107; }
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-bottom: 1em;
-    border-bottom: dashed 0.05em grey;
+    border-bottom: dashed 0.05em #FFC107;
 }
 
 .response div .newsimg {
@@ -78,3 +105,4 @@ nav button:hover { background-color: #FFC107; }
     align-self: center;
     margin-left: 0.5em;
 }
+*/

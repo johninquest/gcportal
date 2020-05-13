@@ -19,6 +19,15 @@
   <p matTooltip="Latest transport-related news">NEWS</p>
 </div>
 
+<div class="rss" *ngIf="rssData">
+  <div *ngFor="let item of rssData">
+    <p class="ititle"><a href="{{ item.children[1].innerHTML }}" target="_blank">{{ item.children[0].innerHTML }}</a></p>
+    <p class="idate">{{ item.children[3].innerHTML }}</p>
+    <p class="isrc"><a><span>&copy; </span>{{ item.children[5].innerHTML | uppercase }}</a></p>
+  </div>
+</div>
+
+<!--
 <div class="response" *ngIf="respData">
   <div *ngFor="let item of respData">
     <p class="newsimg"><img src="{{ item.urlToImage }}" alt="{{ item.title }}" width="150" height="auto"></p>
@@ -28,3 +37,4 @@
     <p class="newsdesc">{{ item.description }}</p>
   </div>
 </div>
+-->

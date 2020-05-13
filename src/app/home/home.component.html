@@ -8,11 +8,11 @@
       <mat-icon>info</mat-icon>
       <span>ABOUT</span>
     </button>
-    <button mat-menu-item routerLink="/news" matTooltip="Transport-related news">
-      <mat-icon>radio</mat-icon>
-      <span>NEWS</span>
+    <button mat-menu-item [matMenuTriggerFor]="navinfos" matTooltip="Helpful information">
+      <mat-icon>new_releases</mat-icon>
+      <span>INFORMATION</span>
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="navtools" matTooltip="Transport-related services">
+    <button mat-menu-item [matMenuTriggerFor]="navtools" matTooltip="Digital tools and services we offer">
       <mat-icon>menu</mat-icon>
       <span>TOOLS</span>
     </button>
@@ -38,23 +38,23 @@
       <mat-icon>attach_money</mat-icon>
       <span>PRICE GUIDE</span>
     </button>
-    <button mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="navsafety">
-      <mat-icon>security</mat-icon>
-      <span>SAFETY</span>
-    </button>
     <button mat-menu-item routerLink="/ticket"> 
       <mat-icon>receipt</mat-icon>
       <span>TICKET</span>
     </button>
   </mat-menu>
-  <mat-menu #navsafety="matMenu">
-    <button mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">
+  <mat-menu #navinfos="matMenu">
+    <button mat-menu-item matTooltip="Coronavirus safety tips for drivers and transporters" routerLink="/coronavirus">
       <mat-icon>local_hospital</mat-icon>
-      <span>CORONAVIRUS SAFETY</span>
+      <span>CORONAVIRUS SAFETY TIPS</span>
     </button>
-    <button mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety"> 
+    <button mat-menu-item matTooltip="Regional news" routerLink="/news"> 
+      <mat-icon>radio</mat-icon>
+      <span>REGIONAL NEWS</span>
+    </button>
+    <button mat-menu-item matTooltip="General road safety tips" routerLink="/roadsafety"> 
       <mat-icon>directions</mat-icon>
-      <span>ROAD SAFETY GUIDE</span>
+      <span>ROAD SAFETY TIPS</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="nav_menu">
@@ -67,17 +67,17 @@
 </div>
 
 <div class="start-btn">
-  <button mat-raised-button color="primary" routerLink="/news" matTooltip="Transport-related news">NEWS</button>
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons" matTooltip="Check out the information, services and tools we offer">TOOLS</button>
-  <mat-menu #buttons="matMenu">
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="infobuttons" matTooltip="Helpful information">INFORMATION</button>
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="toolbuttons" matTooltip="Digital tools and services we offer">TOOLS</button>
+  <mat-menu #toolbuttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Passenger management system" routerLink="/login">PMS</button>
     <button class="menu-btn" mat-menu-item matTooltip="See and submit pothole information" routerLink="/pothole-tracker">POTHOLE TRACKER</button>
     <button class="menu-btn" mat-menu-item routerLink="/priceguide">PRICE GUIDE</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Safety information" [matMenuTriggerFor]="safety_buttons">SAFETY</button>
     <button class="menu-btn" mat-menu-item routerLink="/ticket">TICKET</button>
   </mat-menu>
-  <mat-menu #safety_buttons="matMenu">
+  <mat-menu #infobuttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/coronavirus">CORONAVIRUS SAFETY</button>
-    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety">ROAD SAFETY GUIDE</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Regional news" routerLink="/news">REGIONAL NEWS</button>
+    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/roadsafety">ROAD SAFETY</button>
   </mat-menu>
 </div>
