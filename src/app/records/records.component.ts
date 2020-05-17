@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { DbService } from '../services/db.service';
+import { WebService } from '../services/web.service';
 import moment from 'moment';
 import { Router } from '@angular/router';
 import { PLACES } from '../destinations';
@@ -18,13 +18,14 @@ export interface placesListDesc {
 
 export class RecordsComponent implements OnInit {
 
-  constructor(private dbs: DbService, private rt: Router) { }
+  constructor(private ws: WebService, private rt: Router) { }
 
   toggleAddForm: boolean = false; 
   toggleUpdateForm: boolean = false;
   start = new FormControl(''); end = new FormControl('');
   surname = new FormControl('', Validators.required); givennames = new FormControl(''); 
-  fee = new FormControl(''); nidn = new FormControl('') // National Id number
+  fee = new FormControl(''); 
+  nidn = new FormControl('') // National Id number
   datetime_now = moment().format('YYYY-MM-DD HH:mm:ss');
   startPlaces: placesListDesc[] = PLACES; endPlaces: placesListDesc[] = PLACES;
   salesData: any; 
@@ -35,9 +36,9 @@ export class RecordsComponent implements OnInit {
     this.toggleAddForm = false;
     this.toggleUpdateForm = false;
     this.balanceData = null;
-    let reqEndpoint: string = 'get_all_rows_in_table';
+    let reqEndpoint: string = 'https://mandiguide2020.appspot.com/get_all_rows_in_table';
     let sqlPayload: object = { tb_name: 'sales' };
-    let obs = this.dbs.postRequest(reqEndpoint, sqlPayload);
+    let obs = this.ws.postRequest(reqEndpoint, sqlPayload);
     obs.subscribe(
       res => {
         this.salesData = res; 
@@ -47,7 +48,7 @@ export class RecordsComponent implements OnInit {
   }
 
   addData() { 
-    let createEndpoint: string = 'add_row_to_table';
+    let createEndpoint: string = 'https://mandiguide2020.appspot.com/add_row_to_table';
     let createData: object = {
       tb_name: 'sales',
       from: this.start.value,
@@ -57,7 +58,7 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       created: this.datetime_now
     };
-    let obs = this.dbs.postRequest(createEndpoint, createData);
+    let obs = this.ws.postRequest(createEndpoint, createData);
     obs.subscribe(
       res => { 
         this.addResponseHandler(res);
@@ -68,7 +69,6 @@ export class RecordsComponent implements OnInit {
 
   addResponseHandler(resData: object) {
     if(resData['insertId'] !== 0 && resData['warningCount'] === 0) {
-      // alert('PASSENGER successfully ADDED');
       this.ngOnInit();
     }if(resData['errno']) {
       alert('You submitted invalid information \nPlease verify and try again.');
@@ -88,7 +88,7 @@ export class RecordsComponent implements OnInit {
   }
 
   updateData() { 
-    let updateEndpoint: string = 'update_row_in_table';
+    let updateEndpoint: string = 'https://mandiguide2020.appspot.com/update_row_in_table';
     let updateData: object = {
       tb_name: 'sales',
       row_id: this.updateRowId,
@@ -99,7 +99,7 @@ export class RecordsComponent implements OnInit {
       fee: this.fee.value, 
       updated: this.datetime_now
     };
-    let obs = this.dbs.postRequest(updateEndpoint, updateData);
+    let obs = this.ws.postRequest(updateEndpoint, updateData);
     obs.subscribe(
       res => this.updateResponseHandler(res),
       err => this.updateResponseHandler(err)
@@ -108,7 +108,6 @@ export class RecordsComponent implements OnInit {
 
   updateResponseHandler(resData: object) {
      if(resData['insertId'] === 0 && resData['warningCount'] === 0) {
-       // alert('PASSENGER successfully UPDATED');
        this.ngOnInit();
      }if(resData['errno']) {
       alert('You submitted invalid information \nPlease verify and try again.');
@@ -126,12 +125,12 @@ export class RecordsComponent implements OnInit {
   deleteData(targetRow: number) { 
     let deleteDialog = confirm('Delete this information?');
     if(deleteDialog === true) {
-      let reqEndpoint: string = 'delete_row_in_table';
+      let reqEndpoint: string = 'https://mandiguide2020.appspot.com/delete_row_in_table';
       let deleteData: object = {
         tb_name: 'sales', 
         row_id: targetRow
       };
-    let obs = this.dbs.postRequest(reqEndpoint, deleteData);
+    let obs = this.ws.postRequest(reqEndpoint, deleteData);
     obs.subscribe(
       res => { 
       this.deleteResponseHandler(res);
@@ -198,29 +197,29 @@ export class RecordsComponent implements OnInit {
     this.salesData = null;
     this.toggleAddForm = false;  
     this.toggleUpdateForm = false;
-    let reqEndpoint: string = 'get_total'; 
+    let reqEndpoint: string = 'https://mandiguide2020.appspot.com/get_total'; 
     if(period === 'day') {
       let reqObject: object = { tb_name: 'sales', period: 'day' };
-      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
+      let obs = this.ws.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) 
         );
     }if(period === 'week') {
       let reqObject: object = { tb_name: 'sales', period: 'week' };
-      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
+      let obs = this.ws.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'month') {
       let reqObject: object = { tb_name: 'sales', period: 'month' };
-      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
+      let obs = this.ws.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) );
     }if(period === 'year') {
       let reqObject: object = { tb_name: 'sales', period: 'year' };
-      let obs = this.dbs.postRequest(reqEndpoint, reqObject);
+      let obs = this.ws.postRequest(reqEndpoint, reqObject);
       obs.subscribe( 
         res => { this.balanceData = res },
         err => console.log(err) 
@@ -251,10 +250,6 @@ export class RecordsComponent implements OnInit {
       return [message, amount];
     }
    }
-
-  msg() {
-    alert('Under construction 👷🏾');
-  }  
 
   displayedColumns: string[] = ['route', 'person', 'details', 'options'];
 
