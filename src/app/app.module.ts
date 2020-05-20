@@ -19,6 +19,8 @@ import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
 import { PotholetrackerComponent } from './potholetracker/potholetracker.component';
 import { AgmCoreModule } from '@agm/core';
 import { TicketComponent } from './ticket/ticket.component';
+import { BusinessComponent } from './business/business.component';
+import { TransportComponent } from './transport/transport.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { TicketComponent } from './ticket/ticket.component';
     CoronavirusComponent,
     RoadsafetyComponent,
     PotholetrackerComponent,
-    TicketComponent
+    TicketComponent,
+    BusinessComponent,
+    TransportComponent
   ],
   imports: [
     BrowserModule,

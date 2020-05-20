@@ -3,17 +3,10 @@ nav button:hover { background-color: #FFC107; }
 .mat-menu-item:hover { background-color: #FFC107; }
 
 .title {
-    margin-top: 1em;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.title p {
+    text-align: center;
+    margin: 1em;
     font-weight: bold;
     font-size: 1.5em;
-    margin-bottom: 0;
 }
 
 .rss {

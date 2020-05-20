@@ -1,4 +1,3 @@
-
 <nav>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
@@ -15,9 +14,7 @@
   </button>
 </nav>
 
-<div class="title">
-  <p matTooltip="Regional news">REGIONAL NEWS</p>
-</div>
+<div class="title" matTooltip="Regional news">REGIONAL NEWS</div>
 
 <div class="rss" *ngIf="googleNewsData">
   <div *ngFor="let i of googleNewsData">

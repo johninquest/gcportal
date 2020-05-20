@@ -1,0 +1,19 @@
+<nav>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" matTooltip="Home">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item matTooltip="Tool for generating receipts" (click)="msg()">
+        <mat-icon>receipt</mat-icon>
+        <span>RECEIPT</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</nav>
+
+<div class="title" matTooltip="Digital tools for business">BUSINESS</div>
+
+<div class="btns">COMING SOON ...</div>

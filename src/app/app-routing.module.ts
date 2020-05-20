@@ -12,6 +12,8 @@ import { CoronavirusComponent } from './coronavirus/coronavirus.component';
 import { RoadsafetyComponent } from './roadsafety/roadsafety.component';
 import { PotholetrackerComponent } from './potholetracker/potholetracker.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { BusinessComponent } from './business/business.component';
+import { TransportComponent } from './transport/transport.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'roadsafety', component: RoadsafetyComponent },
   { path: 'pothole-tracker', component: PotholetrackerComponent },
   { path: 'ticket', component: TicketComponent },
+  { path: 'business', component: BusinessComponent },
+  { path: 'transport', component: TransportComponent },
   { path: '**', component: HomeComponent }
 ];
 

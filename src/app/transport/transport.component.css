@@ -1,33 +1,25 @@
-nav { background-color: #FFC107; }
+nav button:hover { background-color: #FFC107; }
 
 .mat-menu-item:hover { background-color: #FFC107; }
 
 .title {
     text-align: center;
-    margin-top: 3em;
-    margin-bottom: 2em;
-}
-
-.title p {
-    font-size: 2em;
+    margin: 1em;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
-.start-btn {
+.btns {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-.start-btn button {
+.btns button {
     font-size: 1em;
     width: 15em;
     height: 5em;
     border-radius: 0.8em;
     margin-top: 1em;
     margin-bottom: 1em;
-}
-
-.menu-btn {
-    width: 17em;
 }
