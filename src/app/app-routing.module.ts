@@ -22,15 +22,15 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'priceguide', component: PriceguideComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'pms', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: 'coronavirus', component: CoronavirusComponent }, 
   { path: 'roadsafety', component: RoadsafetyComponent },
-  { path: 'pothole-tracker', component: PotholetrackerComponent },
-  { path: 'ticket', component: TicketComponent },
   { path: 'business', component: BusinessComponent },
   { path: 'transport', component: TransportComponent },
+  { path: 'transport/pothole-tracker', component: PotholetrackerComponent },
+  { path: 'transport/ticket', component: TicketComponent },
+  { path: 'transport/priceguide', component: PriceguideComponent },
+  { path: 'transport/login', component: LoginComponent },
+  { path: 'transport/pms', component: RecordsComponent, canActivate: [AuthGuard] },
   { path: '**', component: HomeComponent }
 ];
 

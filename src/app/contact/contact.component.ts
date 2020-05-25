@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { SlackService } from '../services/slack.service';
+import { WebService } from '../services/web.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
   cSubject = new FormControl('');
   cMessage = new FormControl('');
 
-  constructor(private slackservice: SlackService) { }
+  constructor(private ws: WebService) { }
 
   resetInputs() {
     this.cNames.reset();
@@ -25,12 +25,16 @@ export class ContactComponent implements OnInit {
   }
 
   sendToSlack() {
+    alert('Under construction ...')
+  }
+
+/*  sendToSlack() {
     const payloadData: string = JSON.stringify({
       'attachments':[
         {
            'fallback':`Subject: ${this.cSubject.value}`,
            'pretext':`Subject: ${this.cSubject.value}`,
-           /* "color":"#D00000", */
+           // "color":"#D00000",
            'fields':[
             {
               'title':'Sender',
@@ -57,7 +61,6 @@ export class ContactComponent implements OnInit {
           );
     }
   
- /*
     sendToWhatsApp() {
     let rNumber: string = '{{ Place phone number }}';
     let rMessage: string = '{{ Leave me the fuck alone }}';
