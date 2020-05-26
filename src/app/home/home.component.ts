@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -7,10 +7,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-
 export class HomeComponent implements OnInit {
 
   constructor(private rt: Router, private snackBar: MatSnackBar) {}
+
+  showSnackBar() {
+    setTimeout(() => {
+      this.snackBar.openFromComponent(SnackBarMessage, {duration: 10000});
+      // let snackbarRef = this.snackBar.open('Please take a look at our hygiene and safety tips in times of the coronavirus (COVID-19)', 'X', { duration: 10000 });
+    }, 10000);
+  }
 
   goToFacebook() {
     let targetUrl: string = 'https://www.facebook.com/mandiguide';
@@ -18,14 +24,21 @@ export class HomeComponent implements OnInit {
     window.focus();
   }
 
-  popUpDialog() {
-    setTimeout(() => {
-      let snackbarRef = this.snackBar.open('Please take a look at our hygiene and safety tips in times of the coronavirus (COVID-19).', 'YES, SHOW ME', { duration: 10000 });
-      snackbarRef.onAction().subscribe(() => this.rt.navigateByUrl('/coronavirus'));
-    }, 10000);
-  }
-
   ngOnInit() {
-    this.popUpDialog();
+    this.showSnackBar();
+  }
+}
+
+@Component({
+  selector: 'snack-message',
+  template: `<a (click)="goToLink()">See our hygiene and safety tips in times of the coronavirus (COVID-19)</a>`
+})
+export class SnackBarMessage {
+
+  constructor(private rt: Router, private snackBar: MatSnackBar) {}
+
+  goToLink() { 
+    this.rt.navigateByUrl('/coronavirus');
+    this.snackBar.dismiss();
   }
 }
