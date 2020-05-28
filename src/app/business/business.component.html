@@ -4,13 +4,17 @@
         <mat-icon>home</mat-icon>
         <span>HOME</span>
       </button>
-      <button mat-menu-item matTooltip="Money exchange rates" (click)="msg()">
+      <button mat-menu-item matTooltip="Currency exchange rates" (click)="msg()">
         <mat-icon>attach_money</mat-icon>
         <span>CURRENCY</span>
       </button>
       <button mat-menu-item matTooltip="Tool for generating receipts" (click)="msg()">
         <mat-icon>receipt</mat-icon>
         <span>RECEIPT</span>
+      </button>
+      <button mat-menu-item matTooltip="Tax calculator for your business" (click)="msg()">
+        <mat-icon>payment</mat-icon>
+        <span>TAXES</span>
       </button>
     </mat-menu>
     <button mat-icon-button [matMenuTriggerFor]="menu">
