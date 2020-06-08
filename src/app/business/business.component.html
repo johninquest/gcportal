@@ -1,27 +1,31 @@
 <nav>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/home" matTooltip="Home">
-        <mat-icon>home</mat-icon>
-        <span>HOME</span>
-      </button>
-      <button mat-menu-item matTooltip="Currency exchange rates" (click)="msg()">
-        <mat-icon>attach_money</mat-icon>
-        <span>CURRENCY</span>
-      </button>
-      <button mat-menu-item matTooltip="Tool for generating receipts" (click)="msg()">
-        <mat-icon>receipt</mat-icon>
-        <span>RECEIPT</span>
-      </button>
-      <button mat-menu-item matTooltip="Tax calculator for your business" (click)="msg()">
-        <mat-icon>payment</mat-icon>
-        <span>TAXES</span>
-      </button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
     </button>
+    <button mat-menu-item matTooltip="Currency exchange rates" (click)="msg()">
+      <mat-icon>attach_money</mat-icon>
+      <span>CURRENCY</span>
+    </button>
+    <button mat-menu-item matTooltip="Tool for generating receipts" routerLink="/business/receipt">
+      <mat-icon>receipt</mat-icon>
+      <span>RECEIPT</span>
+    </button>
+    <button mat-menu-item matTooltip="Tax calculator for your business" (click)="msg()">
+      <mat-icon>payment</mat-icon>
+      <span>TAXES</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 </nav>
 
-<div class="title" matTooltip="Digital tools for business and finance">BUSINESS</div>
-
+<router-outlet></router-outlet>
+<!-- 
+<div class="title" matTooltip="Digital tools for business and finance">BUSINESS TOOLS</div>
 <div class="btns">COMING SOON ...</div>
+-->
+
+

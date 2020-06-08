@@ -32,7 +32,12 @@ export class HomeComponent implements OnInit {
 
 @Component({
   selector: 'snack-message',
-  template: `<p><span (click)="goToLink()">See our hygiene and safety tips in times of the coronavirus (COVID-19)</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span (click)="closeSnackbar()">X</span></p>`
+  template: `<p><span (click)="goToLink()">See our hygiene and safety tips in times of the coronavirus (COVID-19)</span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <span (click)="closeSnackbar()">X</span></p>`,
+  styles: [
+    'span {cursor: pointer}'
+   ]
 })
 export class SnackBarMessage {
 

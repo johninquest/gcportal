@@ -1,0 +1,23 @@
+<div class="title">RECEIPT TOOL</div>
+
+<div class="form-input" *ngIf="toggleInput">
+
+    <mat-form-field>
+      <input matInput placeholder="FEE" type="number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="PASSENGER NAME" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="PASSENGER ID" type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="TICKET NUMBER" type="number">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="receiptPreview()">PREVIEW</button>
+
+</div>

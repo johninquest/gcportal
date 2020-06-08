@@ -21,6 +21,7 @@ import { AgmCoreModule } from '@agm/core';
 import { TicketComponent } from './ticket/ticket.component';
 import { BusinessComponent } from './business/business.component';
 import { TransportComponent } from './transport/transport.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TransportComponent } from './transport/transport.component';
     PotholetrackerComponent,
     TicketComponent,
     BusinessComponent,
-    TransportComponent
+    TransportComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,
