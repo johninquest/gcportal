@@ -5,6 +5,8 @@ import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
 import moment from 'moment';
 moment.locale('en-gb');
+import { PrintService } from '../services/print.service'
+import { from } from 'rxjs';
 
 export interface placesListDesc {
   value: string;
@@ -19,7 +21,7 @@ export interface placesListDesc {
 
 export class TicketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ps: PrintService) { }
 
   startLocation = new FormControl(''); endLocation = new FormControl('');
   ticketFee = new FormControl(''); ticketOwnerName = new FormControl(''); 
@@ -60,7 +62,16 @@ export class TicketComponent implements OnInit {
    }
 
   saveAsPdf() {
-    alert('Coming soon 🚧');
+    // alert('Coming soon 🚧');
+    let tkData: object = {
+      sLocation: this.startLocation.value,
+      eLocation: this.endLocation.value,
+      tFee: this.ticketFee.value,
+      tOwnerName: this.ticketOwnerName.value,
+      tOwnerId: this.ticketOwnerId.value,
+      tNumber: this.ticketNumber.value
+    }
+    this.ps.ticketToPDF(tkData);
   }
 
   ngOnInit(): void { }
