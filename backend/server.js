@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     console.log('Received POST request');
+    console.log(req.body);
     let filename = 'response.pdf';
     // Setting response to 'attachment' (download).
     // If you use 'inline' here it will automatically open the PDF
@@ -36,11 +37,14 @@ app.post('/', (req, res) => {
     res.setHeader('Content-type', 'application/pdf')
     // const content = 'Hallo welt';
     doc.y = 300
-    doc.text(req.body.title, 50, 50).fontSize(30).fillColor('orange');
-    doc.text(req.body.passenger, 100, 100).fontSize(20).fillColor('black');
-    doc.pipe(res)
-    doc.end()
-
+    doc.text(req.body.sLocation, 200, 50).fontSize(30).fillColor('black');
+    doc.text(req.body.eLocation, 200, 100).fontSize(30).fillColor('black');
+    doc.text(req.body.tFee, 200, 150).fontSize(30).fillColor('black');
+    doc.text(req.body.tOwnerName, 200, 200).fontSize(30).fillColor('black');
+    doc.text(req.body.tOwnerId, 200, 250).fontSize(30).fillColor('black');
+    doc.text(req.body.tNumber, 200, 300).fontSize(30).fillColor('black');
+    doc.pipe(res);
+    doc.end();
 });
 
 // const doc = new PDFDocument();

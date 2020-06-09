@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -20,6 +20,13 @@ export class WebService {
   getRequest(reqUrl: string): Observable<object> {
     let reqGet = this.http.get(reqUrl);
     return reqGet;
+  }
+
+  ticketToPdf(reqUrl: string, reqPayload: object): Observable<object> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Accept', 'application/pdf');
+    let reqPost = this.http.post(reqUrl, reqPayload, { headers: headers, responseType: 'blob' });
+    return reqPost;
   }
 
 }

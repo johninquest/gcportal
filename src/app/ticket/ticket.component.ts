@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
 import moment from 'moment';
 moment.locale('en-gb');
-import { PrintService } from '../services/print.service'
+import { WebService } from '../services/web.service'
 import { from } from 'rxjs';
 
 export interface placesListDesc {
@@ -18,10 +18,9 @@ export interface placesListDesc {
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-
 export class TicketComponent implements OnInit {
 
-  constructor(private ps: PrintService) { }
+  constructor(private ws: WebService) { }
 
   startLocation = new FormControl(''); endLocation = new FormControl('');
   ticketFee = new FormControl(''); ticketOwnerName = new FormControl(''); 
@@ -63,7 +62,8 @@ export class TicketComponent implements OnInit {
 
   saveAsPdf() {
     // alert('Coming soon 🚧');
-    let tkData: object = {
+    let reqEndpoint: string = 'http://localhost:3000';
+    let ticketData: object = {
       sLocation: this.startLocation.value,
       eLocation: this.endLocation.value,
       tFee: this.ticketFee.value,
@@ -71,7 +71,12 @@ export class TicketComponent implements OnInit {
       tOwnerId: this.ticketOwnerId.value,
       tNumber: this.ticketNumber.value
     }
-    this.ps.ticketToPDF(tkData);
+    // this.ps.ticketToPDF(tkData);
+    let obs = this.ws.postRequest(reqEndpoint, ticketData);
+    obs.subscribe(
+    //  res => console.log(res),
+    //  err => console.log(err)
+    );
   }
 
   ngOnInit(): void { }
