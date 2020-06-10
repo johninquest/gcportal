@@ -3,6 +3,7 @@ import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
 import * as jsPDF from 'jspdf';
 import moment from 'moment';
+moment.locale('en-gb');
 
 @Injectable({
   providedIn: 'root'
@@ -20,26 +21,32 @@ export class PrintService {
       ctx.imageSmoothingEnabled = false;
       let imageGened = canvas.toDataURL('image/jpeg', 1.0).replace('image/png', 'image/octet-stream');
       let datetimeNow: string = moment().format('YYYYMMDDTHHmmss');
-      return saveAs(imageGened, `TN-${datetimeNow}.JPEG`); 
+      let finalJPEG = saveAs(imageGened, `TN-${datetimeNow}.JPEG`);
+      return finalJPEG; // saveAs(imageGened, `TN-${datetimeNow}.JPEG`); 
     });
   }
 
   ticketToPDF(ticketData: object) {
-    // console.log(ticketData);
+
+    let from: string = ticketData['fromLocation'].toUpperCase(),
+        to: string = ticketData['toLocation'].toUpperCase(), 
+        fee: string = ticketData['tkFee'].toString(), 
+        ownername: string = ticketData['ownerName'].toUpperCase(), 
+        ownerid: string = ticketData['ownerId'].toUpperCase(),
+        ticketnr: string = ticketData['tkNumber'].toString(); 
+    let datetimeOnPdf = moment().format('LLL');    
+
     let doc = new jsPDF();
-    doc.text(ticketData['fromLocation'], 100, 100);
-    doc.text(ticketData['toLocation'], 100, 110);
-    doc.text(ticketData['fee'].toString(), 100, 120);
-    doc.text(ticketData['ownerName'], 100, 130);
-    doc.text(ticketData['ownerId'].toUpperCase(), 100, 140);
-    doc.text(ticketData['ticketNumber'].toString(), 100, 150);
+    doc.text(datetimeOnPdf, 100, 90);
+    doc.text(from, 100, 100);
+    doc.text(to, 100, 110);
+    doc.text(fee, 100, 120);
+    doc.text(ownername, 100, 130);
+    doc.text(ownerid, 100, 140);
+    doc.text(ticketnr, 100, 150);
     let datetimeNow: string = moment().format('YYYYMMDDTHHmmss');
     let finalPDF = doc.save(`TN-${datetimeNow}.PDF`);
     return finalPDF;
   }
   
 }
-
-// https://hackernoon.com/generating-pdfs-in-javascript-for-fun-and-profit-c7af594cf697
-// https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/
-

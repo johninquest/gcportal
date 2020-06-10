@@ -52,10 +52,10 @@ export class TicketComponent implements OnInit {
     let ticketData: object = {
       fromLocation: this.startLocation.value,
       toLocation: this.endLocation.value,
-      fee: this.ticketFee.value,
+      tkFee: this.ticketFee.value,
       ownerName: this.ticketOwnerName.value,
       ownerId: this.ticketOwnerId.value,
-      ticketNumber: this.ticketNumber.value
+      tkNumber: this.ticketNumber.value
     };
     this.ps.ticketToPDF(ticketData);
   }
