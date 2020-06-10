@@ -22,11 +22,11 @@ export class WebService {
     return reqGet;
   }
 
-  ticketToPdf(reqUrl: string, reqPayload: object): Observable<object> {
+/*   ticketToPdf(reqUrl: string, reqPayload: object): Observable<object> {
     let headers = new HttpHeaders();
     headers = headers.set('Accept', 'application/pdf');
     let reqPost = this.http.post(reqUrl, reqPayload, { headers: headers, responseType: 'blob' });
     return reqPost;
-  }
+  } */
 
 }

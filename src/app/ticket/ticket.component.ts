@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
+import { PrintService } from '../services/print.service';
 import moment from 'moment';
 moment.locale('en-gb');
-import { WebService } from '../services/web.service'
-import { from } from 'rxjs';
 
 export interface placesListDesc {
   value: string;
@@ -20,7 +17,7 @@ export interface placesListDesc {
 })
 export class TicketComponent implements OnInit {
 
-  constructor(private ws: WebService) { }
+  constructor(private ps: PrintService) { }
 
   startLocation = new FormControl(''); endLocation = new FormControl('');
   ticketFee = new FormControl(''); ticketOwnerName = new FormControl(''); 
@@ -48,21 +45,11 @@ export class TicketComponent implements OnInit {
 
   saveAsImage() {
     let targetElement = document.getElementById('ticketElement');
-    html2canvas(targetElement)
-    .then((canvas: any) => {      
-      let ctx = canvas.getContext('2d');
-      ctx.webkitImageSmoothingEnabled = false;
-      ctx.mozImageSmoothingEnabled = false;
-      ctx.imageSmoothingEnabled = false;
-      let imageGened = canvas.toDataURL('image/jpeg', 1.0).replace('image/png', 'image/octet-stream');
-      let timeNow: string = moment().format('YYYYMMDDTHHmmss');
-      return saveAs(imageGened, `TN-${timeNow}.JPEG`); 
-    });
+    this.ps.ticketToImage(targetElement);
    }
 
   saveAsPdf() {
     // alert('Coming soon 🚧');
-    let reqEndpoint: string = 'http://localhost:3000';
     let ticketData: object = {
       sLocation: this.startLocation.value,
       eLocation: this.endLocation.value,
@@ -70,16 +57,11 @@ export class TicketComponent implements OnInit {
       tOwnerName: this.ticketOwnerName.value,
       tOwnerId: this.ticketOwnerId.value,
       tNumber: this.ticketNumber.value
-    }
-    // this.ps.ticketToPDF(tkData);
-    let obs = this.ws.postRequest(reqEndpoint, ticketData);
-    obs.subscribe(
-    //  res => console.log(res),
-    //  err => console.log(err)
-    );
+    };
+    this.ps.ticketToPDF(ticketData);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
 }
 
