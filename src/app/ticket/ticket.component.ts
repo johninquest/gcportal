@@ -51,12 +51,12 @@ export class TicketComponent implements OnInit {
   saveAsPdf() {
     // alert('Coming soon 🚧');
     let ticketData: object = {
-      sLocation: this.startLocation.value,
-      eLocation: this.endLocation.value,
-      tFee: this.ticketFee.value,
-      tOwnerName: this.ticketOwnerName.value,
-      tOwnerId: this.ticketOwnerId.value,
-      tNumber: this.ticketNumber.value
+      fromLocation: this.startLocation.value,
+      toLocation: this.endLocation.value,
+      fee: this.ticketFee.value,
+      ownerName: this.ticketOwnerName.value,
+      ownerId: this.ticketOwnerId.value,
+      ticketNumber: this.ticketNumber.value
     };
     this.ps.ticketToPDF(ticketData);
   }
