@@ -49,7 +49,6 @@ export class TicketComponent implements OnInit {
    }
 
   saveAsPdf() {
-    // alert('Coming soon 🚧');
     let ticketData: object = {
       fromLocation: this.startLocation.value,
       toLocation: this.endLocation.value,

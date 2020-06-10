@@ -4,22 +4,10 @@ import { saveAs } from 'file-saver';
 import * as jsPDF from 'jspdf';
 import moment from 'moment';
 
-/* export interface Passenger {
-  fromLocation: string,
-  toLocation: string, 
-  fee: number,
-  ownerName: string,
-  ownerId: string,
-  ticketNumber: number
-}; */
-
 @Injectable({
   providedIn: 'root'
 })
 export class PrintService {
-
-  // https://hackernoon.com/generating-pdfs-in-javascript-for-fun-and-profit-c7af594cf697
-  // https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/
 
   constructor() {}
 
@@ -37,17 +25,21 @@ export class PrintService {
   }
 
   ticketToPDF(ticketData: object) {
-    console.log(ticketData);
+    // console.log(ticketData);
     let doc = new jsPDF();
-    doc.text('Hello world!', 100, 100);
-/*     doc.text(ticketData.toLocation, 100, 150);
-    doc.text(ticketData.fee, 100, 200);
-    doc.text(ticketData.ownerName, 100, 250);
-    doc.text(ticketData.ownerId, 100, 300);
-    doc.text(ticketData.ticketNumber, 100, 350); */
+    doc.text(ticketData['fromLocation'], 100, 100);
+    doc.text(ticketData['toLocation'], 100, 110);
+    doc.text(ticketData['fee'].toString(), 100, 120);
+    doc.text(ticketData['ownerName'], 100, 130);
+    doc.text(ticketData['ownerId'].toUpperCase(), 100, 140);
+    doc.text(ticketData['ticketNumber'].toString(), 100, 150);
     let datetimeNow: string = moment().format('YYYYMMDDTHHmmss');
     let finalPDF = doc.save(`TN-${datetimeNow}.PDF`);
     return finalPDF;
   }
   
 }
+
+// https://hackernoon.com/generating-pdfs-in-javascript-for-fun-and-profit-c7af594cf697
+// https://www.positronx.io/angular-pdf-tutorial-export-pdf-in-angular-with-jspdf/
+
