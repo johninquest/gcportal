@@ -22,9 +22,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'coronavirus', component: CoronavirusComponent }, 
-  { path: 'roadsafety', component: RoadsafetyComponent },
+  { path: 'information/news', component: NewsComponent },
+  { path: 'information/coronavirus', component: CoronavirusComponent }, 
+  { path: 'information/roadsafety', component: RoadsafetyComponent },
   { path: 'business', component: BusinessComponent, children: [
     { path: 'receipt', component: ReceiptComponent },
   ]},
