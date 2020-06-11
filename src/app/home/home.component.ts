@@ -44,7 +44,7 @@ export class SnackBarMessage {
   constructor(private rt: Router, private snackBar: MatSnackBar) {}
 
   goToLink() { 
-    this.rt.navigateByUrl('/coronavirus');
+    this.rt.navigateByUrl('/information/coronavirus');
     this.snackBar.dismiss();
   }
 

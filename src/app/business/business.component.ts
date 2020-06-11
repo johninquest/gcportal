@@ -10,7 +10,7 @@ export class BusinessComponent implements OnInit {
   constructor() { }
 
   msg() {
-    alert('Under construction 🔨');
+    alert('Under construction 🚧');
   }
 
   ngOnInit(): void { }

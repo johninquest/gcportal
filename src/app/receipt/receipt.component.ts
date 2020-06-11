@@ -11,8 +11,12 @@ export class ReceiptComponent implements OnInit {
 
   toggleInput = true;
 
+  addItem() {
+    alert('Under construction 🚧');
+  }
+
   receiptPreview() {
-    alert('Under construction');
+    alert('Under construction 🚧');
   }
 
   ngOnInit(): void {}

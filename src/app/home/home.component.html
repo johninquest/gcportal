@@ -34,13 +34,13 @@
       <mat-icon>store</mat-icon>
       <span>BUSINESS</span>
     </button>
+    <button mat-menu-item matTooltip="Citizen and local government" disabled> 
+      <mat-icon>account_balance</mat-icon>
+      <span>CITIZEN</span>
+    </button>
     <button mat-menu-item matTooltip="Education and schools" disabled> 
       <mat-icon>school</mat-icon>
       <span>EDUCATION</span>
-    </button>
-    <button mat-menu-item matTooltip="Education and schools" disabled> 
-      <mat-icon>account_balance</mat-icon>
-      <span>GOVERNMENT</span>
     </button>
     <button mat-menu-item matTooltip="Transport, both public and private" routerLink="/transport"> 
       <mat-icon>directions_bus</mat-icon>
@@ -76,8 +76,8 @@
   <mat-menu #toolbuttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Agriculture and farming" disabled>AGRICULTURE</button>
     <button class="menu-btn" mat-menu-item matTooltip="Business and finance" routerLink="/business">BUSINESS</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Citizen and local government" disabled>CITIZEN</button>
     <button class="menu-btn" mat-menu-item matTooltip="Education and schools" disabled>EDUCATION</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Citizens and local government" disabled>GOVERNMENT</button>
     <button class="menu-btn" mat-menu-item matTooltip="Transport, both public and private" routerLink="/transport">TRANSPORT</button>
   </mat-menu>
   <mat-menu #infobuttons="matMenu">
