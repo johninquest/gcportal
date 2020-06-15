@@ -15,7 +15,6 @@ export interface placesListDesc {
   templateUrl: './records.component.html',
   styleUrls: ['./records.component.css']
 })
-
 export class RecordsComponent implements OnInit {
 
   constructor(private ws: WebService, private rt: Router) { }
@@ -190,7 +189,7 @@ export class RecordsComponent implements OnInit {
 
   logout() {
     sessionStorage.removeItem('access');
-    this.rt.navigateByUrl('/login');
+    this.rt.navigateByUrl('/transport/login');
   }
 
   getBalance(period: string) {

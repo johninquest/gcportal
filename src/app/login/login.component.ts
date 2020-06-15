@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 export class LoginComponent implements OnInit {
 
   userid = new FormControl('', Validators.required);
@@ -32,7 +31,6 @@ export class LoginComponent implements OnInit {
         }
       },
       err => { 
-        // console.log('ERR => ' + JSON.stringify(err));
         alert('Network or firewall problems! \nPlease try again later'); }
     ); 
   }
