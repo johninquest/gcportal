@@ -1,23 +1,30 @@
-<div class="title">RECEIPT TOOL</div>
+<div class="title">RECEIPT GENERATOR</div>
 
 <div class="form-input" *ngIf="toggleInput">
-
-    <mat-form-field>
-      <input matInput placeholder="FEE" type="number">
+  <div class="items">
+    <mat-form-field class="item-i">
+      <input matInput placeholder="Item" type="text">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="PASSENGER NAME" type="text">
+    <mat-form-field class="item-p">
+      <input matInput placeholder="Price" type="number">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="PASSENGER ID" type="text">
-    </mat-form-field>
+    <button mat-raised-button color="primary" matTooltip="Add item" (click)="addItem()">Add</button>
+  </div>
 
+  <div class="buyer">
     <mat-form-field>
-      <input matInput placeholder="TICKET NUMBER" type="number">
+      <input matInput placeholder="Buyer" type="text">
     </mat-form-field>
+  </div>
 
-    <button mat-raised-button color="primary" (click)="receiptPreview()">PREVIEW</button>
+  <div class="seller">
+    <mat-form-field>
+      <input matInput placeholder="Seller" type="text">
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" matTooltip="Preview receipt" (click)="receiptPreview()">PREVIEW</button>
 
 </div>

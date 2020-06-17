@@ -4,9 +4,13 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
-      <mat-icon>mail</mat-icon>
-      <span>CONTACT</span>
+    <button mat-menu-item matTooltip="Coronavirus safety tips for the public" routerLink="/information/coronavirus">
+      <mat-icon>local_hospital</mat-icon>
+      <span>CORONAVIRUS SAFETY</span>
+    </button>
+    <button mat-menu-item routerLink="/information/roadsafety" matTooltip="Road safety tips">
+      <mat-icon>directions</mat-icon>
+      <span>ROAD SAFETY</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">

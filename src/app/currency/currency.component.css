@@ -1,0 +1,42 @@
+.title {
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.inputs {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.result {
+    width: 16em;
+    border: solid 0.2em #FFC107;
+    border-radius: 1em; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.result div {
+    margin: 1em;
+}
+
+.result .result-title {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.currency {
+    font-weight: auto;
+}
+
+.input-amount {
+    font-weight: bold;
+}
+
+.output-amount {
+    font-weight: bold;
+}

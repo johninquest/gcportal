@@ -1,5 +1,4 @@
 nav button:hover { background-color: #FFC107; }
-
 .mat-menu-item:hover { background-color: #FFC107; }
 
 .title {
@@ -21,4 +20,19 @@ mat-form-field { width: 15em; }
 .form-input button {
     width: 12em;
     margin-top: 1em;
+}
+
+.item-i {
+    width: 10em;
+    margin: 0.2em;
+}
+
+.item-p {
+    width: 4em;
+    margin: 0.2em;
+}
+
+.items button {
+  width: 4em;
+  margin: 0.2em;
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
 import { PLACES } from '../destinations';
+import { PrintService } from '../services/print.service';
 import moment from 'moment';
 moment.locale('en-gb');
 
@@ -16,10 +15,9 @@ export interface placesListDesc {
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-
 export class TicketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ps: PrintService) { }
 
   startLocation = new FormControl(''); endLocation = new FormControl('');
   ticketFee = new FormControl(''); ticketOwnerName = new FormControl(''); 
@@ -47,23 +45,22 @@ export class TicketComponent implements OnInit {
 
   saveAsImage() {
     let targetElement = document.getElementById('ticketElement');
-    html2canvas(targetElement)
-    .then((canvas: any) => {      
-      let ctx = canvas.getContext('2d');
-      ctx.webkitImageSmoothingEnabled = false;
-      ctx.mozImageSmoothingEnabled = false;
-      ctx.imageSmoothingEnabled = false;
-      let imageGened = canvas.toDataURL('image/jpeg', 1.0).replace('image/png', 'image/octet-stream');
-      let timeNow: string = moment().format('YYYYMMDDTHHmmss');
-      return saveAs(imageGened, `TN-${timeNow}.JPEG`); 
-    });
+    this.ps.ticketToImage(targetElement);
    }
 
   saveAsPdf() {
-    alert('Coming soon 🚧');
+    let ticketData: object = {
+      fromLocation: this.startLocation.value,
+      toLocation: this.endLocation.value,
+      tkFee: this.ticketFee.value,
+      ownerName: this.ticketOwnerName.value,
+      ownerId: this.ticketOwnerId.value,
+      tkNumber: this.ticketNumber.value
+    };
+    this.ps.ticketToPDF(ticketData);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
 }
 

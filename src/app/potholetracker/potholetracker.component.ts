@@ -8,7 +8,6 @@ import { from } from 'rxjs';
   templateUrl: './potholetracker.component.html',
   styleUrls: ['./potholetracker.component.css']
 })
-
 export class PotholetrackerComponent implements OnInit {
 
   constructor(private ws: WebService, private snackBar: MatSnackBar) {}
