@@ -15,6 +15,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { BusinessComponent } from './business/business.component';
 import { TransportComponent } from './transport/transport.component';
 import { ReceiptComponent } from './receipt/receipt.component';
+import { CurrencyComponent } from './currency/currency.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'information/roadsafety', component: RoadsafetyComponent },
   { path: 'business', component: BusinessComponent, children: [
     { path: 'receipt', component: ReceiptComponent },
+    { path: 'currency', component: CurrencyComponent }
   ]},
   { path: 'transport', component: TransportComponent },
   { path: 'transport/pothole-tracker', component: PotholetrackerComponent },

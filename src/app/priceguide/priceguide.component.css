@@ -1,13 +1,11 @@
-
 nav button:hover { background-color: #FFC107; }
-
 .mat-menu-item:hover { background-color: #FFC107; }
 
 .title {
     text-align: center;
     margin: 1em;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .locations {

@@ -152,3 +152,15 @@ export const DETAILS = [
 
    {from: 'tiko', to: 'douala', price: 0, distance: 55.4, roadstate: 'GOOD'}
 ];
+
+export const CURRENCIES = [
+    {value: null, viewValue: ''},
+    {value: 'cad', viewValue: 'CAD'},
+    {value: 'cny', viewValue: 'CNY'},
+    {value: 'gbp', viewValue: 'GBP'},
+    {value: 'eur', viewValue: 'EUR'},
+    {value: 'kes', viewValue: 'KES'},
+    {value: 'ngn', viewValue: 'NGN'},
+    {value: 'usd', viewValue: 'USD'},
+    {value: 'zar', viewValue: 'ZAR'},
+];

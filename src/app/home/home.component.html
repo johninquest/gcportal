@@ -30,7 +30,7 @@
       <mat-icon>eco</mat-icon>
       <span>AGRICULTURE</span>
     </button>
-    <button mat-menu-item matTooltip="Business and finance" routerLink="/business"> 
+    <button mat-menu-item matTooltip="Business and finance" routerLink="/business/currency"> 
       <mat-icon>store</mat-icon>
       <span>BUSINESS</span>
     </button>
@@ -75,7 +75,7 @@
   <button mat-raised-button color="primary" [matMenuTriggerFor]="toolbuttons" matTooltip="Digital tools and services we offer">TOOLS</button>
   <mat-menu #toolbuttons="matMenu">
     <button class="menu-btn" mat-menu-item matTooltip="Agriculture and farming" disabled>AGRICULTURE</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Business and finance" routerLink="/business">BUSINESS</button>
+    <button class="menu-btn" mat-menu-item matTooltip="Business and finance" routerLink="/business/currency">BUSINESS</button>
     <button class="menu-btn" mat-menu-item matTooltip="Citizen and local government" disabled>CITIZEN</button>
     <button class="menu-btn" mat-menu-item matTooltip="Education and schools" disabled>EDUCATION</button>
     <button class="menu-btn" mat-menu-item matTooltip="Transport, both public and private" routerLink="/transport">TRANSPORT</button>

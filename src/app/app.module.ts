@@ -22,6 +22,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { BusinessComponent } from './business/business.component';
 import { TransportComponent } from './transport/transport.component';
 import { ReceiptComponent } from './receipt/receipt.component';
+import { CurrencyComponent } from './currency/currency.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ReceiptComponent } from './receipt/receipt.component';
     TicketComponent,
     BusinessComponent,
     TransportComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    CurrencyComponent
   ],
   imports: [
     BrowserModule,

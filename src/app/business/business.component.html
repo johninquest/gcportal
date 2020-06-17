@@ -4,7 +4,7 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item matTooltip="Currency exchange rates" (click)="msg()">
+    <button mat-menu-item matTooltip="Currency exchange rates" routerLink="/business/currency">
       <mat-icon>attach_money</mat-icon>
       <span>CURRENCY</span>
     </button>
@@ -23,6 +23,7 @@
 </nav>
 
 <router-outlet></router-outlet>
+
 <!-- 
 <div class="title" matTooltip="Digital tools for business and finance">BUSINESS TOOLS</div>
 <div class="btns">COMING SOON ...</div>

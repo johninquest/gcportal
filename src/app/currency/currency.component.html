@@ -1,0 +1,20 @@
+
+<div class="title">CURRENCY CONVERTER</div>
+
+<div class="inputs">
+    <mat-form-field class="input-amount">
+        <input matInput placeholder="AMOUNT" [formControl]="amount" type="number">
+    </mat-form-field>
+
+    <mat-form-field class="input-currency">
+        <mat-select placeholder="CURRENCY" [formControl]="currency">
+            <mat-option *ngFor="let c of currencyList" [value]="c.value">{{ c.viewValue }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="result">
+    <div class="result-title">CONVERTION DETAILS</div>
+    <div><span class="input">INPUT: </span><span class="input-a">{{ amount.value }}</span>&nbsp;<span class="currency">{{ currency.value | uppercase }}</span></div>
+    <div><span class="output">OUTPUT: </span><span class="selectedloc">{{ xafValue(amount.value, currency.value) }}</span>&nbsp;<span class="currency">XAF</span> </div>
+</div>
