@@ -22,27 +22,41 @@ export class CurrencyComponent implements OnInit {
 
   xafValue(_amount: number, _currency: string ) {
     if(_currency === 'aed') {
-      return _amount * 159;
+      let convertedValue: string = (_amount * 159.25).toFixed(1);
+      return convertedValue;
     }if(_currency === 'cad') {
-      return _amount * 431;
+      let convertedValue: string = (_amount * 430.21).toFixed(1);
+      return convertedValue;
     }if(_currency === 'cny') {
-      return _amount * 82.5;
-    }if(_currency === 'gbp') {
-      return _amount * 733;
-    }if(_currency === 'ghs') {
-      return _amount * 101;
+      let convertedValue: string = (_amount * 82.5).toFixed(1);
+      return convertedValue;
     }if(_currency === 'eur') {
-      return _amount * 655;
+      let convertedValue: string = (_amount * 655.95).toFixed(1);
+      return convertedValue;
+    }if(_currency === 'gbp') {
+      let convertedValue: string = (_amount * 730).toFixed(1);
+      return convertedValue;
+    }if(_currency === 'ghs') {
+      let convertedValue: string = (_amount * 101).toFixed(1);
+      return convertedValue;
+    }if(_currency === 'inr') {
+      let convertedValue: string = (_amount * 7.66).toFixed(1);
+      return convertedValue;
     }if(_currency === 'kes') {
-      return _amount * 5.5;
+      let convertedValue: string = (_amount * 5.50).toFixed(1);
+      return convertedValue;
     }if(_currency === 'ngn') {
-      return _amount * 1.5;
+      let convertedValue: string = (_amount * 1.50).toFixed(1);
+      return convertedValue;
     }if(_currency === 'usd') {
-      return _amount * 584;
+      let convertedValue: string = (_amount * 584).toFixed(1);
+      return convertedValue;
     }if(_currency === 'xof') {
-      return _amount * 1;
+      let convertedValue: string = (_amount * 1).toFixed(1);
+      return convertedValue;
     }if(_currency === 'zar') {
-      return _amount * 34;
+      let convertedValue: string = (_amount * 33.45).toFixed(1);
+      return convertedValue;
     }   
   }
 
