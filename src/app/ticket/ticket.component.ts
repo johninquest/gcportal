@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { PLACES } from '../destinations';
+import { PLACES } from '../lists/transport';
 import { PrintService } from '../services/print.service';
 import moment from 'moment';
 moment.locale('en-gb');

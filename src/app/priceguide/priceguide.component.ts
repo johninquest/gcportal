@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { PLACES, DETAILS } from '../destinations';
-import { from } from 'rxjs';
+import { PLACES, DETAILS } from '../lists/transport';
 
 export interface placesListDesc {
   value: string;

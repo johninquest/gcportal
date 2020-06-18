@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { WebService } from '../services/web.service';
-import moment from 'moment';
 import { Router } from '@angular/router';
-import { PLACES } from '../destinations';
+import { PLACES } from '../lists/transport';
+import moment from 'moment';
 
 export interface placesListDesc {
   value: string;

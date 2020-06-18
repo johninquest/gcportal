@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CURRENCIES } from '../destinations';
+import { CURRENCIES } from '../lists/business';
 
 export interface currencyListDesc {
   value: string;
