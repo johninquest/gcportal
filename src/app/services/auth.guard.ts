@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
         return true;
       }else {
         alert('ACCESS DENIED 🛑 \nNOW REDIRECTING ...');
-        this.rt.navigateByUrl('/transport/login');
+        this.rt.navigateByUrl('/login');
         // return false;
       }
   }

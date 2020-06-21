@@ -1,67 +1,23 @@
 <nav>
-  <mat-menu #nav_menu="matMenu">
+  <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item routerLink="/about" matTooltip="About MANDI GUIDE">
+    <button mat-menu-item matTooltip="About MANDI GUIDE">
       <mat-icon>info</mat-icon>
       <span>ABOUT</span>
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="navinfos" matTooltip="Helpful information">
+    <button mat-menu-item routerLink="/login" matTooltip="Helpful information">
       <mat-icon>new_releases</mat-icon>
       <span>INFORMATION</span>
     </button>
-    <button mat-menu-item [matMenuTriggerFor]="navtools" matTooltip="Digital tools and services we offer">
+    <button mat-menu-item matTooltip="Digital tools and services we offer">
       <mat-icon>menu</mat-icon>
       <span>TOOLS</span>
     </button>
-    <button mat-menu-item routerLink="/contact" matTooltip="Contact us">
-      <mat-icon>mail</mat-icon>
-      <span>CONTACT</span>
-    </button>
-    <button mat-menu-item (click)="goToFacebook()" matTooltip="Visit our facebook page">
-      <mat-icon><img src="https://img.icons8.com/material/24/000000/facebook-f.png"/></mat-icon> 
-      <span>FACEBOOK</span>
-    </button>
   </mat-menu>
-  <mat-menu #navtools="matMenu">
-    <button mat-menu-item matTooltip="Agriculture and farming" disabled>
-      <mat-icon>eco</mat-icon>
-      <span>AGRICULTURE</span>
-    </button>
-    <button mat-menu-item matTooltip="Business and finance" routerLink="/business/currency"> 
-      <mat-icon>store</mat-icon>
-      <span>BUSINESS</span>
-    </button>
-    <button mat-menu-item matTooltip="Citizen and local government" disabled> 
-      <mat-icon>account_balance</mat-icon>
-      <span>CITIZEN</span>
-    </button>
-    <button mat-menu-item matTooltip="Education and schools" disabled> 
-      <mat-icon>school</mat-icon>
-      <span>EDUCATION</span>
-    </button>
-    <button mat-menu-item matTooltip="Transport, both public and private" routerLink="/transport"> 
-      <mat-icon>directions_bus</mat-icon>
-      <span>TRANSPORT</span>
-    </button>
-  </mat-menu>
-  <mat-menu #navinfos="matMenu">
-    <button mat-menu-item matTooltip="Coronavirus safety tips for the public" routerLink="/information/coronavirus">
-      <mat-icon>local_hospital</mat-icon>
-      <span>CORONAVIRUS SAFETY INFO</span>
-    </button>
-    <button mat-menu-item matTooltip="Regional news" routerLink="/information/news"> 
-      <mat-icon>radio</mat-icon>
-      <span>REGIONAL NEWS</span>
-    </button>
-    <button mat-menu-item matTooltip="General road safety tips" routerLink="/information/roadsafety"> 
-      <mat-icon>directions</mat-icon>
-      <span>ROAD SAFETY INFO</span>
-    </button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="nav_menu">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
   </button>
 </nav>
@@ -71,18 +27,5 @@
 </div>
 
 <div class="start-btn">
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="infobuttons" matTooltip="Helpful information">INFORMATION</button>
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="toolbuttons" matTooltip="Digital tools and services we offer">TOOLS</button>
-  <mat-menu #toolbuttons="matMenu">
-    <button class="menu-btn" mat-menu-item matTooltip="Agriculture and farming" disabled>AGRICULTURE</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Business and finance" routerLink="/business/currency">BUSINESS</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Citizen and local government" disabled>CITIZEN</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Education and schools" disabled>EDUCATION</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Transport, both public and private" routerLink="/transport">TRANSPORT</button>
-  </mat-menu>
-  <mat-menu #infobuttons="matMenu">
-    <button class="menu-btn" mat-menu-item matTooltip="Coronavirus safety recommendations" routerLink="/information/coronavirus">CORONAVIRUS SAFETY</button>
-    <button class="menu-btn" mat-menu-item matTooltip="Regional news" routerLink="/information/news">REGIONAL NEWS</button>
-    <button class="menu-btn" mat-menu-item matTooltip="General road safety recommendations" routerLink="/information/roadsafety">ROAD SAFETY</button>
-  </mat-menu>
-</div>
+  <button mat-raised-button color="primary" matTooltip="Helpful information">INFORMATION</button>
+  <button mat-raised-button color="primary" matTooltip="Digital tools and services we offer">TOOLS</button>

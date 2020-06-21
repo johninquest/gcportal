@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       res => {
         if(res['message'] === 'OK') {
           sessionStorage.setItem('access', 'allowed');
-          this.rt.navigateByUrl('/transport/pms');
+          this.rt.navigateByUrl('/pms');
         }else if(res['message'] === 'NOK') {
           alert('Login failed');
         }else {
