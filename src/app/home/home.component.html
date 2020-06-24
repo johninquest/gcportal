@@ -4,17 +4,13 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item matTooltip="About MANDI GUIDE">
-      <mat-icon>info</mat-icon>
-      <span>ABOUT</span>
+    <button mat-menu-item routerLink="/login">
+      <mat-icon>account_balance_wallet</mat-icon>
+      <span>BUCHFÜHRUNG</span>
     </button>
-    <button mat-menu-item routerLink="/login" matTooltip="Helpful information">
-      <mat-icon>new_releases</mat-icon>
-      <span>INFORMATION</span>
-    </button>
-    <button mat-menu-item matTooltip="Digital tools and services we offer">
-      <mat-icon>menu</mat-icon>
-      <span>TOOLS</span>
+    <button mat-menu-item routerLink="/timing" matTooltip="Arbeitszeiten erfassen">
+      <mat-icon>timer</mat-icon>
+      <span>ZEITERFASSUNG</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -27,5 +23,6 @@
 </div>
 
 <div class="start-btn">
-  <button mat-raised-button color="primary" matTooltip="Helpful information">INFORMATION</button>
-  <button mat-raised-button color="primary" matTooltip="Digital tools and services we offer">TOOLS</button>
+  <button mat-raised-button color="primary" routerLink="/bookkeeping">BUCHFÜHRUNG</button>
+  <button mat-raised-button color="primary" routerLink="/timing">ZEITERFASSUNG</button>
+</div>  

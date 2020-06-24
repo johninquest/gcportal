@@ -2,14 +2,15 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$mytheme-primary: mat-palette($mat-cyan, 400); // #00BCD4
+$mytheme-primary: mat-palette($mat-blue, 300); // #64B5F6
 $mytheme-accent: mat-palette($mat-grey, 300); // #E0E0E0
 $mytheme-warn: mat-palette($mat-red, 500); // #F44336
 
 $mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
 @include angular-material-theme($mytheme-all);
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 /* $myfont: 'Quicksand', sans-serif; */
-$myfont: 'Allerta', sans-serif;
+$myfont: 'Quicksand', sans-serif;
 * { font: 100% $myfont; } 
 /* Add !important to overwrite all elements */

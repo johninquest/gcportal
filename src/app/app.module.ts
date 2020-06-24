@@ -11,6 +11,8 @@ import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { TicketComponent } from './ticket/ticket.component';
+import { TimingComponent } from './timing/timing.component';
+import { BookkeepingComponent } from './bookkeeping/bookkeeping.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TicketComponent } from './ticket/ticket.component';
     RecordsComponent,
     LoginComponent,
     TicketComponent,
+    TimingComponent,
+    BookkeepingComponent,
   ],
   imports: [
     BrowserModule,
