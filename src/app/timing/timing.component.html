@@ -1,36 +1,40 @@
 <nav>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/home" matTooltip="Home">
-        <mat-icon>home</mat-icon>
-        <span>HOME</span>
-      </button>
-      <button mat-menu-item matTooltip="About MANDI GUIDE">
-        <mat-icon>calendar_today</mat-icon>
-        <span>MEINE ZEITEN</span>
-      </button>
-      <button mat-menu-item matTooltip="About MANDI GUIDE">
-        <mat-icon>timer</mat-icon>
-        <span>ZEIT ERFASSEN</span>
-      </button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
     </button>
+    <button mat-menu-item matTooltip="About MANDI GUIDE">
+      <mat-icon>calendar_today</mat-icon>
+      <span>MEINE ZEITEN</span>
+    </button>
+    <button mat-menu-item [matMenuTriggerFor]="zeiten">
+      <mat-icon>timer</mat-icon>
+      <span>ZEIT ERFASSEN</span>
+    </button>
+  <mat-menu #zeiten="matMenu">
+    <button mat-menu-item>AUTOMATISCH</button>
+    <button mat-menu-item>MANUELL</button>
+    </mat-menu>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 </nav>
 
 <div class="title" matTooltip="Meine Zeiterfassung">ZEITERFASSUNG</div>
 
 <div class="auto">
-    <div class="btns">
-        <button mat-raised-button color="primary" (click)="autoKommen()">kommen</button>
-        <button mat-raised-button color="primary" (click)="autoGehen()">gehen</button>
-    </div>
-    <div class="btns">
-        <button mat-raised-button color="primary">arbeit <br> anfangen</button>
-        <button mat-raised-button color="primary">arbeit <br> beenden</button>   
-    </div>
-    <div class="btns">
-        <button mat-raised-button color="primary">pause <br> anfangen</button>
-        <button mat-raised-button color="primary">pause <br> beenden</button>
-    </div>
+  <div class="btns">
+    <button mat-raised-button color="primary" (click)="autoKommen()">kommen</button>
+    <button mat-raised-button color="primary" (click)="autoGehen()">gehen</button>
+  </div>
+  <div class="btns">
+    <button mat-raised-button color="primary">arbeit <br> anfangen</button>
+    <button mat-raised-button color="primary">arbeit <br> beenden</button>   
+  </div>
+  <div class="btns">
+    <button mat-raised-button color="primary">pause <br> anfangen</button>
+    <button mat-raised-button color="primary">pause <br> beenden</button>
+  </div>
 </div>  
