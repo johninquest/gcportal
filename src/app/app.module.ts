@@ -13,6 +13,7 @@ import { AuthGuard } from './services/auth.guard';
 import { TicketComponent } from './ticket/ticket.component';
 import { TimingComponent } from './timing/timing.component';
 import { BookkeepingComponent } from './bookkeeping/bookkeeping.component';
+import { GastanmeldungComponent } from './gastanmeldung/gastanmeldung.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BookkeepingComponent } from './bookkeeping/bookkeeping.component';
     TicketComponent,
     TimingComponent,
     BookkeepingComponent,
+    GastanmeldungComponent,
   ],
   imports: [
     BrowserModule,
