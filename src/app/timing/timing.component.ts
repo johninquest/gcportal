@@ -13,6 +13,12 @@ export class TimingComponent implements OnInit {
 
   autoKommen() {
     let dtstamp: string = moment().format('YYYY-MM-DD HH:mm:ss');
+    let msg = confirm('Stempelzeit \n' + dtstamp);
+    if(msg) {
+      alert('Die Zeit wurde erfolgreich gespeichert');
+    }else {
+      alert('Die Zeiten wurde nicht gespeichert');
+    }
     console.log(dtstamp);
   }
 
