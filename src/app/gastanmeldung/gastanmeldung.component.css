@@ -7,3 +7,17 @@ nav button:hover { background-color: #64B5F6; }
     font-weight: bold;
     font-size: 1.5em;
 }
+
+.guest-info-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+mat-form-field { width: 15em; }
+
+.guest-info-form button {
+    width: 12em;
+    margin-top: 1em;
+}

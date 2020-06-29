@@ -11,6 +11,23 @@ export class GastanmeldungComponent implements OnInit {
 
   constructor() { }
 
+  guestInfoForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl('', Validators.required),
+    arrivedAt: new FormControl(''),
+    departedAt: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    eMail: new FormControl(''),  
+  });
+
+  preview() {
+    alert('Ist noch eine Baustelle');
+  }
+
+  msg() {
+    alert('Ist noch eine Baustelle');
+  }
+
   ngOnInit(): void { }
 
 }

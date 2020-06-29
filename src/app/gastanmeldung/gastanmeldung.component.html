@@ -4,7 +4,7 @@
         <mat-icon>home</mat-icon>
         <span>HOME</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="msg()">
         <mat-icon>info</mat-icon>
         <span>INFO</span>
       </button>
@@ -15,3 +15,33 @@
 </nav>
 
 <div class="title" matTooltip="Mein Besuch anmelden">GAST ANMELDUNG</div>
+
+<div class="guest-info-form" [formGroup]="guestInfoForm">
+
+  <mat-form-field>
+    <input matInput placeholder="VORNAME" formControlName="firstName" type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="NACHNAME" formControlName="lastName" type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="BEGINN DES BESUCHS" formControlName="arrivedAt" type="datetime">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="ENDE DES BESUCHS" formControlName="departedAt" type="datetime">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="TELEFONNUMMER" formControlName="phoneNumber" type="tel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="E-MAIL" formControlName="eMail" type="email">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="preview()">VORSCHAU</button>
+
+</div>
