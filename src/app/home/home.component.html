@@ -8,6 +8,7 @@
       <mat-icon>create</mat-icon>
       <span>GASTANMELDUNG</span>
     </button>
+    <!-- 
     <button mat-menu-item routerLink="/bookkeeping" matTooltip="Meine Einnahmen und ausgaben erfassen">
       <mat-icon>account_balance_wallet</mat-icon>
       <span>BUCHFÜHRUNG</span>
@@ -16,6 +17,7 @@
       <mat-icon>timer</mat-icon>
       <span>ZEITERFASSUNG</span>
     </button>
+  -->
     <button mat-menu-item matTooltip="Mein Schaden erfassen" (click)="msg()">
       <mat-icon>broken_image</mat-icon>
       <span>SCHADEN</span>
@@ -36,8 +38,8 @@
 
 <div class="start-btn">
   <button mat-raised-button color="primary" routerLink="/gastanmeldung">GASTANMELDUNG</button>
-  <button mat-raised-button color="primary" routerLink="/bookkeeping">BUCHFÜHRUNG</button>
-  <button mat-raised-button color="primary" routerLink="/timing">ZEITERFASSUNG</button>
+  <!-- <button mat-raised-button color="primary" routerLink="/bookkeeping">BUCHFÜHRUNG</button>
+  <button mat-raised-button color="primary" routerLink="/timing">ZEITERFASSUNG</button> -->
   <button mat-raised-button color="primary" (click)="msg()">SCHADEN</button>
   <button mat-raised-button color="primary" (click)="msg()">STÖRUNG</button>
 </div>  
