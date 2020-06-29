@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   constructor() {}
 
+  msg() {
+    alert('Ist noch eine Baustelle');
+  }
 
   ngOnInit() { }
 }
