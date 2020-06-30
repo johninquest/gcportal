@@ -16,22 +16,21 @@
 
 <div class="title" matTooltip="Mein Besuch anmelden">GAST ANMELDUNG</div>
 
-<div class="guest-info-form" [formGroup]="guestInfoForm">
-
+<div class="guest-info-form" [formGroup]="guestInfoForm" *ngIf="toggleInput">
   <mat-form-field>
-    <input matInput placeholder="VORNAME" formControlName="firstName" type="text">
-  </mat-form-field>
-
-  <mat-form-field>
-    <input matInput placeholder="NACHNAME" formControlName="lastName" type="text">
+    <input matInput placeholder="NACHNAME, VORNAME" formControlName="lastName" type="text">
   </mat-form-field>
 
   <mat-form-field>
     <input matInput placeholder="BEGINN DES BESUCHS" formControlName="arrivedAt" type="datetime">
   </mat-form-field>
 
-  <mat-form-field>
+   <mat-form-field>
     <input matInput placeholder="ENDE DES BESUCHS" formControlName="departedAt" type="datetime">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="TISCHNUMMER" formControlName="tableNumber" type="number">
   </mat-form-field>
 
   <mat-form-field>
@@ -43,5 +42,8 @@
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="preview()">VORSCHAU</button>
+</div>
 
+<div *ngIf="togglePreview">
+  PREVIEW
 </div>

@@ -11,16 +11,20 @@ export class GastanmeldungComponent implements OnInit {
 
   constructor() { }
 
+  toggleInput: boolean = true;
+  togglePreview: boolean = false;
+
   guestInfoForm = new FormGroup({
-    firstName: new FormControl(''),
     lastName: new FormControl('', Validators.required),
     arrivedAt: new FormControl(''),
     departedAt: new FormControl(''),
+    tableNumber: new FormControl(''),
     phoneNumber: new FormControl(''),
-    eMail: new FormControl(''),  
+    eMail: new FormControl('')  
   });
 
   preview() {
+    // this.toggleInput = false;
     alert('Ist noch eine Baustelle');
   }
 
