@@ -18,6 +18,10 @@
       <span>ZEITERFASSUNG</span>
     </button>
   -->
+    <button mat-menu-item routerLink="/timing" matTooltip="Meine Arbeitszeiten erfassen">
+      <mat-icon>timer</mat-icon>
+      <span>RECHNUNG</span>
+    </button>
     <button mat-menu-item matTooltip="Mein Schaden erfassen" (click)="msg()">
       <mat-icon>broken_image</mat-icon>
       <span>SCHADEN</span>
@@ -40,6 +44,7 @@
   <button mat-raised-button color="primary" routerLink="/gastanmeldung">GASTANMELDUNG</button>
   <!-- <button mat-raised-button color="primary" routerLink="/bookkeeping">BUCHFÜHRUNG</button>
   <button mat-raised-button color="primary" routerLink="/timing">ZEITERFASSUNG</button> -->
+  <button mat-raised-button color="primary" (click)="msg()">RECHNUNG</button>
   <button mat-raised-button color="primary" (click)="msg()">SCHADEN</button>
   <button mat-raised-button color="primary" (click)="msg()">STÖRUNG</button>
 </div>  
