@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'; 
-import { from } from 'rxjs';
 
 @Component({
-  selector: 'app-gastanmeldung',
-  templateUrl: './gastanmeldung.component.html',
-  styleUrls: ['./gastanmeldung.component.css']
+  selector: 'app-guest',
+  templateUrl: './guest.component.html',
+  styleUrls: ['./guest.component.css']
 })
-export class GastanmeldungComponent implements OnInit {
+export class GuestComponent implements OnInit {
 
   constructor() { }
 

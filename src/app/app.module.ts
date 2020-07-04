@@ -11,9 +11,8 @@ import { RecordsComponent } from './records/records.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { TicketComponent } from './ticket/ticket.component';
-import { TimingComponent } from './timing/timing.component';
-import { BookkeepingComponent } from './bookkeeping/bookkeeping.component';
-import { GastanmeldungComponent } from './gastanmeldung/gastanmeldung.component';
+import { GuestComponent } from './guest/guest.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +21,8 @@ import { GastanmeldungComponent } from './gastanmeldung/gastanmeldung.component'
     RecordsComponent,
     LoginComponent,
     TicketComponent,
-    TimingComponent,
-    BookkeepingComponent,
-    GastanmeldungComponent,
+    GuestComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,
