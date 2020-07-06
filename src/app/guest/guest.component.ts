@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'; 
+import moment from 'moment';
+moment.locale('de');
 
 @Component({
   selector: 'app-guest',
@@ -24,10 +26,11 @@ export class GuestComponent implements OnInit {
 
   preview() {
     // this.toggleInput = false;
+    // console.log(this.guestInfoForm.value)
     alert('Ist noch eine Baustelle');
   }
 
-  msg() {
+  ucMessage() {
     alert('Ist noch eine Baustelle');
   }
 

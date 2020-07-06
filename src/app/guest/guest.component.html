@@ -4,7 +4,7 @@
         <mat-icon>home</mat-icon>
         <span>HOME</span>
       </button>
-      <button mat-menu-item (click)="msg()">
+      <button mat-menu-item (click)="ucMessage()">
         <mat-icon>info</mat-icon>
         <span>INFO</span>
       </button>
@@ -14,7 +14,7 @@
     </button>
 </nav>
 
-<div class="title" matTooltip="Mein Besuch anmelden">GAST ANMELDUNG</div>
+<div class="title" matTooltip="Mein Besuch anmelden">GASTANMELDUNG</div>
 
 <div class="guest-info-form" [formGroup]="guestInfoForm" *ngIf="toggleInput">
   <mat-form-field>
@@ -22,11 +22,11 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="BEGINN DES BESUCHS" formControlName="arrivedAt" type="datetime">
+    <input matInput placeholder="BEGINN DES BESUCHS" formControlName="arrivedAt" type="datetime-local">
   </mat-form-field>
 
    <mat-form-field>
-    <input matInput placeholder="ENDE DES BESUCHS" formControlName="departedAt" type="datetime">
+    <input matInput placeholder="ENDE DES BESUCHS" formControlName="departedAt" type="datetime-local">
   </mat-form-field>
 
   <mat-form-field>
