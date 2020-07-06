@@ -27,6 +27,9 @@ export class InvoiceComponent implements OnInit {
     sellerEmail: new FormControl()
   });
 
+  toggleInputBuyer: boolean = false;
+  toggleInputSeller: boolean = false;
+
   ucMessage() {
     alert('Noch eine Baustelle 🚧');
   }
