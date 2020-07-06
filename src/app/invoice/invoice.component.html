@@ -1,1 +1,27 @@
-<p>invoice works!</p>
+<nav>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" matTooltip="Home">
+        <mat-icon>home</mat-icon>
+        <span>HOME</span>
+      </button>
+      <button mat-menu-item (click)="ucMessage()">
+        <mat-icon>info</mat-icon>
+        <span>INFO</span>
+      </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</nav>
+
+<div class="title" matTooltip="Rechnung unterwegs erstellen">RECHNUNG</div>
+
+<div class="invoice-input-form" [formGroup]="itemForm">
+    <mat-form-field class="invoice-input-item">
+        <input matInput placeholder="Item" formControlName="itemName" type="text">
+    </mat-form-field>
+    <mat-form-field class="invoice-input-price">
+        <input matInput placeholder="Price" formControlName="itemPrice" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="ucMessage()">ADD</button>
+</div>

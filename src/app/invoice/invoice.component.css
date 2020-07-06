@@ -1,0 +1,25 @@
+nav button:hover { background-color: #64B5F6; }
+.mat-menu-item:hover { background-color: #64B5F6; }
+
+.title {
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.invoice-input-form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.invoice-input-form .invoice-input-item  {
+    width: 15em;
+}
+
+.invoice-input-form .invoice-input-price  {
+    width: 15em;
+}
