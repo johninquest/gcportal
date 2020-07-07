@@ -21,7 +21,7 @@ export class PrintService {
       ctx.imageSmoothingEnabled = false;
       let imageGened = canvas.toDataURL('image/jpeg', 1.0).replace('image/png', 'image/octet-stream');
       let datetimeNow: string = moment().format('YYYYMMDDTHHmmss');
-      let finalJPEG = saveAs(imageGened, `TN-${datetimeNow}.JPEG`);
+      let finalJPEG = saveAs(imageGened, `GN-${datetimeNow}.JPEG`);
       return finalJPEG; // saveAs(imageGened, `TN-${datetimeNow}.JPEG`); 
     });
   }

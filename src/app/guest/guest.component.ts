@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'; 
 import moment from 'moment';
-moment.locale('de');
+// import 'moment/locale/de'; 
+// moment.locale('de');
 
 @Component({
   selector: 'app-guest',
@@ -14,6 +15,8 @@ export class GuestComponent implements OnInit {
 
   toggleInput: boolean = true;
   togglePreview: boolean = false;
+  toggleButtons: boolean = false;
+  datetimeStamp: string;
 
   guestInfoForm = new FormGroup({
     lastName: new FormControl('', Validators.required),
@@ -25,10 +28,35 @@ export class GuestComponent implements OnInit {
   });
 
   preview() {
-    // this.toggleInput = false;
-    // console.log(this.guestInfoForm.value)
-    alert('Ist noch eine Baustelle');
+    this.toggleInput = false;
+    this.togglePreview = true;
+    this.toggleButtons = true;
+    console.log(this.guestInfoForm.value);
+
+    // this.datetimeStamp = moment().format('LLL');
+    this.datetimeStamp = moment().locale('de').format('LLL');
   }
+
+  backToInput() {
+    this.toggleButtons = false;
+    this.togglePreview = false;
+    this.toggleInput = true;
+  }
+
+  formatPrintDateTime(dt: string) {
+    if(dt) {
+      let outputDate: string = moment(dt).locale('de').format('L');
+      let outputTime: string = moment(dt).locale('de').format('LT');
+      let outputDateTime = outputDate + ' ' + outputTime;
+      return outputDateTime;
+    }else {
+      return '';
+    }
+  }
+
+  saveAsImage() {}
+
+  saveAsPdf() {}
 
   ucMessage() {
     alert('Ist noch eine Baustelle');

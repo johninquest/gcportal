@@ -44,7 +44,73 @@
   <button mat-raised-button color="primary" (click)="preview()">VORSCHAU</button>
 </div>
 
-<div *ngIf="togglePreview">
-  PREVIEW
+<div class="invoice-box" id="ticketElement" *ngIf="togglePreview">
+  <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+          <td colspan="2">
+              <table>
+                  <tr>
+                      <td>
+                        <span>GASTSTÄTTE INFORMATION</span>
+                      </td>
+                      
+                      <td>
+                        <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span><br><br>
+                        <span>GAST INFORMATION</span><br>
+                        <span>NACHNAME, VORNAME: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('lastName').value | uppercase }}</span><br>
+                        <span>TELEFONNUMMER: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('phoneNumber').value | uppercase }}</span><br>
+                        <span>E-MAIL: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('eMail').value | lowercase}}</span>
+                      </td>
+                  </tr>
+              </table>
+          </td>
+      </tr>
+           
+    <tr class="heading">
+      <td></td>
+        
+      <td></td>
+    </tr>
+    
+    <tr class="item">
+        <td>BEGINN DES BESUCHS</td>
+        
+        <td>{{ formatPrintDateTime(this.guestInfoForm.get('arrivedAt').value) }}</td>
+    </tr>
+
+    <tr class="item">
+      <td>TISCHNUMMER</td>
+      
+      <td>{{ this.guestInfoForm.get('tableNumber').value }}</td>
+  </tr>
+    
+    <tr class="item">
+        <td>ENDE DES BESUCHS</td>
+        
+        <td>{{ formatPrintDateTime(this.guestInfoForm.get('departedAt').value) }}</td>
+    </tr>
+    
+   <!-- <tr class="total">
+        <td>FARE INCL. TAX</td>
+        
+        <td>{{ 0 }} <span class="currency"> XAF </span>
+        </td>
+    </tr> -->
+  </table>
+  <p class="sig">⚙️ MIT FORMULIZE</p>
+</div>
+
+
+<div class="nav-button" *ngIf="toggleButtons">
+  <div>
+      <button mat-raised-button color="accent" (click)="backToInput()">BEARBEITEN</button>
+  </div>
+  <div>
+      <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">DRUCKEN</button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="saveAsImage()">als BILD</button>
+          <button mat-menu-item (click)="saveAsPdf()" disabled>als PDF</button>
+      </mat-menu>
+  </div>
 </div>
 
