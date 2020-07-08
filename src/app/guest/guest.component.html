@@ -51,15 +51,18 @@
               <table>
                   <tr>
                       <td>
-                        <span>GASTSTÄTTE INFORMATION</span>
+                        <span>GAST INFORMATION</span><br>
+                        <span style="font-weight: bold">{{ this.guestInfoForm.get('lastName').value | uppercase }}</span><br>
+                        <span style="font-weight: bold">{{ this.guestInfoForm.get('phoneNumber').value | uppercase }}</span><br>
+                        <span style="font-weight: bold">{{ this.guestInfoForm.get('eMail').value | lowercase}}</span>
                       </td>
                       
                       <td>
-                        <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span><br><br>
-                        <span>GAST INFORMATION</span><br>
-                        <span>NACHNAME, VORNAME: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('lastName').value | uppercase }}</span><br>
-                        <span>TELEFONNUMMER: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('phoneNumber').value | uppercase }}</span><br>
-                        <span>E-MAIL: </span><span style="font-weight: bold">{{ this.guestInfoForm.get('eMail').value | lowercase}}</span>
+                        <span>GASTSTÄTTE INFORMATION</span><br>
+                        <span style="font-weight: bold">{{ 'Enchilada' | uppercase }}</span><br>
+                        <span style="font-weight: bold">{{ 'Am Alten Schloß 8, 76646 Bruchsal' | uppercase }}</span><br>
+                        <br>
+                        <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span>
                       </td>
                   </tr>
               </table>
@@ -89,15 +92,8 @@
         
         <td>{{ formatPrintDateTime(this.guestInfoForm.get('departedAt').value) }}</td>
     </tr>
-    
-   <!-- <tr class="total">
-        <td>FARE INCL. TAX</td>
-        
-        <td>{{ 0 }} <span class="currency"> XAF </span>
-        </td>
-    </tr> -->
   </table>
-  <p class="sig">⚙️ MIT FORMULIZE</p>
+  <p class="signature">⚙️ mit formulize</p>
 </div>
 
 

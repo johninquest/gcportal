@@ -112,11 +112,13 @@ mat-form-field { width: 15em; }
     margin-left: 5em;
 }
 
-.invoice-box .sig {
+.invoice-box .signature {
     text-align: center;
     font-size: 0.6em;
     margin-top: 3em;
     margin-bottom: -1.5em;
+    text-transform: uppercase;
+
 }
 
 .currency { 

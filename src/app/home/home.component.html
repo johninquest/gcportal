@@ -8,15 +8,15 @@
       <mat-icon>create</mat-icon>
       <span>GASTANMELDUNG</span>
     </button>
-    <button mat-menu-item routerLink="/invoice" matTooltip="Rechnung erstellen">
+    <button mat-menu-item routerLink="/invoice" matTooltip="Rechnung erstellen" disabled>
       <mat-icon>timer</mat-icon>
       <span>RECHNUNG</span>
     </button>
-    <button mat-menu-item matTooltip="Mein Schaden erfassen" (click)="msg()">
+    <button mat-menu-item matTooltip="Mein Schaden erfassen" (click)="msg()" disabled>
       <mat-icon>broken_image</mat-icon>
       <span>SCHADEN</span>
     </button>
-    <button mat-menu-item matTooltip="Meine Störung erfassen" (click)="msg()">
+    <button mat-menu-item matTooltip="Meine Störung erfassen" (click)="msg()" disabled>
       <mat-icon>report_problem</mat-icon>
       <span>STÖRUNG</span>
     </button>
@@ -32,7 +32,7 @@
 
 <div class="start-btn">
   <button mat-raised-button color="primary" routerLink="/guest">GASTANMELDUNG</button>
-  <button mat-raised-button color="primary" routerLink="/invoice">RECHNUNG</button>
-  <button mat-raised-button color="primary" (click)="msg()">SCHADEN</button>
-  <button mat-raised-button color="primary" (click)="msg()">STÖRUNG</button>
+  <button mat-raised-button color="primary" routerLink="/invoice" disabled>RECHNUNG</button>
+  <button mat-raised-button color="primary" (click)="msg()" disabled>SCHADEN</button>
+  <button mat-raised-button color="primary" (click)="msg()" disabled>STÖRUNG</button>
 </div>  

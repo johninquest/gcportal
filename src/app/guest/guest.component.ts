@@ -54,7 +54,9 @@ export class GuestComponent implements OnInit {
     }
   }
 
-  saveAsImage() {}
+  saveAsImage() {
+    this.ucMessage();
+  }
 
   saveAsPdf() {}
 
