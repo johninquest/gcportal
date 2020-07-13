@@ -62,12 +62,38 @@
         <ng-template matStepLabel>ANGABEN ZUR BESUCH</ng-template>
 
         <div class="datetime">
-          <mat-form-field class="date">
+          <mat-form-field>
+            <input
+              matInput
+              [ngxMatDatetimePicker]="picker1"
+              placeholder="Beginn des Besuchs"
+              [formControl]="guestArrivalDateTime"
+              [min]="minDate"
+              [max]="maxDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker
+              #picker1
+              [showSpinners]="showSpinners"
+              [showSeconds]="showSeconds"
+              [stepHour]="stepHour"
+              [stepMinute]="stepMinute"
+              [stepSecond]="stepSecond"
+              [touchUi]="touchUi"
+              [color]="color"
+              [enableMeridian]="enableMeridian"
+            >
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+          <!-- <mat-form-field class="date">
             <input matInput placeholder="Beginn des Besuchs" type="date" />
           </mat-form-field>
           <mat-form-field class="time">
             <input matInput placeholder="Uhrzeit" type="time" />
-          </mat-form-field>
+          </mat-form-field> -->
         </div>
 
         <mat-form-field>
@@ -80,12 +106,41 @@
         </mat-form-field>
 
         <div class="datetime">
-          <mat-form-field class="date">
+          <mat-form-field>
+            <input
+              matInput
+              [ngxMatDatetimePicker]="picker2"
+              placeholder="Ende des Besuchs"
+              [formControl]="guestDepartureDateTime"
+              [min]="minDate"
+              [max]="maxDate"
+              [disabled]="disabled"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker2"
+            ></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker
+              #picker2
+              [showSpinners]="showSpinners"
+              [showSeconds]="showSeconds"
+              [stepHour]="stepHour"
+              [stepMinute]="stepMinute"
+              [stepSecond]="stepSecond"
+              [touchUi]="touchUi"
+              [color]="color"
+              [enableMeridian]="enableMeridian"
+              [disableMinute]="disableMinute"
+              [hideTime]="hideTime"
+            >
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+          <!-- <mat-form-field class="date">
             <input matInput placeholder="Ende des Besuchs" type="date" />
           </mat-form-field>
           <mat-form-field class="time">
             <input matInput placeholder="Uhrzeit" type="time" />
-          </mat-form-field>
+          </mat-form-field> -->
         </div>
 
         <div>
@@ -206,7 +261,7 @@
       <td>BEGINN DES BESUCHS</td>
 
       <td>
-        {{ 0 }}
+        {{ formatPrintDateTime(guestArrivalDateTime.value) }}
       </td>
     </tr>
 
@@ -220,7 +275,7 @@
       <td>ENDE DES BESUCHS</td>
 
       <td>
-        {{ 0 }}
+        {{ formatPrintDateTime(guestDepartureDateTime.value) }}
       </td>
     </tr>
   </table>
