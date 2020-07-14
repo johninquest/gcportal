@@ -2,21 +2,19 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import moment from "moment";
 import {
-  NgxMatDateFormats,
   NGX_MAT_DATE_FORMATS,
+  NgxMatDateFormats,
 } from "@angular-material-components/datetime-picker";
-// import "moment/locale/de";
-moment.locale("de");
 
-const CUSTOM_DATE_FORMATS: NgxMatDateFormats = {
+export const MY_DATE_FORMATS: NgxMatDateFormats = {
   parse: {
-    dateInput: "l, LTS",
+    dateInput: "DD.MM.YYYY HH:mm",
   },
   display: {
-    dateInput: "l, LTS",
-    monthYearLabel: "MMM YYYY",
-    dateA11yLabel: "LL",
-    monthYearA11yLabel: "MMMM YYYY",
+    dateInput: "DD.MM.YYYY HH:mm",
+    monthYearLabel: "",
+    dateA11yLabel: "",
+    monthYearA11yLabel: "",
   },
 };
 
@@ -24,7 +22,7 @@ const CUSTOM_DATE_FORMATS: NgxMatDateFormats = {
   selector: "app-guest",
   templateUrl: "./guest.component.html",
   styleUrls: ["./guest.component.css"],
-  providers: [{ provide: NGX_MAT_DATE_FORMATS, useValue: CUSTOM_DATE_FORMATS }],
+  providers: [{ provide: NGX_MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
 })
 export class GuestComponent implements OnInit {
   constructor() {}
@@ -36,7 +34,6 @@ export class GuestComponent implements OnInit {
 
   // Guest Data
   guestNames = new FormControl("", Validators.required);
-  // guestAddress = new FormControl("");
   guestPhoneNumber = new FormControl("");
   guestEmail = new FormControl("", Validators.email);
   guestArrivalDateTime = new FormControl("");
@@ -67,16 +64,16 @@ export class GuestComponent implements OnInit {
   }
 
   public date: moment.Moment;
-  public disabled = false;
   public showSpinners = true;
-  public showSeconds = false;
-  public touchUi = false;
+  public touchUi = true;
   public enableMeridian = false;
   public minDate: moment.Moment;
   public maxDate: moment.Moment;
   public stepHour = 1;
   public stepMinute = 1;
-  public stepSecond = 1;
+  // public disabled = false;
+  // public showSeconds = false;
+  // public stepSecond = 1;
 
   formatPrintDateTime(dt: string) {
     if (dt) {
