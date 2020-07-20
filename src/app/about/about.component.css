@@ -1,0 +1,36 @@
+nav button:hover {
+  background-color: #64b5f6;
+}
+.mat-menu-item:hover {
+  background-color: #64b5f6;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.description {
+  text-align: center;
+  margin: 1em;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer .footer-title {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.footer .footer-message {
+  font-size: 0.7em;
+}

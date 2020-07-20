@@ -9,9 +9,10 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { GuestComponent } from "./guest/guest.component";
 import { InvoiceComponent } from "./invoice/invoice.component";
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GuestComponent, InvoiceComponent],
+  declarations: [AppComponent, HomeComponent, GuestComponent, InvoiceComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

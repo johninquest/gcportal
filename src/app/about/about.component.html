@@ -1,0 +1,31 @@
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
+
+<div class="title" matTooltip="about">
+  über formulize
+</div>
+
+<div class="description">
+  FORMULIZE ist ein Onlinewerkzeug für die digitale und strukturierte Erfassung
+  von persönliche Ereignisse und Vörfälle.
+</div>
+
+<div class="footer">
+  <div class="footer-title">Datenschutzerklärung</div>
+  <div class="footer-message">
+    Auf <a routerLink="/home">formulize.de</a> werden keine personenbezogene
+    Daten im Sinne der EU-Datenschutz-Grundverordnung (DSGVO) erhoben. Die
+    Erklärung zum Datenschutz gilt nur für
+    <a routerLink="/home">formulize.de</a>. Sie trifft nicht zu für Websites,
+    auf die verlinkt wird (Drittwebsites).
+  </div>
+</div>

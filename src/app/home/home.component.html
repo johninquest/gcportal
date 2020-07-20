@@ -4,21 +4,46 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item routerLink="/guest" matTooltip="Mein Besuch anmelden">
+    <button
+      mat-menu-item
+      routerLink="/guest"
+      matTooltip="Gaststättebesuch aufgrund der aktuellen Situation zum Coronavirus anmelden"
+    >
       <mat-icon>create</mat-icon>
-      <span>GASTANMELDUNG</span>
+      <span>GASTSTÄTTEBESUCH</span>
     </button>
-    <button mat-menu-item routerLink="/invoice" matTooltip="Rechnung erstellen" disabled>
+    <!--
+    <button
+      mat-menu-item
+      routerLink="/invoice"
+      matTooltip="Rechnung erstellen"
+      disabled
+    >
       <mat-icon>timer</mat-icon>
       <span>RECHNUNG</span>
-    </button>
-    <button mat-menu-item matTooltip="Mein Schaden erfassen" (click)="msg()" disabled>
+    </button> 
+  -->
+    <button
+      mat-menu-item
+      matTooltip="Mein Schaden erfassen"
+      (click)="msg()"
+      disabled
+    >
       <mat-icon>broken_image</mat-icon>
       <span>SCHADEN</span>
     </button>
-    <button mat-menu-item matTooltip="Meine Störung erfassen" (click)="msg()" disabled>
+    <button
+      mat-menu-item
+      matTooltip="Meine Störung erfassen"
+      (click)="msg()"
+      disabled
+    >
       <mat-icon>report_problem</mat-icon>
       <span>STÖRUNG</span>
+    </button>
+    <button mat-menu-item routerLink="/about" matTooltip="Über FORMULIZE">
+      <mat-icon>info</mat-icon>
+      <span>ÜBER FORMULIZE</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -27,12 +52,30 @@
 </nav>
 
 <div class="title">
-  <p matTooltip="Digitale Erfassungstools">- FORMULIZE -<br><span style="font-size: 0.6em">Das digitale Erfassungstool</span></p>
+  <p matTooltip="Digitale Erfassungstools">
+    - FORMULIZE -<br /><span style="font-size: 0.6em;"
+      >Digital und strukturiert erfassen</span
+    >
+  </p>
 </div>
 
 <div class="start-btn">
-  <button mat-raised-button color="primary" routerLink="/guest">GASTANMELDUNG</button>
-  <button mat-raised-button color="primary" routerLink="/invoice" disabled>RECHNUNG</button>
-  <button mat-raised-button color="primary" (click)="msg()" disabled>SCHADEN</button>
-  <button mat-raised-button color="primary" (click)="msg()" disabled>STÖRUNG</button>
-</div>  
+  <button
+    mat-raised-button
+    color="primary"
+    matTooltip="Gaststättebesuch aufgrund der aktuellen Situation zum Coronavirus anmelden"
+    routerLink="/guest"
+  >
+    GASTSTÄTTEBESUCH
+  </button>
+  <!-- 
+  <button mat-raised-button color="primary" routerLink="/invoice" disabled>
+    RECHNUNG
+  </button> -->
+  <button mat-raised-button color="primary" (click)="msg()" disabled>
+    SCHADEN
+  </button>
+  <button mat-raised-button color="primary" (click)="msg()" disabled>
+    STÖRUNG
+  </button>
+</div>
