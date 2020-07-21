@@ -21,7 +21,6 @@ nav button:hover {
 .footer {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   position: fixed;
   bottom: 0;
 }
@@ -29,8 +28,10 @@ nav button:hover {
 .footer .footer-title {
   font-size: 0.8em;
   font-weight: bold;
+  text-align: center;
 }
 
 .footer .footer-message {
   font-size: 0.7em;
+  text-align: center;
 }

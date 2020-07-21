@@ -1,5 +1,4 @@
-
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 @include mat-core();
 
 $mytheme-primary: mat-palette($mat-blue, 300); // #64B5F6
@@ -9,8 +8,10 @@ $mytheme-warn: mat-palette($mat-red, 500); // #F44336
 $mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
 @include angular-material-theme($mytheme-all);
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 /* $myfont: 'Quicksand', sans-serif; */
-$myfont: 'Quicksand', sans-serif;
-* { font: 100% $myfont; } 
+$myfont: "Lato", sans-serif;
+* {
+  font: 100% $myfont;
+}
 /* Add !important to overwrite all elements */

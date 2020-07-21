@@ -112,7 +112,6 @@
               [formControl]="guestDepartureDateTime"
               [min]="minDate"
               [max]="maxDate"
-              [disabled]="disabled"
             />
             <mat-datepicker-toggle
               matSuffix
@@ -124,12 +123,9 @@
               [showSeconds]="showSeconds"
               [stepHour]="stepHour"
               [stepMinute]="stepMinute"
-              [stepSecond]="stepSecond"
               [touchUi]="touchUi"
               [color]="color"
               [enableMeridian]="enableMeridian"
-              [disableMinute]="disableMinute"
-              [hideTime]="hideTime"
             >
             </ngx-mat-datetime-picker>
           </mat-form-field>
@@ -189,7 +185,7 @@
 
     <mat-step>
       <ng-template matStepLabel>ENDE</ng-template>
-      <p>Sie sind mit der Erfassung jetzt fertig 🙂</p>
+      <p>Sie sind mit der Erfassung jetzt fertig.</p>
       <div>
         <button mat-button matStepperPrevious>ZURÜCK</button>
         <button mat-button (click)="stepper.reset()">NEU STARTEN</button>
@@ -198,13 +194,13 @@
   </mat-vertical-stepper>
 
   <div class="tr-submit">
-    <button mat-raised-button color="primary" (click)="preview()">
+    <button mat-raised-button color="primary" (click)="printPreview()">
       DRUCKVORSCHAU
     </button>
   </div>
 </div>
 
-<div class="invoice-box" id="ticketElement" *ngIf="togglePreview">
+<div class="preview-container" id="printElement" *ngIf="togglePreview">
   <table cellpadding="0" cellspacing="0">
     <tr class="top">
       <td colspan="2">
@@ -235,8 +231,13 @@
                 businessAddress.value | uppercase
               }}</span
               ><br />
-              <br />
-              <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span>
+              <span style="font-weight: bold;">{{
+                businessPhoneNumber.value
+              }}</span
+              ><br />
+              <span style="font-weight: bold;">{{ businessEmail.value }}</span>
+              <!-- <br /><br />
+              <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span> -->
             </td>
           </tr>
         </table>

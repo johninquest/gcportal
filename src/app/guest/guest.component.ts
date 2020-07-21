@@ -5,6 +5,7 @@ import {
   NGX_MAT_DATE_FORMATS,
   NgxMatDateFormats,
 } from "@angular-material-components/datetime-picker";
+import { PrintService } from "../services/print.service";
 
 export const MY_DATE_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -25,7 +26,7 @@ export const MY_DATE_FORMATS: NgxMatDateFormats = {
   providers: [{ provide: NGX_MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
 })
 export class GuestComponent implements OnInit {
-  constructor() {}
+  constructor(private ps: PrintService) {}
 
   toggleInput: boolean = true;
   togglePreview: boolean = false;
@@ -46,12 +47,12 @@ export class GuestComponent implements OnInit {
   businessPhoneNumber = new FormControl("");
   businessEmail = new FormControl("", Validators.email);
 
-  preview() {
+  printPreview() {
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
-    console.log(this.guestArrivalDateTime.value);
-    console.log(this.guestDepartureDateTime.value);
+    // console.log(this.guestArrivalDateTime.value);
+    // console.log(this.guestDepartureDateTime.value);
 
     // this.datetimeStamp = moment().format('LLL');
     this.datetimeStamp = moment().locale("de").format("LLL");
@@ -87,7 +88,8 @@ export class GuestComponent implements OnInit {
   }
 
   saveAsImage() {
-    this.ucMessage();
+    let targetElement = document.getElementById("printElement");
+    this.ps.ticketToImage(targetElement);
   }
 
   saveAsPdf() {}
