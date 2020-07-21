@@ -89,10 +89,13 @@ export class GuestComponent implements OnInit {
 
   saveAsImage() {
     let targetElement = document.getElementById("printElement");
-    this.ps.ticketToImage(targetElement);
+    this.ps.htmlToImage(targetElement);
   }
 
-  saveAsPdf() {}
+  saveAsPdf() {
+    let targetDiv = document.getElementById("printElement");
+    this.ps.htmlToPDF(targetDiv);
+  }
 
   ucMessage() {
     alert("🚧 BAUSTELLE 🚧");
