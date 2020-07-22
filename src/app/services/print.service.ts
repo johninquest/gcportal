@@ -10,7 +10,7 @@ import moment from "moment";
 export class PrintService {
   constructor() {}
 
-  htmlToImage(targetDiv: any) {
+  htmlToImage(targetDiv: HTMLElement) {
     html2canvas(targetDiv).then((canvas: any) => {
       let ctx = canvas.getContext("2d");
       ctx.webkitImageSmoothingEnabled = false;
@@ -56,19 +56,10 @@ export class PrintService {
     return finalPDF;
   }
 
-  htmlToPDF(targetDiv: any) {
-    html2canvas(targetDiv).then((canvas: any) => {
-      let ctx = canvas.getContext("2d");
-      ctx.webkitImageSmoothingEnabled = false;
-      ctx.mozImageSmoothingEnabled = false;
-      ctx.imageSmoothingEnabled = false;
-      let imageGened = canvas.toDataURL("image/png", "image/octet-stream");
-      // .replace("image/png", "image/octet-stream");
-      let doc = new jsPDF();
-      // let doc = new jsPDF("p", "pt", "a4");
-      doc.addImage(imageGened, () => {
-        doc.save("testdoc.pdf");
-      });
-    });
+  htmlToPDF(targetDiv: HTMLElement) {
+    let doc = new jsPDF();
+    // let doc = new jsPDF("p", "pt", "a4");
+    doc.fromHTML(targetDiv, 20, 20, {});
+    doc.save("testdoc.pdf");
   }
 }

@@ -51,8 +51,6 @@ export class GuestComponent implements OnInit {
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
-    // console.log(this.guestArrivalDateTime.value);
-    // console.log(this.guestDepartureDateTime.value);
 
     // this.datetimeStamp = moment().format('LLL');
     this.datetimeStamp = moment().locale("de").format("LLL");
@@ -72,10 +70,6 @@ export class GuestComponent implements OnInit {
   public maxDate: moment.Moment;
   public stepHour = 1;
   public stepMinute = 1;
-  /* public disabled = false;
-  public showSeconds = false;
-  public stepSecond = 1; 
-  */
 
   formatPrintDateTime(dt: string) {
     if (dt) {
@@ -89,8 +83,8 @@ export class GuestComponent implements OnInit {
   }
 
   saveAsImage() {
-    let targetElement = document.getElementById("printElement");
-    this.ps.htmlToImage(targetElement);
+    let targetDiv = document.getElementById("printElement");
+    this.ps.htmlToImage(targetDiv);
   }
 
   saveAsPdf() {
