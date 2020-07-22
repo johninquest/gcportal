@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import moment from "moment";
 import {
@@ -26,6 +26,8 @@ export const MY_DATE_FORMATS: NgxMatDateFormats = {
   providers: [{ provide: NGX_MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
 })
 export class GuestComponent implements OnInit {
+  @ViewChild("printElement") printElement: ElementRef;
+
   constructor(private ps: PrintService) {}
 
   toggleInput: boolean = true;
@@ -88,7 +90,8 @@ export class GuestComponent implements OnInit {
   }
 
   saveAsPdf() {
-    let targetDiv = document.getElementById("printElement");
+    let targetDiv: HTMLElement = document.getElementById("printElement");
+    // let targetDiv: HTMLElement = this.printElement.nativeElement;
     this.ps.htmlToPDF(targetDiv);
   }
 
