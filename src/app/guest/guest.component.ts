@@ -72,9 +72,10 @@ export class GuestComponent implements OnInit {
   public maxDate: moment.Moment;
   public stepHour = 1;
   public stepMinute = 1;
-  // public disabled = false;
-  // public showSeconds = false;
-  // public stepSecond = 1;
+  /* public disabled = false;
+  public showSeconds = false;
+  public stepSecond = 1; 
+  */
 
   formatPrintDateTime(dt: string) {
     if (dt) {
@@ -97,11 +98,27 @@ export class GuestComponent implements OnInit {
     this.ps.htmlToPDF(targetDiv);
   }
 
+  saveAsPdf2() {
+    let printData: object = {
+      guestnames: this.guestNames.value,
+      guestphone: this.guestPhoneNumber.value,
+      guestemail: this.guestEmail.value,
+      guestarrived: this.formatPrintDateTime(this.guestArrivalDateTime.value),
+      tablenumber: this.tableNumber.value,
+      guestdeparted: this.formatPrintDateTime(
+        this.guestDepartureDateTime.value
+      ),
+      businessname: this.businessName.value,
+      businessaddress: this.businessAddress.value,
+      businessphone: this.businessPhoneNumber.value,
+      businessemail: this.businessEmail.value,
+    };
+    this.ps.dataToPDF(printData);
+  }
+
   ucMessage() {
     alert("🚧 BAUSTELLE 🚧");
   }
 
   ngOnInit(): void {}
 }
-
-// https://www.npmjs.com/package/@angular-material-components/datetime-picker
