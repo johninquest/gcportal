@@ -3,7 +3,6 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
 import moment from "moment";
-// moment.locale("de");
 
 @Injectable({
   providedIn: "root",
@@ -28,16 +27,16 @@ export class PrintService {
 
   dataToPDF(formData: object) {
     let guestNames: string = formData["guestnames"].toUpperCase(),
-      guestPhone: string = formData["guestphone"].toUpperCase(),
-      guestEmail: string = formData["guestemail"],
+      guestPhone: string = formData["guestphone"],
+      guestEmail: string = formData["guestemail"].toLowerCase(),
       arrivedAt: string = formData["guestarrived"],
       departedAt: string = formData["guestdeparted"],
       tableNumber: string = formData["tablenumber"].toString(),
-      businessName: string = formData["businessname"],
-      businessAddress: string = formData["businessaddress"],
+      businessName: string = formData["businessname"].toUpperCase(),
+      businessAddress: string = formData["businessaddress"].toUpperCase(),
       businessPhone: string = formData["businessphone"],
-      businessEmail: string = formData["businessemail"];
-    let timestampOnPdf = moment().format("LLL");
+      businessEmail: string = formData["businessemail"].toLowerCase();
+    let timestampOnPdf = moment().locale("de").format("LLL");
 
     let doc = new jsPDF();
     doc.text(timestampOnPdf, 100, 90);
@@ -63,12 +62,11 @@ export class PrintService {
       ctx.webkitImageSmoothingEnabled = false;
       ctx.mozImageSmoothingEnabled = false;
       ctx.imageSmoothingEnabled = false;
-      let imageGened = canvas
-        .toDataURL("image/jpeg", 1.0)
-        .replace("image/png", "image/octet-stream");
+      let imageGened = canvas.toDataURL("image/png", "image/octet-stream");
+      // .replace("image/png", "image/octet-stream");
       let doc = new jsPDF();
       // let doc = new jsPDF("p", "pt", "a4");
-      doc.addHTML(imageGened, () => {
+      doc.addImage(imageGened, () => {
         doc.save("testdoc.pdf");
       });
     });
