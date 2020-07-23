@@ -37,23 +37,45 @@ export class PrintService {
       businessPhone: string = formData["businessphone"],
       businessEmail: string = formData["businessemail"].toLowerCase();
     let timestampOnPdf = moment().locale("de").format("LLL");
-    let guestTitle: string = "GAST INFORMATION";
-    let businessTitle: string = "GASTSTÄTTE INFORMATION";
 
-    let doc = new jsPDF();
-    doc.text(timestampOnPdf, 80, 80);
-    doc.text(guestTitle, 80, 95);
-    doc.text(`${guestNames}`, 80, 100);
-    doc.text(`${guestPhone}`, 80, 105);
-    doc.text(`${guestEmail}`, 80, 110);
-    doc.text(`${arrivedAt}`, 80, 120);
-    doc.text(`${tableNumber}`, 80, 125);
-    doc.text(`${departedAt}`, 80, 130);
-    doc.text(businessTitle, 80, 140);
-    doc.text(`${businessName}`, 80, 145);
-    doc.text(`${businessAddress}`, 80, 150);
-    doc.text(`${businessPhone}`, 80, 155);
-    doc.text(`${businessEmail}`, 80, 160);
+    let doc = new jsPDF("p", "pt", "a4");
+
+    doc.setFont("helvetica");
+
+    doc.text(`ERFASST AM: ${timestampOnPdf}`, 200, 85, "right");
+
+    // doc.setFontType("bold");
+    doc.setTextColor("#808080");
+    doc.text("GAST INFORMATION", 10, 95);
+
+    // doc.setFontType("normal");
+    doc.setTextColor("#000000");
+    doc.text(`${guestNames}`, 10, 100);
+    doc.text(`${guestPhone}`, 10, 105);
+    doc.text(`${guestEmail}`, 10, 110);
+
+    // doc.setFontType("bold");
+    doc.setTextColor("#808080");
+    doc.text("GASTSTÄTTE INFORMATION", 200, 95, "right");
+
+    // doc.setFontType("normal");
+    doc.setTextColor("#000000");
+    doc.text(`${businessName}`, 200, 100, "right");
+    doc.text(`${businessAddress}`, 200, 105, "right");
+    doc.text(`${businessPhone}`, 200, 110, "right");
+    doc.text(`${businessEmail}`, 200, 115, "right");
+
+    // doc.setFontType("bold");
+    doc.setTextColor("#808080");
+    doc.text("BEGINN DES BESUCHS", 10, 130, "left");
+    doc.text("TISCHNUMMER", 10, 135, "left");
+    doc.text("ENDE DES BESUCHS", 10, 140, "left");
+
+    // doc.setFontType("normal");
+    doc.setTextColor("#000000");
+    doc.text(`${arrivedAt}`, 200, 130, "right");
+    doc.text(`${tableNumber}`, 200, 135, "right");
+    doc.text(`${departedAt}`, 200, 140, "right");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
