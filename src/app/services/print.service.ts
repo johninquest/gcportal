@@ -38,44 +38,50 @@ export class PrintService {
       businessEmail: string = formData["businessemail"].toLowerCase();
     let timestampOnPdf = moment().locale("de").format("LLL");
 
-    let doc = new jsPDF("p", "pt", "a4");
+    let doc = new jsPDF();
 
     doc.setFont("helvetica");
+    // doc.setFontSize(10);
 
-    doc.text(`ERFASST AM: ${timestampOnPdf}`, 200, 85, "right");
+    doc.text(`${timestampOnPdf}`, 200, 100, "right");
 
-    // doc.setFontType("bold");
     doc.setTextColor("#808080");
-    doc.text("GAST INFORMATION", 10, 95);
+    doc.text("GAST INFORMATION", 10, 110, "left");
 
-    // doc.setFontType("normal");
     doc.setTextColor("#000000");
-    doc.text(`${guestNames}`, 10, 100);
-    doc.text(`${guestPhone}`, 10, 105);
-    doc.text(`${guestEmail}`, 10, 110);
+    doc.text(`${guestNames}`, 10, 115, "left");
+    doc.text(`${guestPhone}`, 10, 120, "left");
+    doc.text(`${guestEmail}`, 10, 125, "left");
 
-    // doc.setFontType("bold");
     doc.setTextColor("#808080");
-    doc.text("GASTSTÄTTE INFORMATION", 200, 95, "right");
+    doc.text("GASTSTÄTTE INFORMATION", 200, 110, "right");
 
-    // doc.setFontType("normal");
     doc.setTextColor("#000000");
-    doc.text(`${businessName}`, 200, 100, "right");
-    doc.text(`${businessAddress}`, 200, 105, "right");
-    doc.text(`${businessPhone}`, 200, 110, "right");
-    doc.text(`${businessEmail}`, 200, 115, "right");
+    doc.text(`${businessName}`, 200, 115, "right");
+    doc.text(`${businessAddress}`, 200, 120, "right");
+    doc.text(`${businessPhone}`, 200, 125, "right");
+    doc.text(`${businessEmail}`, 200, 130, "right");
 
-    // doc.setFontType("bold");
+    doc.setDrawColor("#64B5F6");
+    doc.setLineWidth(0.4);
+    doc.line(10, 140, 200, 140);
+
     doc.setTextColor("#808080");
-    doc.text("BEGINN DES BESUCHS", 10, 130, "left");
-    doc.text("TISCHNUMMER", 10, 135, "left");
-    doc.text("ENDE DES BESUCHS", 10, 140, "left");
+    doc.text("BEGINN DES BESUCHS", 10, 150, "left");
+    doc.text("TISCHNUMMER", 10, 160, "left");
+    doc.text("ENDE DES BESUCHS", 10, 170, "left");
 
-    // doc.setFontType("normal");
     doc.setTextColor("#000000");
-    doc.text(`${arrivedAt}`, 200, 130, "right");
-    doc.text(`${tableNumber}`, 200, 135, "right");
-    doc.text(`${departedAt}`, 200, 140, "right");
+    doc.text(`${arrivedAt}`, 200, 150, "right");
+    doc.text(`${tableNumber}`, 200, 160, "right");
+    doc.text(`${departedAt}`, 200, 170, "right");
+
+    doc.setDrawColor("#64B5F6");
+    doc.setLineWidth(0.4);
+    doc.line(10, 175, 200, 175);
+
+    doc.setFontSize(5);
+    doc.text("ERSTELLT MIT BELEG2GO", 100, 250, "center");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
@@ -85,7 +91,6 @@ export class PrintService {
   htmlToPDF(targetDiv: HTMLElement) {
     console.log(targetDiv);
     let doc = new jsPDF();
-    // let doc = new jsPDF("p", "pt", "a4");
     let myElementHandler = {
       "#editor": function (element, renderer) {
         return true;
