@@ -7,43 +7,26 @@
     <button
       mat-menu-item
       routerLink="/guest"
-      matTooltip="Gaststättebesuch aufgrund der aktuellen Situation zum Coronavirus anmelden"
+      matTooltip="Gaststättebesuch aufgrund der aktuellen Situation zum Coronavirus belegen"
     >
       <mat-icon>create</mat-icon>
       <span>GASTSTÄTTEBESUCH</span>
     </button>
-    <!--
-    <button
-      mat-menu-item
-      routerLink="/invoice"
-      matTooltip="Rechnung erstellen"
-      disabled
-    >
-      <mat-icon>timer</mat-icon>
-      <span>RECHNUNG</span>
-    </button> 
-  -->
-    <button
-      mat-menu-item
-      matTooltip="Mein Schaden erfassen"
-      (click)="msg()"
-      disabled
-    >
+    <button mat-menu-item matTooltip="Kaufbeleg erstellen" (click)="msg()">
+      <mat-icon>shopping_cart</mat-icon>
+      <span>KAUF</span>
+    </button>
+    <button mat-menu-item matTooltip="Schadensbeleg erstellen" (click)="msg()">
       <mat-icon>broken_image</mat-icon>
       <span>SCHADEN</span>
     </button>
-    <button
-      mat-menu-item
-      matTooltip="Meine Störung erfassen"
-      (click)="msg()"
-      disabled
-    >
+    <!--    <button mat-menu-item matTooltip="Meine Störung erfassen" (click)="msg()">
       <mat-icon>report_problem</mat-icon>
       <span>STÖRUNG</span>
-    </button>
-    <button mat-menu-item routerLink="/about" matTooltip="Über FORMULIZE">
+    </button> -->
+    <button mat-menu-item routerLink="/about" matTooltip="Über BELEGO">
       <mat-icon>info</mat-icon>
-      <span>ÜBER BELEG2GO</span>
+      <span>ÜBER BELEGO</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -53,7 +36,7 @@
 
 <div class="title">
   <p>
-    - BELEG2GO -<br /><span style="font-size: 0.6em;"
+    - BELEGO -<br /><span style="font-size: 0.6em;"
       >Belege, digital und strukturiert erstellen</span
     >
   </p>
@@ -68,14 +51,13 @@
   >
     GASTSTÄTTEBESUCH
   </button>
-  <!-- 
-  <button mat-raised-button color="primary" routerLink="/invoice" disabled>
-    RECHNUNG
-  </button> -->
-  <button mat-raised-button color="primary" (click)="msg()" disabled>
+  <button mat-raised-button color="primary" (click)="msg()">
+    KAUF
+  </button>
+  <button mat-raised-button color="primary" (click)="msg()">
     SCHADEN
   </button>
-  <button mat-raised-button color="primary" (click)="msg()" disabled>
+  <!-- <button mat-raised-button color="primary" (click)="msg()" disabled>
     STÖRUNG
-  </button>
+  </button> -->
 </div>

@@ -81,7 +81,7 @@ export class PrintService {
     doc.line(10, 175, 200, 175);
 
     doc.setFontSize(5);
-    doc.text("ERSTELLT MIT BELEG2GO", 100, 250, "center");
+    doc.text("ERSTELLT MIT BELEGO", 100, 250, "center");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
