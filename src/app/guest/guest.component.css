@@ -86,8 +86,9 @@ mat-form-field {
 }
 
 .preview-container table tr.heading td {
-  background: #eee;
-  border-bottom: 1px solid #ddd;
+  /* background: #eeee; */
+  background: #64b5f6;
+  border-bottom: 0.5em solid white;
   font-weight: bold;
 }
 

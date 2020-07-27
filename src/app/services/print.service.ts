@@ -21,7 +21,7 @@ export class PrintService {
         .replace("image/png", "image/octet-stream");
       let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
       let finalJPEG = saveAs(imageGened, `BN-${datetimeNow}.JPEG`);
-      return finalJPEG; // saveAs(imageGened, `TN-${datetimeNow}.JPEG`);
+      return finalJPEG;
     });
   }
 
@@ -40,8 +40,13 @@ export class PrintService {
 
     let doc = new jsPDF();
 
+    let grayLine = function (yPosition: number) {
+      doc.setDrawColor("#C0C0C0");
+      doc.setLineWidth(0.2);
+      doc.line(10, yPosition, 200, yPosition);
+    };
+
     doc.setFont("helvetica");
-    // doc.setFontSize(10);
 
     doc.text(`${timestampOnPdf}`, 200, 100, "right");
 
@@ -63,25 +68,28 @@ export class PrintService {
     doc.text(`${businessEmail}`, 200, 130, "right");
 
     doc.setDrawColor("#64B5F6");
-    doc.setLineWidth(0.4);
+    doc.setLineWidth(1);
     doc.line(10, 140, 200, 140);
 
     doc.setTextColor("#808080");
     doc.text("BEGINN DES BESUCHS", 10, 150, "left");
+    grayLine(151);
     doc.text("TISCHNUMMER", 10, 160, "left");
+    grayLine(161);
     doc.text("ENDE DES BESUCHS", 10, 170, "left");
+    grayLine(171);
 
     doc.setTextColor("#000000");
     doc.text(`${arrivedAt}`, 200, 150, "right");
     doc.text(`${tableNumber}`, 200, 160, "right");
     doc.text(`${departedAt}`, 200, 170, "right");
 
-    doc.setDrawColor("#64B5F6");
+    /*     doc.setDrawColor("#64B5F6");
     doc.setLineWidth(0.4);
-    doc.line(10, 175, 200, 175);
+    doc.line(10, 175, 200, 175); */
 
     doc.setFontSize(5);
-    doc.text("ERSTELLT MIT BELEGO", 100, 250, "center");
+    doc.text("ERSTELLT MIT BELEGO", 100, 280, "center");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
