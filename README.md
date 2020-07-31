@@ -1,4 +1,4 @@
-# simple application for managing a small business multipurpose business
+# simple web tool for generating and sharing business documents digitally
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
