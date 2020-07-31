@@ -48,9 +48,11 @@ export class PrintService {
 
     doc.setFont("helvetica");
 
-    doc.text(`${timestampOnPdf}`, 200, 100, "right");
-
     doc.setTextColor("#808080");
+    // doc.setFontSize(12);
+    // doc.text(`ERFASSUNGSDATUM: ${timestampOnPdf}`, 200, 100, "right");
+
+    doc.setFontSize(15);
     doc.text("GAST INFORMATION", 10, 110, "left");
 
     doc.setTextColor("#000000");
@@ -69,27 +71,24 @@ export class PrintService {
 
     doc.setDrawColor("#64B5F6");
     doc.setLineWidth(1);
-    doc.line(10, 140, 200, 140);
+    doc.line(10, 135, 200, 135);
 
     doc.setTextColor("#808080");
-    doc.text("BEGINN DES BESUCHS", 10, 150, "left");
-    grayLine(151);
-    doc.text("TISCHNUMMER", 10, 160, "left");
-    grayLine(161);
-    doc.text("ENDE DES BESUCHS", 10, 170, "left");
-    grayLine(171);
+    doc.text("BEGINN DES BESUCHS", 10, 145, "left");
+    grayLine(146);
+    doc.text("TISCHNUMMER", 10, 155, "left");
+    grayLine(156);
+    doc.text("ENDE DES BESUCHS", 10, 165, "left");
+    grayLine(166);
 
     doc.setTextColor("#000000");
-    doc.text(`${arrivedAt}`, 200, 150, "right");
-    doc.text(`${tableNumber}`, 200, 160, "right");
-    doc.text(`${departedAt}`, 200, 170, "right");
-
-    /*     doc.setDrawColor("#64B5F6");
-    doc.setLineWidth(0.4);
-    doc.line(10, 175, 200, 175); */
+    doc.text(`${arrivedAt}`, 200, 145, "right");
+    doc.text(`${tableNumber}`, 200, 155, "right");
+    doc.text(`${departedAt}`, 200, 165, "right");
 
     doc.setFontSize(5);
-    doc.text("ERSTELLT MIT BELEGO", 100, 280, "center");
+    doc.setTextColor("#808080");
+    doc.text("ERSTELLT AUF BELEGO.DE", 100, 280, "center");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
