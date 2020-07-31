@@ -50,24 +50,28 @@ export class PrintService {
 
     doc.setTextColor("#808080");
     // doc.setFontSize(12);
-    // doc.text(`ERFASSUNGSDATUM: ${timestampOnPdf}`, 200, 100, "right");
+    // doc.text(`ERSTELLT AM: ${timestampOnPdf}`, 200, 100, "right");
 
     doc.setFontSize(15);
-    doc.text("GAST INFORMATION", 10, 110, "left");
+    doc.text("GAST INFORMATION", 10, 100, "left");
 
     doc.setTextColor("#000000");
-    doc.text(`${guestNames}`, 10, 115, "left");
-    doc.text(`${guestPhone}`, 10, 120, "left");
-    doc.text(`${guestEmail}`, 10, 125, "left");
+    doc.text(`${guestNames}`, 10, 105, "left");
+    doc.text(`${guestPhone}`, 10, 110, "left");
+    doc.text(`${guestEmail}`, 10, 115, "left");
 
     doc.setTextColor("#808080");
-    doc.text("GASTSTÄTTE INFORMATION", 200, 110, "right");
+    doc.text("GASTSTÄTTE INFORMATION", 200, 100, "right");
 
     doc.setTextColor("#000000");
-    doc.text(`${businessName}`, 200, 115, "right");
-    doc.text(`${businessAddress}`, 200, 120, "right");
-    doc.text(`${businessPhone}`, 200, 125, "right");
-    doc.text(`${businessEmail}`, 200, 130, "right");
+    doc.text(`${businessName}`, 200, 105, "right");
+    doc.text(`${businessAddress}`, 200, 110, "right");
+    doc.text(`${businessPhone}`, 200, 115, "right");
+    doc.text(`${businessEmail}`, 200, 120, "right");
+
+    doc.setTextColor("#808080");
+    doc.setFontSize(13);
+    doc.text(`ERSTELLT AM: ${timestampOnPdf}`, 200, 130, "right");
 
     doc.setDrawColor("#64B5F6");
     doc.setLineWidth(1);
