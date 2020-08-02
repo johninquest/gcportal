@@ -11,10 +11,12 @@ declare const gtag: any;
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  constructor(router: Router) {}
-  /*     const navEndEvent$ = router.events.pipe(filter(event => event instanceof NavigationEnd));
+  constructor(router: Router) {
+    const navEndEvent$ = router.events.pipe(
+      filter((event) => event instanceof NavigationEnd)
+    );
     navEndEvent$.subscribe((event: NavigationEnd) => {
-      gtag('config', 'UA-137248590-3', {'page_path': event.urlAfterRedirects});
+      gtag("config", "UA-137248590-5", { page_path: event.urlAfterRedirects });
     });
-  } */
+  }
 }

@@ -8,6 +8,12 @@ import { Component, OnInit } from "@angular/core";
 export class HomeComponent implements OnInit {
   constructor() {}
 
+  goToFacebook() {
+    let targetUrl: string = "https://www.facebook.com/belego.de";
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
   msg() {
     alert("🚧 IST NOCH EINE BAUSTELLE 🚧");
   }

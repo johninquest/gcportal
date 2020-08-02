@@ -1,23 +1,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-<loc>https://mandiguide.com/home</loc>
-<lastmod>2020-03-30T12:08:07+00:00</lastmod>
+<loc>https://belego.de/home</loc>
+<lastmod>2020-07-03T08:00:00+00:00</lastmod>
 </url>
 
 <url>
-<loc>https://mandiguide.com/about</loc>
-<lastmod>2020-03-30T19:30:05+00:00</lastmod>
+<loc>https://belego.de/ueber-belego</loc>
+<lastmod>2020-07-03T08:00:05+00:00</lastmod>
 </url>
 
 <url>
-<loc>https://mandiguide.com/information/coronavirus</loc>
-<lastmod>2020-06-11T16:00:00+00:00</lastmod>
+<loc>https://belego.de/gaststaettenbesuch</loc>
+<lastmod>2020-07-03T08:00:05+00:00</lastmod>
 </url>
 
+<!--
 <url>
-<loc>https://mandiguide.com/information/roadsafety</loc>
-<lastmod>2020-06-11T16:00:00+00:00</lastmod>
+<loc>https://belego.de/kauf</loc>
+<lastmod>2020-07-03T08:00:05+00:00</lastmod>
 </url>
-
+-->
 </urlset>

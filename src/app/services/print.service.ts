@@ -70,13 +70,14 @@ export class PrintService {
     doc.text(`${businessEmail}`, 200, 120, "right");
 
     doc.setTextColor("#808080");
-    doc.setFontSize(13);
+    doc.setFontSize(12);
     doc.text(`ERSTELLT AM: ${timestampOnPdf}`, 200, 130, "right");
 
     doc.setDrawColor("#64B5F6");
     doc.setLineWidth(1);
     doc.line(10, 135, 200, 135);
 
+    doc.setFontSize(15);
     doc.setTextColor("#808080");
     doc.text("BEGINN DES BESUCHS", 10, 145, "left");
     grayLine(146);
@@ -90,10 +91,10 @@ export class PrintService {
     doc.text(`${tableNumber}`, 200, 155, "right");
     doc.text(`${departedAt}`, 200, 165, "right");
 
-    doc.setFontSize(5);
+    /*     doc.setFontSize(5);
     doc.setTextColor("#808080");
     doc.text("ERSTELLT AUF BELEGO.DE", 100, 280, "center");
-
+ */
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
     return finalPDF;
