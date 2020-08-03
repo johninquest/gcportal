@@ -10,7 +10,7 @@ import moment from "moment";
 export class PrintService {
   constructor() {}
 
-  htmlToImage(targetDiv: HTMLElement) {
+  createImageFromHtml(targetDiv: HTMLElement) {
     html2canvas(targetDiv).then((canvas: any) => {
       let ctx = canvas.getContext("2d");
       ctx.webkitImageSmoothingEnabled = false;
@@ -25,7 +25,7 @@ export class PrintService {
     });
   }
 
-  dataToPDF(formData: object) {
+  createPdfDoc(formData: object) {
     let guestNames: string = formData["guestnames"].toUpperCase(),
       guestPhone: string = formData["guestphone"],
       guestEmail: string = formData["guestemail"].toLowerCase(),
@@ -49,8 +49,6 @@ export class PrintService {
     doc.setFont("helvetica");
 
     doc.setTextColor("#808080");
-    // doc.setFontSize(12);
-    // doc.text(`ERSTELLT AM: ${timestampOnPdf}`, 200, 100, "right");
 
     doc.setFontSize(15);
     doc.text("GAST INFORMATION", 10, 100, "left");
@@ -98,20 +96,5 @@ export class PrintService {
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
     return finalPDF;
-  }
-
-  htmlToPDF(targetDiv: HTMLElement) {
-    console.log(targetDiv);
-    let doc = new jsPDF();
-    let myElementHandler = {
-      "#editor": function (element, renderer) {
-        return true;
-      },
-    };
-    doc.fromHTML(targetDiv, 0, 0, {
-      width: 100,
-      elementHandlers: myElementHandler,
-    });
-    doc.save("testdoc.pdf");
   }
 }

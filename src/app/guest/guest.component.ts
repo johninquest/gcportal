@@ -86,16 +86,10 @@ export class GuestComponent implements OnInit {
 
   saveAsImage() {
     let targetDiv = document.getElementById("printElement");
-    this.ps.htmlToImage(targetDiv);
+    this.ps.createImageFromHtml(targetDiv);
   }
 
   saveAsPdf() {
-    let targetDiv: HTMLElement = document.getElementById("printElement");
-    // let targetDiv: HTMLElement = this.printElement.nativeElement;
-    this.ps.htmlToPDF(targetDiv);
-  }
-
-  saveAsPdf2() {
     let printData: object = {
       guestnames: this.guestNames.value,
       guestphone: this.guestPhoneNumber.value,
@@ -110,7 +104,7 @@ export class GuestComponent implements OnInit {
       businessphone: this.businessPhoneNumber.value,
       businessemail: this.businessEmail.value,
     };
-    this.ps.dataToPDF(printData);
+    this.ps.createPdfDoc(printData);
   }
 
   ucMessage() {
