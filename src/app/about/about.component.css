@@ -26,12 +26,16 @@ nav button:hover {
 }
 
 .footer .footer-title {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: bold;
   text-align: center;
 }
 
 .footer .footer-message {
-  font-size: 0.7em;
+  font-size: 0.8em;
   text-align: center;
+}
+
+a {
+  font-weight: bold;
 }
