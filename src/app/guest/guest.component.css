@@ -62,6 +62,11 @@ mat-form-field {
   background-color: #ffffff;
 }
 
+.preview-container table caption {
+  font-weight: bold;
+  color: #808080;
+}
+
 .preview-container table td {
   padding: 5px;
   vertical-align: top;

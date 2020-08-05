@@ -49,6 +49,7 @@ export class PrintService {
     doc.setFont("helvetica");
 
     doc.setTextColor("#808080");
+    doc.text("BESUCHSBELEG", 100, 80, "center");
 
     doc.setFontSize(15);
     doc.text("GAST INFORMATION", 10, 100, "left");
