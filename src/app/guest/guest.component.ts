@@ -33,6 +33,7 @@ export class GuestComponent implements OnInit {
   toggleInput: boolean = true;
   togglePreview: boolean = false;
   toggleButtons: boolean = false;
+  togglePageTitle: boolean = true;
   datetimeStamp: string;
 
   // Guest Data
@@ -53,8 +54,7 @@ export class GuestComponent implements OnInit {
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
-
-    // this.datetimeStamp = moment().format('LLL');
+    this.togglePageTitle = false;
     this.datetimeStamp = moment().locale("de").format("LLL");
   }
 
@@ -62,6 +62,7 @@ export class GuestComponent implements OnInit {
     this.toggleButtons = false;
     this.togglePreview = false;
     this.toggleInput = true;
+    this.togglePageTitle = true;
   }
 
   public date: moment.Moment;
