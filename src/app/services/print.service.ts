@@ -32,6 +32,7 @@ export class PrintService {
       arrivedAt: string = formData["guestarrived"],
       departedAt: string = formData["guestdeparted"],
       tableNumber: string = formData["tablenumber"].toString(),
+      accPersons: string = formData["accompanyingpersons"].toString(),
       businessName: string = formData["businessname"].toUpperCase(),
       businessAddress: string = formData["businessaddress"].toUpperCase(),
       businessPhone: string = formData["businessphone"],

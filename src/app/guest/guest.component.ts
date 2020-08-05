@@ -43,6 +43,7 @@ export class GuestComponent implements OnInit {
   guestArrivalDateTime = new FormControl("");
   guestDepartureDateTime = new FormControl("");
   tableNumber = new FormControl("");
+  accompanyingPersons = new FormControl("");
 
   // Business Data
   businessName = new FormControl("", Validators.required);
@@ -97,6 +98,7 @@ export class GuestComponent implements OnInit {
       guestemail: this.guestEmail.value,
       guestarrived: this.formatPrintDateTime(this.guestArrivalDateTime.value),
       tablenumber: this.tableNumber.value,
+      accompanyingpersons: this.accompanyingPersons,
       guestdeparted: this.formatPrintDateTime(
         this.guestDepartureDateTime.value
       ),

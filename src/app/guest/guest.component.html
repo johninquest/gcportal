@@ -101,6 +101,15 @@
             placeholder="Tischnummer"
             type="number"
             [formControl]="tableNumber"
+          /> </mat-form-field
+        ><br />
+
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Anzahl der Begleitpersonen"
+            type="number"
+            [formControl]="accompanyingPersons"
           />
         </mat-form-field>
 
@@ -267,6 +276,12 @@
       <td>TISCHNUMMER</td>
 
       <td>{{ tableNumber.value }}</td>
+    </tr>
+
+    <tr class="item">
+      <td>ANZAHL DER BEGLEITPERSONEN</td>
+
+      <td>{{ accompanyingPersons.value }}</td>
     </tr>
 
     <tr class="item">
