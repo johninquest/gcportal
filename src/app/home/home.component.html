@@ -6,8 +6,8 @@
     </button>
     <button
       mat-menu-item
-      routerLink="/gaststaettenbesuch"
       matTooltip="Gaststättenbesuch aufgrund der aktuellen Situation zum Coronavirus belegen"
+      routerLink="/besuchsbeleg"
     >
       <mat-icon>create</mat-icon>
       <span>GASTSTÄTTENBESUCH</span>
@@ -15,7 +15,7 @@
     <button
       mat-menu-item
       matTooltip="Kaufbeleg erstellen"
-      (click)="msg()"
+      routerLink="/kaufbeleg"
       disabled
     >
       <mat-icon>shopping_cart</mat-icon>
@@ -24,7 +24,7 @@
     <button
       mat-menu-item
       matTooltip="Schadensbeleg erstellen"
-      (click)="msg()"
+      routerLink="/schadenbeleg"
       disabled
     >
       <mat-icon>broken_image</mat-icon>
@@ -34,7 +34,7 @@
       <mat-icon>report_problem</mat-icon>
       <span>STÖRUNG</span>
     </button> -->
-    <button mat-menu-item routerLink="/ueber-belego" matTooltip="Über BELEGO">
+    <button mat-menu-item routerLink="/about" matTooltip="Über BELEGO">
       <mat-icon>info</mat-icon>
       <span>ÜBER BELEGO</span>
     </button>
@@ -63,7 +63,7 @@
     mat-raised-button
     color="primary"
     matTooltip="Gaststättenbesuch aufgrund der aktuellen Situation zum Coronavirus anmelden"
-    routerLink="/gaststaettenbesuch"
+    routerLink="/besuchsbeleg"
   >
     GASTSTÄTTENBESUCH
   </button>
@@ -71,7 +71,7 @@
     mat-raised-button
     color="primary"
     matTooltip="Kaufbeleg erstellen"
-    (click)="msg()"
+    routerLink="/kaufbeleg"
     disabled
   >
     KAUF

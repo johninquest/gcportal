@@ -8,10 +8,10 @@ import { from } from "rxjs";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
-  { path: "ueber-belego", component: AboutComponent },
+  { path: "about", component: AboutComponent },
   { path: "home", component: HomeComponent },
-  { path: "gaststaettenbesuch", component: GuestComponent },
-  { path: "kauf", component: InvoiceComponent },
+  { path: "besuchsbeleg", component: GuestComponent },
+  { path: "kaufbeleg", component: InvoiceComponent },
   { path: "**", component: HomeComponent },
 ];
 
