@@ -43,7 +43,7 @@ export class GuestComponent implements OnInit {
   guestArrivalDateTime = new FormControl("");
   guestDepartureDateTime = new FormControl("");
   tableNumber = new FormControl("");
-  accompanyingPersons = new FormControl("");
+  numberOfAccompanyingPersons = new FormControl("");
 
   // Business Data
   businessName = new FormControl("", Validators.required);
@@ -98,7 +98,9 @@ export class GuestComponent implements OnInit {
       guestemail: this.guestEmail.value,
       guestarrived: this.formatPrintDateTime(this.guestArrivalDateTime.value),
       tablenumber: this.tableNumber.value,
-      accompanyingpersons: this.accompanyingPersons,
+      accompanyingpersons: this.processNumberOfAccompanyingPersons(
+        this.numberOfAccompanyingPersons.value
+      ),
       guestdeparted: this.formatPrintDateTime(
         this.guestDepartureDateTime.value
       ),
@@ -108,6 +110,14 @@ export class GuestComponent implements OnInit {
       businessemail: this.businessEmail.value,
     };
     this.ps.createPdfDoc(printData);
+  }
+
+  processNumberOfAccompanyingPersons(inputData: number) {
+    if (inputData) {
+      return inputData;
+    } else {
+      return 0;
+    }
   }
 
   ucMessage() {

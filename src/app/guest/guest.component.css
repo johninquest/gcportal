@@ -13,16 +13,19 @@ nav button:hover {
 }
 
 .guest-info-form {
-  display: flex;
+  /* display: inline-flex; 
   flex-flow: column nowrap;
   align-items: center;
+  */
+  width: 20em;
+  margin: 0 auto;
   margin-bottom: 1em;
-  border: #64b5f6 solid 0.2em;
+  border: #64b5f6 solid 0.3em;
   border-radius: 0.5em;
 }
 
 mat-form-field {
-  width: 14em;
+  width: 15em;
 }
 
 .datetime {
@@ -38,6 +41,10 @@ mat-form-field {
 
 .time {
   width: 4em;
+}
+
+.guest-info-form .submit-btn {
+  text-align: center;
 }
 
 .guest-info-form button {

@@ -107,9 +107,9 @@
         <mat-form-field>
           <input
             matInput
-            placeholder="Anzahl der Begleitpersonen"
+            placeholder="Begleitperson(en)"
             type="number"
-            [formControl]="accompanyingPersons"
+            [formControl]="numberOfAccompanyingPersons"
           />
         </mat-form-field>
 
@@ -203,7 +203,7 @@
     </mat-step>
   </mat-vertical-stepper>
 
-  <div class="tr-submit">
+  <div class="submit-btn">
     <button mat-raised-button color="primary" (click)="printPreview()">
       DRUCKVORSCHAU
     </button>
@@ -279,9 +279,13 @@
     </tr>
 
     <tr class="item">
-      <td>ANZAHL DER BEGLEITPERSONEN</td>
+      <td>BEGLEITPERSON(EN)</td>
 
-      <td>{{ accompanyingPersons.value }}</td>
+      <td>
+        {{
+          processNumberOfAccompanyingPersons(numberOfAccompanyingPersons.value)
+        }}
+      </td>
     </tr>
 
     <tr class="item">

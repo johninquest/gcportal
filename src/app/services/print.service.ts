@@ -31,8 +31,8 @@ export class PrintService {
       guestEmail: string = formData["guestemail"].toLowerCase(),
       arrivedAt: string = formData["guestarrived"],
       departedAt: string = formData["guestdeparted"],
-      tableNumber: string = formData["tablenumber"].toString(),
-      accPersons: string = formData["accompanyingpersons"].toString(),
+      tableNumber: number = formData["tablenumber"],
+      numberOfAccompanyingPersons: number = formData["accompanyingpersons"],
       businessName: string = formData["businessname"].toUpperCase(),
       businessAddress: string = formData["businessaddress"].toUpperCase(),
       businessPhone: string = formData["businessphone"],
@@ -83,13 +83,16 @@ export class PrintService {
     grayLine(146);
     doc.text("TISCHNUMMER", 10, 155, "left");
     grayLine(156);
-    doc.text("ENDE DES BESUCHS", 10, 165, "left");
+    doc.text("BEGLEITPERSON(EN)", 10, 165, "left");
     grayLine(166);
+    doc.text("ENDE DES BESUCHS", 10, 175, "left");
+    grayLine(176);
 
     doc.setTextColor("#000000");
     doc.text(`${arrivedAt}`, 200, 145, "right");
     doc.text(`${tableNumber}`, 200, 155, "right");
-    doc.text(`${departedAt}`, 200, 165, "right");
+    doc.text(`${numberOfAccompanyingPersons}`, 200, 165, "right");
+    doc.text(`${departedAt}`, 200, 175, "right");
 
     /*     doc.setFontSize(5);
     doc.setTextColor("#808080");
