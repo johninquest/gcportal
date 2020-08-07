@@ -18,6 +18,27 @@ nav button:hover {
   margin: 1em;
 }
 
+.highlights {
+  margin-top: 3em;
+}
+
+.highlights-title {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.highlights ul {
+  text-align: left;
+  margin: 0;
+}
+
+.offer-item {
+  font-weight: bold;
+  color: #64b5f6;
+  cursor: pointer;
+}
+
 .footer {
   display: flex;
   flex-flow: column nowrap;
