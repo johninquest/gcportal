@@ -1,47 +1,47 @@
-nav button:hover { background-color: #64B5F6; }
-.mat-menu-item:hover { background-color: #64B5F6; }
+nav button:hover {
+  background-color: #64b5f6;
+}
+.mat-menu-item:hover {
+  background-color: #64b5f6;
+}
 
 .title {
-    text-align: center;
-    margin: 1em;
-    font-weight: bold;
-    font-size: 1em;
+  text-align: center;
+  margin: 1em;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 .invoice-input-form {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-}
-
-.invoice-input-form .invoice-input-item  {
-    width: 15em;
-}
-
-.invoice-input-form .invoice-input-price  {
-    width: 15em;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .invoice-input-buyer {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .invoice-input-seller {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 caption {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 mat-form-field {
-    width: 15em;
+  width: 15em;
+}
+
+.invoice-input-item input {
+  height: 5em;
 }

@@ -14,41 +14,95 @@
   </button>
 </nav>
 
-<div class="title" matTooltip="Rechnung unterwegs erstellen">RECHNUNG 2 GO</div>
+<div class="title" matTooltip="Kaufbeleg bzw. Quittung erstellen">
+  KAUFBELEG
+</div>
 
 <div class="invoice-input-form" [formGroup]="itemForm">
   <mat-form-field class="invoice-input-item">
-    <input matInput placeholder="Artikel" formControlName="itemName" type="text">
+    <input
+      matInput
+      placeholder="Produkt bzw. Dienstleistung"
+      formControlName="itemName"
+      type="text"
+    />
   </mat-form-field>
   <mat-form-field class="invoice-input-price">
-    <input matInput placeholder="Preis" formControlName="itemPrice" type="number">
+    <input
+      matInput
+      placeholder="Nettopreis"
+      formControlName="itemPrice"
+      type="number"
+    />
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="ucMessage()">ADD</button>
 </div>
 
-<div class="invoice-input-buyer"  [formGroup]="buyerForm" *ngIf="toggleInputBuyer">
-  <caption>BUYER</caption>
+<div
+  class="invoice-input-buyer"
+  [formGroup]="buyerForm"
+  *ngIf="toggleInputBuyer"
+>
+  <caption>
+    BUYER
+  </caption>
   <mat-form-field>
-    <input matInput placeholder="NACHNAME, VORNAME" formControlName="buyerName" type="text">
+    <input
+      matInput
+      placeholder="NACHNAME, VORNAME"
+      formControlName="buyerName"
+      type="text"
+    />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="TELEFONNUMMER" formControlName="buyerPhone" type="tel">
+    <input
+      matInput
+      placeholder="TELEFONNUMMER"
+      formControlName="buyerPhone"
+      type="tel"
+    />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="E-MAIL" formControlName="buyerEmail" type="email">
+    <input
+      matInput
+      placeholder="E-MAIL"
+      formControlName="buyerEmail"
+      type="email"
+    />
   </mat-form-field>
 </div>
 
-<div class="invoice-input-seller"  [formGroup]="sellerForm" *ngIf="toggleInputSeller">
-  <caption>SELLER</caption>
+<div
+  class="invoice-input-seller"
+  [formGroup]="sellerForm"
+  *ngIf="toggleInputSeller"
+>
+  <caption>
+    SELLER
+  </caption>
   <mat-form-field>
-    <input matInput placeholder="NACHNAME, VORNAME" formControlName="sellerName" type="text">
+    <input
+      matInput
+      placeholder="NACHNAME, VORNAME"
+      formControlName="sellerName"
+      type="text"
+    />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="TELEFONNUMMER" formControlName="sellerPhone" type="tel">
+    <input
+      matInput
+      placeholder="TELEFONNUMMER"
+      formControlName="sellerPhone"
+      type="tel"
+    />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="E-MAIL" formControlName="sellerEmail" type="email">
+    <input
+      matInput
+      placeholder="E-MAIL"
+      formControlName="sellerEmail"
+      type="email"
+    />
   </mat-form-field>
 </div>
 
