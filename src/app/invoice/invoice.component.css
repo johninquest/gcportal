@@ -38,10 +38,6 @@ caption {
   font-weight: bold;
 }
 
-mat-form-field {
-  width: 15em;
-}
-
 .invoice-input-item input {
-  height: 5em;
+  height: 3em;
 }
