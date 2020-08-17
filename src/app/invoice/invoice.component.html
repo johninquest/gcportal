@@ -15,14 +15,14 @@
 </nav>
 
 <div class="title" matTooltip="Kaufbeleg bzw. Quittung erstellen">
-  KAUFBELEG
+  KAUFBELEG | QUITTUNG
 </div>
 
 <div class="invoice-input-form" [formGroup]="itemForm">
   <mat-form-field class="invoice-input-item">
     <input
       matInput
-      placeholder="Art der Dienstleistung oder Ware"
+      placeholder="Dienstleistung / Ware"
       formControlName="itemName"
       type="text"
     />
@@ -46,72 +46,61 @@
   <button mat-raised-button color="primary" (click)="ucMessage()">ADD</button>
 </div>
 
-<div
-  class="invoice-input-buyer"
-  [formGroup]="buyerForm"
-  *ngIf="toggleInputBuyer"
->
-  <caption>
-    BUYER
-  </caption>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="NACHNAME, VORNAME"
-      formControlName="buyerName"
-      type="text"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="TELEFONNUMMER"
-      formControlName="buyerPhone"
-      type="tel"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="E-MAIL"
-      formControlName="buyerEmail"
-      type="email"
-    />
-  </mat-form-field>
-</div>
+<div class="guest-info-form" *ngIf="toggleInput">
+  <mat-vertical-stepper #stepper>
+    <mat-step>
+      <div class="formGroup1">
+        <ng-template matStepLabel>ZAHLUNGSANGABEN</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Vorname, Nachname" type="text" />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>WEITER</button>
+        </div>
+      </div>
+    </mat-step>
 
-<div
-  class="invoice-input-seller"
-  [formGroup]="sellerForm"
-  *ngIf="toggleInputSeller"
->
-  <caption>
-    SELLER
-  </caption>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="NACHNAME, VORNAME"
-      formControlName="sellerName"
-      type="text"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="TELEFONNUMMER"
-      formControlName="sellerPhone"
-      type="tel"
-    />
-  </mat-form-field>
-  <mat-form-field>
-    <input
-      matInput
-      placeholder="E-MAIL"
-      formControlName="sellerEmail"
-      type="email"
-    />
-  </mat-form-field>
-</div>
+    <mat-step>
+      <div class="formGroup2">
+        <ng-template matStepLabel>ZAHLUNGSEMPFÄNGER</ng-template>
 
-<div class="invoice-input-seller"></div>
+        <mat-form-field>
+          <input matInput placeholder="Tischnummer" type="number" />
+        </mat-form-field>
+
+        <div>
+          <button mat-button matStepperPrevious>ZURÜCK</button>
+          <button mat-button matStepperNext>WEITER</button>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <div class="formGroup3">
+        <ng-template matStepLabel>ZAHLER</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Name des Geschäfts" type="text" />
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>ZURÜCK</button>
+          <button mat-button matStepperNext>WEITER</button>
+        </div>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>ENDE</ng-template>
+      <p>Sie sind mit der Datenerfassung jetzt fertig.</p>
+      <div>
+        <button mat-button matStepperPrevious>ZURÜCK</button>
+        <button mat-button (click)="stepper.reset()">NEU STARTEN</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+
+  <div class="submit-btn">
+    <button mat-raised-button color="primary">
+      VORSCHAU
+    </button>
+  </div>
+</div>

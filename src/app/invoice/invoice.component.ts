@@ -34,8 +34,7 @@ export class InvoiceComponent implements OnInit {
     sellerEmail: new FormControl(),
   });
 
-  toggleInputBuyer: boolean = false;
-  toggleInputSeller: boolean = false;
+  toggleInput: boolean = true;
 
   vats: Vatdesc[] = [
     { value: 0, viewValue: "0 %" },
