@@ -11,7 +11,7 @@ nav button:hover {
   font-weight: bold;
   font-size: 1em;
 }
-
+/* 
 .invoice-input-form {
   display: flex;
   flex-flow: column nowrap;
@@ -40,4 +40,70 @@ caption {
 
 .invoice-input-item input {
   height: 4em;
+}
+ */
+
+.invoice table {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1em white;
+}
+
+.invoice table caption {
+  font-weight: bold;
+}
+
+.invoice td {
+  border: 1em solid white;
+}
+
+.col1 {
+  vertical-align: top;
+}
+
+.col2 {
+  vertical-align: top;
+}
+
+.invoice-number {
+  width: 5em;
+}
+
+.col2 mat-form-field {
+  width: 7em;
+}
+
+.doc-title {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.row3 mat-form-field {
+  width: 16em;
+}
+
+.row4 mat-form-field {
+  width: 16em;
+}
+
+.row5 {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.row6 {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.row5 mat-form-field {
+  width: 7.5em;
+  margin-right: 0.5em;
+}
+
+.row6 mat-form-field {
+  width: 7.5em;
+  margin-right: 0.5em;
 }
