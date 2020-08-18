@@ -19,14 +19,19 @@
 </div> -->
 
 <div class="invoice" id="invoice">
-  <table>
+  <table [formGroup]="invoiceForm">
     <caption>
       QUITTUNG
     </caption>
     <tr class="row1">
       <td class="col1">
         <mat-form-field class="invoice-number">
-          <input matInput placeholder="Nr." type="number" />
+          <input
+            matInput
+            placeholder="Nr."
+            type="number"
+            formControlName="invoiceNumber"
+          />
         </mat-form-field>
       </td>
       <td class="col2">
@@ -34,142 +39,81 @@
           <input
             matInput
             placeholder="Netto in EUR"
+            formControlName="amountBeforeTax"
             type="number"
             step="0.01"
           /> </mat-form-field
         ><br />
         <mat-form-field>
-          <input
-            matInput
-            placeholder="MwSt in %"
-            type="text"
-          /> </mat-form-field
+          <mat-select formControlName="taxValue" placeholder="MwSt in %">
+            <mat-option *ngFor="let vat of vats" [value]="vat.value">{{
+              vat.viewValue
+            }}</mat-option>
+          </mat-select> </mat-form-field
         ><br />
         <mat-form-field>
-          <input matInput placeholder="Brutto in EUR" type="number" disabled />
+          <input
+            matInput
+            placeholder="Brutto in EUR"
+            formControlName="amountAfterTax"
+            type="number"
+          />
         </mat-form-field>
       </td>
     </tr>
     <tr class="row3">
       <mat-form-field>
-        <input matInput placeholder="von" type="text" />
+        <input
+          matInput
+          placeholder="von"
+          formControlName="paidBy"
+          type="text"
+        />
       </mat-form-field>
     </tr>
     <tr class="row4">
       <mat-form-field>
-        <input matInput placeholder="für" type="text" />
+        <input
+          matInput
+          placeholder="für"
+          formControlName="paidFor"
+          type="text"
+        />
       </mat-form-field>
     </tr>
     <tr class="row5">
       <td>
         <mat-form-field>
-          <input matInput placeholder="Ort" type="text" />
+          <input
+            matInput
+            placeholder="Ort"
+            formControlName="transactionLocation"
+            type="text"
+          />
         </mat-form-field>
-        <!-- <span> | </span> -->
         <mat-form-field>
-          <input matInput placeholder="Datum" />
+          <input
+            matInput
+            placeholder="Datum"
+            formControlName="transactionDate"
+          />
         </mat-form-field>
       </td>
     </tr>
     <tr class="row6">
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="Vermerke" type="text" />
-        </mat-form-field>
-        <!-- <span> | </span> -->
-        <mat-form-field>
-          <input matInput placeholder="Unterschrift" type="text" disabled />
-        </mat-form-field>
-      </td>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Buchungsvermerke"
+          formControlName="furtherInfos"
+          type="text"
+        />
+      </mat-form-field>
     </tr>
   </table>
-</div>
-
-<!--
-<div class="invoice-input-form" [formGroup]="itemForm">
-  <mat-form-field class="invoice-input-item">
-    <input
-      matInput
-      placeholder="Dienstleistung / Ware"
-      formControlName="itemName"
-      type="text"
-    />
-  </mat-form-field>
-  <mat-form-field class="invoice-input-price">
-    <input
-      matInput
-      placeholder="Nettopreis in EUR"
-      formControlName="itemPrice"
-      type="number"
-      step="0.01"
-    />
-  </mat-form-field>
-  <mat-form-field class="vat-selector">
-    <mat-select formControlName="itemTax" placeholder="MwSt in %">
-      <mat-option *ngFor="let vat of vats" [value]="vat.value">{{
-        vat.viewValue
-      }}</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="ucMessage()">ADD</button>
-</div>
-
-<div class="guest-info-form" *ngIf="toggleInput">
-  <mat-vertical-stepper #stepper>
-    <mat-step>
-      <div class="formGroup1">
-        <ng-template matStepLabel>ZAHLUNGSANGABEN</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Vorname, Nachname" type="text" />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>WEITER</button>
-        </div>
-      </div>
-    </mat-step>
-
-    <mat-step>
-      <div class="formGroup2">
-        <ng-template matStepLabel>ZAHLUNGSEMPFÄNGER</ng-template>
-
-        <mat-form-field>
-          <input matInput placeholder="Tischnummer" type="number" />
-        </mat-form-field>
-
-        <div>
-          <button mat-button matStepperPrevious>ZURÜCK</button>
-          <button mat-button matStepperNext>WEITER</button>
-        </div>
-      </div>
-    </mat-step>
-
-    <mat-step>
-      <div class="formGroup3">
-        <ng-template matStepLabel>ZAHLER</ng-template>
-        <mat-form-field>
-          <input matInput placeholder="Name des Geschäfts" type="text" />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>ZURÜCK</button>
-          <button mat-button matStepperNext>WEITER</button>
-        </div>
-      </div>
-    </mat-step>
-
-    <mat-step>
-      <ng-template matStepLabel>ENDE</ng-template>
-      <p>Sie sind mit der Datenerfassung jetzt fertig.</p>
-      <div>
-        <button mat-button matStepperPrevious>ZURÜCK</button>
-        <button mat-button (click)="stepper.reset()">NEU STARTEN</button>
-      </div>
-    </mat-step>
-  </mat-vertical-stepper>
-
-  <div class="submit-btn">
-    <button mat-raised-button color="primary">
-      VORSCHAU
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="ucMessage()">
+      DRUCKVORSCHAU
     </button>
   </div>
 </div>
--->

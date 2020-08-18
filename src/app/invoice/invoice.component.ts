@@ -16,22 +16,16 @@ export interface Vatdesc {
 export class InvoiceComponent implements OnInit {
   constructor(private cs: CalculatorService) {}
 
-  itemForm = new FormGroup({
-    itemName: new FormControl("", Validators.required),
-    itemPrice: new FormControl(),
-    itemTax: new FormControl(),
-  });
-
-  buyerForm = new FormGroup({
-    buyerName: new FormControl("", Validators.required),
-    buyerPhone: new FormControl(),
-    buyerEmail: new FormControl(),
-  });
-
-  sellerForm = new FormGroup({
-    sellerName: new FormControl("", Validators.required),
-    sellerPhone: new FormControl(),
-    sellerEmail: new FormControl(),
+  invoiceForm = new FormGroup({
+    invoiceNumber: new FormControl(""),
+    amountBeforeTax: new FormControl(""),
+    taxValue: new FormControl(""),
+    amountAfterTax: new FormControl({ value: "", disabled: true }),
+    paidBy: new FormControl(""),
+    paidFor: new FormControl(""),
+    transactionLocation: new FormControl(""),
+    transactionDate: new FormControl(""),
+    furtherInfos: new FormControl(""),
   });
 
   vats: Vatdesc[] = [
@@ -40,8 +34,13 @@ export class InvoiceComponent implements OnInit {
     { value: 16, viewValue: "16 %" },
   ];
 
+  logInputs() {
+    console.log(this.invoiceForm.value);
+  }
+
   ucMessage() {
     alert("Noch eine Baustelle 🚧");
+    this.logInputs();
   }
 
   ngOnInit(): void {}

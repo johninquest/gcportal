@@ -5,13 +5,14 @@ nav button:hover {
   background-color: #64b5f6;
 }
 
+/*
 .title {
   text-align: center;
   margin: 1em;
   font-weight: bold;
   font-size: 1em;
 }
-/* 
+
 .invoice-input-form {
   display: flex;
   flex-flow: column nowrap;
@@ -41,13 +42,13 @@ caption {
 .invoice-input-item input {
   height: 4em;
 }
- */
+*/
 
 .invoice table {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border: solid 1em white;
 }
 
@@ -69,15 +70,11 @@ caption {
 
 .invoice-number {
   width: 5em;
+  margin-bottom: 0.01em;
 }
 
 .col2 mat-form-field {
-  width: 7em;
-}
-
-.doc-title {
-  font-size: 1em;
-  font-weight: bold;
+  width: 7.5em;
 }
 
 .row3 mat-form-field {
@@ -93,17 +90,15 @@ caption {
   flex-flow: row nowrap;
 }
 
-.row6 {
-  display: flex;
-  flex-flow: row nowrap;
-}
-
 .row5 mat-form-field {
   width: 7.5em;
   margin-right: 0.5em;
 }
 
 .row6 mat-form-field {
-  width: 7.5em;
-  margin-right: 0.5em;
+  width: 16em;
+}
+
+.buttons {
+  text-align: center;
 }
