@@ -5,45 +5,6 @@ nav button:hover {
   background-color: #64b5f6;
 }
 
-/*
-.title {
-  text-align: center;
-  margin: 1em;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-.invoice-input-form {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1em;
-}
-
-.invoice-input-buyer {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.invoice-input-seller {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-caption {
-  font-weight: bold;
-}
-
-.invoice-input-item input {
-  height: 4em;
-}
-*/
-
 .invoice table {
   display: flex;
   flex-flow: column nowrap;
