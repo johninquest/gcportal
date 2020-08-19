@@ -30,6 +30,7 @@
             matInput
             placeholder="Nr."
             type="number"
+            min="0"
             formControlName="invoiceNumber"
           />
         </mat-form-field>
@@ -51,12 +52,14 @@
             }}</mat-option>
           </mat-select> </mat-form-field
         ><br />
-        <mat-form-field>
+        <div hidden>{{ showAfterTaxTotal() }}</div>
+        <mat-form-field class="after-tax">
           <input
             matInput
+            type="text"
             placeholder="Brutto in EUR"
-            formControlName="amountAfterTax"
-            type="number"
+            [value]="afterTaxValue"
+            disabled
           />
         </mat-form-field>
       </td>
@@ -113,7 +116,7 @@
   </table>
   <div class="buttons">
     <button mat-raised-button color="primary" (click)="ucMessage()">
-      DRUCKVORSCHAU
+      VORSCHAU
     </button>
   </div>
 </div>

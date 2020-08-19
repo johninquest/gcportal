@@ -63,3 +63,7 @@ nav button:hover {
 .buttons {
   text-align: center;
 }
+
+.after-tax input {
+  font-weight: bold;
+}
