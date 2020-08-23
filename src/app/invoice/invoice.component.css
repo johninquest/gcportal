@@ -13,7 +13,8 @@ nav button:hover {
   border: solid 1em white;
 }
 
-.invoice table caption {
+.document-title {
+  font-size: 1.2em;
   font-weight: bold;
 }
 

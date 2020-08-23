@@ -19,19 +19,20 @@
 </div> -->
 
 <div class="invoice" id="invoice">
-  <table [formGroup]="invoiceForm">
-    <caption>
+  <table>
+    <!-- <caption>
       QUITTUNG
-    </caption>
+    </caption> -->
     <tr class="row1">
       <td class="col1">
+        <div class="document-title">QUITTUNG</div>
         <mat-form-field class="invoice-number">
           <input
             matInput
             placeholder="Nr."
             type="number"
             min="0"
-            formControlName="invoiceNumber"
+            [formControl]="invoiceNumber"
           />
         </mat-form-field>
       </td>
@@ -40,48 +41,47 @@
           <input
             matInput
             placeholder="Netto in EUR"
-            formControlName="amountBeforeTax"
+            [formControl]="amountBeforeTax"
             type="number"
             step="0.01"
           /> </mat-form-field
         ><br />
         <mat-form-field>
-          <mat-select formControlName="taxValue" placeholder="MwSt in %">
+          <mat-select [formControl]="taxPercentage" placeholder="MwSt in %">
             <mat-option *ngFor="let vat of vats" [value]="vat.value">{{
               vat.viewValue
             }}</mat-option>
           </mat-select> </mat-form-field
         ><br />
-        <div hidden>{{ showAfterTaxTotal() }}</div>
+        <div>
+          {{ showAfterTaxTotal(amountBeforeTax.value, taxPercentage.value) }}
+        </div>
         <mat-form-field class="after-tax">
           <input
             matInput
             type="text"
             placeholder="Brutto in EUR"
-            [value]="afterTaxValue"
-            disabled
+            [formControl]="amountAfterTax"
           />
         </mat-form-field>
       </td>
     </tr>
+    <tr>
+      <mat-divider></mat-divider>
+      <div>
+        {{ showAfterTaxTotal(amountBeforeTax.value, taxPercentage.value) }}
+        <span> EUR</span>
+      </div>
+      <mat-divider></mat-divider>
+    </tr>
     <tr class="row3">
       <mat-form-field>
-        <input
-          matInput
-          placeholder="von"
-          formControlName="paidBy"
-          type="text"
-        />
+        <input matInput placeholder="von" [formControl]="paidBy" type="text" />
       </mat-form-field>
     </tr>
     <tr class="row4">
       <mat-form-field>
-        <input
-          matInput
-          placeholder="für"
-          formControlName="paidFor"
-          type="text"
-        />
+        <input matInput placeholder="für" [formControl]="paidFor" type="text" />
       </mat-form-field>
     </tr>
     <tr class="row5">
@@ -90,16 +90,12 @@
           <input
             matInput
             placeholder="Ort"
-            formControlName="transactionLocation"
+            [formControl]="transactionLocation"
             type="text"
           />
         </mat-form-field>
         <mat-form-field>
-          <input
-            matInput
-            placeholder="Datum"
-            formControlName="transactionDate"
-          />
+          <input matInput placeholder="Datum" [formControl]="transactionDate" />
         </mat-form-field>
       </td>
     </tr>
@@ -108,7 +104,7 @@
         <input
           matInput
           placeholder="Buchungsvermerke"
-          formControlName="furtherInfos"
+          [formControl]="furtherDetails"
           type="text"
         />
       </mat-form-field>
