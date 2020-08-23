@@ -17,13 +17,13 @@ export interface Vatdesc {
 export class InvoiceComponent implements OnInit {
   constructor(private cs: CalculatorService) {}
 
-  // afterTaxValue: string = "0";
+  afterTaxTotal: string = "0";
 
   invoiceNumber = new FormControl("");
-  amountBeforeTax = new FormControl("0.00");
+  amountBeforeTax = new FormControl("0");
   taxPercentage = new FormControl("");
   /*   amountAfterTax = new FormControl({
-    value: "",
+    value: "0",
     disabled: true,
   }); */
   paidBy = new FormControl("");
@@ -41,52 +41,30 @@ export class InvoiceComponent implements OnInit {
     { value: 16, viewValue: "16 %" },
   ];
 
-  showAfterTaxTotal(_amount: number, _tax: number) {
-    // _amount = this.amountBeforeTax.value;
-    // _tax = this.taxPercentage.value;
+  showAfterTaxTotal() {
+    let _amount: number = this.amountBeforeTax.value;
+    let _tax: number = this.taxPercentage.value;
     if (_amount && _tax) {
       let calculatedTotalPlusTax = this.cs.calculateVAT(_amount, _tax);
-      return calculatedTotalPlusTax;
+      return (this.afterTaxTotal = calculatedTotalPlusTax);
     }
     if (_amount && !_tax) {
-      return this.amountBeforeTax.value;
+      return (this.afterTaxTotal = this.amountBeforeTax.value);
     }
     if (!_amount && _tax) {
-      return 0;
+      return (this.afterTaxTotal = "0");
     } else {
       return "";
     }
   }
 
-  onChanges(): void {
-    this.amountBeforeTax.valueChanges.subscribe(() => {
-      this.showAfterTaxTotal(
-        this.amountBeforeTax.value,
-        this.taxPercentage.value
-      );
-    });
-    this.taxPercentage.valueChanges.subscribe(() => {
-      this.showAfterTaxTotal(
-        this.amountBeforeTax.value,
-        this.taxPercentage.value
-      );
-    });
+  saveAsImage() {
+    alert("Als Bild speichern?");
   }
 
-  amountAfterTax = new FormControl({
-    value: this.showAfterTaxTotal(
-      this.amountBeforeTax.value,
-      this.taxPercentage.value
-    ),
-    disabled: true,
-  });
-
-  ucMessage() {
-    // alert("Noch eine Baustelle 🚧");
-    this.showAfterTaxTotal(
-      this.amountBeforeTax.value,
-      this.taxPercentage.value
-    );
+  saveAsPdf() {
+    alert("Als PDF speichern?");
   }
+
   ngOnInit(): void {}
 }

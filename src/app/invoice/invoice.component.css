@@ -22,11 +22,11 @@ nav button:hover {
   border: 1em solid white;
 }
 
-.col1 {
+.row1 .col1 {
   vertical-align: top;
 }
 
-.col2 {
+.row1 .col2 {
   vertical-align: top;
 }
 
@@ -52,16 +52,21 @@ nav button:hover {
   flex-flow: row nowrap;
 }
 
-.row5 mat-form-field {
-  width: 7.5em;
+.row5 td .place {
+  width: 10em;
   margin-right: 0.5em;
+}
+
+.row5 td .date {
+  width: 5.5em;
+  margin-left: 0.5em;
 }
 
 .row6 mat-form-field {
   width: 16em;
 }
 
-.buttons {
+.save-button {
   text-align: center;
 }
 

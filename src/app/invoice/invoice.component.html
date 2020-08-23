@@ -4,7 +4,7 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <button mat-menu-item (click)="ucMessage()">
+    <button mat-menu-item disabled>
       <mat-icon>info</mat-icon>
       <span>INFO</span>
     </button>
@@ -20,9 +20,6 @@
 
 <div class="invoice" id="invoice">
   <table>
-    <!-- <caption>
-      QUITTUNG
-    </caption> -->
     <tr class="row1">
       <td class="col1">
         <div class="document-title">QUITTUNG</div>
@@ -51,42 +48,32 @@
             <mat-option *ngFor="let vat of vats" [value]="vat.value">{{
               vat.viewValue
             }}</mat-option>
-          </mat-select> </mat-form-field
-        ><br />
-        <div>
-          {{ showAfterTaxTotal(amountBeforeTax.value, taxPercentage.value) }}
-        </div>
-        <mat-form-field class="after-tax">
-          <input
-            matInput
-            type="text"
-            placeholder="Brutto in EUR"
-            [formControl]="amountAfterTax"
-          />
+          </mat-select>
         </mat-form-field>
       </td>
     </tr>
-    <tr>
-      <mat-divider></mat-divider>
-      <div>
-        {{ showAfterTaxTotal(amountBeforeTax.value, taxPercentage.value) }}
-        <span> EUR</span>
-      </div>
-      <mat-divider></mat-divider>
-    </tr>
     <tr class="row3">
+      <div hidden>{{ showAfterTaxTotal() }}</div>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Gesamt inkl. MwSt in EUR"
+          [value]="afterTaxTotal"
+          disabled
+        />
+      </mat-form-field>
+      <br />
       <mat-form-field>
         <input matInput placeholder="von" [formControl]="paidBy" type="text" />
       </mat-form-field>
-    </tr>
-    <tr class="row4">
+      <br />
       <mat-form-field>
         <input matInput placeholder="für" [formControl]="paidFor" type="text" />
       </mat-form-field>
     </tr>
     <tr class="row5">
       <td>
-        <mat-form-field>
+        <mat-form-field class="place">
           <input
             matInput
             placeholder="Ort"
@@ -94,7 +81,7 @@
             type="text"
           />
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="date">
           <input matInput placeholder="Datum" [formControl]="transactionDate" />
         </mat-form-field>
       </td>
@@ -110,9 +97,18 @@
       </mat-form-field>
     </tr>
   </table>
-  <div class="buttons">
+  <!-- <div class="buttons">
     <button mat-raised-button color="primary" (click)="ucMessage()">
-      VORSCHAU
+      SPEICHERN
     </button>
+  </div> -->
+  <div class="save-button">
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons">
+      SPEICHERN
+    </button>
+    <mat-menu #buttons="matMenu">
+      <button mat-menu-item (click)="saveAsImage()">als BILD</button>
+      <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
+    </mat-menu>
   </div>
 </div>
