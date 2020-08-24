@@ -102,4 +102,39 @@ export class PrintService {
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
     return finalPDF;
   }
+
+  createInvoiceImageFromHTML(targetDiv: HTMLElement) {
+    html2canvas(targetDiv).then((canvas: any) => {
+      let ctx = canvas.getContext("2d");
+      ctx.webkitImageSmoothingEnabled = false;
+      ctx.mozImageSmoothingEnabled = false;
+      ctx.imageSmoothingEnabled = false;
+      let imageGened = canvas
+        .toDataURL("image/jpeg", 1.0)
+        .replace("image/png", "image/octet-stream");
+      let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+      let finalJPEG = saveAs(imageGened, `QN-${datetimeNow}.JPEG`);
+      return finalJPEG;
+    });
+  }
+
+  createInvoicePdfFromData(invoiceData: object) {
+    let payment_number: string = invoiceData["invoiceNumber"].toString(),
+      payment_amount_before_tax: string = invoiceData[
+        "amountBeforeTax"
+      ].toString(),
+      payment_tax_percentage: string = invoiceData["taxPercentage"].toString(),
+      payment_amount_after_tax: string = invoiceData[
+        "amountAfterTax"
+      ].toString(),
+      payment_for: string = invoiceData["paymentFor"],
+      paymant_from: string = invoiceData["paymentFrom"],
+      payment_by: string = invoiceData["paymentBy"];
+    let timestampOnPdf = moment().locale("de").format("LLL");
+    let doc = new jsPDF();
+
+    let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+    let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
+    return finalPDF;
+  }
 }
