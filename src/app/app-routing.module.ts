@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "home", component: HomeComponent },
   { path: "besuchsbeleg", component: GuestComponent },
-  { path: "kaufbeleg", component: InvoiceComponent },
+  { path: "quittung", component: InvoiceComponent },
   { path: "**", component: HomeComponent },
 ];
 

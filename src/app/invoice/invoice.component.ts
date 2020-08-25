@@ -21,10 +21,11 @@ export class InvoiceComponent implements OnInit {
   afterTaxTotal: string = "";
 
   invoiceNumber = new FormControl("");
-  amountBeforeTax = new FormControl("0", Validators.required);
+  amountBeforeTax = new FormControl("", Validators.required);
   taxPercentage = new FormControl("");
-  paidBy = new FormControl("");
   paidFor = new FormControl("");
+  paidBy = new FormControl("");
+  paidTo = new FormControl("");
   transactionLocation = new FormControl("");
   transactionDate = new FormControl({
     value: moment().locale("de").format("L"),
@@ -32,6 +33,7 @@ export class InvoiceComponent implements OnInit {
   });
   furtherDetails = new FormControl("");
 
+  togglePageTitle: boolean = true;
   toggleInput: boolean = true;
   togglePreview: boolean = false;
   togglePreviewButtons: boolean = false;
@@ -62,6 +64,7 @@ export class InvoiceComponent implements OnInit {
   previewInvoice() {
     let currentDateTime: string = moment().locale("de").format("LLL");
     this.transactionDate.setValue(currentDateTime);
+    this.togglePageTitle = false;
     this.toggleInput = false;
     this.togglePreview = true;
     this.togglePreviewButtons = true;
@@ -73,6 +76,7 @@ export class InvoiceComponent implements OnInit {
     this.togglePreviewButtons = false;
     this.togglePreview = false;
     this.toggleInput = true;
+    this.togglePageTitle = true;
   }
 
   saveAsImage() {

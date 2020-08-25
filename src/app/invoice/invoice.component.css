@@ -5,6 +5,12 @@ nav button:hover {
   background-color: #64b5f6;
 }
 
+.page-title {
+  font-weight: bold;
+  text-align: center;
+  margin: 0.5em;
+}
+
 .invoice {
   border: 0.1em solid #64b5f6;
 }
@@ -15,10 +21,6 @@ nav button:hover {
   align-items: center;
   justify-content: space-evenly;
   /* border: 1em solid white; */
-}
-
-.document-title {
-  font-weight: bold;
 }
 
 .invoice td {
@@ -67,7 +69,7 @@ nav button:hover {
 
 .preview-button {
   text-align: center;
-  margin: 1em;
+  margin-bottom: 0.5em;
 }
 
 .after-tax input {
@@ -121,8 +123,8 @@ nav button:hover {
 }
 
 .receipt-box table tr.heading td {
-  background: #64b5f6;
-  border-bottom: 1px solid #ddd;
+  background: white;
+  border-bottom: 1px solid #64b5f6;
   font-weight: bold;
 }
 

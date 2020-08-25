@@ -14,19 +14,23 @@
   </button>
 </nav>
 
-<!-- <div class="title" matTooltip="Kaufbeleg bzw. Quittung erstellen">
-  KAUFBELEG
-</div> -->
+<div
+  class="page-title"
+  *ngIf="togglePageTitle"
+  matTooltip="Kaufbeleg bzw. Quittung erstellen"
+>
+  QUITTUNG
+</div>
 
 <div class="invoice" *ngIf="toggleInput">
   <table>
     <tr class="row1">
       <td class="col1">
-        <div class="document-title">QUITTUNG</div>
+        <!-- <div class="document-title">QUITTUNG</div> -->
         <mat-form-field class="invoice-number">
           <input
             matInput
-            placeholder="Nr."
+            placeholder="Nummer"
             type="number"
             min="0"
             [formControl]="invoiceNumber"
@@ -44,7 +48,7 @@
           /> </mat-form-field
         ><br />
         <mat-form-field>
-          <mat-select [formControl]="taxPercentage" placeholder="MwSt in %">
+          <mat-select [formControl]="taxPercentage" placeholder="MwSt. in %">
             <mat-option *ngFor="let vat of vats" [value]="vat.value">{{
               vat.viewValue
             }}</mat-option>
@@ -57,10 +61,14 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Gesamt inkl. MwSt in EUR"
+          placeholder="Gesamt inkl. MwSt. in EUR"
           [value]="afterTaxTotal"
           disabled
         />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="für" [formControl]="paidFor" type="text" />
       </mat-form-field>
       <br />
       <mat-form-field>
@@ -68,7 +76,7 @@
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="für" [formControl]="paidFor" type="text" />
+        <input matInput placeholder="an" [formControl]="paidTo" type="text" />
       </mat-form-field>
     </tr>
     <tr class="row5">
@@ -90,7 +98,7 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Buchungsvermerke"
+          placeholder="Buchungsvermerk(e)"
           [formControl]="furtherDetails"
           type="text"
         />
@@ -116,26 +124,31 @@
             <td class="title"><!-- trLogo --></td>
 
             <td>
+              <span>{{ transactionDate.value }}</span
+              ><br />
               <span>NUMMER: </span
               ><span style="font-weight: bold;">{{ invoiceNumber.value }}</span>
               <br />
-              <span style="font-weight: bold;">{{ transactionDate.value }}</span
-              ><br />
-              <br />
+              <span>ORT: </span
+              ><span style="font-weight: bold;">{{
+                transactionLocation.value
+              }}</span>
+              <br /><br />
               <mat-divider></mat-divider>
-              <br />
               <span>NETTO: </span
               ><span style="font-weight: bold;">{{
                 amountBeforeTax.value
               }}</span
               ><span class="currency"> EUR </span>
               <br />
-              <span>MwSt: </span
+              <span>MwSt.: </span
               ><span style="font-weight: bold;">{{ taxPercentage.value }}</span
               ><span class="currency"> % </span><br />
-              <span>BRUTTO: </span
+              <span>GESAMT: </span
               ><span style="font-weight: bold;">{{ afterTaxTotal }}</span>
               <span class="currency"> EUR </span>
+              <br />
+              <mat-divider></mat-divider>
             </td>
           </tr>
         </table>
@@ -146,24 +159,22 @@
       <td></td>
       <td></td>
     </tr>
-
+    <tr class="item">
+      <td>FÜR</td>
+      <td>{{ paidFor.value }}</td>
+    </tr>
     <tr class="item">
       <td>VON</td>
       <td>{{ paidBy.value }}</td>
     </tr>
     <tr class="item">
-      <td>FÜR</td>
-      <td>{{ paidFor.value }}</td>
+      <td>AN</td>
+      <td>{{ paidTo.value }}</td>
     </tr>
-    <!-- <tr class="item">
-      <td>TO</td>
-      <td>{{ rTo.value }}</td>
-    </tr> -->
     <tr class="item">
-      <td>WEITERE DETAILS</td>
+      <td>BUCHUNGSVERMERK(E)</td>
       <td>{{ furtherDetails.value }}</td>
     </tr>
-
     <!--     <tr class="total">
       <td>AMOUNT INCL. TAX</td>
 
