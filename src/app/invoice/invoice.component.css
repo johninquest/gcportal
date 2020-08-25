@@ -18,7 +18,6 @@ nav button:hover {
 }
 
 .document-title {
-  font-size: 1.7em;
   font-weight: bold;
 }
 
@@ -44,11 +43,7 @@ nav button:hover {
 }
 
 .row3 mat-form-field {
-  width: 17em;
-}
-
-.row4 mat-form-field {
-  width: 16em;
+  width: 15em;
 }
 
 .row5 {
@@ -57,7 +52,7 @@ nav button:hover {
 }
 
 .row5 td .place {
-  width: 10em;
+  width: 8.5em;
   margin-right: 0.5em;
 }
 
@@ -67,10 +62,10 @@ nav button:hover {
 }
 
 .row6 mat-form-field {
-  width: 16em;
+  width: 15em;
 }
 
-.save-button {
+.preview-button {
   text-align: center;
   margin: 1em;
 }

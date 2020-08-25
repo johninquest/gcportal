@@ -18,7 +18,7 @@ export interface Vatdesc {
 export class InvoiceComponent implements OnInit {
   constructor(private cs: CalculatorService, private ps: PrintService) {}
 
-  afterTaxTotal: string = "0";
+  afterTaxTotal: string = "";
 
   invoiceNumber = new FormControl("");
   amountBeforeTax = new FormControl("0", Validators.required);
@@ -57,6 +57,13 @@ export class InvoiceComponent implements OnInit {
     } else {
       return "";
     }
+  }
+
+  previewInvoice() {
+    alert("Baustelle");
+    let currentDateTime: string = moment().locale("de").format("LLL");
+    this.transactionDate.setValue(currentDateTime);
+    console.log(this.transactionDate);
   }
 
   saveAsImage() {
