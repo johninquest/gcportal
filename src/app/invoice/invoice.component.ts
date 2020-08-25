@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
+import { PrintService } from "../services/print.service";
 import moment from "moment";
 import { from } from "rxjs";
 
@@ -15,12 +16,12 @@ export interface Vatdesc {
   styleUrls: ["./invoice.component.css"],
 })
 export class InvoiceComponent implements OnInit {
-  constructor(private cs: CalculatorService) {}
+  constructor(private cs: CalculatorService, private ps: PrintService) {}
 
   afterTaxTotal: string = "0";
 
   invoiceNumber = new FormControl("");
-  amountBeforeTax = new FormControl("0");
+  amountBeforeTax = new FormControl("0", Validators.required);
   taxPercentage = new FormControl("");
   /*   amountAfterTax = new FormControl({
     value: "0",
@@ -60,6 +61,8 @@ export class InvoiceComponent implements OnInit {
 
   saveAsImage() {
     alert("Als Bild speichern?");
+    let targetElement: any = document.getElementById("invoice");
+    this.ps.createInvoiceImageFromHTML(targetElement);
   }
 
   saveAsPdf() {

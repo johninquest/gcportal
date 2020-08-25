@@ -23,6 +23,7 @@
     <tr class="row1">
       <td class="col1">
         <div class="document-title">QUITTUNG</div>
+        <br /><br />
         <mat-form-field class="invoice-number">
           <input
             matInput
@@ -97,18 +98,18 @@
       </mat-form-field>
     </tr>
   </table>
-  <!-- <div class="buttons">
+</div>
+<!-- <div class="buttons">
     <button mat-raised-button color="primary" (click)="ucMessage()">
       SPEICHERN
     </button>
   </div> -->
-  <div class="save-button">
-    <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons">
-      SPEICHERN
-    </button>
-    <mat-menu #buttons="matMenu">
-      <button mat-menu-item (click)="saveAsImage()">als BILD</button>
-      <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
-    </mat-menu>
-  </div>
+<div class="save-button">
+  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons">
+    SPEICHERN
+  </button>
+  <mat-menu #buttons="matMenu">
+    <button mat-menu-item (click)="saveAsImage()">als BILD</button>
+    <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
+  </mat-menu>
 </div>

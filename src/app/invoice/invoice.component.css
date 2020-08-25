@@ -5,16 +5,20 @@ nav button:hover {
   background-color: #64b5f6;
 }
 
+.invoice {
+  border: 0.1em solid #64b5f6;
+}
+
 .invoice table {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-evenly;
-  border: solid 1em white;
+  /* border: 1em solid white; */
 }
 
 .document-title {
-  font-size: 1.2em;
+  font-size: 1.7em;
   font-weight: bold;
 }
 
@@ -40,7 +44,7 @@ nav button:hover {
 }
 
 .row3 mat-form-field {
-  width: 16em;
+  width: 17em;
 }
 
 .row4 mat-form-field {
@@ -68,6 +72,7 @@ nav button:hover {
 
 .save-button {
   text-align: center;
+  margin: 1em;
 }
 
 .after-tax input {
