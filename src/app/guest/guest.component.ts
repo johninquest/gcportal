@@ -87,7 +87,7 @@ export class GuestComponent implements OnInit {
   }
 
   saveAsImage() {
-    let targetDiv = document.getElementById("printElement");
+    let targetDiv: any = document.getElementById("printElement");
     this.ps.createImageFromHtml(targetDiv);
   }
 

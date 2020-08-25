@@ -23,10 +23,6 @@ export class InvoiceComponent implements OnInit {
   invoiceNumber = new FormControl("");
   amountBeforeTax = new FormControl("0", Validators.required);
   taxPercentage = new FormControl("");
-  /*   amountAfterTax = new FormControl({
-    value: "0",
-    disabled: true,
-  }); */
   paidBy = new FormControl("");
   paidFor = new FormControl("");
   transactionLocation = new FormControl("");
@@ -35,6 +31,10 @@ export class InvoiceComponent implements OnInit {
     disabled: true,
   });
   furtherDetails = new FormControl("");
+
+  toggleInput: boolean = true;
+  togglePreview: boolean = false;
+  togglePreviewButtons: boolean = false;
 
   vats: Vatdesc[] = [
     { value: 0, viewValue: "0 %" },
@@ -60,14 +60,22 @@ export class InvoiceComponent implements OnInit {
   }
 
   previewInvoice() {
-    alert("Baustelle");
     let currentDateTime: string = moment().locale("de").format("LLL");
     this.transactionDate.setValue(currentDateTime);
-    console.log(this.transactionDate);
+    this.toggleInput = false;
+    this.togglePreview = true;
+    this.togglePreviewButtons = true;
+  }
+
+  backToInput() {
+    let currentDate: string = moment().locale("de").format("L");
+    this.transactionDate.setValue(currentDate);
+    this.togglePreviewButtons = false;
+    this.togglePreview = false;
+    this.toggleInput = true;
   }
 
   saveAsImage() {
-    alert("Als Bild speichern?");
     let targetElement: any = document.getElementById("invoice");
     this.ps.createInvoiceImageFromHTML(targetElement);
   }

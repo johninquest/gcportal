@@ -18,7 +18,7 @@
   KAUFBELEG
 </div> -->
 
-<div class="invoice" id="invoice">
+<div class="invoice" *ngIf="toggleInput">
   <table>
     <tr class="row1">
       <td class="col1">
@@ -103,19 +103,89 @@
     </button>
   </div>
 </div>
-<!-- 
-  <div class="buttons">
-    <button mat-raised-button color="primary" (click)="ucMessage()">
-      SPEICHERN
+
+<div class="receipt-box" id="invoice" *ngIf="togglePreview">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="2">
+        <table>
+          <caption>
+            QUITTUNG
+          </caption>
+          <tr>
+            <td class="title"><!-- trLogo --></td>
+
+            <td>
+              <span>NUMMER: </span
+              ><span style="font-weight: bold;">{{ invoiceNumber.value }}</span>
+              <br />
+              <span style="font-weight: bold;">{{ transactionDate.value }}</span
+              ><br />
+              <br />
+              <mat-divider></mat-divider>
+              <br />
+              <span>NETTO: </span
+              ><span style="font-weight: bold;">{{
+                amountBeforeTax.value
+              }}</span
+              ><span class="currency"> EUR </span>
+              <br />
+              <span>MwSt: </span
+              ><span style="font-weight: bold;">{{ taxPercentage.value }}</span
+              ><span class="currency"> % </span><br />
+              <span>BRUTTO: </span
+              ><span style="font-weight: bold;">{{ afterTaxTotal }}</span>
+              <span class="currency"> EUR </span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td></td>
+      <td></td>
+    </tr>
+
+    <tr class="item">
+      <td>VON</td>
+      <td>{{ paidBy.value }}</td>
+    </tr>
+    <tr class="item">
+      <td>FÜR</td>
+      <td>{{ paidFor.value }}</td>
+    </tr>
+    <!-- <tr class="item">
+      <td>TO</td>
+      <td>{{ rTo.value }}</td>
+    </tr> -->
+    <tr class="item">
+      <td>WEITERE DETAILS</td>
+      <td>{{ furtherDetails.value }}</td>
+    </tr>
+
+    <!--     <tr class="total">
+      <td>AMOUNT INCL. TAX</td>
+
+      <td>{{ rAmount.value }} <span class="currency"> XAF </span></td>
+    </tr> -->
+  </table>
+  <!-- <p class="sig">ERSTELLT AUF BELEGO.DE</p> -->
+</div>
+
+<div class="nav-button" *ngIf="togglePreviewButtons">
+  <div>
+    <button mat-raised-button color="accent" (click)="backToInput()">
+      BEARBEITEN
     </button>
   </div>
-<div class="save-button">
-  <button mat-raised-button color="primary" [matMenuTriggerFor]="buttons">
-    SPEICHERN
-  </button>
-  <mat-menu #buttons="matMenu">
-    <button mat-menu-item (click)="saveAsImage()">als BILD</button>
-    <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
-  </mat-menu>
+  <div>
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+      SPEICHERN
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="saveAsImage()">als BILD</button>
+      <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
+    </mat-menu>
+  </div>
 </div>
--->
