@@ -86,6 +86,18 @@ export class InvoiceComponent implements OnInit {
 
   saveAsPdf() {
     alert("Als PDF speichern?");
+    let paymentFormData: object = {
+      paymentNumber: this.invoiceNumber.value,
+      // paymentDateTime: this.transactionDate.value,
+      paymentAmountBeforeTax: this.amountBeforeTax.value,
+      paymentTaxPercentage: this.taxPercentage.value,
+      paymentAmountAfterTax: this.afterTaxTotal,
+      paymentFor: this.paidFor.value,
+      paymentBy: this.paidBy.value,
+      paymentTo: this.paidTo.value,
+      paymentExtraDetails: this.furtherDetails.value,
+    };
+    this.ps.createInvoicePdfFromData(paymentFormData);
   }
 
   ngOnInit(): void {}
