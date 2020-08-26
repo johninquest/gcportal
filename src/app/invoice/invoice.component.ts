@@ -85,7 +85,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   saveAsPdf() {
-    alert("Als PDF speichern?");
+    // alert("Als PDF speichern?");
     let paymentFormData: object = {
       paymentNumber: this.invoiceNumber.value,
       // paymentDateTime: this.transactionDate.value,

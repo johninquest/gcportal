@@ -129,7 +129,6 @@ export class PrintService {
         "paymentAmountAfterTax"
       ].toString(),
       payment_for: string = invoiceData["paymentFor"],
-      paymant_from: string = invoiceData["paymentFrom"],
       payment_by: string = invoiceData["paymentBy"],
       payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
@@ -152,17 +151,27 @@ export class PrintService {
       doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
     doc.text(page_title, pageWidth / 2, pageHeight - 215, "center");
 
+    doc.setFontSize(15);
+    doc.setTextColor("#808080");
+    doc.text(`${timestampOnPdf}`, 200, 105, "right");
     doc.setTextColor("#000000");
-    doc.text(`${timestampOnPdf}`, 10, 105, "left");
-    doc.text(`${payment_number}`, 10, 110, "left");
-    doc.text(`${payment_amount_before_tax}`, 10, 115, "left");
-    doc.text(`${payment_tax_percentage}`, 10, 120, "left");
-    doc.text(`${payment_amount_after_tax}`, 10, 125, "left");
-    doc.text(`${payment_for}`, 10, 130, "left");
-    doc.text(`${payment_by}`, 10, 135, "left");
-    doc.text(`${payment_to}`, 10, 140, "left");
-    doc.text(`${payment_extra_details}`, 10, 145, "left");
-    grayLine(150);
+    doc.text(`NUMMER: ${payment_number}`, 200, 110, "right");
+    grayLine(119);
+    doc.text(`NETTO: ${payment_amount_before_tax} EUR`, 200, 125, "right");
+    doc.text(`MwSt.: ${payment_tax_percentage} %`, 200, 130, "right");
+    doc.text(
+      `GESAMT INKL. MwSt.: ${payment_amount_after_tax} EUR`,
+      200,
+      135,
+      "right"
+    );
+    grayLine(137);
+
+    doc.text(`${payment_for}`, 10, 150, "left");
+    doc.text(`${payment_by}`, 10, 155, "left");
+    doc.text(`${payment_to}`, 10, 160, "left");
+    doc.text(`${payment_extra_details}`, 10, 165, "left");
+    grayLine(175);
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
