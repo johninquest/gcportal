@@ -10,9 +10,10 @@ import { HomeComponent } from "./home/home.component";
 import { GuestComponent } from "./guest/guest.component";
 import { InvoiceComponent } from "./invoice/invoice.component";
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GuestComponent, InvoiceComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, GuestComponent, InvoiceComponent, AboutComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

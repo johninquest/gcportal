@@ -89,6 +89,7 @@ export class InvoiceComponent implements OnInit {
     let paymentFormData: object = {
       paymentNumber: this.invoiceNumber.value,
       // paymentDateTime: this.transactionDate.value,
+      paymentLocation: this.transactionLocation.value,
       paymentAmountBeforeTax: this.amountBeforeTax.value,
       paymentTaxPercentage: this.taxPercentage.value,
       paymentAmountAfterTax: this.afterTaxTotal,

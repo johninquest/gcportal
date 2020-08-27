@@ -1,0 +1,17 @@
+<nav>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+    <!-- <button mat-menu-item (click)="ucMessage()">
+      <mat-icon>info</mat-icon>
+      <span>INFO</span>
+    </button> -->
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>
+
+<div class="page-title" matTooltip="So erreichen Sie uns">KONTAKT</div>

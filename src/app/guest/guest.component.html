@@ -19,7 +19,7 @@
   matTooltip="Gaststättenbesuch aufgrund der aktuellen Situation zum Coronavirus anmelden"
   *ngIf="togglePageTitle"
 >
-  GASTSTÄTTENBESUCH
+  BESUCHSBELEG
 </div>
 
 <div class="guest-info-form" *ngIf="toggleInput">
@@ -222,34 +222,34 @@
           <tr>
             <td>
               <span>GAST INFORMATION</span><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 guestNames.value | uppercase
               }}</span
               ><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 guestPhoneNumber.value | uppercase
               }}</span
               ><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 guestEmail.value | lowercase
               }}</span>
             </td>
 
             <td>
               <span>GASTSTÄTTE INFORMATION</span><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 businessName.value | uppercase
               }}</span
               ><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 businessAddress.value | uppercase
               }}</span
               ><br />
-              <span style="font-weight: bold;">{{
+              <span style="font-weight: bold">{{
                 businessPhoneNumber.value
               }}</span
               ><br />
-              <span style="font-weight: bold;">{{ businessEmail.value }}</span>
+              <span style="font-weight: bold">{{ businessEmail.value }}</span>
               <br /><br />
               <span>ERSTELLT AM: </span> <span>{{ datetimeStamp }}</span>
             </td>

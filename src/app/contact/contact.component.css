@@ -1,0 +1,13 @@
+nav button:hover {
+  background-color: #64b5f6;
+}
+.mat-menu-item:hover {
+  background-color: #64b5f6;
+}
+
+.page-title {
+  text-align: center;
+  margin: 1em;
+  font-weight: bold;
+  font-size: 1em;
+}

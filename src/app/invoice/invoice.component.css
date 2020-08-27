@@ -13,6 +13,9 @@ nav button:hover {
 
 .invoice {
   border: 0.1em solid #64b5f6;
+  border-radius: 0.1em;
+  margin: 0 auto;
+  width: 20em;
 }
 
 .invoice table {

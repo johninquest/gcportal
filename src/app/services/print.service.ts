@@ -119,6 +119,7 @@ export class PrintService {
 
   createInvoicePdfFromData(invoiceData: object) {
     let payment_number: string = invoiceData["paymentNumber"].toString(),
+      payment_location: string = invoiceData["paymentLocation"],
       payment_amount_before_tax: string = invoiceData[
         "paymentAmountBeforeTax"
       ].toString(),
@@ -154,24 +155,28 @@ export class PrintService {
     doc.setFontSize(15);
     doc.setTextColor("#808080");
     doc.text(`${timestampOnPdf}`, 200, 105, "right");
-    doc.setTextColor("#000000");
-    doc.text(`NUMMER: ${payment_number}`, 200, 110, "right");
+    // doc.setTextColor("#000000");
+    doc.text("NUMMER: ", 150, 110, "left");
     grayLine(119);
-    doc.text(`NETTO: ${payment_amount_before_tax} EUR`, 200, 125, "right");
-    doc.text(`MwSt.: ${payment_tax_percentage} %`, 200, 130, "right");
-    doc.text(
-      `GESAMT INKL. MwSt.: ${payment_amount_after_tax} EUR`,
-      200,
-      135,
-      "right"
-    );
+    doc.text("NETTO: ", 110, 125, "left");
+    doc.text("MwSt.: ", 110, 130, "left");
+    doc.text("GESAMT INKL. MwSt.: ", 110, 135, "left");
     grayLine(137);
+
+    doc.setTextColor("#000000");
+    doc.text(`${payment_number}`, 200, 110, "right");
+    // grayLine(119);
+    doc.text(`${payment_amount_before_tax} EUR`, 200, 125, "right");
+    doc.text(`${payment_tax_percentage} %`, 200, 130, "right");
+    doc.text(`${payment_amount_after_tax} EUR`, 200, 135, "right");
+    // grayLine(137);
 
     doc.text(`${payment_for}`, 10, 150, "left");
     doc.text(`${payment_by}`, 10, 155, "left");
     doc.text(`${payment_to}`, 10, 160, "left");
     doc.text(`${payment_extra_details}`, 10, 165, "left");
     grayLine(175);
+    doc.text(`${payment_location}`, 10, 185, "left");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
