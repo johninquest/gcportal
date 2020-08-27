@@ -2,7 +2,7 @@
 
 <url>
 <loc>https://belego.de/home</loc>
-<lastmod>2020-08-06T11:45:00+00:00</lastmod>
+<lastmod>2020-08-27T11:45:00+00:00</lastmod>
 </url>
 
 <url>
@@ -15,11 +15,14 @@
 <lastmod>2020-08-06T12:01:05+00:00</lastmod>
 </url>
 
-<!--
 <url>
-<loc>https://belego.de/kauf</loc>
-<lastmod>2020-07-03T08:00:05+00:00</lastmod>
+<loc>https://belego.de/kontakt</loc>
+<lastmod>2020-08-27T23:45:05+00:00</lastmod>
 </url>
--->
+
+<url>
+<loc>https://belego.de/quittung</loc>
+<lastmod>2020-08-27T23:45:05+00:00</lastmod>
+</url>
 
 </urlset>

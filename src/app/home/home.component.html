@@ -16,35 +16,6 @@
       <mat-icon>build</mat-icon>
       <span>LÖSUNGEN</span>
     </button>
-    <!-- <button
-      mat-menu-item
-      matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus"
-      routerLink="/besuchsbeleg"
-    >
-      <mat-icon>create</mat-icon>
-      <span>BESUCHSBELEG</span>
-    </button>
-    <button
-      mat-menu-item
-      matTooltip="Quittung erstellen"
-      routerLink="/quittung"
-    >
-      <mat-icon>shopping_cart</mat-icon>
-      <span>QUITTUNG</span>
-    </button>
-    <button
-      mat-menu-item
-      matTooltip="Schadensbeleg erstellen"
-      routerLink="/schadenbeleg"
-      disabled
-    >
-      <mat-icon>broken_image</mat-icon>
-      <span>SCHADEN</span>
-    </button>
-    <button mat-menu-item matTooltip="Meine Störung erfassen" (click)="msg()">
-      <mat-icon>report_problem</mat-icon>
-      <span>STÖRUNG</span>
-    </button> -->
     <button
       mat-menu-item
       routerLink="/kontakt"
@@ -60,7 +31,7 @@
   <mat-menu #solutions="matMenu">
     <button
       mat-menu-item
-      matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus"
+      matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus erstellen"
       routerLink="/besuchsbeleg"
     >
       <mat-icon>create</mat-icon>
@@ -68,11 +39,19 @@
     </button>
     <button
       mat-menu-item
-      matTooltip="Quittung erstellen"
+      matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
       routerLink="/quittung"
     >
       <mat-icon>shopping_cart</mat-icon>
       <span>QUITTUNG</span>
+    </button>
+    <button mat-menu-item matTooltip="Schadensbeleg erstellen" disabled>
+      <mat-icon>broken_image</mat-icon>
+      <span>SCHADENSBELEG</span>
+    </button>
+    <button mat-menu-item matTooltip="Meine Störung erfassen" disabled>
+      <mat-icon>report_problem</mat-icon>
+      <span>STÖRUNG</span>
     </button>
   </mat-menu>
 </nav>
@@ -89,7 +68,7 @@
   <button
     mat-raised-button
     color="primary"
-    matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus"
+    matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus erstellen"
     routerLink="/besuchsbeleg"
   >
     BESUCHSBELEG
@@ -97,7 +76,7 @@
   <button
     mat-raised-button
     color="primary"
-    matTooltip="Quittung erstellen"
+    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
     routerLink="/quittung"
   >
     QUITTUNG
@@ -109,6 +88,6 @@
     (click)="msg()"
     disabled
   >
-    SCHADEN
+    SCHADENSBELEG
   </button>
 </div>
