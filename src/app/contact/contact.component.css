@@ -11,3 +11,21 @@ nav button:hover {
   font-weight: bold;
   font-size: 1em;
 }
+
+.content {
+  margin-top: 4em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.content div {
+  cursor: pointer;
+  margin: 2.5em;
+}
+
+i {
+  color: #64b5f6;
+  font-size: 4em !important;
+}

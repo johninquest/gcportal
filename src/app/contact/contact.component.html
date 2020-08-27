@@ -4,10 +4,6 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <!-- <button mat-menu-item (click)="ucMessage()">
-      <mat-icon>info</mat-icon>
-      <span>INFO</span>
-    </button> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
@@ -15,3 +11,18 @@
 </nav>
 
 <div class="page-title" matTooltip="So erreichen Sie uns">KONTAKT</div>
+
+<div class="content">
+  <div
+    (click)="goToFacebook()"
+    matTooltip="Hier geht es zu unserer Facebookseite"
+  >
+    <i class="fab fa-facebook-square"></i><br />
+  </div>
+  <div
+    (click)="goToInstagram()"
+    matTooltip="Hier geht es zu unserer Instagramseite"
+  >
+    <i class="fab fa-instagram-square"></i><br />
+  </div>
+</div>
