@@ -13,9 +13,9 @@ export const MY_DATE_FORMATS: NgxMatDateFormats = {
   },
   display: {
     dateInput: "DD.MM.YYYY HH:mm",
-    monthYearLabel: "",
-    dateA11yLabel: "",
-    monthYearA11yLabel: "",
+    monthYearLabel: "MM YYYY",
+    dateA11yLabel: "LL",
+    monthYearA11yLabel: "MMMM YYYY",
   },
 };
 
@@ -66,7 +66,7 @@ export class GuestComponent implements OnInit {
     this.togglePageTitle = true;
   }
 
-  public date: moment.Moment;
+  // public date: moment.Moment;
   public showSpinners = true;
   public touchUi = true;
   public enableMeridian = false;
@@ -74,6 +74,7 @@ export class GuestComponent implements OnInit {
   public maxDate: moment.Moment;
   public stepHour = 1;
   public stepMinute = 1;
+  public hideTime = false;
 
   formatPrintDateTime(dt: string) {
     if (dt) {
