@@ -62,7 +62,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   previewInvoice() {
-    let currentDateTime: string = moment().locale("de").format("LLL");
+    let currentDateTime: string = moment().locale("de").format("LL");
     this.transactionDate.setValue(currentDateTime);
     this.togglePageTitle = false;
     this.toggleInput = false;

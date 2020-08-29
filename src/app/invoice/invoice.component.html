@@ -64,16 +64,16 @@
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="für" [formControl]="paidFor" type="text" />
-      </mat-form-field>
-      <br />
-      <mat-form-field>
         <input matInput placeholder="von" [formControl]="paidBy" type="text" />
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="an" [formControl]="paidTo" type="text" />
+        <input matInput placeholder="für" [formControl]="paidFor" type="text" />
       </mat-form-field>
+      <!-- <br />
+      <mat-form-field>
+        <input matInput placeholder="an" [formControl]="paidTo" type="text" />
+      </mat-form-field> -->
     </tr>
     <tr class="row5">
       <td>
@@ -94,7 +94,7 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Buchungsvermerk(e)"
+          placeholder="Vermerk(e)"
           [formControl]="furtherDetails"
           type="text"
         />
@@ -120,29 +120,34 @@
             <td class="title"><!-- trLogo --></td>
 
             <td>
-              <span>{{ transactionDate.value }}</span
-              ><br />
               <span>NUMMER: </span
-              ><span style="font-weight: bold">{{ invoiceNumber.value }}</span>
+              ><span style="font-weight: bold">
+                {{ invoiceNumber.value }}
+              </span>
               <br />
               <span>ORT: </span
-              ><span style="font-weight: bold">{{
-                transactionLocation.value
-              }}</span>
+              ><span style="font-weight: bold">
+                {{ transactionLocation.value | titlecase }}
+              </span>
               <br /><br />
               <mat-divider></mat-divider>
-              <span>NETTO: </span
-              ><span style="font-weight: bold">{{ amountBeforeTax.value }}</span
-              ><span class="currency"> EUR </span>
+              <span>NETTOBETRAG: </span
+              ><span style="font-weight: bold"
+                >{{ amountBeforeTax.value }} EUR</span
+              >
               <br />
               <span>MwSt.: </span
-              ><span style="font-weight: bold">{{ taxPercentage.value }}</span
-              ><span class="currency"> % </span><br />
-              <span>GESAMT: </span
-              ><span style="font-weight: bold">{{ afterTaxTotal }}</span>
-              <span class="currency"> EUR </span>
+              ><span style="font-weight: bold">{{ taxPercentage.value }} %</span
+              ><br />
+              <span>GESAMTBETRAG: </span
+              ><span style="font-weight: bold"> {{ afterTaxTotal }} EUR </span>
               <br />
               <mat-divider></mat-divider>
+              <br />
+              <span>ERHALTEN AM </span
+              ><span style="font-weight: bold">
+                {{ transactionDate.value }}
+              </span>
             </td>
           </tr>
         </table>
@@ -154,19 +159,19 @@
       <td></td>
     </tr>
     <tr class="item">
+      <td>VON</td>
+      <td>{{ paidBy.value | titlecase }}</td>
+    </tr>
+    <tr class="item">
       <td>FÜR</td>
       <td>{{ paidFor.value }}</td>
     </tr>
-    <tr class="item">
-      <td>VON</td>
-      <td>{{ paidBy.value }}</td>
-    </tr>
-    <tr class="item">
+    <!-- <tr class="item">
       <td>AN</td>
       <td>{{ paidTo.value }}</td>
-    </tr>
+    </tr> -->
     <tr class="item">
-      <td>BUCHUNGSVERMERK(E)</td>
+      <td>VERMERK(E)</td>
       <td>{{ furtherDetails.value }}</td>
     </tr>
     <!--     <tr class="total">
