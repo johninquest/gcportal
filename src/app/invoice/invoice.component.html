@@ -125,11 +125,11 @@
                 {{ invoiceNumber.value }}
               </span>
               <br />
-              <span>ORT: </span
+              <!-- <span>ORT: </span
               ><span style="font-weight: bold">
                 {{ transactionLocation.value | titlecase }}
-              </span>
-              <br /><br />
+              </span> -->
+              <br />
               <mat-divider></mat-divider>
               <span>NETTOBETRAG: </span
               ><span style="font-weight: bold"
@@ -143,11 +143,10 @@
               ><span style="font-weight: bold"> {{ afterTaxTotal }} EUR </span>
               <br />
               <mat-divider></mat-divider>
-              <br />
-              <span>ERHALTEN AM </span
+              <!-- <span>ERHALTEN AM </span
               ><span style="font-weight: bold">
                 {{ transactionDate.value }}
-              </span>
+              </span> -->
             </td>
           </tr>
         </table>
@@ -171,10 +170,38 @@
       <td>{{ paidTo.value }}</td>
     </tr> -->
     <tr class="item">
-      <td>VERMERK(E)</td>
+      <td></td>
       <td>{{ furtherDetails.value }}</td>
     </tr>
-    <!--     <tr class="total">
+    <tr class="item">
+      <td></td>
+      <td><span>DANKEND ERHALTEN</span></td>
+    </tr>
+    <tr class="item">
+      <td></td>
+      <td></td>
+    </tr>
+    <tr class="item">
+      <td>
+        <span> DATUM </span><br /><span style="font-weight: bold">{{
+          transactionDate.value
+        }}</span>
+      </td>
+      <td>
+        <span> ORT </span><br /><span style="font-weight: bold">{{
+          transactionLocation.value | uppercase
+        }}</span>
+      </td>
+    </tr>
+    <!-- <tr class="item">
+      <td>
+        <span>ORT: </span><span>{{ transactionLocation.value }}</span>
+      </td>
+      <td>
+        <span>DATUM: </span><span>{{ transactionDate.value }}</span>
+      </td>
+    </tr>
+    <tr class="total">
       <td>AMOUNT INCL. TAX</td>
 
       <td>{{ rAmount.value }} <span class="currency"> XAF </span></td>
