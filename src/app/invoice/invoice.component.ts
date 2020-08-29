@@ -44,6 +44,14 @@ export class InvoiceComponent implements OnInit {
     { value: 16, viewValue: "16 %" },
   ];
 
+  processDisplayedInputAmount(amtValue: number) {
+    if (amtValue) {
+      return amtValue.toFixed(2);
+    } else {
+      return "";
+    }
+  }
+
   showAfterTaxTotal() {
     let _amount: number = this.amountBeforeTax.value;
     let _tax: number = this.taxPercentage.value;
@@ -52,7 +60,7 @@ export class InvoiceComponent implements OnInit {
       return (this.afterTaxTotal = calculatedTotalPlusTax);
     }
     if (_amount && !_tax) {
-      return (this.afterTaxTotal = this.amountBeforeTax.value);
+      return (this.afterTaxTotal = this.amountBeforeTax.value.toFixed(2));
     }
     if (!_amount && _tax) {
       return (this.afterTaxTotal = "0");

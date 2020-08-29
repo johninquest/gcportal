@@ -117,23 +117,21 @@
             QUITTUNG
           </caption>
           <tr>
-            <td class="title"><!-- trLogo --></td>
-
+            <td class="title"></td>
             <td>
               <span>NUMMER: </span
               ><span style="font-weight: bold">
                 {{ invoiceNumber.value }}
               </span>
               <br />
-              <!-- <span>ORT: </span
-              ><span style="font-weight: bold">
-                {{ transactionLocation.value | titlecase }}
-              </span> -->
               <br />
               <mat-divider></mat-divider>
               <span>NETTOBETRAG: </span
               ><span style="font-weight: bold"
-                >{{ amountBeforeTax.value }} EUR</span
+                >{{
+                  processDisplayedInputAmount(amountBeforeTax.value)
+                }}
+                EUR</span
               >
               <br />
               <span>MwSt.: </span
@@ -143,16 +141,21 @@
               ><span style="font-weight: bold"> {{ afterTaxTotal }} EUR </span>
               <br />
               <mat-divider></mat-divider>
-              <!-- <span>ERHALTEN AM </span
-              ><span style="font-weight: bold">
-                {{ transactionDate.value }}
-              </span> -->
+              <br />
+              <span>ERHALTEN AM: </span
+              ><span style="font-weight: bold">{{
+                transactionDate.value
+              }}</span>
+              <br />
+              <span>ORT: </span
+              ><span style="font-weight: bold">{{
+                transactionLocation.value | uppercase
+              }}</span>
             </td>
           </tr>
         </table>
       </td>
     </tr>
-
     <tr class="heading">
       <td></td>
       <td></td>
@@ -171,41 +174,12 @@
     </tr> -->
     <tr class="item">
       <td></td>
+      <td></td>
+    </tr>
+    <tr class="item">
+      <td>VERMERK(E)</td>
       <td>{{ furtherDetails.value }}</td>
     </tr>
-    <tr class="item">
-      <td></td>
-      <td><span>DANKEND ERHALTEN</span></td>
-    </tr>
-    <tr class="item">
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="item">
-      <td>
-        <span> DATUM </span><br /><span style="font-weight: bold">{{
-          transactionDate.value
-        }}</span>
-      </td>
-      <td>
-        <span> ORT </span><br /><span style="font-weight: bold">{{
-          transactionLocation.value | uppercase
-        }}</span>
-      </td>
-    </tr>
-    <!-- <tr class="item">
-      <td>
-        <span>ORT: </span><span>{{ transactionLocation.value }}</span>
-      </td>
-      <td>
-        <span>DATUM: </span><span>{{ transactionDate.value }}</span>
-      </td>
-    </tr>
-    <tr class="total">
-      <td>AMOUNT INCL. TAX</td>
-
-      <td>{{ rAmount.value }} <span class="currency"> XAF </span></td>
-    </tr> -->
   </table>
   <!-- <p class="sig">ERSTELLT AUF BELEGO.DE</p> -->
 </div>
