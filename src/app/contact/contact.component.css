@@ -12,8 +12,13 @@ nav button:hover {
   font-size: 1em;
 }
 
-.content {
+.message {
+  text-align: center;
   margin-top: 4em;
+}
+
+.content {
+  margin-top: 1em;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -22,7 +27,8 @@ nav button:hover {
 
 .content div {
   cursor: pointer;
-  margin: 2.5em;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 i {

@@ -32,6 +32,7 @@ export class InvoiceComponent implements OnInit {
     disabled: true,
   });
   furtherDetails = new FormControl("");
+  trSignature = new FormControl("");
 
   togglePageTitle: boolean = true;
   toggleInput: boolean = true;
