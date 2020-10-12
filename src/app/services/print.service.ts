@@ -133,7 +133,10 @@ export class PrintService {
       payment_by: string = invoiceData["paymentBy"],
       payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
-    let timestampOnPdf = moment().locale("de").format("LLL");
+    let timestampOnPdf =
+      moment().locale("de").format("ll") +
+      " " +
+      moment().locale("de").format("LT");
     let doc = new jsPDF();
 
     let grayLine = function (yPosition: number) {
@@ -141,6 +144,16 @@ export class PrintService {
       doc.setLineWidth(0.2);
       doc.line(10, yPosition, 200, yPosition);
     };
+
+    let customLine = function (lineColor: string, yPosition: number) {
+      doc.setDrawColor(lineColor);
+      doc.setLineWidth(0.2);
+      doc.line(10, yPosition, 200, yPosition);
+    };
+
+    // doc.setDrawColor("#64B5F6");
+    // doc.setLineWidth(1);
+    // doc.line(10, 135, 200, 135);
 
     doc.setFont("helvetica");
 
@@ -154,29 +167,33 @@ export class PrintService {
 
     doc.setFontSize(15);
     doc.setTextColor("#808080");
-    doc.text(`${timestampOnPdf}`, 200, 105, "right");
+    // doc.text(`${timestampOnPdf}`, 200, 105, "right");
     // doc.setTextColor("#000000");
-    doc.text("NUMMER: ", 150, 110, "left");
-    grayLine(119);
-    doc.text("NETTO: ", 110, 125, "left");
-    doc.text("MwSt.: ", 110, 130, "left");
-    doc.text("GESAMT INKL. MwSt.: ", 110, 135, "left");
-    grayLine(137);
+    doc.text("NUMMER: ", 110, 100, "left");
+    grayLine(104);
+    doc.text("NETTOBETRAG: ", 110, 110, "left");
+    doc.text("MwSt.: ", 110, 115, "left");
+    doc.text("GESAMTBETRAG: ", 110, 120, "left");
+    grayLine(122);
+    doc.text("ERHALTEN AM: ", 110, 130);
 
     doc.setTextColor("#000000");
-    doc.text(`${payment_number}`, 200, 110, "right");
+    doc.text(`${payment_number}`, 200, 100, "right");
     // grayLine(119);
-    doc.text(`${payment_amount_before_tax} EUR`, 200, 125, "right");
-    doc.text(`${payment_tax_percentage} %`, 200, 130, "right");
-    doc.text(`${payment_amount_after_tax} EUR`, 200, 135, "right");
+    doc.text(`${payment_amount_before_tax} EUR`, 200, 110, "right");
+    doc.text(`${payment_tax_percentage} %`, 200, 115, "right");
+    doc.text(`${payment_amount_after_tax} EUR`, 200, 120, "right");
     // grayLine(137);
+    doc.text(`${timestampOnPdf}`, 200, 130, "right");
+
+    customLine("#64B5F6", 140);
 
     doc.text(`${payment_for}`, 10, 150, "left");
     doc.text(`${payment_by}`, 10, 155, "left");
     doc.text(`${payment_to}`, 10, 160, "left");
     doc.text(`${payment_extra_details}`, 10, 165, "left");
     grayLine(175);
-    doc.text(`${payment_location}`, 10, 185, "left");
+    doc.text(`${payment_location.toUpperCase()}`, 10, 185, "left");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
