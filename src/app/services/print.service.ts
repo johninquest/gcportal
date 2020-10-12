@@ -48,8 +48,6 @@ export class PrintService {
     };
 
     doc.setFont("helvetica");
-    // doc.setTextColor("#808080");
-    // doc.text("BESUCHSBELEG", 100, 80, "center");
     doc.setTextColor("#808080");
     let page_title: string = "BESUCHSBELEG";
     let pageHeight =
@@ -133,49 +131,32 @@ export class PrintService {
       payment_by: string = invoiceData["paymentBy"],
       payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
-    let timestampOnPdf =
-      moment().locale("de").format("ll") +
-      " " +
-      moment().locale("de").format("LT");
+    let dateOnPdf: string = moment().locale("de").format("L"); // Date generated
     let doc = new jsPDF();
 
-    let grayLine = function (yPosition: number) {
-      doc.setDrawColor("#C0C0C0");
-      doc.setLineWidth(0.2);
-      doc.line(10, yPosition, 200, yPosition);
-    };
-
-    let customLine = function (lineColor: string, yPosition: number) {
+    let customLine = function (lineColor: string, xStartPos: number, xEndPos: number, yPos: number) {
       doc.setDrawColor(lineColor);
       doc.setLineWidth(0.2);
-      doc.line(10, yPosition, 200, yPosition);
+      doc.line(xStartPos, yPos, xEndPos, yPos);
     };
 
-    // doc.setDrawColor("#64B5F6");
-    // doc.setLineWidth(1);
-    // doc.line(10, 135, 200, 135);
-
     doc.setFont("helvetica");
+    const page_title: string = "QUITTUNG";
 
+    doc.setFontSize(18);
     doc.setTextColor("#808080");
-    let page_title: string = "QUITTUNG";
-    let pageHeight =
-      doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
-    let pageWidth =
-      doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
-    doc.text(page_title, pageWidth / 2, pageHeight - 215, "center");
-
+    doc.text(page_title, 10, 100, 'left');
+    
     doc.setFontSize(15);
-    doc.setTextColor("#808080");
-    // doc.text(`${timestampOnPdf}`, 200, 105, "right");
-    // doc.setTextColor("#000000");
     doc.text("NUMMER: ", 110, 100, "left");
-    grayLine(104);
+    customLine('#C0C0C0', 110, 200, 104);
+    // grayLine(104);
     doc.text("NETTOBETRAG: ", 110, 110, "left");
     doc.text("MwSt.: ", 110, 115, "left");
     doc.text("GESAMTBETRAG: ", 110, 120, "left");
-    grayLine(122);
-    doc.text("ERHALTEN AM: ", 110, 130);
+    // grayLine(122);
+    customLine('#C0C0C0', 110, 200, 122);
+    // doc.text("ERHALTEN AM: ", 110, 130, 'left');
 
     doc.setTextColor("#000000");
     doc.text(`${payment_number}`, 200, 100, "right");
@@ -183,17 +164,30 @@ export class PrintService {
     doc.text(`${payment_amount_before_tax} EUR`, 200, 110, "right");
     doc.text(`${payment_tax_percentage} %`, 200, 115, "right");
     doc.text(`${payment_amount_after_tax} EUR`, 200, 120, "right");
-    // grayLine(137);
-    doc.text(`${timestampOnPdf}`, 200, 130, "right");
 
-    customLine("#64B5F6", 140);
+    customLine("#64B5F6", 10, 200, 135);
 
-    doc.text(`${payment_for}`, 10, 150, "left");
-    doc.text(`${payment_by}`, 10, 155, "left");
-    doc.text(`${payment_to}`, 10, 160, "left");
-    doc.text(`${payment_extra_details}`, 10, 165, "left");
-    grayLine(175);
-    doc.text(`${payment_location.toUpperCase()}`, 10, 185, "left");
+    doc.setTextColor("#808080");
+    doc.text('VON', 10, 148, 'left');
+    customLine('#C0C0C0', 10, 200, 149);
+    doc.text('FÜR', 10, 155, 'left');
+    customLine('#C0C0C0', 10, 200, 156);
+    doc.text('VERMERK', 10, 162, 'left');
+    customLine('#C0C0C0', 10, 200, 163);
+
+    doc.setTextColor("#000000");
+    doc.text(`${payment_by}`, 200, 148, "right");
+    doc.text(`${payment_for}`, 200, 155, "right");
+    doc.text(`${payment_extra_details}`, 200, 162, "right");
+
+    doc.setTextColor("#808080");
+    doc.text(`DATUM, ORT`, 10, 183, 'left');
+    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 183, 'right');
+    customLine('#C0C0C0', 10, 80, 184);
+    customLine('#C0C0C0', 130, 200, 190);
+
+    doc.setTextColor("#000000");
+    doc.text(`${dateOnPdf}, ${payment_location.toUpperCase()}`, 10, 189, 'left');
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
