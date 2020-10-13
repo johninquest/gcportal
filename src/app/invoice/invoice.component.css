@@ -115,7 +115,7 @@ nav button:hover {
   padding-bottom: 20px;
 }
 
-.receipt-box table tr.top table td.title {
+.receipt-box table tr.top table td span.title {
   font-size: 1.5em;
   line-height: 45px;
   color: #333;

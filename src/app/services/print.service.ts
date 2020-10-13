@@ -129,12 +129,17 @@ export class PrintService {
       ].toString(),
       payment_for: string = invoiceData["paymentFor"],
       payment_by: string = invoiceData["paymentBy"],
-      payment_to: string = invoiceData["paymentTo"],
+      // payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
     let dateOnPdf: string = moment().locale("de").format("L"); // Date generated
     let doc = new jsPDF();
 
-    let customLine = function (lineColor: string, xStartPos: number, xEndPos: number, yPos: number) {
+    let customLine = function (
+      lineColor: string,
+      xStartPos: number,
+      xEndPos: number,
+      yPos: number
+    ) {
       doc.setDrawColor(lineColor);
       doc.setLineWidth(0.2);
       doc.line(xStartPos, yPos, xEndPos, yPos);
@@ -145,18 +150,18 @@ export class PrintService {
 
     doc.setFontSize(18);
     doc.setTextColor("#808080");
-    doc.text(page_title, 10, 100, 'left');
-    
+    doc.text(page_title, 10, 100, "left");
+
     doc.setFontSize(15);
     doc.text("NUMMER: ", 110, 100, "left");
-    customLine('#C0C0C0', 110, 200, 104);
+    customLine("#C0C0C0", 110, 200, 104);
     // grayLine(104);
     doc.text("NETTOBETRAG: ", 110, 110, "left");
     doc.text("MwSt.: ", 110, 115, "left");
     doc.text("GESAMTBETRAG: ", 110, 120, "left");
     // grayLine(122);
-    customLine('#C0C0C0', 110, 200, 122);
-    // doc.text("ERHALTEN AM: ", 110, 130, 'left');
+    customLine("#C0C0C0", 110, 200, 122);
+    // doc.text("DATUM / ORT", 110, 130, "left");
 
     doc.setTextColor("#000000");
     doc.text(`${payment_number}`, 200, 100, "right");
@@ -168,26 +173,38 @@ export class PrintService {
     customLine("#64B5F6", 10, 200, 135);
 
     doc.setTextColor("#808080");
-    doc.text('VON', 10, 148, 'left');
-    customLine('#C0C0C0', 10, 200, 149);
-    doc.text('FÜR', 10, 155, 'left');
-    customLine('#C0C0C0', 10, 200, 156);
-    doc.text('VERMERK', 10, 162, 'left');
-    customLine('#C0C0C0', 10, 200, 163);
+    doc.text("VON", 10, 148, "left");
+    customLine("#C0C0C0", 10, 200, 149);
+    doc.text("FÜR", 10, 155, "left");
+    customLine("#C0C0C0", 10, 200, 156);
+    // doc.text("VERMERK", 10, 162, "left");
+    customLine("#C0C0C0", 10, 200, 163);
 
     doc.setTextColor("#000000");
     doc.text(`${payment_by}`, 200, 148, "right");
     doc.text(`${payment_for}`, 200, 155, "right");
-    doc.text(`${payment_extra_details}`, 200, 162, "right");
+    // doc.text(`${payment_extra_details}`, 200, 162, "right");
+    doc.text("dankend erhalten.", 200, 162, "right");
 
     doc.setTextColor("#808080");
-    doc.text(`DATUM, ORT`, 10, 183, 'left');
-    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 183, 'right');
-    customLine('#C0C0C0', 10, 80, 184);
-    customLine('#C0C0C0', 130, 200, 190);
+    doc.text(`DATUM / ORT`, 10, 183, "left");
+    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 183, "right");
+    customLine("#C0C0C0", 10, 80, 184);
+    customLine("#C0C0C0", 130, 200, 190);
 
     doc.setTextColor("#000000");
-    doc.text(`${dateOnPdf}, ${payment_location.toUpperCase()}`, 10, 189, 'left');
+    doc.text(
+      `${dateOnPdf} / ${payment_location.toUpperCase()}`,
+      10,
+      189,
+      "left"
+    );
+
+    doc.setTextColor("#808080");
+    doc.text("VERMERK", 10, 220, "left");
+    customLine("#C0C0C0", 10, 200, 221);
+    doc.setTextColor("#000000");
+    doc.text(`${payment_extra_details}`, 10, 226, "left");
 
     let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
