@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
-import moment from "moment";
+import { ThemePalette } from "@angular/material/core";
+// import moment from "moment";
+import dayjs from "dayjs";
 import {
   NGX_MAT_DATE_FORMATS,
   NgxMatDateFormats,
@@ -14,8 +16,8 @@ export const MY_DATE_FORMATS: NgxMatDateFormats = {
   display: {
     dateInput: "DD.MM.YYYY HH:mm",
     monthYearLabel: "MM YYYY",
-    dateA11yLabel: "LL",
-    monthYearA11yLabel: "MMMM YYYY",
+    dateA11yLabel: "DD.MM.YYYY HH:mm",
+    monthYearA11yLabel: "DD.MM.YYYY HH:mm",
   },
 };
 
@@ -51,12 +53,31 @@ export class GuestComponent implements OnInit {
   businessPhoneNumber = new FormControl("");
   businessEmail = new FormControl("", Validators.email);
 
+  @ViewChild("fromPicker") fromPicker: any;
+  @ViewChild("toPicker") toPicker: any;
+  public date: dayjs.Dayjs;
+  public disabled = false;
+  public showSpinners = true;
+  public showSeconds = false;
+  public touchUi = true;
+  public enableMeridian = false;
+  public minDate: dayjs.Dayjs;
+  public maxDate: dayjs.Dayjs;
+  public stepHour = 1;
+  public stepMinute = 1;
+  public hideTime = false;
+  public stepHours = [1, 2, 3, 4, 5];
+  public stepMinutes = [1, 5, 10, 15, 20, 25];
+  public stepSeconds = [1, 5, 10, 15, 20, 25];
+  public color: ThemePalette = "primary";
+
   printPreview() {
+    // console.log(this.guestArrivalDateTime.value);
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
     this.togglePageTitle = false;
-    this.datetimeStamp = moment().locale("de").format("LLL");
+    this.datetimeStamp = dayjs().format("DD.MM.YYYY HH:mm");
   }
 
   backToInput() {
@@ -66,21 +87,9 @@ export class GuestComponent implements OnInit {
     this.togglePageTitle = true;
   }
 
-  // public date: moment.Moment;
-  public showSpinners = true;
-  public touchUi = true;
-  public enableMeridian = false;
-  public minDate: moment.Moment;
-  public maxDate: moment.Moment;
-  public stepHour = 1;
-  public stepMinute = 1;
-  public hideTime = false;
-
   formatPrintDateTime(dt: string) {
     if (dt) {
-      let outputDate: string = moment(dt).locale("de").format("L");
-      let outputTime: string = moment(dt).locale("de").format("LT");
-      let outputDateTime = outputDate + " " + outputTime;
+      let outputDateTime = dayjs(dt).format("DD.MM.YYYY HH:mm");
       return outputDateTime;
     } else {
       return "";
@@ -127,3 +136,25 @@ export class GuestComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+
+/* export class Picker {
+  @ViewChild("fromPicker") fromPicker: any;
+  @ViewChild("toPicker") toPicker: any;
+
+  public date: dayjs.Dayjs;
+  public disabled = false;
+  public showSpinners = true;
+  public showSeconds = false;
+  public touchUi = false;
+  public enableMeridian = false;
+  public minDate: dayjs.Dayjs;
+  public maxDate: dayjs.Dayjs;
+  public stepHour = 1;
+  public stepMinute = 1;
+  public stepSecond = 1;
+  public color: ThemePalette = "primary";
+
+  public stepHours = [1, 2, 3, 4, 5];
+  public stepMinutes = [1, 5, 10, 15, 20, 25];
+  public stepSeconds = [1, 5, 10, 15, 20, 25];
+} */

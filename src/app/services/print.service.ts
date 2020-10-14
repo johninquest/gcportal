@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
-import moment from "moment";
+import dayjs from "dayjs";
 
 @Injectable({
   providedIn: "root",
@@ -19,7 +19,7 @@ export class PrintService {
       let imageGened = canvas
         .toDataURL("image/jpeg", 1.0)
         .replace("image/png", "image/octet-stream");
-      let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+      let datetimeNow: string = dayjs().format("YYYYMMDDTHHmmss");
       let finalJPEG = saveAs(imageGened, `BN-${datetimeNow}.JPEG`);
       return finalJPEG;
     });
@@ -37,7 +37,7 @@ export class PrintService {
       businessAddress: string = formData["businessaddress"].toUpperCase(),
       businessPhone: string = formData["businessphone"],
       businessEmail: string = formData["businessemail"].toLowerCase();
-    let timestampOnPdf = moment().locale("de").format("LLL");
+    let timestampOnPdf = dayjs().format("DD.MM.YYYY HH:mm");
 
     let doc = new jsPDF();
 
@@ -95,7 +95,7 @@ export class PrintService {
     doc.setTextColor("#808080");
     doc.text("ERSTELLT AUF BELEGO.DE", 100, 280, "center");
  */
-    let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+    let datetimeNow: string = dayjs().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`BN-${datetimeNow}.PDF`);
     return finalPDF;
   }
@@ -109,7 +109,7 @@ export class PrintService {
       let imageGened = canvas
         .toDataURL("image/jpeg", 1.0)
         .replace("image/png", "image/octet-stream");
-      let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+      let datetimeNow: string = dayjs().format("YYYYMMDDTHHmmss");
       let finalJPEG = saveAs(imageGened, `QN-${datetimeNow}.JPEG`);
       return finalJPEG;
     });
@@ -131,7 +131,7 @@ export class PrintService {
       payment_by: string = invoiceData["paymentBy"],
       // payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
-    let dateOnPdf: string = moment().locale("de").format("L"); // Date generated
+    let dateOnPdf: string = dayjs().format("DD.MM.YYYY"); // Date generated
     let doc = new jsPDF();
 
     let customLine = function (
@@ -206,7 +206,7 @@ export class PrintService {
     doc.setTextColor("#000000");
     doc.text(`${payment_extra_details}`, 10, 226, "left");
 
-    let datetimeNow: string = moment().format("YYYYMMDDTHHmmss");
+    let datetimeNow: string = dayjs().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
     return finalPDF;
   }

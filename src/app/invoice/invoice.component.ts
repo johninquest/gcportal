@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
 import { PrintService } from "../services/print.service";
-import moment from "moment";
+import dayjs from "dayjs";
 import { from } from "rxjs";
 
 export interface Vatdesc {
@@ -28,7 +28,7 @@ export class InvoiceComponent implements OnInit {
   paidTo = new FormControl("");
   transactionLocation = new FormControl("");
   transactionDate = new FormControl({
-    value: moment().locale("de").format("L"),
+    value: dayjs().format("DD.MM.YYYY"),
     disabled: true,
   });
   furtherDetails = new FormControl("");
@@ -71,7 +71,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   previewInvoice() {
-    let currentDateTime: string = moment().locale("de").format("L");
+    let currentDateTime: string = dayjs().format("DD.MM.YYYY HH:mm");
     this.transactionDate.setValue(currentDateTime);
     this.togglePageTitle = false;
     this.toggleInput = false;
@@ -80,7 +80,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   backToInput() {
-    let currentDate: string = moment().locale("de").format("L");
+    let currentDate: string = dayjs().format("DD.MM.YYYY");
     this.transactionDate.setValue(currentDate);
     this.togglePreviewButtons = false;
     this.togglePreview = false;
@@ -94,7 +94,6 @@ export class InvoiceComponent implements OnInit {
   }
 
   saveAsPdf() {
-    // alert("Als PDF speichern?");
     let paymentFormData: object = {
       paymentNumber: this.invoiceNumber.value,
       // paymentDateTime: this.transactionDate.value,

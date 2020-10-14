@@ -4,10 +4,6 @@
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <!-- <button mat-menu-item (click)="ucMessage()">
-      <mat-icon>info</mat-icon>
-      <span>INFO</span>
-    </button> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>menu</mat-icon>
@@ -35,9 +31,6 @@
             [formControl]="guestNames"
           /> </mat-form-field
         ><br />
-        <!-- <mat-form-field>
-          <input matInput placeholder="Adresse" type="text" /> </mat-form-field
-        ><br /> -->
         <mat-form-field>
           <input
             matInput
@@ -71,7 +64,7 @@
           <mat-form-field>
             <input
               matInput
-              [ngxMatDatetimePicker]="picker1"
+              [ngxMatDatetimePicker]="fromPicker"
               placeholder="Beginn des Besuchs"
               [formControl]="guestArrivalDateTime"
               [min]="minDate"
@@ -79,13 +72,14 @@
             />
             <mat-datepicker-toggle
               matSuffix
-              [for]="picker1"
+              [for]="fromPicker"
             ></mat-datepicker-toggle>
             <ngx-mat-datetime-picker
-              #picker1
+              #fromPicker
               [showSpinners]="showSpinners"
               [stepHour]="stepHour"
               [stepMinute]="stepMinute"
+              [stepSecond]="stepSecond"
               [touchUi]="touchUi"
               [color]="color"
               [enableMeridian]="enableMeridian"
@@ -117,7 +111,7 @@
           <mat-form-field>
             <input
               matInput
-              [ngxMatDatetimePicker]="picker2"
+              [ngxMatDatetimePicker]="toPicker"
               placeholder="Ende des Besuchs"
               [formControl]="guestDepartureDateTime"
               [min]="minDate"
@@ -125,10 +119,10 @@
             />
             <mat-datepicker-toggle
               matSuffix
-              [for]="picker2"
+              [for]="toPicker"
             ></mat-datepicker-toggle>
             <ngx-mat-datetime-picker
-              #picker2
+              #toPicker
               [showSpinners]="showSpinners"
               [stepHour]="stepHour"
               [stepMinute]="stepMinute"

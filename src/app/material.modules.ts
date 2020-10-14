@@ -11,7 +11,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatListModule } from "@angular/material/list";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTableModule } from "@angular/material/table";
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
+// import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatTooltipModule } from "@angular/material/tooltip";
@@ -23,7 +23,7 @@ import {
   NgxMatTimepickerModule,
   NgxMatNativeDateModule,
 } from "@angular-material-components/datetime-picker";
-import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
+// import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
 import { from } from "rxjs";
 
 @NgModule({
@@ -40,7 +40,7 @@ import { from } from "rxjs";
     MatListModule,
     MatIconModule,
     MatTableModule,
-    MatMomentDateModule,
+    // MatMomentDateModule,
     MatStepperModule,
     MatDialogModule,
     MatTooltipModule,
@@ -50,7 +50,7 @@ import { from } from "rxjs";
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    NgxMatMomentModule,
+    // NgxMatMomentModule,
   ],
   exports: [
     MatButtonModule,
@@ -65,7 +65,7 @@ import { from } from "rxjs";
     MatListModule,
     MatIconModule,
     MatTableModule,
-    MatMomentDateModule,
+    // MatMomentDateModule,
     MatStepperModule,
     MatDialogModule,
     MatTooltipModule,
@@ -75,7 +75,7 @@ import { from } from "rxjs";
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    NgxMatMomentModule,
+    // NgxMatMomentModule,
   ],
 })
 export class MaterialModules {}
