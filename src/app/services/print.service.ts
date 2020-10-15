@@ -91,6 +91,11 @@ export class PrintService {
     doc.text(`${numberOfAccompanyingPersons}`, 200, 165, "right");
     doc.text(`${departedAt}`, 200, 175, "right");
 
+    let splitText = doc.splitTextToSize(corona_disclaimer.toUpperCase(), 250);
+    // doc.text(15, 20, splitTitle);
+    doc.setFontSize(11);
+    doc.text(splitText, 15, 200, 'left');
+
     /*     doc.setFontSize(5);
     doc.setTextColor("#808080");
     doc.text("ERSTELLT AUF BELEGO.DE", 100, 280, "center");
@@ -211,3 +216,7 @@ export class PrintService {
     return finalPDF;
   }
 }
+
+const corona_disclaimer: string = `* um mögliche infektionsketten nachvollziehen zu können, sind gaststätte verpflichtet die oben stehenden daten jedes gastes mit dessen einverständnis zu dokumentieren. diese daten werden vier wochen allein zu diesem zweck bei uns aufbewahrt. nur registrierte gäste dürfen bedient werden. 
+\nrechtsgrundlage hierfür ist Art. 6 Abs. 1 Buchstabe C) der DSGVO i.v.m § 2 absatz 3 corona-verordnung gaststätten (verordnung zur eindämmung von übertragung des corona-virus) in gaststätten vom 10. mai 2020).
+im falle eines konkreten infektionsverdachtes sind die zuständigen gesundheitsbehörden nach dem bundesinfektionsschutzgesetz empfänger dieser daten ihre personbezogenen daten werden von uns vier wochen nach erhalt gelöscht.`;
