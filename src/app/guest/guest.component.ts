@@ -15,9 +15,9 @@ export const MY_DATE_FORMATS: NgxMatDateFormats = {
   },
   display: {
     dateInput: "DD.MM.YYYY HH:mm",
-    monthYearLabel: "MM YYYY",
-    dateA11yLabel: "DD.MM.YYYY HH:mm",
-    monthYearA11yLabel: "DD.MM.YYYY HH:mm",
+    monthYearLabel: "",
+    dateA11yLabel: "",
+    monthYearA11yLabel: "",
   },
 };
 

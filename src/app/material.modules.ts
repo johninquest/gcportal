@@ -23,7 +23,7 @@ import {
   NgxMatTimepickerModule,
   NgxMatNativeDateModule,
 } from "@angular-material-components/datetime-picker";
-// import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
+import { NgxMatMomentModule } from "@angular-material-components/moment-adapter";
 import { from } from "rxjs";
 
 @NgModule({
@@ -50,7 +50,7 @@ import { from } from "rxjs";
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    // NgxMatMomentModule,
+    NgxMatMomentModule,
   ],
   exports: [
     MatButtonModule,
@@ -75,7 +75,7 @@ import { from } from "rxjs";
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     NgxMatNativeDateModule,
-    // NgxMatMomentModule,
+    NgxMatMomentModule,
   ],
 })
 export class MaterialModules {}
