@@ -67,25 +67,24 @@
               [ngxMatDatetimePicker]="fromPicker"
               placeholder="Beginn des Besuchs"
               [formControl]="guestArrivalDateTime"
-              [min]="minDate"
-              [max]="maxDate" 
-              [disabled]="disabled"/>
+            />
             <mat-datepicker-toggle
               matSuffix
               [for]="fromPicker"
             ></mat-datepicker-toggle>
             <ngx-mat-datetime-picker
               #fromPicker
-	            [showSpinners]="showSpinners" 
-	            [showSeconds]="showSeconds" 
-	            [stepHour]="stepHour" 
-	            [stepMinute]="stepMinute" 
-	            [stepSecond]="stepSecond" 
-	            [touchUi]="touchUi" 
-	            [color]="color" 
-	            [enableMeridian]="enableMeridian" 
-              [disableMinute]="disableMinute" 
-	            [hideTime]="hideTime">
+              [showSpinners]="showSpinners"
+              [showSeconds]="showSeconds"
+              [stepHour]="stepHour"
+              [stepMinute]="stepMinute"
+              [stepSecond]="stepSecond"
+              [touchUi]="touchUi"
+              [color]="color"
+              [enableMeridian]="enableMeridian"
+              [disableMinute]="disableMinute"
+              [hideTime]="hideTime"
+            >
             </ngx-mat-datetime-picker>
           </mat-form-field>
         </div>
@@ -115,9 +114,6 @@
               [ngxMatDatetimePicker]="toPicker"
               placeholder="Ende des Besuchs"
               [formControl]="guestDepartureDateTime"
-              [min]="minDate"
-              [max]="maxDate" 
-              [disabled]="disabled"
             />
             <mat-datepicker-toggle
               matSuffix
@@ -125,16 +121,16 @@
             ></mat-datepicker-toggle>
             <ngx-mat-datetime-picker
               #toPicker
-              [showSpinners]="showSpinners" 
-	            [showSeconds]="showSeconds" 
-	            [stepHour]="stepHour" 
-	            [stepMinute]="stepMinute" 
-	            [stepSecond]="stepSecond" 
-	            [touchUi]="touchUi" 
-	            [color]="color" 
-	            [enableMeridian]="enableMeridian" 
-              [disableMinute]="disableMinute" 
-	            [hideTime]="hideTime"
+              [showSpinners]="showSpinners"
+              [showSeconds]="showSeconds"
+              [stepHour]="stepHour"
+              [stepMinute]="stepMinute"
+              [stepSecond]="stepSecond"
+              [touchUi]="touchUi"
+              [color]="color"
+              [enableMeridian]="enableMeridian"
+              [disableMinute]="disableMinute"
+              [hideTime]="hideTime"
             >
             </ngx-mat-datetime-picker>
           </mat-form-field>

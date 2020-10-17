@@ -55,14 +55,14 @@ export class GuestComponent implements OnInit {
 
   @ViewChild("fromPicker") fromPicker: any;
   @ViewChild("toPicker") toPicker: any;
-  public date: dayjs.Dayjs;
+  // public date: dayjs.Dayjs;
   public disabled = false;
   public showSpinners = true;
   public showSeconds = false;
   public touchUi = true;
   public enableMeridian = false;
-  public minDate: dayjs.Dayjs;
-  public maxDate: dayjs.Dayjs;
+  // public minDate: dayjs.Dayjs;
+  // public maxDate: dayjs.Dayjs;
   public stepHour = 1;
   public stepMinute = 1;
   public hideTime = false;
@@ -72,7 +72,6 @@ export class GuestComponent implements OnInit {
   public color: ThemePalette = "primary";
 
   printPreview() {
-    // console.log(this.guestArrivalDateTime.value);
     this.toggleInput = false;
     this.togglePreview = true;
     this.toggleButtons = true;
@@ -130,33 +129,5 @@ export class GuestComponent implements OnInit {
     }
   }
 
-  ucMessage() {
-    alert("🚧 BAUSTELLE 🚧");
-  }
-
   ngOnInit(): void {}
 }
-
-/* export class Picker {
-  @ViewChild("fromPicker") fromPicker: any;
-  @ViewChild("toPicker") toPicker: any;
-
-  public date: dayjs.Dayjs;
-  public disabled = false;
-  public showSpinners = true;
-  public showSeconds = false;
-  public touchUi = false;
-  public enableMeridian = false;
-  public minDate: dayjs.Dayjs;
-  public maxDate: dayjs.Dayjs;
-  public stepHour = 1;
-  public stepMinute = 1;
-  public stepSecond = 1;
-  public color: ThemePalette = "primary";
-
-  public stepHours = [1, 2, 3, 4, 5];
-  public stepMinutes = [1, 5, 10, 15, 20, 25];
-  public stepSeconds = [1, 5, 10, 15, 20, 25];
-}
-https://www.npmjs.com/package/@mat-datetimepicker/core
-*/
