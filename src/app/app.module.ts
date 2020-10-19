@@ -7,6 +7,7 @@ import { MAT_DATE_LOCALE } from "@angular/material/core";
 import { MaterialModules } from "./material.modules";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeComponent } from "./home/home.component";
 import { GuestComponent } from "./guest/guest.component";
 import { InvoiceComponent } from "./invoice/invoice.component";
@@ -29,6 +30,7 @@ import { ContactComponent } from "./contact/contact.component";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MaterialModules,
   ],
   providers: [
