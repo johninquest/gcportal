@@ -1,3 +1,8 @@
+nav {
+  background-color: #64b5f6;
+  height: 3em;
+}
+
 nav button:hover {
   background-color: #64b5f6;
 }
@@ -204,4 +209,30 @@ nav button:hover {
 
 button {
   font-size: 1em;
+}
+
+.desktop-nav a {
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin: 1em;
+  text-decoration: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    background-color: white;
+  }
+  .desktop-nav a {
+    display: none;
+  }
+  .mobile-nav {
+    float: right;
+    display: block;
+  }
 }
