@@ -8,6 +8,8 @@ import {
   NgxMatDateFormats,
 } from "@angular-material-components/datetime-picker";
 import { PrintService } from "../services/print.service";
+import { COVID19_DISCLAIMER_SHORT } from "../data/disclaimers";
+import { from } from "rxjs";
 
 export const MY_DATE_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -52,6 +54,8 @@ export class GuestComponent implements OnInit {
   businessAddress = new FormControl("");
   businessPhoneNumber = new FormControl("");
   businessEmail = new FormControl("", Validators.email);
+
+  covid19_disclaimer: string = COVID19_DISCLAIMER_SHORT;
 
   @ViewChild("fromPicker") fromPicker: any;
   @ViewChild("toPicker") toPicker: any;
