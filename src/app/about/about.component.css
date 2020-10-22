@@ -45,8 +45,7 @@ nav button:hover {
 }
 
 .footer {
-  display: flex;
-  flex-flow: column nowrap;
+  text-align: center;
   position: fixed;
   bottom: 0;
 }
@@ -62,8 +61,9 @@ nav button:hover {
   text-align: center;
 }
 
-a {
+.footer .footer-message a {
   font-weight: bold;
+  text-decoration: none;
 }
 
 .desktop-nav a {
