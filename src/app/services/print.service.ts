@@ -179,41 +179,41 @@ export class PrintService {
     doc.text(`${payment_tax_percentage} %`, 200, 115, "right");
     doc.text(`${payment_amount_after_tax} EUR`, 200, 120, "right");
 
-    customLine("#64B5F6", 10, 200, 135);
+    customLine("#64B5F6", 10, 200, 130);
 
     doc.setTextColor("#808080");
-    doc.text("VON", 10, 148, "left");
-    customLine("#C0C0C0", 10, 200, 149);
-    doc.text("FÜR", 10, 155, "left");
-    customLine("#C0C0C0", 10, 200, 156);
+    doc.text("VON", 10, 136, "left");
+    customLine("#C0C0C0", 10, 200, 137);
+    doc.text("FÜR", 10, 143, "left");
+    customLine("#C0C0C0", 10, 200, 144);
     // doc.text("VERMERK", 10, 162, "left");
-    customLine("#C0C0C0", 10, 200, 163);
+    customLine("#C0C0C0", 10, 200, 151);
 
     doc.setTextColor("#000000");
-    doc.text(`${payment_by}`, 200, 148, "right");
-    doc.text(`${payment_for}`, 200, 155, "right");
+    doc.text(`${payment_by}`, 200, 136, "right");
+    doc.text(`${payment_for}`, 200, 143, "right");
     // doc.text(`${payment_extra_details}`, 200, 162, "right");
-    doc.text("dankend erhalten.", 200, 162, "right");
+    doc.text("dankend erhalten.", 200, 150, "right");
 
     doc.setTextColor("#808080");
-    doc.text(`DATUM / ORT`, 10, 183, "left");
-    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 183, "right");
-    customLine("#C0C0C0", 10, 80, 184);
-    customLine("#C0C0C0", 130, 200, 190);
+    doc.text(`DATUM / ORT`, 10, 176, "left");
+    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 170, "right");
+    customLine("#C0C0C0", 10, 80, 177);
+    customLine("#C0C0C0", 130, 200, 177);
 
     doc.setTextColor("#000000");
     doc.text(
       `${dateOnPdf} / ${payment_location.toUpperCase()}`,
       10,
-      189,
+      183,
       "left"
     );
 
     doc.setTextColor("#808080");
-    doc.text("VERMERK", 10, 220, "left");
-    customLine("#C0C0C0", 10, 200, 221);
+    doc.text("VERMERK", 10, 230, "left");
+    customLine("#C0C0C0", 10, 200, 231);
     doc.setTextColor("#000000");
-    doc.text(`${payment_extra_details}`, 10, 226, "left");
+    doc.text(`${payment_extra_details}`, 10, 236, "left");
 
     let datetimeNow: string = dayjs().format("YYYYMMDDTHHmmss");
     let finalPDF = doc.save(`QN-${datetimeNow}.PDF`);
