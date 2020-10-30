@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import {
+  FormControl,
+  FormControlName,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
 import { PrintService } from "../services/print.service";
 import dayjs from "dayjs";
@@ -44,6 +49,13 @@ export class InvoiceComponent implements OnInit {
     { value: 5, viewValue: "5 %" },
     { value: 16, viewValue: "16 %" },
   ];
+
+  businessData = new FormGroup({
+    businessName: new FormControl(""),
+    businessAddress: new FormControl(""),
+    businessPhone: new FormControl(""),
+    businessEmail: new FormControl(""),
+  });
 
   processDisplayedInputAmount(amtValue: number) {
     if (amtValue) {
@@ -107,6 +119,10 @@ export class InvoiceComponent implements OnInit {
       paymentExtraDetails: this.furtherDetails.value,
     };
     this.ps.createInvoicePdfFromData(paymentFormData);
+  }
+
+  fallbackMessage() {
+    alert("Under construction");
   }
 
   ngOnInit(): void {}

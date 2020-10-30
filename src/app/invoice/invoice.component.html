@@ -1,12 +1,21 @@
 <nav>
   <div class="desktop-nav">
     <a routerLink="/home">HOME</a>
+    <a (click)="fallbackMessage()">AUSSTELLER</a>
   </div>
 
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
       <span>HOME</span>
+    </button>
+    <button
+      mat-menu-item
+      (click)="fallbackMessage()"
+      matTooltip="Quittungsaussteller"
+    >
+      <mat-icon>store</mat-icon>
+      <span>AUSSTELLER</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
