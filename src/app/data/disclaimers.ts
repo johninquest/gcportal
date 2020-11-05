@@ -1,4 +1,1 @@
-export const COVID19_DISCLAIMER_FULL: string = `* Um mögliche infektionsketten nachvollziehen zu können, sind gaststätte verpflichtet die oben stehenden daten jedes gastes mit dessen einverständnis zu dokumentieren. diese daten werden vier wochen allein zu diesem zweck bei der gaststätte aufbewahrt. 
-\nRechtsgrundlage hierfür ist Art. 6 Abs. 1 Buchstabe C) der DSGVO i.v.m § 2 absatz 3 corona-verordnung gaststätten (verordnung zur eindämmung von übertragung des corona-virus) in gaststätten vom 10. mai 2020). Im falle eines konkreten infektionsverdachtes sind die zuständigen gesundheitsbehörden nach dem bundesinfektionsschutzgesetz empfänger dieser daten ihre personbezogenen daten werden von uns vier wochen nach erhalt gelöscht.`;
-
-export const COVID19_DISCLAIMER_SHORT: string = "* gemäß Corona-Verordnung.";
+export const COVID19_DISCLAIMER_SHORT: string = "* gemäß corona-verordnung.";

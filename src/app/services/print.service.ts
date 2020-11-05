@@ -3,7 +3,7 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
 import dayjs from "dayjs";
-import { COVID19_DISCLAIMER_FULL } from "../data/disclaimers";
+import { COVID19_DISCLAIMER_SHORT } from "../data/disclaimers";
 
 @Injectable({
   providedIn: "root",
@@ -93,12 +93,12 @@ export class PrintService {
     doc.text(`${departedAt}`, 200, 175, "right");
 
     let splitText = doc.splitTextToSize(
-      COVID19_DISCLAIMER_FULL.toUpperCase(),
+      COVID19_DISCLAIMER_SHORT.toUpperCase(),
       250
     );
     // doc.text(15, 20, splitTitle);
     doc.setFontSize(11);
-    doc.text(splitText, 15, 200, "left");
+    doc.text(splitText, 10, 200, "left");
 
     /*     doc.setFontSize(5);
     doc.setTextColor("#808080");
