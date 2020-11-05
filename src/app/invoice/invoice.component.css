@@ -237,3 +237,15 @@ button {
     display: block;
   }
 }
+
+.business-data {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-data caption {
+  margin: 1em;
+  font-weight: bold;
+}

@@ -1,10 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  FormControl,
-  FormControlName,
-  FormGroup,
-  Validators,
-} from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
 import { PrintService } from "../services/print.service";
 import dayjs from "dayjs";
@@ -43,6 +38,7 @@ export class InvoiceComponent implements OnInit {
   toggleInput: boolean = true;
   togglePreview: boolean = false;
   togglePreviewButtons: boolean = false;
+  toggleBusinessData: boolean = false;
 
   vats: Vatdesc[] = [
     { value: 0, viewValue: "0 %" },
@@ -50,13 +46,13 @@ export class InvoiceComponent implements OnInit {
     { value: 16, viewValue: "16 %" },
   ];
 
-  /*   businessData = new FormGroup({
+  businessData = new FormGroup({
     businessName: new FormControl(""),
     businessAddress: new FormControl(""),
     businessPhone: new FormControl(""),
     businessEmail: new FormControl(""),
   });
- */
+
   processDisplayedInputAmount(amtValue: number) {
     if (amtValue) {
       return amtValue.toFixed(2);
@@ -119,6 +115,29 @@ export class InvoiceComponent implements OnInit {
       paymentExtraDetails: this.furtherDetails.value,
     };
     this.ps.createInvoicePdfFromData(paymentFormData);
+  }
+
+  saveBusinessData() {
+    let formData: object = {
+      business_name: this.businessData.get("businessName").value,
+      business_address: this.businessData.get("businessAddress").value,
+      business_phone: this.businessData.get("businessPhone").value,
+      business_email: this.businessData.get("businessEmail").value,
+    };
+    console.log(formData);
+    sessionStorage.setItem("belego_app_data", JSON.stringify(formData));
+    // localStorage.setItem('belego_gi', 'Hello world!');
+    // alert("Under construction");
+    this.toggleBusinessData = false;
+    this.togglePageTitle = true;
+    this.toggleInput = true;
+  }
+
+  showBusinessDataForm() {
+    this.togglePageTitle = false;
+    this.toggleInput = false;
+    this.togglePreview = false;
+    this.toggleBusinessData = true;
   }
 
   fallbackMessage() {

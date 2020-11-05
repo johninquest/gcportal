@@ -1,10 +1,14 @@
 <nav>
   <div class="desktop-nav">
-    <a routerLink="/home">HOME</a>
+    <a routerLink="/home" matTooltip="zur Startseite zurückkehren">HOME</a>
   </div>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/home" matTooltip="Home">
+    <button
+      mat-menu-item
+      routerLink="/home"
+      matTooltip="zur Startseite zurückkehren"
+    >
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>

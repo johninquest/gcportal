@@ -1,22 +1,30 @@
 <nav>
   <div class="desktop-nav">
-    <a routerLink="/home">HOME</a>
-    <!-- <a (click)="fallbackMessage()">AUSSTELLER</a> -->
+    <a routerLink="/home" matTooltip="zur Startseite zurückkehren">HOME</a>
+    <a
+      (click)="showBusinessDataForm()"
+      matTooltip="Quittungsaussteller hinterlegen"
+      >AUSSTELLER</a
+    >
   </div>
 
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/home" matTooltip="Home">
+    <button
+      mat-menu-item
+      routerLink="/home"
+      matTooltip="zur Startseite zurückkehren"
+    >
       <mat-icon>home</mat-icon>
       <span>HOME</span>
     </button>
-    <!-- <button
+    <button
       mat-menu-item
-      (click)="fallbackMessage()"
-      matTooltip="Quittungsaussteller"
+      (click)="showBusinessDataForm()"
+      matTooltip="Quittungsaussteller hinterlegen"
     >
       <mat-icon>store</mat-icon>
       <span>AUSSTELLER</span>
-    </button> -->
+    </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
     <mat-icon>menu</mat-icon>
@@ -221,4 +229,53 @@
       <button mat-menu-item (click)="saveAsPdf()">als PDF</button>
     </mat-menu>
   </div>
+</div>
+
+<div
+  class="business-data"
+  [formGroup]="businessData"
+  *ngIf="toggleBusinessData"
+>
+  <caption>
+    AUSSTELLER
+  </caption>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Name"
+      formControlName="businessName"
+      type="text"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Adresse"
+      formControlName="businessAddress"
+      type="text"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Telefon"
+      formControlName="businessPhone"
+      type="tel"
+    />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="E-mail"
+      formControlName="businessEmail"
+      type="email"
+    />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="saveBusinessData()">
+    SPEICHERN
+  </button>
 </div>
