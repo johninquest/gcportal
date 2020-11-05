@@ -50,13 +50,13 @@ export class InvoiceComponent implements OnInit {
     { value: 16, viewValue: "16 %" },
   ];
 
-  businessData = new FormGroup({
+  /*   businessData = new FormGroup({
     businessName: new FormControl(""),
     businessAddress: new FormControl(""),
     businessPhone: new FormControl(""),
     businessEmail: new FormControl(""),
   });
-
+ */
   processDisplayedInputAmount(amtValue: number) {
     if (amtValue) {
       return amtValue.toFixed(2);
