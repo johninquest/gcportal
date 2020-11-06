@@ -233,7 +233,7 @@ export class PrintService {
 }
 
 const getSavedData = function () {
-  let rawData = sessionStorage.getItem("belego_app_data");
+  let rawData = localStorage.getItem("belego_app_data");
   if (rawData) {
     let parsedRawData = JSON.parse(rawData);
     // console.log(parsedRawData.business_name);

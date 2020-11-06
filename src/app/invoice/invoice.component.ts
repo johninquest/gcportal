@@ -124,8 +124,8 @@ export class InvoiceComponent implements OnInit {
       business_phone: this.businessData.get("businessPhone").value,
       business_email: this.businessData.get("businessEmail").value,
     };
-    console.log(formData);
-    sessionStorage.setItem("belego_app_data", JSON.stringify(formData));
+    // console.log(formData);
+    localStorage.setItem("belego_app_data", JSON.stringify(formData));
     // localStorage.setItem('belego_gi', 'Hello world!');
     // alert("Under construction");
     this.toggleBusinessData = false;
@@ -148,7 +148,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   getSavedData() {
-    let rawData = sessionStorage.getItem("belego_app_data");
+    let rawData = localStorage.getItem("belego_app_data");
     if (rawData) {
       let parsedRawData = JSON.parse(rawData);
       return [
