@@ -131,24 +131,31 @@
 
 <div class="receipt-box" id="invoice" *ngIf="togglePreview">
   <table cellpadding="0" cellspacing="0">
+    <caption>
+      QUITTUNG
+    </caption>
     <tr class="top">
       <td colspan="2">
         <table>
           <tr>
             <td>
-              <span class="title">QUITTUNG</span><br />
+              <span style="font-weight: bold; color: #808080">AUSSTELLER</span
+              ><br />
+              <span> {{ getSavedData()[0] | uppercase }}</span
+              ><br />
+              <span> {{ getSavedData()[1] | uppercase }}</span
+              ><br />
+              <span> {{ getSavedData()[2] | uppercase }}</span
+              ><br />
+              <span> {{ getSavedData()[3] | uppercase }}</span>
+            </td>
+            <td>
               <span>NUMMER: </span
               ><span style="font-weight: bold">
                 {{ invoiceNumber.value }}
               </span>
-            </td>
-            <td>
-              <!-- <span>NUMMER: </span
-              ><span style="font-weight: bold">
-                {{ invoiceNumber.value }}
-              </span>
               <br />
-              <br /> -->
+              <br />
               <mat-divider></mat-divider>
               <span>NETTOBETRAG: </span
               ><span style="font-weight: bold"
@@ -204,7 +211,7 @@
     <tr class="item">
       <td></td>
       <td>
-        <span>STEMPEL/UNTERSCHRIFT <br />DES EMPFÄNGERS</span>
+        <span>UNTERSCHRIFT DES EMPFÄNGERS</span>
         <br />
         <mat-divider></mat-divider>
         <span><br /><br /><br /></span>
@@ -242,40 +249,41 @@
   <mat-form-field>
     <input
       matInput
-      placeholder="Name"
+      placeholder="NAME DES AUSSTELLERS"
       formControlName="businessName"
       type="text"
     />
   </mat-form-field>
-  <br />
   <mat-form-field>
     <input
       matInput
-      placeholder="Adresse"
+      placeholder="ADRESSE"
       formControlName="businessAddress"
       type="text"
-    />
+    /><mat-icon matSuffix>place</mat-icon>
   </mat-form-field>
-  <br />
   <mat-form-field>
     <input
       matInput
-      placeholder="Telefon"
+      placeholder="TELEFON"
       formControlName="businessPhone"
       type="tel"
-    />
+    /><mat-icon matSuffix>phone</mat-icon>
   </mat-form-field>
-  <br />
   <mat-form-field>
     <input
       matInput
-      placeholder="E-mail"
+      placeholder="E-MAIL"
       formControlName="businessEmail"
       type="email"
-    />
+    /><mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
-  <br />
-  <button mat-raised-button color="primary" (click)="saveBusinessData()">
-    SPEICHERN
-  </button>
+  <div class="business-data-buttons">
+    <button mat-raised-button color="accent" (click)="doNotSaveBusinessData()">
+      ABBRECHEN
+    </button>
+    <button mat-raised-button color="primary" (click)="saveBusinessData()">
+      SPEICHERN
+    </button>
+  </div>
 </div>

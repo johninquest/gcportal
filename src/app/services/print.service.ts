@@ -138,7 +138,6 @@ export class PrintService {
       ].toString(),
       payment_for: string = invoiceData["paymentFor"],
       payment_by: string = invoiceData["paymentBy"],
-      // payment_to: string = invoiceData["paymentTo"],
       payment_extra_details: string = invoiceData["paymentExtraDetails"];
     let dateOnPdf: string = dayjs().format("DD.MM.YYYY"); // Date generated
     let doc = new jsPDF();
@@ -155,13 +154,25 @@ export class PrintService {
     };
 
     doc.setFont("helvetica");
-    const page_title: string = "QUITTUNG";
-
+    let page_title: string = "QUITTUNG";
+    let pageHeight =
+      doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    let pageWidth =
+      doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
     doc.setFontSize(18);
     doc.setTextColor("#808080");
-    doc.text(page_title, 10, 100, "left");
-
+    doc.text(page_title, pageWidth / 2, pageHeight - 220, "center");
+    // const page_title: string = "QUITTUNG";
     doc.setFontSize(15);
+    doc.setTextColor("#808080");
+    doc.text("AUSSTELLER", 10, 100, "left");
+    doc.setTextColor("#000000");
+    doc.text(getSavedData()[0], 10, 105, "left");
+    doc.text(getSavedData()[1], 10, 110, "left");
+    doc.text(getSavedData()[2], 10, 115, "left");
+    doc.text(getSavedData()[3], 10, 120, "left");
+
+    doc.setTextColor("#808080");
     doc.text("NUMMER: ", 110, 100, "left");
     customLine("#C0C0C0", 110, 200, 104);
     // grayLine(104);
@@ -197,9 +208,9 @@ export class PrintService {
 
     doc.setTextColor("#808080");
     doc.text(`DATUM / ORT`, 10, 176, "left");
-    doc.text(`STEMPEL/UNTERSCHRIFT \nDES EMPFÄNGERS`, 200, 170, "right");
+    doc.text(`UNTERSCHRIFT DES EMPFÄNGERS`, 200, 176, "right");
     customLine("#C0C0C0", 10, 80, 177);
-    customLine("#C0C0C0", 130, 200, 177);
+    customLine("#C0C0C0", 100, 200, 177);
 
     doc.setTextColor("#000000");
     doc.text(
@@ -220,3 +231,19 @@ export class PrintService {
     return finalPDF;
   }
 }
+
+const getSavedData = function () {
+  let rawData = sessionStorage.getItem("belego_app_data");
+  if (rawData) {
+    let parsedRawData = JSON.parse(rawData);
+    // console.log(parsedRawData.business_name);
+    return [
+      parsedRawData.business_name,
+      parsedRawData.business_address,
+      parsedRawData.business_phone,
+      parsedRawData.business_email,
+    ];
+  } else {
+    return ["", "", "", ""];
+  }
+};

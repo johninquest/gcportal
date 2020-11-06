@@ -133,16 +133,36 @@ export class InvoiceComponent implements OnInit {
     this.toggleInput = true;
   }
 
+  doNotSaveBusinessData() {
+    this.toggleBusinessData = false;
+    this.togglePageTitle = true;
+    this.toggleInput = true;
+  }
+
   showBusinessDataForm() {
     this.togglePageTitle = false;
     this.toggleInput = false;
     this.togglePreview = false;
+    this.togglePreviewButtons = false;
     this.toggleBusinessData = true;
   }
 
-  fallbackMessage() {
-    alert("Under construction");
+  getSavedData() {
+    let rawData = sessionStorage.getItem("belego_app_data");
+    if (rawData) {
+      let parsedRawData = JSON.parse(rawData);
+      return [
+        parsedRawData.business_name,
+        parsedRawData.business_address,
+        parsedRawData.business_phone,
+        parsedRawData.business_email,
+      ];
+    } else {
+      return ["", "", "", ""];
+    }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.getSavedData();
+  }
 }

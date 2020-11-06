@@ -102,10 +102,11 @@ nav button:hover {
   background-color: #ffffff;
 }
 
-/* .ticket-box table caption {
+.receipt-box table caption {
+  font-size: 1.5em;
   font-weight: bold;
   color: #808080;
-} */
+}
 
 .receipt-box table td {
   padding: 5px;
@@ -248,4 +249,19 @@ button {
 .business-data caption {
   margin: 1em;
   font-weight: bold;
+}
+
+.business-data mat-form-field {
+  width: 70%;
+}
+
+.business-data-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-data-buttons button {
+  margin: 00.5em;
 }
