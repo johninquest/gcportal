@@ -84,6 +84,15 @@ nav button:hover {
   font-weight: bold;
 }
 
+.seller-data-title {
+  color: gray;
+  cursor: pointer;
+}
+
+.seller-data {
+  font-size: 0.8em;
+}
+
 /* Style for receipt preview */
 .receipt-box {
   max-width: 800px;
@@ -103,7 +112,8 @@ nav button:hover {
 }
 
 .receipt-box table caption {
-  font-size: 1.5em;
+  text-align: right;
+  font-size: 1.4em;
   font-weight: bold;
   color: #808080;
 }

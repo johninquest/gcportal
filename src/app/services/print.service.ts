@@ -155,14 +155,10 @@ export class PrintService {
 
     doc.setFont("helvetica");
     let page_title: string = "QUITTUNG";
-    let pageHeight =
-      doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
-    let pageWidth =
-      doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
-    doc.setFontSize(18);
+    doc.setFontSize(20);
     doc.setTextColor("#808080");
-    doc.text(page_title, pageWidth / 2, pageHeight - 220, "center");
-    // const page_title: string = "QUITTUNG";
+    doc.text(page_title, 155, 80, "center");
+
     doc.setFontSize(15);
     doc.setTextColor("#808080");
     doc.text("AUSSTELLER", 10, 100, "left");
@@ -204,10 +200,10 @@ export class PrintService {
     doc.text(`${payment_by}`, 200, 136, "right");
     doc.text(`${payment_for}`, 200, 143, "right");
     // doc.text(`${payment_extra_details}`, 200, 162, "right");
-    doc.text("dankend erhalten.", 200, 150, "right");
+    // doc.text("dankend erhalten.", 200, 150, "right");
 
     doc.setTextColor("#808080");
-    doc.text(`DATUM / ORT`, 10, 176, "left");
+    doc.text(`ERHALTEN AM / ORT`, 10, 176, "left");
     doc.text(`UNTERSCHRIFT DES EMPFÄNGERS`, 200, 176, "right");
     customLine("#C0C0C0", 10, 80, 177);
     customLine("#C0C0C0", 100, 200, 177);

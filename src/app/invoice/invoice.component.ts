@@ -39,6 +39,7 @@ export class InvoiceComponent implements OnInit {
   togglePreview: boolean = false;
   togglePreviewButtons: boolean = false;
   toggleBusinessData: boolean = false;
+  toggleBusinessDataInput: boolean = true;
 
   vats: Vatdesc[] = [
     { value: 0, viewValue: "0 %" },
@@ -79,12 +80,13 @@ export class InvoiceComponent implements OnInit {
   }
 
   previewInvoice() {
-    let currentDateTime: string = dayjs().format("DD.MM.YYYY HH:mm");
-    this.transactionDate.setValue(currentDateTime);
+    // let currentDateTime: string = dayjs().format("DD.MM.YYYY HH:mm");
+    // this.transactionDate.setValue(currentDateTime);
     this.togglePageTitle = false;
     this.toggleInput = false;
     this.togglePreview = true;
     this.togglePreviewButtons = true;
+    this.toggleBusinessDataInput = false;
   }
 
   backToInput() {
@@ -94,6 +96,7 @@ export class InvoiceComponent implements OnInit {
     this.togglePreview = false;
     this.toggleInput = true;
     this.togglePageTitle = true;
+    this.toggleBusinessDataInput = true;
   }
 
   saveAsImage() {
@@ -116,6 +119,13 @@ export class InvoiceComponent implements OnInit {
     };
     this.ps.createInvoicePdfFromData(paymentFormData);
   }
+  showBusinessDataForm() {
+    this.togglePageTitle = false;
+    this.toggleInput = false;
+    this.togglePreview = false;
+    this.togglePreviewButtons = false;
+    this.toggleBusinessData = true;
+  }
 
   saveBusinessData() {
     let formData: object = {
@@ -124,10 +134,7 @@ export class InvoiceComponent implements OnInit {
       business_phone: this.businessData.get("businessPhone").value,
       business_email: this.businessData.get("businessEmail").value,
     };
-    // console.log(formData);
     localStorage.setItem("belego_app_data", JSON.stringify(formData));
-    // localStorage.setItem('belego_gi', 'Hello world!');
-    // alert("Under construction");
     this.toggleBusinessData = false;
     this.togglePageTitle = true;
     this.toggleInput = true;
@@ -137,14 +144,6 @@ export class InvoiceComponent implements OnInit {
     this.toggleBusinessData = false;
     this.togglePageTitle = true;
     this.toggleInput = true;
-  }
-
-  showBusinessDataForm() {
-    this.togglePageTitle = false;
-    this.toggleInput = false;
-    this.togglePreview = false;
-    this.togglePreviewButtons = false;
-    this.toggleBusinessData = true;
   }
 
   getSavedData() {

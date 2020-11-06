@@ -4,6 +4,7 @@
     <a
       (click)="showBusinessDataForm()"
       matTooltip="Quittungsaussteller hinterlegen"
+      *ngIf="toggleBusinessDataInput"
       >AUSSTELLER</a
     >
   </div>
@@ -21,6 +22,7 @@
       mat-menu-item
       (click)="showBusinessDataForm()"
       matTooltip="Quittungsaussteller hinterlegen"
+      *ngIf="toggleBusinessDataInput"
     >
       <mat-icon>store</mat-icon>
       <span>AUSSTELLER</span>
@@ -43,7 +45,20 @@
   <table>
     <tr class="row1">
       <td class="col1">
-        <!-- <div class="document-title">QUITTUNG</div> -->
+        <br />
+        <span class="seller-data-title" (click)="showBusinessDataForm()"
+          >AUSSTELLER</span
+        >
+        <br />
+        <span class="seller-data">{{ getSavedData()[0] }}</span>
+        <br />
+        <span class="seller-data">{{ getSavedData()[1] }}</span>
+        <br />
+        <span class="seller-data">{{ getSavedData()[2] }}</span>
+        <br />
+        <span class="seller-data">{{ getSavedData()[3] }}</span>
+      </td>
+      <td class="col2">
         <mat-form-field class="invoice-number">
           <input
             matInput
@@ -51,10 +66,7 @@
             type="number"
             min="0"
             [formControl]="invoiceNumber"
-          />
-        </mat-form-field>
-      </td>
-      <td class="col2">
+        /></mat-form-field>
         <mat-form-field>
           <input
             matInput
