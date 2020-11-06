@@ -161,20 +161,6 @@ nav button:hover {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 600px) {
-  .receipt-box table tr.top table td {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-
-  .receipt-box table tr.information table td {
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
-}
-
 .trTitle {
   text-align: center;
   margin-left: 5em;
@@ -226,19 +212,6 @@ button {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
-  nav {
-    background-color: white;
-  }
-  .desktop-nav a {
-    display: none;
-  }
-  .mobile-nav {
-    float: right;
-    display: block;
-  }
-}
-
 .business-data {
   display: flex;
   flex-flow: column nowrap;
@@ -252,7 +225,7 @@ button {
 }
 
 .business-data mat-form-field {
-  width: 70%;
+  width: 50%;
 }
 
 .business-data-buttons {
@@ -264,4 +237,35 @@ button {
 
 .business-data-buttons button {
   margin: 00.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    background-color: white;
+  }
+
+  .desktop-nav a {
+    display: none;
+  }
+
+  .mobile-nav {
+    float: right;
+    display: block;
+  }
+
+  .receipt-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .receipt-box table tr.information table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .business-data mat-form-field {
+    width: 70%;
+  }
 }

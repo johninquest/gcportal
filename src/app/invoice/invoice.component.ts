@@ -25,7 +25,7 @@ export class InvoiceComponent implements OnInit {
   taxPercentage = new FormControl("");
   paidFor = new FormControl("");
   paidBy = new FormControl("");
-  paidTo = new FormControl("");
+  // paidTo = new FormControl("");
   transactionLocation = new FormControl("");
   transactionDate = new FormControl({
     value: dayjs().format("DD.MM.YYYY"),
@@ -47,10 +47,10 @@ export class InvoiceComponent implements OnInit {
   ];
 
   businessData = new FormGroup({
-    businessName: new FormControl(""),
-    businessAddress: new FormControl(""),
-    businessPhone: new FormControl(""),
-    businessEmail: new FormControl(""),
+    businessName: new FormControl(this.getSavedData()[0]),
+    businessAddress: new FormControl(this.getSavedData()[1]),
+    businessPhone: new FormControl(this.getSavedData()[2]),
+    businessEmail: new FormControl(this.getSavedData()[3]),
   });
 
   processDisplayedInputAmount(amtValue: number) {
@@ -111,7 +111,7 @@ export class InvoiceComponent implements OnInit {
       paymentAmountAfterTax: this.afterTaxTotal,
       paymentFor: this.paidFor.value,
       paymentBy: this.paidBy.value,
-      paymentTo: this.paidTo.value,
+      // paymentTo: this.paidTo.value,
       paymentExtraDetails: this.furtherDetails.value,
     };
     this.ps.createInvoicePdfFromData(paymentFormData);
