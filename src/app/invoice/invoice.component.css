@@ -116,6 +116,7 @@ nav button:hover {
   font-size: 1.4em;
   font-weight: bold;
   color: #808080;
+  margin-bottom: 0.5em;
 }
 
 .receipt-box table td {
@@ -261,6 +262,11 @@ button {
   .mobile-nav {
     float: right;
     display: block;
+  }
+
+  .receipt-box table caption {
+    text-align: center;
+    margin-bottom: 1em;
   }
 
   .receipt-box table tr.top table td {
