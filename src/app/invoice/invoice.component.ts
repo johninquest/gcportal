@@ -157,7 +157,7 @@ export class InvoiceComponent implements OnInit {
         parsedRawData.business_email,
       ];
     } else {
-      return ["", "", "", ""];
+      return ["Bitte hinterlegen", "", "", ""];
     }
   }
 
