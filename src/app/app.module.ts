@@ -12,6 +12,8 @@ import { GuestComponent } from "./guest/guest.component";
 import { InvoiceComponent } from "./invoice/invoice.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { ContactComponent } from "./contact/contact.component";
     FormsModule,
     ReactiveFormsModule,
     MaterialModules,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "de" },
