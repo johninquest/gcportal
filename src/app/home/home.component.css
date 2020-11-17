@@ -33,15 +33,15 @@ nav {
   font-weight: bold;
 }
 
-.start-btn {
+.start-btns {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
 
-.start-btn button {
+.start-btns button {
   font-size: 1em;
-  width: 15em;
+  width: 45%;
   height: 5em;
   border-radius: 0.8em;
   margin-top: 1em;
@@ -56,6 +56,11 @@ nav {
   .desktop-nav a:not(:first-child) {
     display: none;
   }
+
+  .start-btns button {
+    width: 70%;
+  }
+
   .mobile-nav {
     float: right;
     display: block;
