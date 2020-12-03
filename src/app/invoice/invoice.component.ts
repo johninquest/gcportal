@@ -42,9 +42,18 @@ export class InvoiceComponent implements OnInit {
   toggleBusinessDataInput: boolean = true;
 
   vats: Vatdesc[] = [
-    { value: 0, viewValue: "0 %" },
-    { value: 5, viewValue: "5 %" },
-    { value: 16, viewValue: "16 %" },
+    {
+      value: this.setVATByDate().zero,
+      viewValue: `${this.setVATByDate().zero} %`,
+    },
+    {
+      value: this.setVATByDate().reduced,
+      viewValue: `${this.setVATByDate().reduced} %`,
+    },
+    {
+      value: this.setVATByDate().full,
+      viewValue: `${this.setVATByDate().full} %`,
+    },
   ];
 
   businessData = new FormGroup({
@@ -53,6 +62,22 @@ export class InvoiceComponent implements OnInit {
     businessPhone: new FormControl(this.getSavedData()[2]),
     businessEmail: new FormControl(this.getSavedData()[3]),
   });
+
+  setVATByDate() {
+    let current_month: number = dayjs().month() + 1,
+      current_year: number = dayjs().year();
+    if (current_month >= 7 && current_year == 2020) {
+      let zeroVAT: number = 0,
+        reducedVAT: number = 5,
+        fullVAT: number = 16;
+      return { zero: zeroVAT, reduced: reducedVAT, full: fullVAT };
+    } else {
+      let zeroVAT: number = 0,
+        reducedVAT: number = 7,
+        fullVAT: number = 19;
+      return { zero: zeroVAT, reduced: reducedVAT, full: fullVAT };
+    }
+  }
 
   processDisplayedInputAmount(amtValue: number) {
     if (amtValue) {
@@ -161,7 +186,5 @@ export class InvoiceComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    // this.getSavedData();
-  }
+  ngOnInit(): void {}
 }
