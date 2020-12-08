@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { SwUpdate } from "@angular/service-worker";
 
 @Component({
   selector: "app-home",
@@ -6,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private swUpdate: SwUpdate) {}
 
   goToFacebook() {
     let targetUrl: string = "https://www.facebook.com/belego.de";
@@ -14,9 +15,11 @@ export class HomeComponent implements OnInit {
     window.focus();
   }
 
-  msg() {
-    alert("🚧 IST NOCH EINE BAUSTELLE 🚧");
-  }
+  /*   updateCache() {
+    if (this.swUpdate.available) {
+      window.location.reload();
+    }
+  } */
 
   ngOnInit() {}
 }
