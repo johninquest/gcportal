@@ -1,9 +1,9 @@
 <nav>
   <div class="desktop-nav">
     <a routerLink="/home">HOME</a>
-    <a routerLink="/about">ÜBER BELEGO</a>
+    <a routerLink="/about">ÜBER UNS</a>
     <a [matMenuTriggerFor]="solutions1">LÖSUNGEN</a>
-    <a routerLink="/kontakt">KONTAKT</a>
+    <a routerLink="/contact">CONTACT</a>
   </div>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
@@ -12,7 +12,7 @@
     </button>
     <button mat-menu-item routerLink="/about" matTooltip="Über BELEGO">
       <mat-icon>info</mat-icon>
-      <span>ÜBER BELEGO</span>
+      <span>ÜBER UNS</span>
     </button>
     <button
       [matMenuTriggerFor]="solutions2"
@@ -24,11 +24,11 @@
     </button>
     <button
       mat-menu-item
-      routerLink="/kontakt"
+      routerLink="/contact"
       matTooltip="So erreichen Sie uns"
     >
       <mat-icon>mail</mat-icon>
-      <span>KONTAKT</span>
+      <span>CONTACT</span>
     </button>
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
@@ -38,49 +38,21 @@
 
 <div class="title">
   <p>
-    <img src="assets/home_title_xmas.png">
+    <span>JOHN APPS</span>
+    <!-- <img src="assets/home_title_xmas.png" /> -->
     <br />
-    <span style="font-size: 0.6em">
-      Belege kostenlos erstellen
-    </span>
+    <span style="font-size: 0.6em"> building apps the john way </span>
   </p>
 </div>
 
-<div class="start-btns">
-  <button
-    mat-raised-button
-    color="primary"
-    matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus erstellen"
-    routerLink="/besuchsbeleg"
-  >
-    BESUCHSBELEG
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    routerLink="/quittung"
-  >
-    QUITTUNG
-  </button>
-  <button
-    mat-raised-button
-    color="primary"
-    matTooltip="Schadensbeleg erstellen"
-    disabled
-  >
-    SCHADENSBELEG
-  </button>
-</div>
-
 <mat-menu #solutions1="matMenu">
-  <a
+  <!-- <a
     mat-menu-item
     matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus erstellen"
     routerLink="/besuchsbeleg"
   >
     <span>BESUCHSBELEG</span>
-  </a>
+  </a> -->
   <a
     mat-menu-item
     matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
@@ -97,14 +69,14 @@
 </mat-menu>
 
 <mat-menu #solutions2="matMenu">
-  <button
+  <!-- <button
     mat-menu-item
     matTooltip="Besuchsbeleg für die Gastronomie aufgrund der aktuellen Situation zum Coronavirus erstellen"
     routerLink="/besuchsbeleg"
   >
     <mat-icon>create</mat-icon>
     <span>BESUCHSBELEG</span>
-  </button>
+  </button> -->
   <button
     mat-menu-item
     matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
