@@ -1,4 +1,4 @@
-# simple web tool for generating and sharing business documents digitally
+# johnapps -> my private business website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
