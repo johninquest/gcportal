@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "belego": {
+    "johnapps": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -14,12 +14,16 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/belego",
+            "outputPath": "dist/johnapps",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/assets", "src/favicon.png", "src/manifest.webmanifest"],
+            "assets": [
+              "src/assets",
+              "src/favicon.png",
+              "src/manifest.webmanifest"
+            ],
             "styles": ["src/style.scss"],
             "scripts": []
           },
@@ -59,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "belego:build"
+            "browserTarget": "johnapps:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "belego:build:production"
+              "browserTarget": "johnapps:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "belego:build"
+            "browserTarget": "johnapps:build"
           }
         },
         "test": {
@@ -82,7 +86,11 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": ["src/styles.css"],
             "scripts": [],
-            "assets": ["src/favicon.png", "src/assets", "src/manifest.webmanifest"]
+            "assets": [
+              "src/favicon.png",
+              "src/assets",
+              "src/manifest.webmanifest"
+            ]
           }
         },
         "lint": {
@@ -94,7 +102,7 @@
         }
       }
     },
-    "belego-e2e": {
+    "johnapps-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -103,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "belego:serve"
+            "devServerTarget": "johnapps:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "belego:serve:production"
+              "devServerTarget": "johnapps:serve:production"
             }
           }
         },
@@ -121,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "belego"
+  "defaultProject": "johnapps"
 }

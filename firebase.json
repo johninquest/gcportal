@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/belego",
+    "public": "dist/johnapps",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
