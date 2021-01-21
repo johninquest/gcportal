@@ -1,13 +1,13 @@
 nav {
-  background-color: #64b5f6;
+  background-color: #ffb300;
   height: 3em;
 }
 
 nav button:hover {
-  background-color: #64b5f6;
+  background-color: #ffb300;
 }
 .mat-menu-item:hover {
-  background-color: #64b5f6;
+  background-color: #ffb300;
 }
 
 .page-title {
@@ -15,11 +15,13 @@ nav button:hover {
   margin: 1em;
   font-weight: bold;
   font-size: 1em;
+  color: #ffb300;
 }
 
 .message {
   text-align: center;
   margin-top: 4em;
+  color: beige;
 }
 
 .content {
@@ -37,7 +39,7 @@ nav button:hover {
 }
 
 i {
-  color: #64b5f6;
+  color: #ffb300;
   font-size: 4em !important;
 }
 
@@ -45,7 +47,7 @@ i {
   float: left;
   text-align: center;
   font-weight: bold;
-  color: white;
+  color: beige;
   margin: 1em;
   text-decoration: none;
 }
@@ -56,7 +58,7 @@ i {
 
 @media screen and (max-width: 600px) {
   nav {
-    background-color: white;
+    background-color: #ffb300;
   }
   .desktop-nav a {
     display: none;

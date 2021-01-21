@@ -1,7 +1,7 @@
 @import "~@angular/material/theming";
 @include mat-core();
 
-$mytheme-primary: mat-palette($mat-yellow, 700); // #FBC02D
+$mytheme-primary: mat-palette($mat-yellow, 600); // #FFB300
 $mytheme-accent: mat-palette($mat-grey, 300); // #E0E0E0
 $mytheme-warn: mat-palette($mat-red, 500); // #F44336
 
@@ -15,3 +15,7 @@ $myfont: "Lato", sans-serif;
   font: 100% $myfont;
 }
 /* Add !important to overwrite all elements */
+
+html {
+  background-color: #424242;
+}
