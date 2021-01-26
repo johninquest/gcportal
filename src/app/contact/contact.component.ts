@@ -8,6 +8,7 @@ import { Component, OnInit } from "@angular/core";
 export class ContactComponent implements OnInit {
   constructor() {}
 
+  /*  
   goToFacebook() {
     let targetUrl: string = "https://www.facebook.com/belego.de";
     window.open(targetUrl, "_blank");
@@ -24,6 +25,10 @@ export class ContactComponent implements OnInit {
     let targetUrl: string = "";
     window.open(targetUrl, "_blank");
     window.focus();
+  }
+*/
+  showEmailAddress() {
+    alert("demnächst verfügbar");
   }
 
   ngOnInit(): void {}

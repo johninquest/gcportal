@@ -20,7 +20,8 @@ nav button:hover {
 
 .message {
   text-align: center;
-  margin-top: 4em;
+  margin-top: 3em;
+  margin-bottom: 0.5em;
   color: beige;
 }
 
@@ -54,6 +55,10 @@ i {
 
 .mobile-nav {
   display: none;
+}
+
+.mail {
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
