@@ -21,7 +21,7 @@ nav {
 .mat-menu-item:hover {
   background-color: #ffb300;
 }
-
+/*
 .title {
   text-align: center;
   margin-top: 5em;
@@ -32,6 +32,22 @@ nav {
   font-size: 2em;
   font-weight: bold;
   color: beige;
+}
+*/
+.title {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.title img {
+  width: 100%;
+  height: auto;
+}
+
+.message {
+  text-align: center;
+  color: beige;
+  font-size: 1.5em;
 }
 
 .start-btns {
