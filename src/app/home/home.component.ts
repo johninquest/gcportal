@@ -15,6 +15,13 @@ export class HomeComponent implements OnInit {
     window.focus();
   }
 
+  goToCoinEcke() {
+    let targetUrl: string =
+      "https://play.google.com/store/apps/details?id=de.example.cpapp";
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
   /*   updateCache() {
     if (this.swUpdate.available) {
       window.location.reload();

@@ -50,6 +50,17 @@ nav {
   font-size: 1.5em;
 }
 
+a span {
+  color: #424242;
+  font-weight: bold;
+}
+
+button span {
+  color: #424242;
+  font-weight: bold;
+}
+
+/*
 .start-btns {
   display: flex;
   flex-flow: column nowrap;
@@ -64,6 +75,7 @@ nav {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+*/
 
 .menu-btn {
   width: 17em;

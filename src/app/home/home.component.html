@@ -36,6 +36,49 @@
   </button>
 </nav>
 
+<div class="title">
+  <img src="assets/frontpage.svg" alt="john apps" />
+</div>
+
+<div class="message">simple app solutions</div>
+
+<mat-menu #solutions1="matMenu">
+  <a
+    mat-menu-item
+    matTooltip="Kryptowährung Kurse, Nachrichten und Portfolio"
+    (click)="goToCoinEcke()"
+  >
+    <span>COINECKE</span>
+  </a>
+  <a
+    mat-menu-item
+    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
+    routerLink="/quittung"
+    disabled
+  >
+    <span>QUITTUNG</span>
+  </a>
+</mat-menu>
+
+<mat-menu #solutions2="matMenu">
+  <button
+    mat-menu-item
+    matTooltip="Kryptowährung Kurse, Nachrichten und Portfolio"
+    (click)="goToCoinEcke()"
+  >
+    <!-- <mat-icon>shopping_cart</mat-icon> -->
+    <span>COINECKE</span>
+  </button>
+  <button
+    mat-menu-item
+    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
+    routerLink="/quittung"
+    disabled
+  >
+    <span>QUITTUNG</span>
+  </button>
+</mat-menu>
+
 <!-- 
 <div class="title">
   <p>
@@ -46,38 +89,3 @@
   </p>
 </div>
 -->
-<div class="title">
-  <img src="assets/frontpage.svg" alt="john apps" />
-</div>
-
-<div class="message">simple app solutions</div>
-
-<mat-menu #solutions1="matMenu">
-  <a
-    mat-menu-item
-    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    routerLink="/quittung"
-    disabled
-  >
-    <span>QUITTUNG</span>
-  </a>
-  <a mat-menu-item matTooltip="Schadensbeleg erstellen" disabled>
-    <span>SCHADENSBELEG</span>
-  </a>
-</mat-menu>
-
-<mat-menu #solutions2="matMenu">
-  <button
-    mat-menu-item
-    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    routerLink="/quittung"
-    disabled
-  >
-    <mat-icon>shopping_cart</mat-icon>
-    <span>QUITTUNG</span>
-  </button>
-  <button mat-menu-item matTooltip="Schadensbeleg erstellen" disabled>
-    <mat-icon>broken_image</mat-icon>
-    <span>SCHADENSBELEG</span>
-  </button>
-</mat-menu>
