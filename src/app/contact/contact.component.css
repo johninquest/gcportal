@@ -10,12 +10,13 @@ nav button:hover {
   background-color: #ffb300;
 }
 
-.page-title {
+.title {
+  text-transform: uppercase;
   text-align: center;
-  margin: 2em;
+  margin-top: 4em;
   font-weight: bold;
   font-size: 1em;
-  color: #ffb300;
+  color: beige;
 }
 
 .mail {
