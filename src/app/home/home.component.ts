@@ -22,11 +22,15 @@ export class HomeComponent implements OnInit {
     window.focus();
   }
 
-  /*   updateCache() {
-    if (this.swUpdate.available) {
-      window.location.reload();
-    }
-  } */
+  goToQuittungApp() {
+    let targetUrl: string = "https://belego.de/quittung";
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
+  comingSoonMessage() {
+    alert("DEMNÄCHST VERFÜGBAR");
+  }
 
   ngOnInit() {}
 }

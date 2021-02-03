@@ -96,3 +96,19 @@ button span {
     color: beige;
   }
 }
+
+.footer {
+  margin-top: 21.5em;
+}
+
+.footer p {
+  text-align: center;
+}
+
+.footer p a {
+  color: beige;
+  text-decoration: none;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  font-weight: bold;
+}

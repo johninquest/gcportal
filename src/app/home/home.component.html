@@ -53,10 +53,9 @@
   <a
     mat-menu-item
     matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    routerLink="/quittung"
-    disabled
+    (click)="goToQuittungApp()"
   >
-    <span>QUITTUNG</span>
+    <span style="color: #64b5f6">QUITTUNG</span>
   </a>
 </mat-menu>
 
@@ -72,10 +71,9 @@
   <button
     mat-menu-item
     matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    routerLink="/quittung"
-    disabled
+    (click)="goToQuittungApp()"
   >
-    <span>QUITTUNG</span>
+    <span style="color: #64b5f6">QUITTUNG</span>
   </button>
 </mat-menu>
 
@@ -89,3 +87,10 @@
   </p>
 </div>
 -->
+
+<div class="footer">
+  <p>
+    <a (click)="comingSoonMessage()">Impressum</a>
+    <a (click)="comingSoonMessage()">Datenschutz</a>
+  </p>
+</div>
