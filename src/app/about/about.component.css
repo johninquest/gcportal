@@ -26,31 +26,6 @@ nav button:hover {
   color: beige;
 }
 
-.footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-}
-
-.footer .footer-title {
-  font-size: 0.9em;
-  font-weight: bold;
-  text-align: center;
-  color: beige;
-}
-
-.footer .footer-message {
-  font-size: 0.8em;
-  text-align: center;
-  color: beige;
-}
-
-.footer .footer-message a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffb300;
-}
-
 .desktop-nav a {
   float: left;
   text-align: center;
@@ -78,27 +53,26 @@ nav button:hover {
   }
 }
 
-/*
-.highlights {
-  margin-top: 3em;
+.footer {
+  text-align: center;
+  margin-top: 21em;
 }
 
-.highlights-title {
+.footer .footer-title {
+  font-size: 0.9em;
   font-weight: bold;
   text-align: center;
-  margin: 0;
   color: beige;
 }
 
-.highlights ul {
-  text-align: left;
-  margin: 0;
+.footer .footer-message {
+  font-size: 0.8em;
+  text-align: center;
   color: beige;
 }
 
-.offer-item {
+.footer .footer-message a {
   font-weight: bold;
+  text-decoration: none;
   color: #ffb300;
-  cursor: pointer;
 }
-*/

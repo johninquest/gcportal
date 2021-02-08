@@ -21,19 +21,7 @@ nav {
 .mat-menu-item:hover {
   background-color: #ffb300;
 }
-/*
-.title {
-  text-align: center;
-  margin-top: 5em;
-  margin-bottom: 1.5em;
-}
 
-.title p {
-  font-size: 2em;
-  font-weight: bold;
-  color: beige;
-}
-*/
 .title {
   text-align: center;
   margin-top: 4em;
@@ -59,23 +47,6 @@ button span {
   color: #424242;
   font-weight: bold;
 }
-
-/*
-.start-btns {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
-.start-btns button {
-  font-size: 1em;
-  width: 30%;
-  height: 5em;
-  border-radius: 0.8em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-*/
 
 .menu-btn {
   width: 17em;
