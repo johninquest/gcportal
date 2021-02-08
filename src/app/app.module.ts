@@ -13,8 +13,7 @@ import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
-import { SolutionsComponent } from './solutions/solutions.component';
-import { ImprintComponent } from './imprint/imprint.component';
+import { SolutionsComponent } from "./solutions/solutions.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { ImprintComponent } from './imprint/imprint.component';
     AboutComponent,
     ContactComponent,
     SolutionsComponent,
-    ImprintComponent,
   ],
   imports: [
     BrowserModule,

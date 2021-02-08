@@ -14,24 +14,29 @@ nav button:hover {
   text-transform: uppercase;
   text-align: center;
   margin-top: 4em;
+  margin-bottom: 2em;
   font-weight: bold;
   font-size: 1em;
+  font-style: italic;
   color: beige;
 }
 
 .mail {
-  margin-top: 4em;
   text-align: center;
+  color: #ffb300;
 }
 
 .mail a {
-  font-size: 1.2em;
   color: beige;
 }
 
-.mail mat-icon {
-  font-size: 2em;
-  color: #ffb300;
+.address {
+  text-align: center;
+  color: beige;
+}
+
+.address a {
+  color: beige;
 }
 
 .desktop-nav a {
