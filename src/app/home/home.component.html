@@ -1,100 +1,12 @@
-<nav>
-  <div class="desktop-nav">
-    <a routerLink="/home">HOME</a>
-    <a routerLink="/about">ABOUT</a>
-    <!-- <a [matMenuTriggerFor]="solutions1">SOLUTIONS</a> -->
-    <a routerLink="/solutions">SOLUTIONS</a>
-    <a routerLink="/contact">CONTACT</a>
-  </div>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/home" matTooltip="Home">
-      <mat-icon>home</mat-icon>
-      <span>HOME</span>
-    </button>
-    <button mat-menu-item routerLink="/about" matTooltip="Über uns">
-      <mat-icon>info</mat-icon>
-      <span>ABOUT</span>
-    </button>
-    <button mat-menu-item routerLink="/solutions" matTooltip="Unsere Lösungen">
-      <mat-icon>build</mat-icon>
-      <span>SOLUTIONS</span>
-    </button>
-    <!--     <button
-      [matMenuTriggerFor]="solutions2"
-      mat-menu-item
-      matTooltip="Unsere Lösungen"
-    >
-      <mat-icon>build</mat-icon>
-      <span>SOLUTIONS</span>
-    </button> -->
-    <button
-      mat-menu-item
-      routerLink="/contact"
-      matTooltip="So erreichen Sie uns"
-    >
-      <mat-icon>mail</mat-icon>
-      <span>CONTACT</span>
-    </button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
-    <mat-icon>menu</mat-icon>
-  </button>
-</nav>
-
 <div class="title">
   <img src="assets/frontpage.svg" alt="JOHN APPS" />
 </div>
 
 <div class="message">simple app solutions</div>
-<!-- 
-<mat-menu #solutions1="matMenu">
-  <a
-    mat-menu-item
-    matTooltip="Kryptowährung Kurse, Nachrichten und Portfolio"
-    (click)="goToCoinEcke()"
-  >
-    <span style="color: teal">CoinEcke</span>
-  </a>
-  <a
-    mat-menu-item
-    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    (click)="goToQuittungApp()"
-  >
-    <span style="color: #64b5f6">QUITTUNG</span>
-  </a>
-</mat-menu>
-
-<mat-menu #solutions2="matMenu">
-  <button
-    mat-menu-item
-    matTooltip="Kryptowährung Kurse, Nachrichten und Portfolio"
-    (click)="goToCoinEcke()"
-  >
-    <mat-icon>shopping_cart</mat-icon>
-    <span style="color: teal">CoinEcke</span>
-  </button>
-  <button
-    mat-menu-item
-    matTooltip="Quittung für den Kauf bzw. Verkauf erstellen"
-    (click)="goToQuittungApp()"
-  >
-    <span style="color: #64b5f6">QUITTUNG</span>
-  </button>
-</mat-menu>
-
-<div class="title">
-  <p>
-    <span>john apps</span>
-    <img src="assets/home_title_xmas.png" />
-    <br />
-    <span style="font-size: 0.6em"> simple app solutions </span>
-  </p>
-</div>
--->
 
 <div class="footer">
   <p>
-    <a routerLink="/contact">Impressum</a>
-    <a (click)="comingSoonMessage()">Datenschutz</a>
+    <a routerLink="/contact">Imprint</a>
+    <a routerLink="/about">Privacy</a>
   </p>
 </div>

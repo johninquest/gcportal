@@ -1,24 +1,4 @@
-<nav>
-  <div class="desktop-nav">
-    <a routerLink="/home" matTooltip="zur Startseite zurückkehren">HOME</a>
-  </div>
-
-  <mat-menu #menu="matMenu">
-    <button
-      mat-menu-item
-      routerLink="/home"
-      matTooltip="zur Startseite zurückkehren"
-    >
-      <mat-icon>home</mat-icon>
-      <span>HOME</span>
-    </button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
-    <mat-icon>menu</mat-icon>
-  </button>
-</nav>
-
-<div class="title" matTooltip="about">über uns</div>
+<div class="title" matTooltip="about">about</div>
 
 <div class="description">
   Wir entwickeln Mobile (App)- und Web-Lösungen in den Bereichen Finanzen,

@@ -1,27 +1,22 @@
-<nav>
-  <div class="desktop-nav">
-    <a routerLink="/home" matTooltip="zur Startseite zurückkehren">HOME</a>
-  </div>
-
-  <mat-menu #menu="matMenu">
-    <button
-      mat-menu-item
-      routerLink="/home"
-      matTooltip="zur Startseite zurückkehren"
-    >
-      <mat-icon>home</mat-icon>
-      <span>HOME</span>
-    </button>
-  </mat-menu>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
-    <mat-icon>menu</mat-icon>
-  </button>
-</nav>
-
 <div class="title" matTooltip="Unsere Lösungen">lösungen</div>
 
 <div class="solutions">
-  <ul>
+  <div class="item">
+    <p (click)="goToCoinEckeApp()">
+      <span style="font-weight: bold">CoinEcke</span
+      ><span> - Kryptowährung Kurse, Nachrichten und Portfolio</span><br />
+      <span>
+        <img src="assets/google_play_badge_de.png" alt="JOHN APPS" />
+      </span>
+    </p>
+  </div>
+  <div class="item">
+    <p (click)="goToQuittungApp()">
+      <span style="font-weight: bold">Quittung</span>
+      <span> - Eine einfaches Webtool für die Erstellung von Quittungen</span>
+    </p>
+  </div>
+  <!-- <ul>
     <li>
       <p (click)="goToCoinEckeApp()">
         <span style="font-weight: bold">CoinEcke</span
@@ -37,5 +32,5 @@
         <span> - Eine einfaches Webtool für die Erstellung von Quittungen</span>
       </p>
     </li>
-  </ul>
+  </ul> -->
 </div>

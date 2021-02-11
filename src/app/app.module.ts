@@ -14,6 +14,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { SolutionsComponent } from "./solutions/solutions.component";
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SolutionsComponent } from "./solutions/solutions.component";
     AboutComponent,
     ContactComponent,
     SolutionsComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

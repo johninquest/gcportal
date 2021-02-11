@@ -1,0 +1,33 @@
+<nav>
+  <div class="desktop-nav">
+    <a routerLink="/home">HOME</a>
+    <a routerLink="/about">ABOUT</a>
+    <a routerLink="/solutions">SOLUTIONS</a>
+    <a routerLink="/contact">CONTACT</a>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/home" matTooltip="Home">
+      <mat-icon>home</mat-icon>
+      <span>HOME</span>
+    </button>
+    <button mat-menu-item routerLink="/about" matTooltip="Über uns">
+      <mat-icon>info</mat-icon>
+      <span>ABOUT</span>
+    </button>
+    <button mat-menu-item routerLink="/solutions" matTooltip="Unsere Lösungen">
+      <mat-icon>build</mat-icon>
+      <span>SOLUTIONS</span>
+    </button>
+    <button
+      mat-menu-item
+      routerLink="/contact"
+      matTooltip="So erreichen Sie uns"
+    >
+      <mat-icon>mail</mat-icon>
+      <span>CONTACT</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
+    <mat-icon>menu</mat-icon>
+  </button>
+</nav>

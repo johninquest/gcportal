@@ -1,0 +1,39 @@
+nav {
+  background-color: #ffb300;
+  height: 3em;
+}
+
+.desktop-nav a {
+  font-weight: bold;
+  color: beige;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  display: block;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mat-menu-item:hover {
+  background-color: #ffb300;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-nav a:not(:first-child) {
+    display: none;
+  }
+
+  .start-btns button {
+    width: 60%;
+  }
+
+  .mobile-nav {
+    float: right;
+    display: block;
+    color: beige;
+  }
+}
