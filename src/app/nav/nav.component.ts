@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
+import { TranslateService } from "@ngx-translate/core";
 
 interface Language {
   value: string;
@@ -12,7 +13,20 @@ interface Language {
   styleUrls: ["./nav.component.css"],
 })
 export class NavComponent implements OnInit {
-  constructor() {}
+  constructor(private translate: TranslateService) {
+    // translate.addLangs(["en", "de"]);
+    translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
+  }
+
+  getBrowserLanguage(sysLanguage: string) {
+    let languageToLowerCase = sysLanguage.toLocaleLowerCase();
+    let isDE = languageToLowerCase.startsWith("de");
+    if (isDE) {
+      return "de";
+    } else {
+      return "en";
+    }
+  }
 
   selectedLanguage = new FormControl("en");
 
@@ -21,13 +35,18 @@ export class NavComponent implements OnInit {
     { value: "de", viewValue: "DE" },
   ];
 
-  changeLanguage() {
+  useLanguage(myValue: string) {
     console.log("Language has changed!");
+    console.log(this.selectedLanguage.value);
+    this.translate.use(this.selectedLanguage.value);
   }
 
-  onChanges(): void {
-    this.selectedLanguage.valueChanges.subscribe(() => this.changeLanguage());
+  /*  onChanges(): void {
+    this.selectedLanguage.valueChanges.subscribe(() => this.useLanguage());
   }
+ */
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(navigator.language);
+  }
 }

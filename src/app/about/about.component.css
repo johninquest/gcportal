@@ -20,7 +20,8 @@
 }
 
 .footer .footer-title {
-  font-size: 0.9em;
+  text-transform: uppercase;
+  font-size: 0.8em;
   font-weight: bold;
   text-align: center;
   color: beige;

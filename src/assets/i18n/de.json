@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ÜBER UNS",
+    "solutions": "LÖSUNGEN",
+    "contact": "KONTAKT"
+  },
+  "home": {
+    "title": "",
+    "message": "simple app lösungen",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  },
+  "about": {
+    "title": "über uns",
+    "description": "Wir entwickeln Mobile (App)- und Web-Softwarelösungen für die Bereiche Finanzen, Management und Verwaltung.",
+    "privacy-title": "datenschutzerklärung",
+    "privacy-message": ""
+  },
+  "solutions": {
+    "title": "lösungen",
+    "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
+    "quittung": " - Eine einfaches Webtool für die Erstellung von Quittungen."
+  },
+  "contact": {
+    "title": "kontakt"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "solutions": "SOLUTIONS",
+    "contact": "CONTACT"
+  },
+  "home": {
+    "message": "simple app solutions",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  },
+  "about": {
+    "title": "about",
+    "description": "We build mobile (app) and web software solutions for business, finance and governance.",
+    "privacy-title": "privacy policy",
+    "privacy-message": "coming soon"
+  },
+  "solutions": {
+    "title": "solutions",
+    "coinecke": " - A simple android app for viewing cryptocurrency prices, crypto-related news and tracking your favorite coins.",
+    "quittung": " - A simple web tool for generating receipts on the go."
+  },
+  "contact": {
+    "title": "contact"
+  }
+}

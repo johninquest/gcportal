@@ -26,6 +26,10 @@ nav ul li a {
   text-align: center;
 }
 
+nav ul li a:focus {
+  color: #424242;
+}
+
 nav ul li div {
   text-decoration: none;
   padding: 1em;
@@ -36,6 +40,10 @@ nav ul li div {
 
 nav ul li div mat-select {
   width: 3em;
+}
+
+nav ul li div mat-select::-ms-expand {
+  display: none;
 }
 
 nav ul li a:hover {

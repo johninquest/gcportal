@@ -1,10 +1,18 @@
 <nav>
   <ul class="desktop-nav">
-    <li><a routerLink="/home">HOME</a></li>
-    <li><a routerLink="/about">ABOUT</a></li>
-    <li><a routerLink="/solutions">SOLUTIONS</a></li>
-    <li><a routerLink="/contact">CONTACT</a></li>
     <li>
+      <a routerLink="/home">HOME</a>
+    </li>
+    <li>
+      <a routerLink="/about">{{ "nav.about" | translate }}</a>
+    </li>
+    <li>
+      <a routerLink="/solutions">{{ "nav.solutions" | translate }}</a>
+    </li>
+    <li>
+      <a routerLink="/contact">{{ "nav.contact" | translate }}</a>
+    </li>
+    <!-- <li>
       <div class="language">
         <mat-select [formControl]="selectedLanguage">
           <mat-option
@@ -14,7 +22,7 @@
           >
         </mat-select>
       </div>
-    </li>
+    </li> -->
   </ul>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
@@ -23,11 +31,11 @@
     </button>
     <button mat-menu-item routerLink="/about" matTooltip="Über uns">
       <mat-icon>info</mat-icon>
-      <span>ABOUT</span>
+      <span>{{ "nav.about" | translate }}</span>
     </button>
     <button mat-menu-item routerLink="/solutions" matTooltip="Unsere Lösungen">
       <mat-icon>build</mat-icon>
-      <span>SOLUTIONS</span>
+      <span>{{ "nav.solutions" | translate }}</span>
     </button>
     <button
       mat-menu-item
@@ -35,15 +43,15 @@
       matTooltip="So erreichen Sie uns"
     >
       <mat-icon>mail</mat-icon>
-      <span>CONTACT</span>
+      <span>{{ "nav.contact" | translate }}</span>
     </button>
-    <br />
+    <!-- <br />
     <div class="language-toggle">
       <mat-button-toggle-group #toggleBtnGroup="matButtonToggleGroup">
         <mat-button-toggle value="de">DE</mat-button-toggle>
         <mat-button-toggle value="en" checked>EN</mat-button-toggle>
       </mat-button-toggle-group>
-    </div>
+    </div> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
     <mat-icon>menu</mat-icon>
