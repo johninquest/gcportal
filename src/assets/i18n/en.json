@@ -12,13 +12,13 @@
   },
   "about": {
     "title": "about",
-    "description": "We build mobile (app) and web software solutions for business, finance and governance.",
-    "privacy-title": "privacy policy",
-    "privacy-message": "coming soon"
+    "description": "We build mobile (app) and web software solutions for administration, business and finance.",
+    "privacy-title": "privacy notice",
+    "privacy-message": "This website does not collect, store or forward any personal information from its visitors in accordance with global internet privacy regulations (such as the EU's GDPR). This privacy disclaimer only applies to mandiguide.com. It does not apply to third-party applications or websites linked on the site"
   },
   "solutions": {
     "title": "solutions",
-    "coinecke": " - A simple android app for viewing cryptocurrency prices, crypto-related news and tracking your favorite coins.",
+    "coinecke": " - An android app for viewing cryptocurrency prices, crypto-related news and tracking your favorite coins.",
     "quittung": " - A simple web tool for generating receipts on the go."
   },
   "contact": {
