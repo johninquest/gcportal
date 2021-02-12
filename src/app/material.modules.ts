@@ -17,6 +17,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCardModule } from "@angular/material/card";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { from } from "rxjs";
 
 @NgModule({
@@ -39,6 +40,7 @@ import { from } from "rxjs";
     MatExpansionModule,
     MatCardModule,
     MatSnackBarModule,
+    MatButtonToggleModule,
   ],
   exports: [
     MatButtonModule,
@@ -59,6 +61,7 @@ import { from } from "rxjs";
     MatExpansionModule,
     MatCardModule,
     MatSnackBarModule,
+    MatButtonToggleModule,
   ],
 })
 export class MaterialModules {}

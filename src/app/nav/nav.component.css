@@ -1,9 +1,48 @@
 nav {
   background-color: #ffb300;
   height: 3em;
+  width: 100%;
+  left: 0;
+  text-align: center;
 }
 
-.desktop-nav a {
+nav ul {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+nav ul li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  list-style-type: none;
+}
+nav ul li a {
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+  color: beige;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li div {
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+nav ul li div mat-select {
+  width: 3em;
+}
+
+nav ul li a:hover {
+  color: #424242;
+}
+
+/* .desktop-nav a {
   font-weight: bold;
   color: beige;
   margin: 1em;
@@ -14,6 +53,10 @@ nav {
   cursor: pointer;
 }
 
+.desktop-nav a:hover {
+  color: #424242;
+} */
+
 .mobile-nav {
   display: none;
 }
@@ -22,13 +65,17 @@ nav {
   background-color: #ffb300;
 }
 
+.menu-btn {
+  width: 17em;
+}
+
 @media screen and (max-width: 600px) {
-  .desktop-nav a:not(:first-child) {
+  nav ul li:not(:first-child) {
     display: none;
   }
 
-  .start-btns button {
-    width: 60%;
+  nav {
+    text-align: left;
   }
 
   .mobile-nav {
@@ -36,4 +83,36 @@ nav {
     display: block;
     color: beige;
   }
+
+  .language-toggle {
+    text-align: center;
+  }
 }
+
+/*
+#nav {
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    background-color: #2C64B4;
+    width: 100%;
+    text-align: center;
+}
+#nav ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+#nav ul li {
+    margin: 0;
+    padding: 0;
+    float:left;
+}
+#nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #FFF;
+    text-align: center;
+}
+*/
