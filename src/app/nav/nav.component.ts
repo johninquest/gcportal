@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { TranslateService } from "@ngx-translate/core";
+// import { FormControl } from "@angular/forms";
+// import { TranslateService } from "@ngx-translate/core";
 
 interface Language {
   value: string;
@@ -13,7 +13,9 @@ interface Language {
   styleUrls: ["./nav.component.css"],
 })
 export class NavComponent implements OnInit {
-  constructor(private translate: TranslateService) {
+  constructor() {}
+
+  /*   constructor(private translate: TranslateService) {
     // translate.addLangs(["en", "de"]);
     translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
   }
@@ -40,13 +42,6 @@ export class NavComponent implements OnInit {
     console.log(this.selectedLanguage.value);
     this.translate.use(this.selectedLanguage.value);
   }
-
-  /*  onChanges(): void {
-    this.selectedLanguage.valueChanges.subscribe(() => this.useLanguage());
-  }
  */
-
-  ngOnInit(): void {
-    console.log(navigator.language);
-  }
+  ngOnInit(): void {}
 }
