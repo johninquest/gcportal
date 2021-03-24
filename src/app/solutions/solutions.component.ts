@@ -8,6 +8,13 @@ import { Component, OnInit } from "@angular/core";
 export class SolutionsComponent implements OnInit {
   constructor() {}
 
+  goToPazeApp() {
+    let targetUrl: string =
+      "https://play.google.com/store/apps/details?id=de.johnapps.mytime";
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
   goToCoinEckeApp() {
     let targetUrl: string =
       "https://play.google.com/store/apps/details?id=de.example.cpapp";
