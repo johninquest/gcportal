@@ -2,11 +2,13 @@
   <img src="assets/frontpage.svg" alt="JOHN APPS" />
 </div>
 
-<div class="message">{{ "home.message" | translate }}</div>
+<div routerLink="/solutions" class="message">
+  {{ "home.message" | translate }}
+</div>
 
 <div class="footer">
   <p>
-    <a routerLink="/contact">{{ "home.imprint" | translate }}</a>
-    <a routerLink="/about">{{ "home.privacy" | translate }}</a>
+    <a (click)="comingSoonMessage()">{{ "home.imprint" | translate }}</a>
+    <a routerLink="/privacy">{{ "home.privacy" | translate }}</a>
   </p>
 </div>

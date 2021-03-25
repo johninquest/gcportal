@@ -17,9 +17,13 @@
     "privacy-title": "datenschutzerklärung",
     "privacy-message": "Auf dieser Seite werden keine personenbezogene Daten im Sinne der EU-Datenschutz-Grundverordnung (DSGVO) erhoben. Die Erklärung zum Datenschutz gilt nur für dieser Seite. Sie trifft nicht zu für Webseiten, auf die verlinkt wird (Drittwebsieten)."
   },
+  "privacy": {
+    "title": "datenschutzerklärung",
+    "details": "Auf dieser Seite werden keine personenbezogene Daten im Sinne der EU-Datenschutz-Grundverordnung (DSGVO) erhoben. Die Erklärung zum Datenschutz gilt nur für dieser Seite. Sie trifft nicht zu für Webseiten, auf die verlinkt wird (Drittwebsieten)."
+  },
   "solutions": {
     "title": "lösungen",
-    "paze": " - Arbeitszeiterfassung für Privatpersonen.",
+    "paze": " - Eine kostenlose Android-App, mit der Sie Ihre Arbeitszeiten erfassen und im Blick behalten können.",
     "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
     "quittung": " - Ein einfaches Webtool für die Erstellung von Quittungen."
   },

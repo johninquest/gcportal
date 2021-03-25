@@ -1,0 +1,15 @@
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4em;
+  font-weight: bold;
+  font-size: 1em;
+  font-style: italic;
+  color: beige;
+}
+
+.description {
+  text-align: center;
+  margin: 1em 5em 1em 5em;
+  color: beige;
+}

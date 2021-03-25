@@ -16,6 +16,10 @@
     "privacy-title": "privacy notice",
     "privacy-message": "This website does not collect, store or forward any personal information from its visitors in accordance with global internet privacy regulations (such as the EU's GDPR). This privacy disclaimer only applies to mandiguide.com. It does not apply to third-party applications or websites linked on the site"
   },
+  "privacy": {
+    "title": "data privacy statement",
+    "details": "This website does not collect, store or forward any personal information from its visitors in accordance with global internet privacy regulations (such as the EU's GDPR). This privacy disclaimer only applies to mandiguide.com. It does not apply to third-party applications or websites linked on the site."
+  },
   "solutions": {
     "title": "solutions",
     "paze": " - An simple android app for keeping track of your working hours.",
