@@ -4,7 +4,46 @@
   {{ "about.description" | translate }}
 </div>
 
-<!-- <div class="footer">
-  <div class="footer-title">{{ "about.privacy-title" | translate }}</div>
-  <div class="footer-message">{{ "about.privacy-message" | translate }}</div>
-</div> -->
+<div class="technologies">
+  <div class="title" matTooltip="technology stack">
+    {{ "about.technologies" | translate }}
+  </div>
+  <div class="items">
+    <div class="item">
+      <i class="devicon-html5-plain-wordmark colored"></i>
+    </div>
+    <div class="item">
+      <i class="devicon-css3-plain-wordmark colored"></i>
+    </div>
+    <div class="item">
+      <i class="devicon-javascript-plain colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://angular.io')">
+      <i class="devicon-angularjs-plain colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://nodejs.org')">
+      <i class="devicon-nodejs-plain-wordmark colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://git-scm.com')">
+      <i class="devicon-git-plain colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://github.com')">
+      <i class="devicon-github-original-wordmark colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://www.python.org')">
+      <i class="devicon-python-plain-wordmark colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://flutter.dev')">
+      <i class="devicon-flutter-plain colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://www.mysql.com')">
+      <i class="devicon-mysql-plain-wordmark colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://www.electronjs.org')">
+      <i class="devicon-electron-original colored"></i>
+    </div>
+    <div class="item" (click)="goToUrl('https://cloud.google.com')">
+      <i class="devicon-googlecloud-plain-wordmark colored"></i>
+    </div>
+  </div>
+</div>

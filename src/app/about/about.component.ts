@@ -8,5 +8,10 @@ import { Component, OnInit } from "@angular/core";
 export class AboutComponent implements OnInit {
   constructor() {}
 
+  goToUrl(targetUrl: string) {
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
   ngOnInit(): void {}
 }

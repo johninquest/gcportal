@@ -14,7 +14,24 @@
   color: beige;
 }
 
-.footer {
+.items {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-content: center;
+  grid-auto-flow: row;
+}
+
+.item {
+  margin: 1em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.item i {
+  font-size: 4em;
+}
+
+/* .footer {
   text-align: center;
   margin-top: 21em;
 }
@@ -38,3 +55,4 @@
   text-decoration: none;
   color: #ffb300;
 }
+ */
