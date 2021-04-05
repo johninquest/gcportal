@@ -26,3 +26,20 @@
 .address a {
   color: beige;
 }
+
+.donate {
+  margin-top: 20em;
+  text-align: center;
+}
+
+/* .donate p {
+  text-transform: uppercase;
+  color: beige;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.donate span {
+  cursor: pointer;
+}
+ */

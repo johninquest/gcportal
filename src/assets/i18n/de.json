@@ -22,11 +22,12 @@
   },
   "solutions": {
     "title": "lösungen",
-    "paze": " - Eine kostenlose Android-App, mit der Sie Ihre Arbeitszeiten erfassen und im Blick behalten können.",
+    "paze": " - Eine kostenlose Arbeitszeiterfassungs Android-App für Privatpersonen.",
     "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
     "quittung": " - Ein einfaches Webtool für die Erstellung von Quittungen."
   },
   "contact": {
-    "title": "kontakt"
+    "title": "kontakt",
+    "donate": "spenden"
   }
 }

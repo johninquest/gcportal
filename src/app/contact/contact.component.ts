@@ -8,25 +8,12 @@ import { Component, OnInit } from "@angular/core";
 export class ContactComponent implements OnInit {
   constructor() {}
 
-  /*  
-  goToFacebook() {
-    let targetUrl: string = "https://www.facebook.com/belego.de";
+  /*   goToPaypal() {
+    let targetUrl: string = "https://paypal.me/johnapps";
     window.open(targetUrl, "_blank");
     window.focus();
-  }
+  } */
 
-  goToInstagram() {
-    let targetUrl: string = "https://www.instagram.com/belego.de";
-    window.open(targetUrl, "_blank");
-    window.focus();
-  }
-
-  goToTwitter() {
-    let targetUrl: string = "";
-    window.open(targetUrl, "_blank");
-    window.focus();
-  }
-*/
   showEmailAddress() {
     alert("demnächst verfügbar");
   }

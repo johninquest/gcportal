@@ -26,6 +26,7 @@
     "quittung": " - A simple web tool for generating receipts on the go."
   },
   "contact": {
-    "title": "contact"
+    "title": "contact",
+    "donate": "donate"
   }
 }
