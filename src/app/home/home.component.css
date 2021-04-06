@@ -9,12 +9,10 @@
 }
 
 .message {
-  text-transform: uppercase;
   text-align: center;
   color: beige;
   font-size: 1em;
   font-weight: bold;
-  cursor: pointer;
 }
 
 a span {
