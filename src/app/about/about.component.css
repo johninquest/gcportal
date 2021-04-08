@@ -14,20 +14,29 @@
   color: beige;
 }
 
-.items {
+.customers {
+  text-align: center;
+}
+
+.customers .cdetails {
+  color: beige;
+  margin: 1em;
+}
+
+.technologies .items {
   display: grid;
   grid-template-columns: auto auto auto;
   place-content: center;
   grid-auto-flow: row;
 }
 
-.item {
+.technologies .items .item {
   margin: 0.8em;
   padding: 0.8em;
   cursor: pointer;
 }
 
-.item i {
+.technologies .items .item i {
   font-size: 4em;
 }
 

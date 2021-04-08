@@ -7,14 +7,16 @@
   },
   "home": {
     "title": "",
-    "message0": "simple app lösungen",
-    "message": "Effizienz, Transparenz und Verantwortlichkeit fördern mit Hilfe von einfachen Softwareanwendungen",
+    "message": "einfache softwareapplikationen",
+    "message0": "Effizienz, Transparenz und Verantwortlichkeit fördern mit Hilfe von einfachen Softwareanwendungen",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
   "about": {
     "title": "über uns",
     "description": "Wir entwickeln Mobile (App)- und Web-Softwarelösungen für die Bereiche Finanzen, Management und Verwaltung.",
+    "customers-title": "unsere kunden",
+    "customers-details": "demnächst verfügbar ...",
     "technologies": "unsere werkzeuge"
   },
   "privacy": {
