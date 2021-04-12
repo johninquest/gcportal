@@ -7,14 +7,14 @@
   },
   "home": {
     "title": "",
-    "message": "einfache softwareapplikationen",
-    "message0": "Effizienz, Transparenz und Verantwortlichkeit fördern mit Hilfe von einfachen Softwareanwendungen",
+    "message": "simple app lösungen",
+    "message0": "Effizienz, Transparenz und Verantwortlichkeit fördern mit Hilfe einfacher Softwareapplikationen",
     "imprint": "Impressum",
     "privacy": "Datenschutz"
   },
   "about": {
     "title": "über uns",
-    "description": "Wir entwickeln Mobile (App)- und Web-Softwarelösungen für die Bereiche Finanzen, Management und Verwaltung.",
+    "description": "Wir sind ein Team von erfahrene IT-Fachleuten mit langjähriger Erfahrung in der Beratung, Entwicklung und Wartung von Softwarelösungen für kleine und große Unternehmen. Was uns treibt ist den Wunsch, Effizienz, Transparenz und Verantwortlichkeit in Organisationen zu fördern mithilfe einfacher Softwareanwendungen.",
     "customers-title": "unsere kunden",
     "customers-details": "demnächst verfügbar ...",
     "technologies": "unsere werkzeuge"
@@ -25,7 +25,7 @@
   },
   "solutions": {
     "title": "lösungen",
-    "paze": " - Eine kostenlose Arbeitszeiterfassungs Android-App für Privatpersonen.",
+    "paze": " - Eine Arbeitszeiterfassungs App für Privatpersonen.",
     "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
     "quittung": " - Ein einfaches Webtool für die Erstellung von Quittungen."
   },
