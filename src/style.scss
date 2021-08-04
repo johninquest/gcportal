@@ -1,12 +1,13 @@
+@use '~@angular/material' as mat;
 @import "~@angular/material/theming";
-@include mat-core();
+@include mat.core();
 
-$mytheme-primary: mat-palette($mat-amber, 600); // #FFB300
-$mytheme-accent: mat-palette($mat-grey, 300); // #E0E0E0
-$mytheme-warn: mat-palette($mat-red, 500); // #F44336
+$mytheme-primary: mat.define-palette(mat.$amber-palette, 600); // #FFB300
+$mytheme-accent: mat.define-palette(mat.$grey-palette, 300); // #E0E0E0
+$mytheme-warn: mat.define-palette(mat.$red-palette, 500); // #F44336
 
-$mytheme-all: mat-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
-@include angular-material-theme($mytheme-all);
+$mytheme-all: mat.define-light-theme($mytheme-primary, $mytheme-accent, $mytheme-warn);
+@include mat.all-component-themes($mytheme-all);
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 /* $myfont: 'Quicksand', sans-serif; */
