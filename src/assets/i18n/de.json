@@ -27,10 +27,14 @@
     "title": "lösungen",
     "paze": " - Eine Arbeitszeiterfassungs App für Privatpersonen.",
     "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
-    "quittung": " - Ein einfaches Webtool für die Erstellung von Quittungen."
+    "ac": "Altersrechner"
   },
   "contact": {
     "title": "kontakt",
+    "donate": "spenden"
+  },
+  "age-calculator": {
+    "title": "altersrechner",
     "donate": "spenden"
   }
 }

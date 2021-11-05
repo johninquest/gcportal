@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-solutions",
@@ -22,11 +23,11 @@ export class SolutionsComponent implements OnInit {
     window.focus();
   }
 
-  goToQuittungApp() {
+  /*   goToQuittungApp() {
     let targetUrl: string = "https://belego.de/quittung";
     window.open(targetUrl, "_blank");
     window.focus();
-  }
+  } */
 
   ngOnInit(): void {}
 }

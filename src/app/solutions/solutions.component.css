@@ -30,3 +30,8 @@ img {
   box-sizing: border-box;
   height: 5em;
 }
+
+.calc-icon {
+  margin-top: 0.8em;
+  transform: scale(2);
+}

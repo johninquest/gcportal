@@ -23,12 +23,15 @@
       </span>
     </p>
   </div>
-  <!-- 
-    <div class="item">
-    <p (click)="goToQuittungApp()">
-      <span style="font-weight: bold">Quittung</span>
-      <span>{{ "solutions.quittung" | translate }}</span>
+  <div class="item">
+    <p routerLink="/age-calculator">
+      <!--  <span style="font-weight: bold">Quittung</span> -->
+      <span style="font-weight: bold; text-transform: uppercase">{{
+        "solutions.ac" | translate
+      }}</span
+      ><br />
+      <mat-icon class="calc-icon">calculate</mat-icon>
+      <!-- <span class="material-icons-outlined"> calculate </span> -->
     </p>
-  </div> 
-  -->
+  </div>
 </div>

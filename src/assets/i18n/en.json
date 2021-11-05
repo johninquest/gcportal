@@ -27,10 +27,14 @@
     "title": "solutions",
     "paze": " - An simple android app for keeping track of your working hours.",
     "coinecke": " - An android app for viewing cryptocurrency prices, crypto-related news and tracking your favorite coins.",
-    "quittung": " - A simple web tool for generating receipts on the go."
+    "ac": "Age calculator"
   },
   "contact": {
     "title": "contact",
     "donate": "donate"
+  },
+  "age-calculator": {
+    "title": "age calculator",
+    "donate": "spenden"
   }
 }
