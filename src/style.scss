@@ -1,5 +1,5 @@
-@use '~@angular/material' as mat;
-@import "~@angular/material/theming";
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
 @include mat.core();
 
 $mytheme-primary: mat.define-palette(mat.$amber-palette, 600); // #FFB300
