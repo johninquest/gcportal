@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import dayjs from "dayjs";
 
 @Injectable({
   providedIn: "root",
@@ -14,6 +15,16 @@ export class CalculatorService {
     }
     if (tax === 0) {
       return amount.toFixed(2);
+    }
+  }
+
+  ageFromDate(providedDate: string) {
+    if (providedDate) {
+      let now = dayjs(new Date());
+      let diff = now.diff(providedDate, "year");
+      return diff;
+    } else {
+      return "";
     }
   }
 }
