@@ -9,6 +9,16 @@ import { Router } from "@angular/router";
 export class SolutionsComponent implements OnInit {
   constructor() {}
 
+  showCalculator: boolean;
+
+  toggleCalculator() {
+    if (navigator.language == "de") {
+      return (this.showCalculator = true);
+    } else {
+      return (this.showCalculator = false);
+    }
+  }
+
   goToPazeApp() {
     let targetUrl: string =
       "https://play.google.com/store/apps/details?id=de.johnapps.mytime";
@@ -29,5 +39,7 @@ export class SolutionsComponent implements OnInit {
     window.focus();
   } */
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toggleCalculator();
+  }
 }
