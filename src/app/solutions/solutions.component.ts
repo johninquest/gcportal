@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+// import { Router } from "@angular/router";
 
 @Component({
   selector: "app-solutions",
@@ -12,7 +12,7 @@ export class SolutionsComponent implements OnInit {
   showCalculator: boolean;
 
   toggleCalculator() {
-    if (navigator.language == "de") {
+    if (navigator.language.startsWith("de")) {
       return (this.showCalculator = true);
     } else {
       return (this.showCalculator = false);
