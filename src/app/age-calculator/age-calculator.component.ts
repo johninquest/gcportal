@@ -15,11 +15,9 @@ export class AgeCalculatorComponent implements OnInit {
   });
 
   showAge(dateStr: any) {
-    let ageFromDate = this.cs.ageFromDate(dateStr);
+    let ageFromDate = this.cs.ageFromDate2(dateStr);
     if (ageFromDate) {
-      return `${ageFromDate} Jahre`;
-    } else if (ageFromDate === 0) {
-      return "0 Jahre";
+      return ageFromDate;
     } else {
       return "";
     }
