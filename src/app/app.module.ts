@@ -17,35 +17,34 @@ import { PrivacyComponent } from "./privacy/privacy.component";
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    SolutionsComponent,
-    NavComponent,
-    PrivacyComponent,
-    AgeCalculatorComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MaterialModules,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [HomeComponent],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        SolutionsComponent,
+        NavComponent,
+        PrivacyComponent,
+        AgeCalculatorComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModules,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient],
+            },
+        }),
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
 
