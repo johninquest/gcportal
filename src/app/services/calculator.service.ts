@@ -27,4 +27,29 @@ export class CalculatorService {
       return "";
     }
   }
+
+  ageFromDate2(providedDate: string) {
+    if (providedDate) {
+      let now = dayjs(new Date());
+      let diffY = now.diff(providedDate, "year");
+      let diffM = now.diff(providedDate, "month");
+      // let diffD = now.diff(providedDate, "day");
+      if (diffY >= 1) {
+        // console.log("Age in years is => ", diffY);
+        return `${diffY} Jahre`;
+      }
+      if (diffY < 1) {
+        // let diffM = now.diff(providedDate, "month");
+        // console.log("Age in months => ", diffM);
+        return `${diffM} Monate`;
+      }
+      if (diffY < 1 && diffM < 1) {
+        // let diffM = now.diff(providedDate, "month");
+        console.log("Age in days => ", 0);
+        return "";
+      }
+    } else {
+      return "";
+    }
+  }
 }
