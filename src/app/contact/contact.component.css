@@ -25,6 +25,7 @@
 
 .mail a mat-icon {
   transform: scale(2);
+  color: #ffb300;
 }
 
 /* .address {

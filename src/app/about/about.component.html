@@ -1,20 +1,39 @@
-<div class="title" matTooltip="about">{{ "about.title" | translate }}</div>
+<div class="title" matTooltip="About">{{ "about.title" | translate }}</div>
 
 <div class="description">
   {{ "about.description" | translate }}
 </div>
 
 <div class="customers">
-  <div class="title" matTooltip="our customers">
+  <div class="title" matTooltip="Our customers">
     {{ "about.customers-title" | translate }}
   </div>
-  <div class="cdetails">
-    {{ "about.customers-details" | translate }}
+  <div class="customer-list">
+    <div class="customer-item" matTooltip="Reserve Crêperie Lounge">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/johnappsde.appspot.com/o/rcl.jpeg?alt=media&token=c458c861-7df2-4b06-a3f5-5e2422eed734"
+        width="165"
+        height="165"
+        alt="Reserve Crêperie Lounge"
+      />
+    </div>
+    <div
+      class="customer-item"
+      (click)="goToUrl('https://amarembogorilla.com/')"
+      matTooltip="Amarembo Gorilla Village Hotel"
+    >
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/johnappsde.appspot.com/o/agvh.png?alt=media&token=644c9fc5-df4f-482e-b996-fff1359d802b"
+        width="165"
+        height="165"
+        alt="Amarembo Gorilla Village Hotel"
+      />
+    </div>
   </div>
 </div>
 
 <div class="technologies">
-  <div class="title" matTooltip="technology stack">
+  <div class="title" matTooltip="Our technology stack">
     {{ "about.technologies" | translate }}
   </div>
   <div class="items">
@@ -49,7 +68,11 @@
       <i class="devicon-mongodb-plain-wordmark colored"></i>
     </div>
     <div class="item" (click)="goToUrl('https://www.sqlite.org')">
-      <img src="assets/img/sqlite_icon.svg" width="96" alt="SQLite" />
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/johnappsde.appspot.com/o/sqlite_icon.svg?alt=media&token=2f7acf36-eba0-41f9-93d1-8e5f3d458ca9"
+        width="96"
+        alt="SQLite"
+      />
     </div>
     <div class="item" (click)="goToUrl('https://cloud.google.com')">
       <i class="devicon-googlecloud-plain-wordmark colored"></i>

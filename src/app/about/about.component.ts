@@ -5,13 +5,11 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./about.component.html",
   styleUrls: ["./about.component.css"],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   constructor() {}
 
   goToUrl(targetUrl: string) {
     window.open(targetUrl, "_blank");
     window.focus();
   }
-
-  ngOnInit(): void {}
 }
