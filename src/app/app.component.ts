@@ -9,7 +9,7 @@ declare const gtag: any;
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"],
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
   constructor(router: Router, private translate: TranslateService) {

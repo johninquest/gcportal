@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
 
 @Component({
   selector: "app-age-calculator",
   templateUrl: "./age-calculator.component.html",
-  styleUrls: ["./age-calculator.component.css"],
+  styleUrls: ["./age-calculator.component.scss"],
 })
-export class AgeCalculatorComponent implements OnInit {
+export class AgeCalculatorComponent {
   constructor(private cs: CalculatorService) {}
   ageForm = new FormGroup({
     selectedDate: new FormControl(""),
@@ -22,6 +22,4 @@ export class AgeCalculatorComponent implements OnInit {
       return "";
     }
   }
-
-  ngOnInit(): void {}
 }

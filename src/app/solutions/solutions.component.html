@@ -26,6 +26,19 @@
     </p>
   </div>
   <div class="item">
+    <p (click)="goToLdgrApp()">
+      <span style="font-weight: bold">Ldgr</span
+      ><span> {{ "solutions.ldgr" | translate }}</span
+      ><br /><br />
+      <span>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/johnappsde.appspot.com/o/ldgr_logo.png?alt=media&token=f0849b94-88e5-46db-8fe4-4499a84f0e4a"
+          alt="Ldgr"
+        />
+      </span>
+    </p>
+  </div>
+  <div class="item">
     <p (click)="goToCoinEckeApp()">
       <span style="font-weight: bold">CoinEcke</span
       ><span> {{ "solutions.coinecke" | translate }}</span
@@ -38,13 +51,4 @@
       </span>
     </p>
   </div>
-  <!-- <div class="item" *ngIf="showCalculator">
-    <p routerLink="/altersrechner">
-      <span style="font-weight: bold; text-transform: uppercase">{{
-        "solutions.ac" | translate
-      }}</span
-      ><br />
-      <mat-icon class="calc-icon">calculate</mat-icon>
-    </p>
-  </div> -->
 </div>
