@@ -1,0 +1,33 @@
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 2em;
+  font-weight: bold;
+  font-size: 1em;
+  font-style: italic;
+  color: beige;
+}
+
+.downloads {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.downloads .item {
+  border-top: 0.1rem solid beige;
+  margin-bottom: 1rem;
+}
+
+.downloads .item p {
+  color: beige;
+  text-align: center;
+  cursor: pointer;
+}
+
+img {
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: 5rem;
+}

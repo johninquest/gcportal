@@ -15,6 +15,7 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PrivacyComponent } from "./privacy/privacy.component";
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
+import { DownloadsComponent } from './downloads/downloads.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { AgeCalculatorComponent } from './age-calculator/age-calculator.componen
         NavComponent,
         PrivacyComponent,
         AgeCalculatorComponent,
+        DownloadsComponent,
     ],
     imports: [
         BrowserModule,

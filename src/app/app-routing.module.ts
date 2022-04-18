@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { AgeCalculatorComponent } from "./age-calculator/age-calculator.component";
+import { DownloadsComponent } from "./downloads/downloads.component";
 import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { PrivacyComponent } from "./privacy/privacy.component";
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "about", component: AboutComponent },
   { path: "altersrechner", component: AgeCalculatorComponent },
+  { path: "downloads", component: DownloadsComponent },
   { path: "home", component: HomeComponent },
   { path: "contact", component: ContactComponent },
   { path: "privacy", component: PrivacyComponent },
