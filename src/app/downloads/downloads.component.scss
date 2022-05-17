@@ -17,7 +17,7 @@
 
 .downloads .item {
   border-top: 0.1rem solid beige;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .downloads .item p {
@@ -30,4 +30,19 @@ img {
   border-radius: 6px;
   box-sizing: border-box;
   height: 5rem;
+}
+
+table,
+th,
+td {
+  border: 0.1rem solid beige;
+}
+
+th {
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+  font-weight: bold;
+}
+
+td {
+  padding: 0.1rem 0.5rem 0.1rem 0.5rem;
 }
