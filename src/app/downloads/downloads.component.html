@@ -18,21 +18,21 @@
         <tr>
           <th>Version number</th>
           <th>Release date</th>
-          <th>Comment</th>
+          <th>Note</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td style="cursor: pointer" (click)="comingSoon()">v16</td>
-          <td>00/00/0000</td>
-          <td>Coming soon</td>
+        <tr (click)="startDownloadV16()" style="cursor: pointer">
+          <td>v16</td>
+          <td>19/05/2022</td>
+          <td style="color: lime">Latest version</td>
         </tr>
-        <tr (click)="startDownload()" style="cursor: pointer">
+        <tr (click)="startDownloadV15()" style="cursor: pointer">
           <td matTooltip="Click to start download" style="cursor: pointer">
             v15
           </td>
           <td>19/04/2022</td>
-          <td>Latest version</td>
+          <td style="color: gold">Current version</td>
         </tr>
       </tbody>
     </table>
