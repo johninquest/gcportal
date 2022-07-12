@@ -7,6 +7,7 @@ import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { PrivacyComponent } from "./privacy/privacy.component";
 import { SolutionsComponent } from "./solutions/solutions.component";
+import { WuedataComponent } from "./demo/wuedata/wuedata.component";
 import { from } from "rxjs";
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "privacy", component: PrivacyComponent },
   { path: "solutions", component: SolutionsComponent },
+  { path: "demo/wuedata", component: WuedataComponent },
   { path: "**", component: HomeComponent },
 ];
 
