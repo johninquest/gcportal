@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "HOME",
-    "about": "ABOUT",
+    "about": "ABOUT ME",
     "solutions": "SOLUTIONS",
     "contact": "CONTACT"
   },
@@ -12,9 +12,9 @@
     "privacy": "Privacy"
   },
   "about": {
-    "title": "about",
-    "description0": "We build mobile (app) and web software solutions for administration, business and finance.",
-    "description": "We are a team of engineers and IT professionals with years of experience working in consulting, building, delivering and maintaining software solutions for individuals, small businesses as well as large organizations. What motivates us, is a shared desire to promote accountability, efficiency and transparency with the help of simple software applications.",
+    "title": "about me",
+    "description": "My name is John. I am a business-minded engineering and IT professional with years of hands-on experience in assisting sales, technical accoungt management, designing, delivering and maintaining software solutions for small and large organizations. I enjoy working on projects which have a potential to add business and social value",
+    "description1": "We are a team of engineers and IT professionals with years of experience working in consulting, building, delivering and maintaining software solutions for individuals, small businesses as well as large organizations. What motivates us, is a shared desire to promote accountability, efficiency and transparency with the help of simple software applications.",
     "customers-title": "our customers",
     "customers-details": "coming soon ...",
     "technologies": "our tools"

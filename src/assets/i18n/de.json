@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "HOME",
-    "about": "ÜBER UNS",
+    "about": "ÜBER MICH",
     "solutions": "LÖSUNGEN",
     "contact": "KONTAKT"
   },
@@ -13,8 +13,9 @@
     "privacy": "Datenschutz"
   },
   "about": {
-    "title": "über uns",
-    "description": "Wir sind ein Team aus erfahrenen Ingenieuren und IT-Fachleuten mit langjähriger Erfahrung in der Beratung, Entwicklung und Wartung von Softwarelösungen für kleine und große Unternehmen. Unser Bestreben ist es mithilfe einfacher Softwareapplikationen; Effizienz, Transparenz und Verantwortlichkeit in Organisationen zu fördern.",
+    "title": "über mich",
+    "description": "Demnächst verfügbar",
+    "description1": "Wir sind ein Team aus erfahrenen Ingenieuren und IT-Fachleuten mit langjähriger Erfahrung in der Beratung, Entwicklung und Wartung von Softwarelösungen für kleine und große Unternehmen. Unser Bestreben ist es mithilfe einfacher Softwareapplikationen; Effizienz, Transparenz und Verantwortlichkeit in Organisationen zu fördern.",
     "customers-title": "unsere kunden",
     "customers-details": "demnächst verfügbar ...",
     "technologies": "unsere werkzeuge"
