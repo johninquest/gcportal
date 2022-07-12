@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WuedataComponent } from './wuedata.component';
+import { WueDataComponent } from './wue-data.component';
 
-describe('WuedataComponent', () => {
-  let component: WuedataComponent;
-  let fixture: ComponentFixture<WuedataComponent>;
+describe('WueDataComponent', () => {
+  let component: WueDataComponent;
+  let fixture: ComponentFixture<WueDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WuedataComponent ]
+      declarations: [ WueDataComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WuedataComponent);
+    fixture = TestBed.createComponent(WueDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

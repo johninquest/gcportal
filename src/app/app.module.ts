@@ -17,6 +17,7 @@ import { PrivacyComponent } from "./privacy/privacy.component";
 import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { WuedataComponent } from './demo/wuedata/wuedata.component';
+import { WueDataComponent } from './demos/wue-data/wue-data.component';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { WuedataComponent } from './demo/wuedata/wuedata.component';
         AgeCalculatorComponent,
         DownloadsComponent,
         WuedataComponent,
+        WueDataComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,14 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
 import { WebService } from "../../services/web.service";
 
 @Component({
-  selector: "app-wuedata",
-  templateUrl: "./wuedata.component.html",
-  styleUrls: ["./wuedata.component.css"],
-  encapsulation: ViewEncapsulation.None,
+  selector: "app-wue-data",
+  templateUrl: "./wue-data.component.html",
+  styleUrls: ["./wue-data.component.scss"],
 })
-export class WuedataComponent implements OnInit {
+export class WueDataComponent implements OnInit {
   constructor(private _ws: WebService) {}
 
   ngOnInit(): void {
@@ -17,14 +15,14 @@ export class WuedataComponent implements OnInit {
   }
 
   weatherData: any;
-  treeData: any;
+  soilData: any;
 
   getTreeData() {
     let _url: string =
       "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=baeren-bodenfeuchte&q=&facet=alias&facet=time";
     let _req = this._ws.getRequest(_url);
     _req.subscribe(
-      (res) => (this.treeData = res),
+      (res) => (this.soilData = res),
       (err) => console.log("Error =>", err)
     );
   }
