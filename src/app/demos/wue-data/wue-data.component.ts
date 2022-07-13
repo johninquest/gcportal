@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { WebService } from "../../services/web.service";
+import dayjs from "dayjs";
 import {
   Chart,
+  ChartConfiguration,
   BarElement,
   BarController,
   CategoryScale,

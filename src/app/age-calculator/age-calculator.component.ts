@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { UntypedFormControl, UntypedFormGroup } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
 
 @Component({
@@ -9,8 +9,8 @@ import { CalculatorService } from "../services/calculator.service";
 })
 export class AgeCalculatorComponent {
   constructor(private cs: CalculatorService) {}
-  ageForm = new UntypedFormGroup({
-    selectedDate: new UntypedFormControl(""),
+  ageForm = new FormGroup({
+    selectedDate: new FormControl(""),
     // ageInYears: new FormControl(""),
   });
 
