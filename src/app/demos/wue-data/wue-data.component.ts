@@ -43,7 +43,8 @@ export class WueDataComponent implements OnInit {
 
   weatherData: any;
   soilData: any;
-  rainFallData: Array<number> = [];
+  rainFallQty: Array<number> = [];
+  rainFallDate: Array<number> = [];
 
   getSoilData() {
     let _url: string =
@@ -52,7 +53,7 @@ export class WueDataComponent implements OnInit {
     _req.subscribe(
       (res) => {
         this.soilData = res;
-        console.log("Records =>", res["records"]);
+        // console.log("Records =>", res["records"]);
       },
       (err) => console.log("Error =>", err)
     );
@@ -65,15 +66,19 @@ export class WueDataComponent implements OnInit {
     _req.subscribe(
       (res) => {
         this.weatherData = res;
-        this.rainFallData = res["records"].map(
+        this.rainFallQty = res["records"].map(
           (data: any) => data["fields"]["niederschlag"]
         );
-        console.log("Rainfall data:", this.rainFallData);
+        this.rainFallDate = res["records"].map((data: any) =>
+          dayjs(data["fields"]["dt_iso"]).format("DD.MM.YYYY")
+        );
+        // console.log("Rainfall date: ", this.rainFallDate);
+        /* console.log("Rainfall data:", this.rainFallData);
         let test_data = [12, 19, 3, 5, 2, 3, 7, 4.3, 8, 11];
         console.log("Test data: ", test_data);
         console.log("Test data type", typeof test_data);
-        console.log("Rainfall data length:", this.rainFallData.length);
-        this.probeChart(this.rainFallData);
+        console.log("Rainfall data length:", this.rainFallData.length); */
+        this.probeChart(this.rainFallQty);
       },
       (err) => console.log("Error =>", err)
     );
@@ -84,19 +89,7 @@ export class WueDataComponent implements OnInit {
     let _chart = new Chart("myChart", {
       type: "bar",
       data: {
-        /* labels: [
-          "Red",
-          "Blue",
-          "Yellow",
-          "Green",
-          "Purple",
-          "Orange",
-          "Red",
-          "Blue",
-          "Yellow",
-          "Green",
-        ], */
-        labels: this.rainFallData,
+        labels: this.rainFallDate,
         datasets: [
           {
             label: "Niederschlag - Würzburg",
@@ -105,7 +98,7 @@ export class WueDataComponent implements OnInit {
             barThickness: 6,
             maxBarThickness: 8,
             minBarLength: 2, */
-            data: this.rainFallData,
+            data: this.rainFallQty,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -136,4 +129,19 @@ export class WueDataComponent implements OnInit {
     });
     return _chart;
   }
+
+  public barChartLegend = true;
+  public barChartPlugins = [];
+
+  public barChartData: ChartConfiguration<"bar">["data"] = {
+    labels: ["2006", "2007", "2008", "2009", "2010", "2011", "2012"],
+    datasets: [
+      { data: [65, 59, 80, 81, 56, 55, 40], label: "Series A" },
+      { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" },
+    ],
+  };
+
+  public barChartOptions: ChartConfiguration<"bar">["options"] = {
+    responsive: true,
+  };
 }

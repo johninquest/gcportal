@@ -2,6 +2,18 @@
   <div class="bar-chart">
     <canvas id="myChart"></canvas>
   </div>
+
+  <div class="bar-chart">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [legend]="barChartLegend"
+      [type]="'bar'"
+    >
+    </canvas>
+  </div>
   <div style="margin: 1rem 0.5rem 0.5rem 0.5rem; text-align: center">
     <mat-label style="margin-bottom: 0.5rem; font-weight: bold"
       >Bäume data</mat-label
