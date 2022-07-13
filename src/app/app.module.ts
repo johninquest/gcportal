@@ -14,43 +14,41 @@ import { NavComponent } from "./nav/nav.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PrivacyComponent } from "./privacy/privacy.component";
-import { AgeCalculatorComponent } from './age-calculator/age-calculator.component';
-import { DownloadsComponent } from './downloads/downloads.component';
-import { WuedataComponent } from './demo/wuedata/wuedata.component';
-import { WueDataComponent } from './demos/wue-data/wue-data.component';
+import { AgeCalculatorComponent } from "./age-calculator/age-calculator.component";
+import { DownloadsComponent } from "./downloads/downloads.component";
+import { WueDataComponent } from "./demos/wue-data/wue-data.component";
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        AboutComponent,
-        ContactComponent,
-        SolutionsComponent,
-        NavComponent,
-        PrivacyComponent,
-        AgeCalculatorComponent,
-        DownloadsComponent,
-        WuedataComponent,
-        WueDataComponent,
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MaterialModules,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient],
-            },
-        }),
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    SolutionsComponent,
+    NavComponent,
+    PrivacyComponent,
+    AgeCalculatorComponent,
+    DownloadsComponent,
+    WueDataComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModules,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 

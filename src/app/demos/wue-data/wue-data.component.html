@@ -1,10 +1,15 @@
 <div class="main">
-  <div style="margin: 0.5rem auto 0.5rem auto">
-    <mat-label style="margin-bottom: 0.5rem">Soil data</mat-label>
+  <div class="bar-chart">
+    <canvas id="myChart"></canvas>
+  </div>
+  <div style="margin: 1rem 0.5rem 0.5rem 0.5rem; text-align: center">
+    <mat-label style="margin-bottom: 0.5rem; font-weight: bold"
+      >Baum data</mat-label
+    >
     <div>{{ soilData | json }}</div>
   </div>
-  <div style="margin: 0.5rem auto 0.5rem auto">
-    <mat-label>Weather data</mat-label>
+  <div style="margin: 0.5rem auto 0.5rem auto; text-align: center">
+    <mat-label style="font-weight: bold">Wetter data</mat-label>
     <div>{{ weatherData | json }}</div>
   </div>
 </div>
