@@ -17,7 +17,6 @@ import { PrivacyComponent } from "./privacy/privacy.component";
 import { AgeCalculatorComponent } from "./age-calculator/age-calculator.component";
 import { DownloadsComponent } from "./downloads/downloads.component";
 import { WueDataComponent } from "./demos/wue-data/wue-data.component";
-import { NgChartsModule } from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -40,7 +39,6 @@ import { NgChartsModule } from "ng2-charts";
     FormsModule,
     ReactiveFormsModule,
     MaterialModules,
-    NgChartsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

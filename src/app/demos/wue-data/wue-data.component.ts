@@ -50,7 +50,7 @@ export class WueDataComponent implements OnInit {
 
   getSoilData() {
     let _url: string =
-      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=baeren-bodenfeuchte&q=&rows=10000&sort=record_timestamp";
+      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=baeren-bodenfeuchte&q=&rows=10000&refine.time=2022&sort=record_timestamp";
     let _req = this._ws.getRequest(_url);
     _req.subscribe(
       (res) => {
@@ -72,7 +72,7 @@ export class WueDataComponent implements OnInit {
 
   getWeatherData() {
     let _url: string =
-      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=wetter_wue_2022&q=&rows=1000&sort=dt_iso&facet=niederschlag";
+      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=wetter_wue_2022&q=&rows=5000&sort=dt_iso&facet=niederschlag";
     let _req = this._ws.getRequest(_url);
     _req.subscribe(
       (res) => {
@@ -107,6 +107,7 @@ export class WueDataComponent implements OnInit {
             minBarLength: 2, */
             data: _yAxisData,
             backgroundColor: [
+              "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
               "rgba(255, 206, 86, 0.2)",
@@ -115,6 +116,7 @@ export class WueDataComponent implements OnInit {
               "rgba(255, 159, 64, 0.2)",
             ],
             borderColor: [
+              "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 1)",
               "rgba(54, 162, 235, 1)",
               "rgba(255, 206, 86, 1)",
@@ -126,32 +128,26 @@ export class WueDataComponent implements OnInit {
           },
         ],
       },
-      /*       options: {
+      options: {
         scales: {
           y: {
             beginAtZero: true,
           },
         },
-      }, */
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 20,
+                weight: "Bold",
+              },
+            },
+          },
+        },
+      },
     });
     return _chart;
   }
-
-  /*  barChartLegend = true;
-  barChartPlugins = [];
-
-  barChartData: ChartConfiguration<"bar">["data"] = {
-    // labels: ["2006", "2007", "2008", "2009", "2010", "2011", "2012"],
-    labels: this.rainFallDate,
-    datasets: [
-      { data: this.rainFallQty, label: "Series A" },
-      //  { data: [28, 48, 40, 19, 86, 27, 90], label: "Series B" },
-    ],
-  };
-
-  barChartOptions: ChartConfiguration<"bar">["options"] = {
-    responsive: true,
-  }; */
 
   plotSoilHumidityByDay(rawData: any) {
     let _chart = new Chart("soilHumidityChart", {
@@ -163,6 +159,7 @@ export class WueDataComponent implements OnInit {
             label: "Bodenfeuchtigkeit - Hubland / Würzburg",
             data: this.soilHumidityVals.reverse(),
             backgroundColor: [
+              "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
               "rgba(255, 206, 86, 0.2)",
@@ -171,6 +168,7 @@ export class WueDataComponent implements OnInit {
               "rgba(255, 159, 64, 0.2)",
             ],
             borderColor: [
+              "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 1)",
               "rgba(54, 162, 235, 1)",
               "rgba(255, 206, 86, 1)",
@@ -182,7 +180,31 @@ export class WueDataComponent implements OnInit {
           },
         ],
       },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              font: {
+                size: 20,
+                weight: "Bold",
+              },
+            },
+          },
+        },
+      },
     });
     return _chart;
   }
 }
+
+/* 
+wue color 
+hex = #b41c3c
+rgb => rgba(182,31,56,255)
+*/
