@@ -138,7 +138,7 @@ export class WueDataComponent implements OnInit {
           legend: {
             labels: {
               font: {
-                size: 20,
+                size: 15,
                 weight: "Bold",
               },
             },
@@ -191,7 +191,7 @@ export class WueDataComponent implements OnInit {
             display: true,
             labels: {
               font: {
-                size: 20,
+                size: 15,
                 weight: "Bold",
               },
             },
