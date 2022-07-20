@@ -107,7 +107,7 @@ export class WueDataComponent implements OnInit {
         this.rainFallDate = res["records"].map((data: any) =>
           dayjs(data["fields"]["dt_iso"]).format("YYYY-MM-DD")
         );
-        this.plotRainfall(this.rainFallQty);
+        this.plotRainfall();
       },
       (err) => console.log("Error =>", err)
     );
@@ -126,10 +126,11 @@ export class WueDataComponent implements OnInit {
       acc.push(obj);
       return acc;
     }, []);
-    console.log(
+    /* console.log(
       "Grouped data after summing values from same date =>",
       res.reverse()
-    );
+    ); */
+    res.reverse();
     this.soilHumidityByDayYCoords = res.map(
       (data) => data["volwatercontent_1"]
     );
@@ -137,11 +138,12 @@ export class WueDataComponent implements OnInit {
     this.plotSoilHumidityByDay();
   }
 
-  plotRainfall(chartData: any) {
-    // const ctx = document.getElementById("myChart").getContext("2d");
+  plotRainfall() {
+    let _ctx = document.getElementById("rainfallChart") as HTMLCanvasElement;
+    _ctx.getContext("2d");
     let _xAxisData = this.rainFallDate.reverse();
     let _yAxisData = this.rainFallQty.reverse();
-    let _chart = new Chart("weatherRainfallChart", {
+    let _chart = new Chart(_ctx, {
       type: "bar",
       data: {
         labels: _xAxisData,
@@ -251,13 +253,17 @@ export class WueDataComponent implements OnInit {
   }
 
   plotSoilHumidityByDay() {
-    let _chart = new Chart("soilHumidityByDayChart", {
+    let _ctx = document.getElementById(
+      "soilHumidityByDayChart"
+    ) as HTMLCanvasElement;
+    _ctx.getContext("2d");
+    let _chart = new Chart(_ctx, {
       type: "bar",
       data: {
         labels: this.soilHumidityByDayXCoords,
         datasets: [
           {
-            label: "Bodenfeuchtigkeit pro Tag - Hubland, WÜ",
+            label: "Bodenfeuchtigkeit pro Tag - Hubland, Wü",
             data: this.soilHumidityByDayYCoords,
             backgroundColor: [
               "rgba(182, 31, 56, 255)",
@@ -292,7 +298,7 @@ export class WueDataComponent implements OnInit {
             display: true,
             labels: {
               font: {
-                size: 15,
+                // size: 15,
                 weight: "Bold",
               },
             },
