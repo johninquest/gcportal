@@ -72,7 +72,7 @@ export class WueDataComponent implements OnInit {
 
   getSoilHumidityData2() {
     let _url: string =
-      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=baeren-bodenfeuchte&q=&rows=3000&refine.time=2022&sort=record_timestamp";
+      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=baeren-bodenfeuchte&q=&rows=10000&refine.time=2022&sort=record_timestamp";
     let _newList: Array<object> = [];
     let _req = this._ws.getRequest(_url);
     _req.subscribe(
@@ -96,7 +96,7 @@ export class WueDataComponent implements OnInit {
 
   getWeatherData() {
     let _url: string =
-      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=wetter_wue_2022&q=&rows=3000&sort=dt_iso&facet=niederschlag";
+      "https://opendata.wuerzburg.de/api/records/1.0/search/?dataset=wetter_wue_2022&q=&rows=10000&sort=dt_iso&facet=niederschlag";
     let _req = this._ws.getRequest(_url);
     _req.subscribe(
       (res) => {
@@ -156,14 +156,14 @@ export class WueDataComponent implements OnInit {
             data: _yAxisData,
             backgroundColor: [
               "rgba(182, 31, 56, 255)",
-              "rgba(255, 99, 132, 0.2)",
+              /*  "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
               "rgba(255, 206, 86, 0.2)",
               "rgba(75, 192, 192, 0.2)",
               "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)",
+              "rgba(255, 159, 64, 0.2)", */
             ],
-            borderColor: [
+            /* borderColor: [
               "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 1)",
               "rgba(54, 162, 235, 1)",
@@ -172,7 +172,7 @@ export class WueDataComponent implements OnInit {
               "rgba(153, 102, 255, 1)",
               "rgba(255, 159, 64, 1)",
             ],
-            borderWidth: 1,
+            borderWidth: 1, */
           },
         ],
       },
@@ -261,14 +261,14 @@ export class WueDataComponent implements OnInit {
             data: this.soilHumidityByDayYCoords,
             backgroundColor: [
               "rgba(182, 31, 56, 255)",
-              "rgba(255, 99, 132, 0.2)",
+              /*  "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
               "rgba(255, 206, 86, 0.2)",
               "rgba(75, 192, 192, 0.2)",
               "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)",
+              "rgba(255, 159, 64, 0.2)", */
             ],
-            borderColor: [
+            /*  borderColor: [
               "rgba(182, 31, 56, 255)",
               "rgba(255, 99, 132, 1)",
               "rgba(54, 162, 235, 1)",
@@ -276,7 +276,7 @@ export class WueDataComponent implements OnInit {
               "rgba(75, 192, 192, 1)",
               "rgba(153, 102, 255, 1)",
               "rgba(255, 159, 64, 1)",
-            ],
+            ], */
             borderWidth: 1,
           },
         ],
