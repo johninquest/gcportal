@@ -105,9 +105,9 @@ export class WueDataComponent implements OnInit {
           (data: any) => data["fields"]["niederschlag"]
         );
         this.rainFallDate = res["records"].map((data: any) =>
-          dayjs(data["fields"]["dt_iso"]).format("DD.MM.YYYY")
+          dayjs(data["fields"]["dt_iso"]).format("YYYY-MM-DD")
         );
-        this.probeChart(this.rainFallQty);
+        this.plotRainfall(this.rainFallQty);
       },
       (err) => console.log("Error =>", err)
     );
@@ -126,8 +126,6 @@ export class WueDataComponent implements OnInit {
       acc.push(obj);
       return acc;
     }, []);
-    // res.sort((a, b) => dayjs(a.record_timestamp) - dayjs(b.record_timestamp));
-    // res.reverse();
     console.log(
       "Grouped data after summing values from same date =>",
       res.reverse()
@@ -139,7 +137,7 @@ export class WueDataComponent implements OnInit {
     this.plotSoilHumidityByDay();
   }
 
-  probeChart(chartData: any) {
+  plotRainfall(chartData: any) {
     // const ctx = document.getElementById("myChart").getContext("2d");
     let _xAxisData = this.rainFallDate.reverse();
     let _yAxisData = this.rainFallQty.reverse();
@@ -188,7 +186,7 @@ export class WueDataComponent implements OnInit {
           legend: {
             labels: {
               font: {
-                size: 15,
+                // size: 15,
                 weight: "Bold",
               },
             },
@@ -241,7 +239,7 @@ export class WueDataComponent implements OnInit {
             display: true,
             labels: {
               font: {
-                size: 15,
+                // size: 15,
                 weight: "Bold",
               },
             },
@@ -259,7 +257,7 @@ export class WueDataComponent implements OnInit {
         labels: this.soilHumidityByDayXCoords,
         datasets: [
           {
-            label: "Bodenfeuchtigkeit - Hubland / Würzburg pro Tag",
+            label: "Bodenfeuchtigkeit pro Tag - Hubland, WÜ",
             data: this.soilHumidityByDayYCoords,
             backgroundColor: [
               "rgba(182, 31, 56, 255)",
