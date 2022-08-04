@@ -1,6 +1,6 @@
 .title {
   text-align: center;
-  margin-top: 4em;
+  margin-top: 3rem;
 }
 
 .title img {
@@ -11,34 +11,22 @@
 .message {
   text-align: center;
   color: beige;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  word-spacing: 0.4em;
+  word-spacing: 0.5rem;
+  margin: 1rem auto 1rem auto;
 }
 
 .call-to-action {
+  margin: 3rem auto auto auto;
   text-align: center;
   button {
-    margin: 3rem auto auto auto;
     text-transform: uppercase;
+    height: 3rem;
+    border-radius: 1.5rem;
   }
 }
-
-/* 
-a span {
-  color: #424242;
-  font-weight: bold;
-}
-
-button span {
-  color: #424242;
-  font-weight: bold;
-}
-
-.menu-btn {
-  width: 17em;
-} */
 
 .footer {
   margin-top: 20rem;
