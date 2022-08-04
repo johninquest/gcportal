@@ -17,6 +17,15 @@
   word-spacing: 0.4em;
 }
 
+.call-to-action {
+  text-align: center;
+  button {
+    margin: 3rem auto auto auto;
+    text-transform: uppercase;
+  }
+}
+
+/* 
 a span {
   color: #424242;
   font-weight: bold;
@@ -29,10 +38,10 @@ button span {
 
 .menu-btn {
   width: 17em;
-}
+} */
 
 .footer {
-  margin-top: 21em;
+  margin-top: 20rem;
 }
 
 .footer p {
@@ -42,8 +51,8 @@ button span {
 .footer p a {
   color: beige;
   text-decoration: none;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   font-weight: bold;
   cursor: pointer;
 }
