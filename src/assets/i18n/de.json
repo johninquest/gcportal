@@ -37,6 +37,8 @@
     "donate": "spenden",
     "form": {
       "title": "Bitte eine Nachricht hinterlassen",
+      "name": "Vorname",
+      "email": "E-Mail",
       "message": "Nachricht",
       "submit": "absenden"
     }

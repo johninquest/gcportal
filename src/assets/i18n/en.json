@@ -36,6 +36,8 @@
     "donate": "donate",
     "form": {
       "title": "Please leave a message",
+      "name": "First name",
+      "email": "e-mail",
       "message": "Message",
       "submit": "submit"
     }
