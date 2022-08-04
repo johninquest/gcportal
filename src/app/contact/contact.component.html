@@ -4,10 +4,32 @@
 </div>
 
 <div class="mail">
-  <!--  <mat-icon>email</mat-icon><br /> -->
   <a href="mailto:hello@johnapps.de">
     <mat-icon>email</mat-icon>
   </a>
+</div>
+
+<div class="contact-form">
+  <form [formGroup]="messageForm">
+    <h3>Leave a message</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="senderName" type="text" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input matInput formControlName="senderEmail" type="email" />
+      <mat-error *ngIf="messageForm.invalid">Required!</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="senderMessage"></textarea>
+      <mat-error *ngIf="messageForm.invalid">Required!</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onClickSubmit()">
+      submit
+    </button>
+  </form>
 </div>
 
 <!--

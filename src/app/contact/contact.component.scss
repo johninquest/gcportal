@@ -28,6 +28,30 @@
   color: #ffb300;
 }
 
+.contact-form {
+  background-color: beige;
+  margin: 0 auto;
+  width: 60%;
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
+}
+
+.contact-form form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  mat-form-field {
+    width: 90%;
+  }
+  button {
+    text-transform: uppercase;
+  }
+}
+
 /* .address {
   text-align: center;
   color: beige;
