@@ -17,6 +17,7 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  margin-bottom: 2rem;
 }
 
 /* .mail a {
@@ -42,8 +43,8 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
   mat-form-field {
     width: 90%;
   }

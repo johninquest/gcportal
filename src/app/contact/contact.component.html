@@ -11,7 +11,7 @@
 
 <div class="contact-form">
   <form [formGroup]="messageForm">
-    <h3>Leave a message</h3>
+    <h3 style="font-weight: bold">{{ "contact.form.title" | translate }}</h3>
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="senderName" type="text" />
@@ -22,12 +22,12 @@
       <mat-error *ngIf="messageForm.invalid">Required!</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>Message</mat-label>
-      <textarea matInput formControlName="senderMessage"></textarea>
+      <mat-label> {{ "contact.form.message" | translate }}</mat-label>
+      <textarea matInput formControlName="senderMessage" rows="5"></textarea>
       <mat-error *ngIf="messageForm.invalid">Required!</mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="onClickSubmit()">
-      submit
+      {{ "contact.form.submit" | translate }}
     </button>
   </form>
 </div>

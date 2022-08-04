@@ -33,7 +33,12 @@
   },
   "contact": {
     "title": "contact",
-    "donate": "donate"
+    "donate": "donate",
+    "form": {
+      "title": "Please leave a message",
+      "message": "Message",
+      "submit": "submit"
+    }
   },
   "age-calculator": {
     "title": "age calculator",

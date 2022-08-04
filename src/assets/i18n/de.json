@@ -34,7 +34,12 @@
   },
   "contact": {
     "title": "kontakt",
-    "donate": "spenden"
+    "donate": "spenden",
+    "form": {
+      "title": "Bitte eine Nachricht hinterlassen",
+      "message": "Nachricht",
+      "submit": "absenden"
+    }
   },
   "age-calculator": {
     "title": "altersrechner",
