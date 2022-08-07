@@ -13,7 +13,7 @@ import { from } from "rxjs";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "about", component: AboutComponent },
-  { path: "altersrechner", component: AgeCalculatorComponent },
+  { path: "age-calculator", component: AgeCalculatorComponent },
   { path: "downloads", component: DownloadsComponent },
   { path: "home", component: HomeComponent },
   { path: "contact", component: ContactComponent },

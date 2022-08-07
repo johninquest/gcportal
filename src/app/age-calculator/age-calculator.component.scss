@@ -1,18 +1,30 @@
 .title {
   text-transform: uppercase;
   text-align: center;
-  margin-top: 4em;
-  margin-bottom: 2em;
+  padding-top: 3rem;
+  margin-bottom: 2rem;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1rem;
   font-style: italic;
-  color: beige;
+  color: var(--secondary-color);
 }
 
-.age {
-  color: beige;
+.calculator {
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+  padding: 1rem;
+  width: 50%;
+  height: auto;
+  @media screen and (max-width: 600px) {
+    width: 80%;
+  }
+}
+
+.calculator .age {
+  color: var(--txt-color);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin: 1rem auto auto auto;
 }

@@ -1,9 +1,10 @@
 {
   "nav": {
-    "home": "HOME",
-    "about": "ÜBER MICH",
-    "solutions": "LÖSUNGEN",
-    "contact": "KONTAKT"
+    "home": "home",
+    "about": "über uns",
+    "solutions": "lösungen",
+    "tools": "Werkzeuge",
+    "contact": "kontakt"
   },
   "home": {
     "title": "",
@@ -14,7 +15,7 @@
     "privacy": "Datenschutz"
   },
   "about": {
-    "title": "über mich",
+    "title": "über uns",
     "description": "Demnächst verfügbar",
     "description1": "Wir sind ein Team aus erfahrenen Ingenieuren und IT-Fachleuten mit langjähriger Erfahrung in der Beratung, Entwicklung und Wartung von Softwarelösungen für kleine und große Unternehmen. Unser Bestreben ist es mithilfe einfacher Softwareapplikationen; Effizienz, Transparenz und Verantwortlichkeit in Organisationen zu fördern.",
     "customers-title": "unsere kunden",
@@ -29,8 +30,12 @@
     "title": "lösungen",
     "paze": " - Eine Arbeitszeiterfassungs App für Privatpersonen.",
     "coinecke": " - Kryptowährung Kurse, Nachrichten und Portfolio.",
-    "ac": "Altersrechner",
-    "ldgr": " - Eine Webanwendung mit der kleine Unternehmen ihre Geschäftsausgaben im Auge behalten können"
+    "ldgr": " - Eine Webanwendung mit der kleine Unternehmen ihre Geschäftsausgaben im Auge behalten können",
+    "others": {
+      "title": "weitere tools",
+      "age-calculator": "altersrechner",
+      "vat-calculator": "mehrwertsteuerrechner"
+    }
   },
   "contact": {
     "title": "kontakt",

@@ -1,7 +1,7 @@
 <nav>
   <ul class="desktop-nav">
     <li>
-      <a routerLink="/home">HOME</a>
+      <a routerLink="/home">home</a>
     </li>
     <li>
       <a routerLink="/about">{{ "nav.about" | translate }}</a>
@@ -12,30 +12,19 @@
     <li>
       <a routerLink="/contact">{{ "nav.contact" | translate }}</a>
     </li>
-    <!-- <li>
-      <div class="language">
-        <mat-select [formControl]="selectedLanguage">
-          <mat-option
-            *ngFor="let language of languages"
-            [value]="language.value"
-            >{{ language.viewValue }}</mat-option
-          >
-        </mat-select>
-      </div>
-    </li> -->
   </ul>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/home" matTooltip="Home">
       <mat-icon>home</mat-icon>
-      <span>HOME</span>
+      <span class="btn-txt">home</span>
     </button>
     <button mat-menu-item routerLink="/about" matTooltip="Über uns">
       <mat-icon>info</mat-icon>
-      <span>{{ "nav.about" | translate }}</span>
+      <span class="btn-txt">{{ "nav.about" | translate }}</span>
     </button>
     <button mat-menu-item routerLink="/solutions" matTooltip="Unsere Lösungen">
       <mat-icon>build</mat-icon>
-      <span>{{ "nav.solutions" | translate }}</span>
+      <span class="btn-txt">{{ "nav.solutions" | translate }}</span>
     </button>
     <button
       mat-menu-item
@@ -43,15 +32,8 @@
       matTooltip="So erreichen Sie uns"
     >
       <mat-icon>mail</mat-icon>
-      <span>{{ "nav.contact" | translate }}</span>
+      <span class="btn-txt">{{ "nav.contact" | translate }}</span>
     </button>
-    <!-- <br />
-    <div class="language-toggle">
-      <mat-button-toggle-group #toggleBtnGroup="matButtonToggleGroup">
-        <mat-button-toggle value="de">DE</mat-button-toggle>
-        <mat-button-toggle value="en" checked>EN</mat-button-toggle>
-      </mat-button-toggle-group>
-    </div> -->
   </mat-menu>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-nav">
     <mat-icon>menu</mat-icon>

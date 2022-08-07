@@ -1,15 +1,22 @@
 <app-nav></app-nav>
+
 <div class="title" matTooltip="Altersrechner">
   {{ "age-calculator.title" | translate }}
 </div>
-
-<div [formGroup]="ageForm" class="age">
-  <mat-form-field appearance="fill">
-    <mat-label style="color: beige">Datum wählen</mat-label>
-    <input matInput type="date" formControlName="selectedDate" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label style="color: beige">Alter</mat-label>
-    <input matInput type="text" [value]="showAge(ageForm.value.selectedDate)" />
-  </mat-form-field>
+<div class="calculator">
+  <div [formGroup]="ageForm" class="age">
+    <mat-form-field appearance="fill">
+      <mat-label style="color: var(--txt-color)">Datum auswählen</mat-label>
+      <input matInput type="date" formControlName="selectedDate" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label style="color: var(--txt-color)">Alter</mat-label>
+      <input
+        matInput
+        type="text"
+        [value]="showAge(ageForm.value.selectedDate)"
+        disabled
+      />
+    </mat-form-field>
+  </div>
 </div>

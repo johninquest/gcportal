@@ -13,6 +13,13 @@ $mytheme-all: mat.define-light-theme(
 );
 @include mat.all-component-themes($mytheme-all);
 
+:root {
+  --primary-color: #ffb300;
+  --secondary-color: beige;
+  --txt-color: #424242;
+  --bg-color: #424242;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 $myfont: "Lato", sans-serif;
 * {

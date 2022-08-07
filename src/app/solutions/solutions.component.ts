@@ -8,6 +8,9 @@ import { Component, OnInit } from "@angular/core";
 })
 export class SolutionsComponent implements OnInit {
   constructor() {}
+  ngOnInit(): void {
+    this.toggleCalculator();
+  }
 
   showCalculator: boolean;
 
@@ -39,7 +42,9 @@ export class SolutionsComponent implements OnInit {
     window.focus();
   }
 
-  ngOnInit(): void {
-    this.toggleCalculator();
+  goToTaxApp() {
+    let targetUrl: string = "https://johninquest.github.io/tax-app";
+    window.open(targetUrl, "_blank");
+    window.focus();
   }
 }

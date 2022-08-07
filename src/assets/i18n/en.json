@@ -1,9 +1,10 @@
 {
   "nav": {
-    "home": "HOME",
-    "about": "ABOUT ME",
-    "solutions": "SOLUTIONS",
-    "contact": "CONTACT"
+    "home": "home",
+    "about": "about",
+    "solutions": "solutions",
+    "tools": "tools",
+    "contact": "contact"
   },
   "home": {
     "message": "simple app solutions",
@@ -13,7 +14,7 @@
     "privacy": "Privacy"
   },
   "about": {
-    "title": "about me",
+    "title": "about",
     "description": "My name is John. I am a business-minded engineering and IT professional with years of hands-on experience in assisting sales, technical accoungt management, designing, delivering and maintaining software solutions for small and large organizations. I enjoy working on projects which have a potential to add business and social value",
     "description1": "We are a team of engineers and IT professionals with years of experience working in consulting, building, delivering and maintaining software solutions for individuals, small businesses as well as large organizations. What motivates us, is a shared desire to promote accountability, efficiency and transparency with the help of simple software applications.",
     "customers-title": "our customers",
@@ -28,8 +29,12 @@
     "title": "solutions",
     "paze": " - An simple android app for keeping track of your working hours.",
     "coinecke": " - An android app for viewing cryptocurrency prices, crypto-related news and tracking your favorite coins.",
-    "ac": "Age calculator",
-    "ldgr": " - A simple web app aiming help small businesses become more efficient by keeping track of their expenses"
+    "ldgr": " - A simple web app aiming help small businesses become more efficient by keeping track of their expenses",
+    "others": {
+      "title": "other tools",
+      "age-calculator": "age calculator",
+      "vat-calculator": "vat calculator"
+    }
   },
   "contact": {
     "title": "contact",
