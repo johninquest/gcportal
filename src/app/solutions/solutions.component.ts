@@ -6,13 +6,13 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./solutions.component.html",
   styleUrls: ["./solutions.component.scss"],
 })
-export class SolutionsComponent implements OnInit {
+export class SolutionsComponent {
   constructor() {}
-  ngOnInit(): void {
+  /*   ngOnInit(): void {
     this.toggleCalculator();
-  }
+  } */
 
-  showCalculator: boolean;
+  /*   showCalculator: boolean;
 
   toggleCalculator() {
     if (navigator.language.startsWith("de")) {
@@ -20,7 +20,7 @@ export class SolutionsComponent implements OnInit {
     } else {
       return (this.showCalculator = false);
     }
-  }
+  } */
 
   goToPazeApp() {
     let targetUrl: string =

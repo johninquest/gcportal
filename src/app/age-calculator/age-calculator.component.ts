@@ -11,7 +11,6 @@ export class AgeCalculatorComponent {
   constructor(private cs: CalculatorService) {}
   ageForm = new FormGroup({
     selectedDate: new FormControl(""),
-    // ageInYears: new FormControl(""),
   });
 
   showAge(dateStr: any) {

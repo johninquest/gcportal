@@ -6,11 +6,15 @@
 <div class="calculator">
   <div [formGroup]="ageForm" class="age">
     <mat-form-field appearance="fill">
-      <mat-label style="color: var(--txt-color)">Datum auswählen</mat-label>
+      <mat-label style="color: var(--txt-color)">{{
+        "age-calculator.select-date" | translate
+      }}</mat-label>
       <input matInput type="date" formControlName="selectedDate" />
     </mat-form-field>
     <mat-form-field>
-      <mat-label style="color: var(--txt-color)">Alter</mat-label>
+      <mat-label style="color: var(--txt-color)">{{
+        "age-calculator.age" | translate
+      }}</mat-label>
       <input
         matInput
         type="text"

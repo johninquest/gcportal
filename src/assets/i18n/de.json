@@ -50,6 +50,9 @@
   },
   "age-calculator": {
     "title": "altersrechner",
+    "select-date": "Datum auswählen",
+    "age": "Alter",
+    "years": "Jahre alt",
     "donate": "spenden"
   }
 }

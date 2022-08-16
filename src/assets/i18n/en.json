@@ -49,6 +49,9 @@
   },
   "age-calculator": {
     "title": "age calculator",
+    "select-date": "Select date",
+    "age": "Age",
+    "years": "Years old",
     "donate": "spenden"
   }
 }
