@@ -52,7 +52,9 @@
     "title": "altersrechner",
     "select-date": "Datum auswählen",
     "age": "Alter",
-    "years": "Jahre alt",
+    "days": "Tag(e)",
+    "months": "Monat(e)",
+    "years": "Jahr(e)",
     "donate": "spenden"
   }
 }

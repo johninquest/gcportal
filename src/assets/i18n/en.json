@@ -51,7 +51,9 @@
     "title": "age calculator",
     "select-date": "Select date",
     "age": "Age",
-    "years": "Years old",
+    "days": "Day(s)",
+    "months": "Month(s)",
+    "years": "Year(s)",
     "donate": "spenden"
   }
 }

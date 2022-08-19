@@ -25,6 +25,20 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
   margin: 1rem auto auto auto;
+}
+
+.calculator .age .results {
+  width: 100%;
+  div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0.3rem auto 0.3rem auto;
+    padding: 0.3rem auto 0.3rem auto;
+  }
+  div :nth-child(2) {
+    font-weight: bold;
+  }
 }

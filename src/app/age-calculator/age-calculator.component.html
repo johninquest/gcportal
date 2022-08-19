@@ -11,7 +11,7 @@
       }}</mat-label>
       <input matInput type="date" formControlName="selectedDate" />
     </mat-form-field>
-    <mat-form-field>
+    <!--     <mat-form-field>
       <mat-label style="color: var(--txt-color)">{{
         "age-calculator.age" | translate
       }}</mat-label>
@@ -21,6 +21,26 @@
         [value]="showAge(ageForm.value.selectedDate)"
         disabled
       />
-    </mat-form-field>
+    </mat-form-field> -->
+    <div class="results">
+      <div>
+        <span>{{ "age-calculator.years" | translate }}</span>
+        <span>{{ showAgeInYears(ageForm.value.selectedDate) }}</span>
+      </div>
+      <div>
+        <span>{{ "age-calculator.months" | translate }}</span>
+        <span>{{ showAgeInMonths(ageForm.value.selectedDate) }}</span>
+      </div>
+      <div>
+        <span>{{ "age-calculator.days" | translate }}</span>
+        <span>{{ showAgeInDays(ageForm.value.selectedDate) }}</span>
+      </div>
+      <div>
+        <span>Generation</span>
+        <span>{{
+          showGeneration(ageForm.value.selectedDate) | uppercase
+        }}</span>
+      </div>
+    </div>
   </div>
 </div>
