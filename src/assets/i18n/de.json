@@ -51,10 +51,18 @@
   "age-calculator": {
     "title": "altersrechner",
     "select-date": "Datum auswählen",
+    "today-date": "Tagesdatum",
+    "selected-date": "Ausgewählte Datum",
+    "result-title": "Ergebnis",
     "age": "Alter",
     "days": "Tag(e)",
     "months": "Monat(e)",
     "years": "Jahr(e)",
-    "donate": "spenden"
+    "generation": {
+      "title": "",
+      "shortname": "",
+      "period": "Zeitraum",
+      "othernames": "Sonstige Bezeichnung(en)"
+    }
   }
 }

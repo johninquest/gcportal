@@ -50,10 +50,18 @@
   "age-calculator": {
     "title": "age calculator",
     "select-date": "Select date",
+    "today-date": "Today's date",
+    "selected-date": "Selected date",
+    "result-title": "Result",
     "age": "Age",
     "days": "Day(s)",
     "months": "Month(s)",
     "years": "Year(s)",
-    "donate": "spenden"
+    "generation": {
+      "title": "",
+      "shortname": "",
+      "period": "Period",
+      "othernames": "Other name(s)"
+    }
   }
 }

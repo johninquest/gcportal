@@ -39,60 +39,79 @@ export class CalculatorService {
       return _age;
     }
   }
-  /* 
-  ageFromDate2(providedDate: string) {
-    if (providedDate) {
-      let now = dayjs(new Date());
-      let diffY = now.diff(providedDate, "year");
-      let diffM = now.diff(providedDate, "month");
-      let diffD = now.diff(providedDate, "day");
-      if (diffY >= 1) {
-        return `${diffY} ${this.setAgeUnit().year}`;
-      }
-      if (diffY < 1 && diffM >= 1) {
-        return `${diffM} ${this.setAgeUnit().month}`;
-      }
-      if (diffY < 1 && diffM < 1) {
-        return `${diffD} ${this.setAgeUnit().day}`;
-      }
-    } else {
-      return "";
-    }
-  }
 
-  setAgeUnit() {
-    if (navigator.language.startsWith("de")) {
-      let _days: string = "Tage";
-      let _months: string = "Monate";
-      let _years: string = "Jahre";
-      return { day: _days, month: _months, year: _years };
-    } else {
-      let _days: string = "days";
-      let _months: string = "months";
-      let _years: string = "years";
-      return { day: _days, month: _months, year: _years };
-    }
-  }
- */
   generationFromDateOfBirth(providedDate: string) {
     let _yearOfBirth: number = dayjs(providedDate).year() ?? 0;
+    if (_yearOfBirth >= 1883 && _yearOfBirth <= 1900) {
+      let gen_details: object = {
+        name: "lost",
+        period: "1883 - 1900",
+        other_names: "The Generation of 1914",
+      };
+      return gen_details;
+    }
+    if (_yearOfBirth >= 1901 && _yearOfBirth <= 1927) {
+      let gen_details: object = {
+        name: "great",
+        period: "1901 - 1927",
+        other_names: "G.I. Generation",
+      };
+      return gen_details;
+    }
     if (_yearOfBirth >= 1928 && _yearOfBirth <= 1945) {
-      return "silent";
+      let gen_details: object = {
+        name: "silent",
+        period: "1928 - 1945",
+        other_names: "Lucky Few",
+      };
+      return gen_details;
     }
     if (_yearOfBirth >= 1946 && _yearOfBirth <= 1964) {
-      return "boomer";
+      let gen_details: object = {
+        name: "boomers",
+        period: "1946 - 1964",
+        other_names: "baby boomers",
+      };
+      return gen_details;
     }
     if (_yearOfBirth >= 1965 && _yearOfBirth <= 1980) {
-      return "x";
+      let gen_details: object = {
+        name: "x",
+        period: "1965 - 1980",
+        other_names: "Gen X",
+      };
+      return gen_details;
     }
     if (_yearOfBirth >= 1981 && _yearOfBirth <= 1996) {
-      return "y";
+      let gen_details: object = {
+        name: "y",
+        period: "1981 - 1996",
+        other_names: "Millenials",
+      };
+      return gen_details;
     }
     if (_yearOfBirth >= 1997 && _yearOfBirth <= 2010) {
-      return "z";
+      let gen_details: object = {
+        name: "z",
+        period: "1997 - 2010",
+        other_names: "Gen Z",
+      };
+      return gen_details;
     }
     if (_yearOfBirth >= 2011 && _yearOfBirth <= 2025) {
-      return "alpha";
+      let gen_details: object = {
+        name: "alpha",
+        period: "2011 - 2025",
+        other_names: "Gen Alpha",
+      };
+      return gen_details;
+    } else {
+      let gen_details: object = {
+        name: "",
+        period: "",
+        other_names: "",
+      };
+      return gen_details;
     }
   }
 }

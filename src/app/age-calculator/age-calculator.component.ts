@@ -13,14 +13,7 @@ export class AgeCalculatorComponent {
     selectedDate: new FormControl(""),
   });
 
-  /*   showAge(dateStr: string) {
-    let ageFromDate = this._calculator.ageFromDate2(dateStr);
-    if (ageFromDate) {
-      return ageFromDate;
-    } else {
-      return "";
-    }
-  } */
+  current_datetime = new Date();
 
   showAgeInYears(pickedDate: string) {
     return this._calculator.ageFromDate(pickedDate)["inYears"];
@@ -35,8 +28,17 @@ export class AgeCalculatorComponent {
   }
 
   showGeneration(pickedDate: string) {
-    let _generation: string =
+    let _generation: object =
       this._calculator.generationFromDateOfBirth(pickedDate);
     return _generation;
+  }
+
+  formatDisplayedDate(dateStr: string) {
+    if (dateStr) {
+      let _formatted = new Date(dateStr);
+      return _formatted;
+    } else {
+      return "";
+    }
   }
 }
