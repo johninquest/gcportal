@@ -1,5 +1,4 @@
-<app-nav></app-nav>
-
+<!-- <app-nav></app-nav> -->
 <div class="title" matTooltip="Altersrechner">
   {{ "age-calculator.title" | translate }}
 </div>
@@ -59,4 +58,10 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="sig" routerLink="/home">
+  <span>&copy;</span><span>&nbsp;</span><span>JOHN APPS</span>
+  <span>&nbsp;</span>
+  <span>{{ current_datetime | date: "yyyy" }}</span>
 </div>

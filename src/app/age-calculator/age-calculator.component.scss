@@ -7,6 +7,7 @@
   font-size: 1rem;
   font-style: italic;
   color: var(--secondary-color);
+  letter-spacing: 0.05rem;
 }
 
 .calculator {
@@ -55,5 +56,18 @@
   .gData {
     font-size: 2rem;
     margin: 1rem auto 1rem auto;
+  }
+}
+
+.sig {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 3rem auto 0.5rem auto;
+  cursor: pointer;
+  width: 8rem;
+  font-size: 0.8rem;
+  word-spacing: 0.1rem;
+  &:hover {
+    border-bottom: 0.1rem solid var(--primary-color);
   }
 }

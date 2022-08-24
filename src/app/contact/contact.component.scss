@@ -6,12 +6,13 @@
   font-weight: bold;
   font-size: 1rem;
   font-style: italic;
-  color: beige;
+  color: var(--secondary-color);
+  letter-spacing: 0.05rem;
 }
 
 .mail {
   text-align: center;
-  color: #ffb300;
+  color: var(--primary-color);
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -20,17 +21,13 @@
   margin-bottom: 2rem;
 }
 
-/* .mail a {
-  color: #ffb300;
-} */
-
 .mail a mat-icon {
   transform: scale(1.5);
-  color: #ffb300;
+  color: var(--primary-color);
 }
 
 .contact-form {
-  background-color: beige;
+  background-color: var(--secondary-color);
   margin: 0 auto;
   width: 60%;
   @media screen and (max-width: 600px) {

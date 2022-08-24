@@ -16,6 +16,9 @@
 
 .customers {
   text-align: center;
+  .title {
+    letter-spacing: 0.05rem;
+  }
 }
 
 .customers .customer-list {
@@ -29,6 +32,10 @@
 .customers .customer-list .customer-item {
   margin: 1rem;
   cursor: pointer;
+}
+
+.technologies .title {
+  letter-spacing: 0.05rem;
 }
 
 .technologies .items {

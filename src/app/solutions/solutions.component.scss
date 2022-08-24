@@ -7,6 +7,7 @@
   font-size: 1rem;
   font-style: italic;
   color: beige;
+  letter-spacing: 0.05rem;
 }
 
 .solutions {
@@ -47,6 +48,7 @@ img {
     text-transform: uppercase;
     font-weight: bold;
     border-bottom: 1px beige solid;
+    letter-spacing: 0.05rem;
   }
   .tool {
     color: var(--secondary-color);

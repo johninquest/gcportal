@@ -18,9 +18,9 @@
     "title": "über uns",
     "description": "Demnächst verfügbar",
     "description1": "Wir sind ein Team aus erfahrenen Ingenieuren und IT-Fachleuten mit langjähriger Erfahrung in der Beratung, Entwicklung und Wartung von Softwarelösungen für kleine und große Unternehmen. Unser Bestreben ist es mithilfe einfacher Softwareapplikationen; Effizienz, Transparenz und Verantwortlichkeit in Organisationen zu fördern.",
-    "customers-title": "unsere kunden",
+    "customers-title": "kunden / projekte",
     "customers-details": "demnächst verfügbar ...",
-    "technologies": "unsere werkzeuge"
+    "technologies": "werkzeuge"
   },
   "privacy": {
     "title": "datenschutzerklärung",
@@ -52,7 +52,7 @@
     "title": "altersrechner",
     "select-date": "Datum auswählen",
     "today-date": "Tagesdatum",
-    "selected-date": "Ausgewählte Datum",
+    "selected-date": "ausgewählte Datum",
     "result-title": "Ergebnis",
     "age": "Alter",
     "days": "Tag(e)",
@@ -62,7 +62,7 @@
       "title": "",
       "shortname": "",
       "period": "Zeitraum",
-      "othernames": "Sonstige Bezeichnung(en)"
+      "othernames": "sonstige Bezeichnung(en)"
     }
   }
 }
