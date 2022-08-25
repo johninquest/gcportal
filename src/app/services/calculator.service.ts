@@ -46,7 +46,7 @@ export class CalculatorService {
       let gen_details: object = {
         name: "lost",
         period: "1883 - 1900",
-        other_names: "The Generation of 1914",
+        other_names: "Generation of 1914",
       };
       return gen_details;
     }
@@ -70,7 +70,7 @@ export class CalculatorService {
       let gen_details: object = {
         name: "boomers",
         period: "1946 - 1964",
-        other_names: "baby boomers",
+        other_names: "Baby Boomers",
       };
       return gen_details;
     }
@@ -86,7 +86,7 @@ export class CalculatorService {
       let gen_details: object = {
         name: "y",
         period: "1981 - 1996",
-        other_names: "Millenials",
+        other_names: "Millennials",
       };
       return gen_details;
     }
