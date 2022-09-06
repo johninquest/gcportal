@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { CalculatorService } from "../services/calculator.service";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-age-calculator",
@@ -8,7 +9,12 @@ import { CalculatorService } from "../services/calculator.service";
   styleUrls: ["./age-calculator.component.scss"],
 })
 export class AgeCalculatorComponent {
-  constructor(private _calculator: CalculatorService) {}
+  constructor(
+    private _calculator: CalculatorService,
+    private _titleService: Title
+  ) {
+    this.setPageTitle();
+  }
   ageForm = new FormGroup({
     selectedDate: new FormControl(""),
   });
@@ -39,6 +45,14 @@ export class AgeCalculatorComponent {
       return _formatted;
     } else {
       return "";
+    }
+  }
+
+  setPageTitle() {
+    if (navigator.language.startsWith("de")) {
+      this._titleService.setTitle("Altersrechner");
+    } else {
+      this._titleService.setTitle("Age Calculator");
     }
   }
 }
