@@ -10,19 +10,28 @@
   letter-spacing: 0.05rem;
 }
 
+.options {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
 .mail {
-  text-align: center;
-  color: var(--primary-color);
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 .mail a mat-icon {
   transform: scale(1.5);
+  color: var(--primary-color);
+}
+
+.mail a i {
+  transform: scale(2);
   color: var(--primary-color);
 }
 

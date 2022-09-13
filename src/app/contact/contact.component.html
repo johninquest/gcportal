@@ -1,13 +1,23 @@
 <app-nav></app-nav>
-<div class="title" matTooltip="Kontakt">
+<div class="title">
   {{ "contact.title" | translate }}
 </div>
 
-<div class="mail">
-  <a href="mailto:hello@johnapps.de">
-    <mat-icon>email</mat-icon>
-  </a>
+<div class="options">
+  <div class="mail" matTooltip="E-mail">
+    <a href="mailto:hello@johnapps.de">
+      <mat-icon>email</mat-icon>
+    </a>
+  </div>
+
+  <div class="mail" matTooltip="Instagram">
+    <a href="https://www.instagram.com/johnapps.de/" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </div>
 </div>
+
+<!-- <i class="fa-brands fa-instagram"></i> -->
 
 <!-- <div class="contact-form">
   <form [formGroup]="messageForm">
