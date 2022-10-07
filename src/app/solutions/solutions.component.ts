@@ -42,6 +42,12 @@ export class SolutionsComponent {
     window.focus();
   }
 
+  goToZetApp() {
+    let targetUrl: string = "https://zeiterfassungstool.web.app";
+    window.open(targetUrl, "_blank");
+    window.focus();
+  }
+
   goToTaxApp() {
     let targetUrl: string = "https://johninquest.github.io/tax-app";
     window.open(targetUrl, "_blank");
