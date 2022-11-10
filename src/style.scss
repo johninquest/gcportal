@@ -2,8 +2,8 @@
 @import "@angular/material/theming";
 @include mat.core();
 
-$mytheme-primary: mat.define-palette(mat.$amber-palette, 600); // #FFB300
-$mytheme-accent: mat.define-palette(mat.$grey-palette, 300); // #E0E0E0
+$mytheme-primary: mat.define-palette(mat.$indigo-palette, A200, 400);
+$mytheme-accent: mat.define-palette(mat.$yellow-palette, A100, 200); // #E0E0E0
 $mytheme-warn: mat.define-palette(mat.$red-palette, 500); // #F44336
 
 $mytheme-all: mat.define-light-theme(
@@ -14,19 +14,21 @@ $mytheme-all: mat.define-light-theme(
 @include mat.all-component-themes($mytheme-all);
 
 :root {
-  --primary-color: #ffb300;
-  --secondary-color: beige;
-  --txt-color: #424242;
-  --bg-color: #424242;
+  --primary-color: #536dfe;
+  --secondary-color: #fff83b;
+  --warn-color: #f44336;
+  --txt-color: black;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-$myfont: "Lato", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+$myfont: Quicksand, Helvetica, sans-serif;
 * {
   font: 100% $myfont;
 }
 
-/* Add !important to overwrite all elements */
+/* Add !important to overwrite all elements 
 html {
   background-color: #424242;
 }
+
+*/

@@ -7,29 +7,19 @@ import { MaterialModules } from "./material.modules";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
-import { SolutionsComponent } from "./solutions/solutions.component";
 import { NavComponent } from "./nav/nav.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PrivacyComponent } from "./privacy/privacy.component";
-import { AgeCalculatorComponent } from "./age-calculator/age-calculator.component";
-import { DownloadsComponent } from "./downloads/downloads.component";
-import { WueDataComponent } from "./demos/wue-data/wue-data.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     ContactComponent,
-    SolutionsComponent,
     NavComponent,
     PrivacyComponent,
-    AgeCalculatorComponent,
-    DownloadsComponent,
-    WueDataComponent,
   ],
   imports: [
     BrowserModule,

@@ -24,9 +24,9 @@ export class AppComponent {
 
   getBrowserLanguage(sysLanguage: string) {
     let languageToLowerCase = sysLanguage.toLocaleLowerCase();
-    let isDE = languageToLowerCase.startsWith("de");
-    if (isDE) {
-      return "de";
+    let isFR = languageToLowerCase.startsWith("fr");
+    if (isFR) {
+      return "fr";
     } else {
       return "en";
     }
