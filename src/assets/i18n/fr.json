@@ -7,7 +7,7 @@
   },
   "home": {
     "message": "contactez votre conseiller d'orientation",
-    "get-in-touch": "get in touch",
+    "get-in-touch": "entrer en contact",
     "imprint": "Imprint",
     "privacy": "Privacy"
   },
@@ -19,30 +19,12 @@
 
   "contact": {
     "title": "contacter nous",
-    "donate": "donate",
     "form": {
-      "title": "Please leave a message",
-      "name": "First name",
-      "email": "e-mail",
+      "title": "Que voulez-vous nous dire?",
+      "name": "Prénom",
+      "email": "Adress e-mail",
       "message": "Message",
-      "submit": "submit"
-    }
-  },
-  "age-calculator": {
-    "title": "age calculator",
-    "select-date": "Select date",
-    "today-date": "Today's date",
-    "selected-date": "Selected date",
-    "result-title": "Result",
-    "age": "Age",
-    "days": "Day(s)",
-    "months": "Month(s)",
-    "years": "Year(s)",
-    "generation": {
-      "title": "",
-      "shortname": "",
-      "period": "Period",
-      "othernames": "Other name(s)"
+      "submit": "soumettre"
     }
   }
 }

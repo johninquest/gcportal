@@ -3,7 +3,7 @@
   {{ "contact.title" | translate }}
 </div>
 
-<div class="options">
+<!-- <div class="options">
   <div class="mail" matTooltip="E-mail">
     <a href="mailto:hello@johnapps.de">
       <mat-icon>email</mat-icon>
@@ -15,15 +15,15 @@
       <i class="fa-brands fa-instagram"></i>
     </a>
   </div>
-</div>
+</div> -->
 
 <!-- <i class="fa-brands fa-instagram"></i> -->
 
-<!-- <div class="contact-form">
+<div class="contact-form">
   <form [formGroup]="messageForm">
     <h3 style="font-weight: bold">{{ "contact.form.title" | translate }}</h3>
     <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
+      <mat-label>{{ "contact.form.name" | translate }}</mat-label>
       <input matInput formControlName="senderName" type="text" />
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -38,7 +38,7 @@
       {{ "contact.form.submit" | translate }}
     </button>
   </form>
-</div> -->
+</div>
 
 <!--
 <div class="address">
