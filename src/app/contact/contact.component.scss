@@ -9,36 +9,11 @@
   letter-spacing: 0.1rem;
 }
 
-.options {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-}
-
-.mail {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  margin: 2rem;
-}
-
-.mail a mat-icon {
-  transform: scale(1.5);
-  color: var(--primary-color);
-}
-
-.mail a i {
-  transform: scale(2);
-  color: var(--primary-color);
-}
-
 .contact-form {
   margin: 0 auto;
   width: 60%;
   @media screen and (max-width: 600px) {
-    width: 90%;
+    width: 95%;
   }
 }
 
@@ -50,36 +25,26 @@
   padding: 0.5rem;
   margin: 0.5rem;
   mat-form-field {
-    width: 90%;
+    width: 100%;
   }
+  .names {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+
+    mat-form-field {
+      width: 45%;
+    }
+  }
+}
+
+.btns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
   button {
+    margin: 1rem;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
   }
 }
-
-/* .address {
-  text-align: center;
-  color: beige;
-}
-
-.address a {
-  color: beige;
-}
-
-.donate {
-  margin-top: 20em;
-  text-align: center;
-} */
-
-/* .donate p {
-  text-transform: uppercase;
-  color: beige;
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-
-.donate span {
-  cursor: pointer;
-}
- */

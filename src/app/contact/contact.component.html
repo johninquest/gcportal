@@ -1,42 +1,61 @@
-<app-nav></app-nav>
+<!-- <app-nav></app-nav> -->
 <div class="title">
   {{ "contact.title" | translate }}
 </div>
 
-<!-- <div class="options">
-  <div class="mail" matTooltip="E-mail">
-    <a href="mailto:hello@johnapps.de">
-      <mat-icon>email</mat-icon>
-    </a>
-  </div>
-
-  <div class="mail" matTooltip="Instagram">
-    <a href="https://www.instagram.com/johnapps.de/" target="_blank">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-  </div>
-</div> -->
-
-<!-- <i class="fa-brands fa-instagram"></i> -->
-
 <div class="contact-form">
-  <form [formGroup]="messageForm">
+  <form [formGroup]="contactForm">
     <h3 style="font-weight: bold">{{ "contact.form.title" | translate }}</h3>
     <mat-form-field appearance="fill">
-      <mat-label>{{ "contact.form.name" | translate }}</mat-label>
-      <input matInput formControlName="senderName" type="text" />
+      <mat-label>{{ "contact.form.requestReason" | translate }}</mat-label>
+      <mat-select formControlName="reasonForRequest">
+        <mat-option *ngFor="let i of requestReasonsList" [value]="i.value">
+          {{ i.viewValue }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
-      <mat-label>{{ "contact.form.email" | translate }}</mat-label>
-      <input matInput formControlName="senderEmail" type="email" />
+      <mat-label>{{ "contact.form.isUrgentLabel" | translate }}</mat-label>
+      <mat-select formControlName="isUrgent">
+        <mat-option value="no">
+          {{ "contact.form.isUrgentOptions.no" | translate }}</mat-option
+        >
+        <mat-option value="yes">
+          {{ "contact.form.isUrgentOptions.yes" | translate }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label> {{ "contact.form.message" | translate }}</mat-label>
-      <textarea matInput formControlName="senderMessage" rows="5"></textarea>
+      <textarea
+        matInput
+        formControlName="additionalDetails"
+        rows="3"
+      ></textarea>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onClickSubmit()">
-      {{ "contact.form.submit" | translate }}
-    </button>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "contact.form.studentId" | translate }}</mat-label>
+      <input matInput formControlName="studentId" type="text" />
+    </mat-form-field>
+    <div class="names">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "contact.form.surname" | translate }}</mat-label>
+        <input matInput formControlName="surname" type="text" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ "contact.form.givenNames" | translate }}</mat-label>
+        <input matInput formControlName="givenNames" type="text" />
+      </mat-form-field>
+    </div>
+
+    <div class="btns">
+      <button mat-stroked-button color="primary" (click)="onClickBack()">
+        {{ "contact.form.backButton" | translate }}
+      </button>
+      <button mat-raised-button color="primary" (click)="onClickSubmit()">
+        {{ "contact.form.submitButton" | translate }}
+      </button>
+    </div>
   </form>
 </div>
 

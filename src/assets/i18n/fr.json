@@ -20,11 +20,20 @@
   "contact": {
     "title": "contacter nous",
     "form": {
-      "title": "Que voulez-vous nous dire?",
-      "name": "Prénom",
+      "title": "Pourquoi voudriez-vous voir un conseiller d'orientation?",
+      "studentId": "Numéro d'immatriculation",
+      "surname": "Nom",
+      "givenNames": "Prénom",
+      "requestReason": "Raison de la demande?",
+      "isUrgentLabel": "C'est urgent?",
+      "isUrgentOptions": {
+        "yes": "Oui",
+        "no": "Non"
+      },
       "email": "Adress e-mail",
-      "message": "Message",
-      "submit": "soumettre"
+      "message": "Autre détails supplémentaires?",
+      "backButton": "retour",
+      "submitButton": "soumettre"
     }
   }
 }

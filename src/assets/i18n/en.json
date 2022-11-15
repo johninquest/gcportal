@@ -6,7 +6,7 @@
     "contact": "contact"
   },
   "home": {
-    "message": "contact your guidance counselor",
+    "message": "contact your guidance counsellor",
     "get-in-touch": "get in touch",
     "imprint": "Imprint",
     "privacy": "Privacy"
@@ -26,11 +26,20 @@
   "contact": {
     "title": "contact us",
     "form": {
-      "title": "What would you like to tell us?",
-      "name": "First name",
+      "title": "Why would you like to see a guidance counsellor?",
+      "studentId": "Registration number",
+      "surname": "Surname",
+      "givenNames": "Given names",
+      "requestReason": "Reason for request",
+      "isUrgentLabel": "Is it urgent?",
+      "isUrgentOptions": {
+        "yes": "Yes",
+        "no": "No"
+      },
       "email": "Email",
-      "message": "Message",
-      "submit": "submit"
+      "message": "Any additional details?",
+      "backButton": "back",
+      "submitButton": "submit"
     }
   }
 }
