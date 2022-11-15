@@ -24,6 +24,8 @@
       "studentId": "Numéro d'immatriculation",
       "surname": "Nom",
       "givenNames": "Prénom",
+      "classNumber": "No. de classe",
+      "classLetter": "Lettre de classe",
       "requestReason": "Raison de la demande?",
       "isUrgentLabel": "C'est urgent?",
       "isUrgentOptions": {

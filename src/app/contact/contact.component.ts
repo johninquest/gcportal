@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { REQUEST_REASONS } from "../shared/lists";
+import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 
 @Component({
@@ -18,9 +18,12 @@ export class ContactComponent {
     studentId: new FormControl<string | null>("", Validators.required),
     surname: new FormControl<string | null>(""),
     givenNames: new FormControl<string | null>(""),
-    classNumber: new FormControl<string | null>(""),
+    classNumber: new FormControl<string | null>("", Validators.required),
+    classLetter: new FormControl<string | null>(""),
   });
 
+  classLetterList: ListDataTypeDescriptor[] = CLASS_LETTERS;
+  classNumberList: ListDataTypeDescriptor[] = CLASS_NUMBERS;
   requestReasonsList: ListDataTypeDescriptor[] = REQUEST_REASONS;
 
   showEmailAddress() {

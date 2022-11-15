@@ -27,15 +27,17 @@
     "title": "contact us",
     "form": {
       "title": "Why would you like to see a guidance counsellor?",
-      "studentId": "Registration number",
-      "surname": "Surname",
-      "givenNames": "Given names",
       "requestReason": "Reason for request",
       "isUrgentLabel": "Is it urgent?",
       "isUrgentOptions": {
         "yes": "Yes",
         "no": "No"
       },
+      "studentId": "Registration number",
+      "surname": "Surname",
+      "givenNames": "Given names",
+      "classNumber": "Class no.",
+      "classLetter": "Class letter",
       "email": "Email",
       "message": "Any additional details?",
       "backButton": "back",
