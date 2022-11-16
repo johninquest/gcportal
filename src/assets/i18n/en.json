@@ -7,7 +7,8 @@
   },
   "home": {
     "message": "contact your guidance counsellor",
-    "get-in-touch": "get in touch",
+    "school-list-label": "Choose your school",
+    "get-in-touch": "proceed",
     "imprint": "Imprint",
     "privacy": "Privacy"
   },

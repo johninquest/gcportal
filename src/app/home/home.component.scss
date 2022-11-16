@@ -8,6 +8,17 @@
   height: auto;
 } */
 
+.school-selector {
+  text-align: center;
+  margin: 3rem auto 1rem auto;
+  mat-form-field {
+    width: 60%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
+  }
+}
+
 .message {
   text-align: center;
   color: var(--txt-color);
@@ -24,7 +35,8 @@
   text-align: center;
   button {
     text-transform: uppercase;
-    height: 4rem;
+    height: 3rem;
+    width: 10rem;
     border-radius: 2rem;
   }
 }

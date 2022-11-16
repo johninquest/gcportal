@@ -7,7 +7,8 @@
   },
   "home": {
     "message": "contactez votre conseiller d'orientation",
-    "get-in-touch": "entrer en contact",
+    "school-list-label": "Choisissez votre école",
+    "get-in-touch": "procéder",
     "imprint": "Imprint",
     "privacy": "Privacy"
   },

@@ -1,28 +1,22 @@
 <!-- <app-nav></app-nav> -->
-<div class="title">
-  <!--   <img
-    src="https://firebasestorage.googleapis.com/v0/b/johnappsde.appspot.com/o/frontpage.svg?alt=media&token=a1f15347-8f34-438d-875b-5ac2f8700d62"
-    height="200"
-    width="600"
-    alt="JOHN APPS"
-  />
-</div> -->
 
-  <div class="message">
-    {{ "home.message" | translate }}
-  </div>
+<div class="message">
+  {{ "home.message" | translate }}
+</div>
 
-  <div class="call-to-action">
-    <button mat-flat-button color="primary" routerLink="/contact">
-      {{ "home.get-in-touch" | translate }}
-    </button>
-  </div>
+<div class="school-selector">
+  <mat-form-field appearance="fill">
+    <mat-label>{{ "home.school-list-label" | translate }}</mat-label>
+    <mat-select [formControl]="selectedSchool">
+      <mat-option *ngFor="let i of schoolsList" [value]="i.value">
+        {{ i.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
-  <!--   <div class="footer">
-    <p>
-      <a (click)="comingSoonMessage()">{{ "home.imprint" | translate }}</a>
-      <a routerLink="/privacy">{{ "home.privacy" | translate }}</a>
-    </p>
-  </div>
-</div> -->
+<div class="call-to-action">
+  <button mat-flat-button color="primary" (click)="onClickProceed()">
+    {{ "home.get-in-touch" | translate }}
+  </button>
 </div>

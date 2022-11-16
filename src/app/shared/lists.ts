@@ -45,3 +45,12 @@ export const CLASS_LETTERS = [
   { value: "y", viewValue: "Y" },
   { value: "z", viewValue: "Z" },
 ];
+
+export const SCHOOLS = [
+  // { value: '', viewValue: 'Choose...' },
+  { value: "nyalla", viewValue: "Lycée Bilingue de Nyalla" },
+  { value: "japoma", viewValue: "Lycée de Japoma" },
+  { value: "ndoghem", viewValue: "Lycée de Ndog Hem" },
+  { value: "logpom", viewValue: "Lycée Bilingue de Logpom" },
+  { value: "other", viewValue: "Autre/Other" },
+];
