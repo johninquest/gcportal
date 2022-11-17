@@ -4,8 +4,6 @@ import { HomeComponent } from "./home/home.component";
 import { ContactComponent } from "./contact/contact.component";
 import { PrivacyComponent } from "./privacy/privacy.component";
 
-import { from } from "rxjs";
-
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: HomeComponent },

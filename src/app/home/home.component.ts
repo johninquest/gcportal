@@ -11,16 +11,16 @@ import { SCHOOLS } from "../shared/lists";
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   constructor(
     private _router: Router,
     private _snackBar: MatSnackBar,
     private _ws: WebService
   ) {}
 
-  ngOnInit() {
+  /*   ngOnInit() {
     this.fetchRequests();
-  }
+  } */
 
   tableData: any;
 
@@ -44,17 +44,16 @@ export class HomeComponent implements OnInit {
     } else if (this.selectedSchool.value === "nyalla") {
       this._router.navigateByUrl("/contact");
     } else {
-      // alert("The selected school is not supported!");
       this._snackBar.open("The selected school is not yet supported!", "OK", {
         duration: 3000,
       });
     }
   }
 
-  fetchRequests() {
+  /*   fetchRequests() {
     this._ws
       .getSubmittedReqs()
       .then((data) => (this.tableData = data["data"]))
       .catch((err) => console.log(err));
-  }
+  } */
 }
