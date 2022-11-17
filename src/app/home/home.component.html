@@ -12,6 +12,7 @@
         {{ i.viewValue }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="selectedSchool.invalid">{{ errorMessage() }}</mat-error>
   </mat-form-field>
 </div>
 
@@ -20,3 +21,5 @@
     {{ "home.get-in-touch" | translate }}
   </button>
 </div>
+
+<!-- <div style="text-align: center; margin: 3rem">{{ tableData | json }}</div> -->

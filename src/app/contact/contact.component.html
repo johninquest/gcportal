@@ -8,7 +8,7 @@
     <h3 style="font-weight: bold">{{ "contact.form.title" | translate }}</h3>
     <mat-form-field appearance="fill">
       <mat-label>{{ "contact.form.requestReason" | translate }}</mat-label>
-      <mat-select formControlName="reasonForRequest">
+      <mat-select formControlName="requestCategory">
         <mat-option *ngFor="let i of requestReasonsList" [value]="i.value">
           {{ i.viewValue }}
         </mat-option>

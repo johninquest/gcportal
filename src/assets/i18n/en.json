@@ -7,22 +7,14 @@
   },
   "home": {
     "message": "contact your guidance counsellor",
-    "school-list-label": "Choose your school",
+    "school-list-label": "Select your school",
     "get-in-touch": "proceed",
     "imprint": "Imprint",
     "privacy": "Privacy"
   },
-  "about": {
-    "title": "about me",
-    "description": "My name is John. I am a business-minded engineering and IT professional with years of hands-on experience in assisting sales, technical account management, designing, delivering and maintaining software solutions for small and large organizations. I enjoy working on projects which have a potential to add business as well as social value",
-    "description1": "We are a team of engineers and IT professionals with years of experience working in consulting, building, delivering and maintaining software solutions for individuals, small businesses as well as large organizations. What motivates me, is a shared desire to promote accountability, efficiency and transparency with the help of simple software applications.",
-    "customers-title": "customers / projects",
-    "customers-details": "coming soon ...",
-    "technologies": "tools"
-  },
   "privacy": {
     "title": "data privacy statement",
-    "details": "This website does not collect, store or forward any personal information from its visitors in accordance with global internet privacy regulations (such as the EU's GDPR). This privacy disclaimer only applies to this website. It does not apply to third-party applications or websites linked on the site."
+    "details": "This website does not collect, store or forward any personal information from its visitors in accordance with international internet privacy regulations (such as the EU's GDPR). This privacy disclaimer only applies to this website. It does not apply to third-party applications linked on the site."
   },
   "contact": {
     "title": "contact us",

@@ -1,18 +1,28 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { environment } from "src/environments/environment";
 
 @Injectable({ providedIn: "root" })
 export class WebService {
-  constructor(private http: HttpClient) {}
+  constructor() {
+    this.supabase = createClient(
+      environment.supabaseUrl,
+      environment.supabaseKey
+    );
+  }
+  private supabase: SupabaseClient;
 
-  postRequest(reqUrl: string, reqPayload: object): Observable<object> {
-    let reqPost = this.http.post(reqUrl, reqPayload);
-    return reqPost;
+  async getSubmittedReqs() {
+    let { data: requests, error } = await this.supabase
+      .from("requests")
+      .select("*");
+    return { data: requests, error };
   }
 
-  getRequest(reqUrl: string): Observable<object> {
-    let reqGet = this.http.get(reqUrl);
-    return reqGet;
+  async addRowToDB(rowData: object) {
+    let { data, error } = await this.supabase
+      .from("requests")
+      .insert([rowData]);
+    return { data, error };
   }
 }
