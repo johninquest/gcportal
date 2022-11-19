@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
@@ -17,10 +17,6 @@ export class HomeComponent {
     private _snackBar: MatSnackBar,
     private _ws: WebService
   ) {}
-
-  /*   ngOnInit() {
-    this.fetchRequests();
-  } */
 
   tableData: any;
 
@@ -43,9 +39,10 @@ export class HomeComponent {
       this.selectedSchool.markAllAsTouched();
     } else if (this.selectedSchool.value === "nyalla") {
       this._router.navigateByUrl("/request");
+      // this._router.navigate([])
     } else {
       this._snackBar.open("The selected school is not yet supported!", "OK", {
-        duration: 3000,
+        duration: 5000,
       });
     }
   }

@@ -16,7 +16,7 @@ export class AppComponent {
       filter((event) => event instanceof NavigationEnd)
     );
     navEndEvent$.subscribe((event: NavigationEnd) => {
-      gtag("config", "G-KT1LBY6JRB", { page_path: event.urlAfterRedirects });
+      gtag("config", "G-X53L36TCCL", { page_path: event.urlAfterRedirects });
     });
     translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
   }

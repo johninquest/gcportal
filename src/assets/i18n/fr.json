@@ -27,7 +27,7 @@
       "givenNames": "Prénom",
       "classNumber": "No. de classe",
       "classLetter": "Lettre de classe",
-      "requestReason": "Raison de la demande?",
+      "requestReason": "Raison?",
       "isUrgentLabel": "C'est urgent?",
       "isUrgentOptions": {
         "yes": "Oui",
