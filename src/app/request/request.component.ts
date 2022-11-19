@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
 import { DatetimeService } from "../services/datetime.service";
@@ -18,7 +17,6 @@ import { MatDialog } from "@angular/material/dialog";
 export class RequestComponent {
   constructor(
     private _ws: WebService,
-    private _snackBar: MatSnackBar,
     private _translate: TranslateService,
     private _router: Router,
     private _dtService: DatetimeService,
