@@ -3,10 +3,10 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
-import dayjs from "dayjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
+import { DatetimeService } from "../services/datetime.service";
 
 @Component({
   selector: "app-request",
@@ -18,7 +18,8 @@ export class RequestComponent {
     private _ws: WebService,
     private _snackBar: MatSnackBar,
     private _translate: TranslateService,
-    private _router: Router
+    private _router: Router,
+    private _dtService: DatetimeService
   ) {
     _translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
   }
@@ -53,7 +54,7 @@ export class RequestComponent {
       this.contactForm.markAllAsTouched();
     } else {
       let _supabasePayload: object = {
-        created_at: dayjs(new Date()).format("YYYY-MM-DD HH:mm:ss"),
+        created_at: this._dtService.dateTimeFormatted(new Date()),
         request_category: this.contactForm.value.requestCategory,
         is_urgent: this.contactForm.value.isUrgent,
         request_details: this.contactForm.value.additionalDetails,
@@ -63,16 +64,13 @@ export class RequestComponent {
         class_number: this.contactForm.value.classNumber,
         class_letter: this.contactForm.value.classLetter,
       };
-      // console.log("Form data: ", this.contactForm.value);
-      // console.log("Payload data: ", _supabasePayload);
       this._ws
         .addRowToDB(_supabasePayload)
         .then((res) => {
-          // console.log("Insert ok response:", res);
           this._snackBar.open(
             "Your request was submitted successfully!",
             "OK",
-            { duration: 3000 }
+            { duration: 10000 }
           );
           this._router.navigateByUrl("");
         })

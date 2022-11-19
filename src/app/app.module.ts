@@ -11,7 +11,7 @@ import { HomeComponent } from "./home/home.component";
 import { NavComponent } from "./nav/nav.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { PrivacyComponent } from "./privacy/privacy.component";
+/* import { PrivacyComponent } from "./privacy/privacy.component"; */
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { PrivacyComponent } from "./privacy/privacy.component";
     HomeComponent,
     /*  ContactComponent, */
     NavComponent,
-    PrivacyComponent,
+    /*     PrivacyComponent, */
   ],
   imports: [
     BrowserModule,
