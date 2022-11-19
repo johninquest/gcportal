@@ -7,7 +7,7 @@ import { MaterialModules } from "./material.modules";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
-import { ContactComponent } from "./contact/contact.component";
+/* import { ContactComponent } from "./contact/contact.component"; */
 import { NavComponent } from "./nav/nav.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -17,7 +17,7 @@ import { PrivacyComponent } from "./privacy/privacy.component";
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent,
+    /*  ContactComponent, */
     NavComponent,
     PrivacyComponent,
   ],

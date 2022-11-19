@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { filter } from "rxjs/operators";
 import { Router, NavigationEnd } from "@angular/router";
-import { from } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
 
 declare const gtag: any;

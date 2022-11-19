@@ -1,18 +1,37 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
 import dayjs from "dayjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { TranslateService } from "@ngx-translate/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact.component.html",
-  styleUrls: ["./contact.component.scss"],
+  selector: "app-request",
+  templateUrl: "./request.component.html",
+  styleUrls: ["./request.component.scss"],
 })
-export class ContactComponent {
-  constructor(private _ws: WebService, private _snackBar: MatSnackBar) {}
+export class RequestComponent {
+  constructor(
+    private _ws: WebService,
+    private _snackBar: MatSnackBar,
+    private _translate: TranslateService,
+    private _router: Router
+  ) {
+    _translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
+  }
+
+  getBrowserLanguage(sysLanguage: string) {
+    let languageToLowerCase = sysLanguage.toLocaleLowerCase();
+    let isFR = languageToLowerCase.startsWith("fr");
+    if (isFR) {
+      return "fr";
+    } else {
+      return "en";
+    }
+  }
 
   contactForm = new FormGroup({
     requestCategory: new FormControl<string | null>("", Validators.required),
@@ -49,12 +68,13 @@ export class ContactComponent {
       this._ws
         .addRowToDB(_supabasePayload)
         .then((res) => {
-          console.log("Insert ok response:", res);
+          // console.log("Insert ok response:", res);
           this._snackBar.open(
             "Your request was submitted successfully!",
             "OK",
             { duration: 3000 }
           );
+          this._router.navigateByUrl("");
         })
         .catch((err) => console.log("Insert error response:", err));
     }
