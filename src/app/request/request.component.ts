@@ -7,6 +7,8 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
 import { DatetimeService } from "../services/datetime.service";
+import { InfoDialogComponent } from "./info-dialog/info-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-request",
@@ -19,7 +21,8 @@ export class RequestComponent {
     private _snackBar: MatSnackBar,
     private _translate: TranslateService,
     private _router: Router,
-    private _dtService: DatetimeService
+    private _dtService: DatetimeService,
+    private _dialog: MatDialog
   ) {
     _translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
   }
@@ -67,12 +70,17 @@ export class RequestComponent {
       this._ws
         .addRowToDB(_supabasePayload)
         .then((res) => {
-          this._snackBar.open(
-            "Your request was submitted successfully!",
-            "OK",
-            { duration: 10000 }
-          );
-          this._router.navigateByUrl("");
+          this._dialog
+            .open(InfoDialogComponent, {
+              autoFocus: false,
+              data: {
+                title: "Request submitted successfully",
+                body: "A guidance counselor will contact you as soon as possible!",
+              },
+              disableClose: true,
+            })
+            .afterClosed()
+            .subscribe((val) => this._router.navigateByUrl(""));
         })
         .catch((err) => console.log("Insert error response:", err));
     }

@@ -8,9 +8,10 @@ import { RequestRoutingModule } from "./request-routing.module";
 import { RequestComponent } from "./request.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 
 @NgModule({
-  declarations: [RequestComponent],
+  declarations: [RequestComponent, InfoDialogComponent],
   imports: [
     CommonModule,
     RequestRoutingModule,

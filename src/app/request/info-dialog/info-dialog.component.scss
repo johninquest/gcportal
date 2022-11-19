@@ -1,0 +1,10 @@
+.dialog {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 13rem;
+  mat-icon {
+    color: var(--primary-color);
+    transform: scale(2);
+  }
+}

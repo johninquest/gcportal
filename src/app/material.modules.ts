@@ -12,7 +12,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatIconModule } from "@angular/material/icon";
 // import { MatTableModule } from "@angular/material/table";
 // import { MatStepperModule } from "@angular/material/stepper";
-// import { MatDialogModule } from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
 import { MatTooltipModule } from "@angular/material/tooltip";
 // import { MatExpansionModule } from "@angular/material/expansion";
 // import { MatCardModule } from "@angular/material/card";
@@ -34,8 +34,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     /* MatListModule, */
     MatIconModule,
     /*  MatTableModule,
-    MatStepperModule,
-    MatDialogModule, */
+    MatStepperModule, */
+    MatDialogModule,
     MatTooltipModule,
     /*  MatExpansionModule,
     MatCardModule, */
@@ -55,8 +55,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     /*  MatListModule, */
     MatIconModule,
     /*  MatTableModule,
-    MatStepperModule,
-    MatDialogModule, */
+    MatStepperModule, */
+    MatDialogModule,
     MatTooltipModule,
     /*  MatExpansionModule,
     MatCardModule, */

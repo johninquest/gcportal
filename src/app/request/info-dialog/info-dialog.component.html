@@ -1,0 +1,12 @@
+<div class="dialog">
+  <div mat-dialog-title><mat-icon>info_outlined</mat-icon></div>
+  <div mat-dialog-content>
+    <p style="font-weight: bold; margin-bottom: 0.5rem; text-align: center">
+      {{ data["title"] }}
+    </p>
+    <p style="text-align: center">{{ data["body"] }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onDismiss()">OK</button>
+  </div>
+</div>
