@@ -1,13 +1,15 @@
 {
   "name": "gcportal",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-stats": "ng build --stats-json",
+    "analyze": "webpack-bundle-analyzer dist/gcportal/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -56,6 +58,7 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "webpack-bundle-analyzer": "^4.7.0"
   }
 }
