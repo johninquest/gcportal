@@ -5,7 +5,6 @@ import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
-import { DatetimeService } from "../services/datetime.service";
 import { InfoDialogComponent } from "./info-dialog/info-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
 
@@ -19,7 +18,6 @@ export class RequestComponent {
     private _ws: WebService,
     private _translate: TranslateService,
     private _router: Router,
-    private _dtService: DatetimeService,
     private _dialog: MatDialog
   ) {
     _translate.setDefaultLang(this.getBrowserLanguage(navigator.language));
@@ -55,7 +53,7 @@ export class RequestComponent {
       this.contactForm.markAllAsTouched();
     } else {
       let _supabasePayload: object = {
-        created_at: this._dtService.dateTimeFormatted(new Date()),
+        created_at: new Date().toISOString(),
         request_category: this.contactForm.value.requestCategory,
         is_urgent: this.contactForm.value.isUrgent,
         request_details: this.contactForm.value.additionalDetails,

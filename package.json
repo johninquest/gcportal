@@ -1,6 +1,6 @@
 {
   "name": "gcportal",
-  "version": "0.0.7",
+  "version": "0.2.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -26,9 +26,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "@supabase/supabase-js": "^2.1.0",
-    "chart.js": "^3.8.0",
     "core-js": "^2.6.11",
-    "dayjs": "^1.11.3",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
