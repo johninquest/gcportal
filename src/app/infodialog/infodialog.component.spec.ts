@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RequestComponent } from './request.component';
+import { InfodialogComponent } from './infodialog.component';
 
-describe('RequestComponent', () => {
-  let component: RequestComponent;
-  let fixture: ComponentFixture<RequestComponent>;
+describe('InfodialogComponent', () => {
+  let component: InfodialogComponent;
+  let fixture: ComponentFixture<InfodialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestComponent ]
+      declarations: [ InfodialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RequestComponent);
+    fixture = TestBed.createComponent(InfodialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

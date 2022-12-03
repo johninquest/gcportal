@@ -38,7 +38,7 @@ export class HomeComponent {
     if (this.selectedSchool.invalid) {
       this.selectedSchool.markAllAsTouched();
     } else if (this.selectedSchool.value === "nyalla") {
-      this._router.navigateByUrl("/request");
+      this._router.navigateByUrl("/contact");
       // this._router.navigate([])
     } else {
       this._snackBar.open("The selected school is not yet supported!", "OK", {

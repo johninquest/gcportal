@@ -2,11 +2,11 @@ import { Component, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
-  selector: "app-info-dialog",
-  templateUrl: "./info-dialog.component.html",
-  styleUrls: ["./info-dialog.component.scss"],
+  selector: "app-infodialog",
+  templateUrl: "./infodialog.component.html",
+  styleUrls: ["./infodialog.component.scss"],
 })
-export class InfoDialogComponent {
+export class InfodialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: object,
     private _dialogRef: MatDialogRef<any>

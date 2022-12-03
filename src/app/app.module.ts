@@ -9,16 +9,18 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-/* import { ContactComponent } from "./contact/contact.component";
-import { NavComponent } from "./nav/nav.component"; 
+import { ContactComponent } from "./contact/contact.component";
+import { InfodialogComponent } from './infodialog/infodialog.component';
+/* import { NavComponent } from "./nav/nav.component"; 
 import { PrivacyComponent } from "./privacy/privacy.component"; */
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    /*  ContactComponent,
-    NavComponent,
+    ContactComponent,
+    InfodialogComponent,
+    /* NavComponent,
     PrivacyComponent, */
   ],
   imports: [
