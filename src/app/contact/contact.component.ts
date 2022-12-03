@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
-import { MatDialog } from "@angular/material/dialog";
+import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
 import { InfodialogComponent } from "../infodialog/infodialog.component";
 import { Router } from "@angular/router";
 
