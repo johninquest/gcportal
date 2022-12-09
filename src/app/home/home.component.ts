@@ -5,6 +5,7 @@ import { Router } from "@angular/router";
 import { WebService } from "../services/web.service";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { SCHOOLS } from "../shared/lists";
+import pkg from "package.json";
 
 @Component({
   selector: "app-home",
@@ -19,6 +20,7 @@ export class HomeComponent {
   ) {}
 
   tableData: any;
+  currentAppVersion = pkg.version;
 
   selectedSchool = new FormControl<string | null>("", Validators.required);
 
