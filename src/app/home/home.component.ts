@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
-import { WebService } from "../services/web.service";
+/* import { WebService } from "../services/web.service"; */
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { SCHOOLS } from "../shared/lists";
 import pkg from "package.json";
@@ -15,13 +15,11 @@ import pkg from "package.json";
 export class HomeComponent {
   constructor(
     private _router: Router,
-    private _snackBar: MatSnackBar,
-    private _ws: WebService
+    private _snackBar: MatSnackBar /*  private _ws: WebService */
   ) {}
 
-  tableData: any;
+  /*  tableData: any; */
   currentAppVersion = pkg.version;
-
   selectedSchool = new FormControl<string | null>("", Validators.required);
 
   schoolsList: ListDataTypeDescriptor[] = SCHOOLS;
@@ -41,7 +39,6 @@ export class HomeComponent {
       this.selectedSchool.markAllAsTouched();
     } else if (this.selectedSchool.value === "nyalla") {
       this._router.navigateByUrl("/contact");
-      // this._router.navigate([])
     } else {
       this._snackBar.open("The selected school is not yet supported!", "OK", {
         duration: 5000,
