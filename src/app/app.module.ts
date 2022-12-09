@@ -10,9 +10,8 @@ import { HomeComponent } from "./home/home.component";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { ContactComponent } from "./contact/contact.component";
-import { InfodialogComponent } from './infodialog/infodialog.component';
-/* import { NavComponent } from "./nav/nav.component"; 
-import { PrivacyComponent } from "./privacy/privacy.component"; */
+import { InfodialogComponent } from "./infodialog/infodialog.component";
+/* import { PrivacyComponent } from "./privacy/privacy.component"; */
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { PrivacyComponent } from "./privacy/privacy.component"; */
     HomeComponent,
     ContactComponent,
     InfodialogComponent,
-    /* NavComponent,
-    PrivacyComponent, */
+    /* PrivacyComponent, */
   ],
   imports: [
     BrowserModule,
