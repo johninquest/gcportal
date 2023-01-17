@@ -65,6 +65,14 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "contact.form.gender" | translate }}</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option *ngFor="let i of genderList" [value]="i.value">
+          {{ i.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <div class="btns">
       <button mat-stroked-button (click)="onClickBack()">

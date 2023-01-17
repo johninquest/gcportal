@@ -36,7 +36,8 @@
       "email": "Adress e-mail",
       "message": "Autre détails supplémentaires?",
       "backButton": "retour",
-      "submitButton": "soumettre"
+      "submitButton": "soumettre",
+      "gender": "Sexe"
     }
   }
 }

@@ -54,3 +54,10 @@ export const SCHOOLS = [
   { value: "logpom", viewValue: "Lycée Bilingue de Logpom" },
   { value: "other", viewValue: "Autre/Other" },
 ];
+
+export const GENDERS = [
+  // { value: '', viewValue: 'Choose...' },
+  { value: "male", viewValue: "Female" },
+  { value: "female", viewValue: "Male" },
+  { value: "other", viewValue: "Other(s)" },
+];

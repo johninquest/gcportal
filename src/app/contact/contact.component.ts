@@ -1,6 +1,11 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { REQUEST_REASONS, CLASS_LETTERS, CLASS_NUMBERS } from "../shared/lists";
+import {
+  REQUEST_REASONS,
+  CLASS_LETTERS,
+  CLASS_NUMBERS,
+  GENDERS,
+} from "../shared/lists";
 import { ListDataTypeDescriptor } from "../shared/descriptor";
 import { WebService } from "../services/web.service";
 import { MatDialog } from "@angular/material/dialog";
@@ -28,10 +33,12 @@ export class ContactComponent {
     givenNames: new FormControl<string | null>(""),
     classNumber: new FormControl<string | null>("", Validators.required),
     classLetter: new FormControl<string | null>(""),
+    gender: new FormControl<string | null>(""),
   });
 
   classLetterList: ListDataTypeDescriptor[] = CLASS_LETTERS;
   classNumberList: ListDataTypeDescriptor[] = CLASS_NUMBERS;
+  genderList: ListDataTypeDescriptor[] = GENDERS;
   requestReasonsList: ListDataTypeDescriptor[] = REQUEST_REASONS;
 
   onClickSubmit() {
@@ -48,6 +55,7 @@ export class ContactComponent {
         given_names: this.contactForm.value.givenNames,
         class_number: this.contactForm.value.classNumber,
         class_letter: this.contactForm.value.classLetter,
+        gender: this.contactForm.value.gender,
       };
       this._ws
         .addRowToDB(_supabasePayload)
