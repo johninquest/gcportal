@@ -1,6 +1,6 @@
 # <p align="center">Guidance Counseling Portal</p>
 
-A basic platform to help students get in touch with their school or guidance counselor
+<p align="center">A basic platform to help students get in touch with their school or guidance counselor</p>
 
 <!-- 
 ## Development server
